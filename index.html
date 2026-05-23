@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="SNS時代の承認欲求を16タイプのモンスターで楽しむ無料診断。結果画像の保存とX共有に対応。">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SNS承認欲求モンスター診断">
+    <meta property="og:description" content="あなたのSNS承認欲求タイプをポップなモンスターで診断。">
+    <meta name="twitter:card" content="summary">
+    <title>SNS承認欲求モンスター診断</title>
+    <!-- Google Fonts: Poppins (Sans-serif) & M PLUS Rounded 1c (Rounded Japanese) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;500;700;900&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           1. 設計トークン (超絶可愛いパステルピンク ＆ ミルキーホワイト)
+           ========================================================================== */
+        :root {
+            --bg-pastel-pink: #FFF0F5;      /* ラベンダーローズ (ベース背景) */
+            --bg-milk-white: #FFFDF9;       /* ミルクホワイト (カード背景) */
+            --primary-pink: #FFB7C5;        /* パステルサクラピンク */
+            --primary-pink-deep: #FF8DA1;   /* 濃いめパステルピンク */
+            --accent-yellow: #FFFACD;       /* レモンイエロー */
+            --accent-yellow-border: #FCE17D; /* レモンイエローボーダー */
+            --accent-mint: #E0EEEE;         /* パステルミント */
+            --text-dark: #4A3C3F;           /* 柔らかいダークブラウン (文字) */
+            --text-muted: #8B7B7E;          /* 薄いダークブラウン */
+            --border-radius-lg: 24px;
+            --border-radius-md: 16px;
+            --font-rounded: 'M PLUS Rounded 1c', 'Poppins', sans-serif;
+            --safe-top: env(safe-area-inset-top, 20px);
+            --safe-bottom: env(safe-area-inset-bottom, 20px);
+        }
+
+        /* 全体リセット */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-pastel-pink);
+            color: var(--text-dark);
+            font-family: var(--font-rounded);
+            font-weight: 500;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            padding-top: max(20px, var(--safe-top));
+            padding-bottom: max(20px, var(--safe-bottom));
+            padding-left: 16px;
+            padding-right: 16px;
+            
+            /* パステルグリッチ用SVG背景 (feTurbulenceでBPM同期して振動) */
+            background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23noiseFilter)' opacity='0.035'/></svg>");
+            transition: background-color 0.5s ease;
+        }
+
+        .container {
+            max-width: 520px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* ==========================================================================
+           2. 共通可愛いコンポーネント (カード、ボタン、インプット)
+           ========================================================================== */
+        
+        /* ぷっくりパステルカード */
+        .cute-card {
+            background: var(--bg-milk-white);
+            border: 4px solid var(--primary-pink);
+            border-radius: var(--border-radius-lg);
+            padding: 28px;
+            box-shadow: 0 10px 0 var(--primary-pink);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cute-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 0 var(--primary-pink);
+        }
+
+        /* ヘッダー */
+        header {
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        /* 言語選択セレクトボックス */
+        .lang-select-container {
+            position: absolute;
+            top: -10px;
+            right: 0;
+            z-index: 100;
+        }
+
+        .lang-select {
+            background: #FFF;
+            border: 2px solid var(--primary-pink);
+            border-radius: 12px;
+            padding: 6px 12px;
+            font-family: var(--font-rounded);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0 3px 0 var(--primary-pink);
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+        }
+
+        .lang-select:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 var(--primary-pink);
+        }
+
+        header h1 {
+            font-size: 2.0rem;
+            font-weight: 900;
+            color: var(--primary-pink-deep);
+            text-shadow: 2px 2px 0 #FFF;
+            -webkit-text-stroke: 1px var(--primary-pink-deep);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            padding-top: 25px; /* 言語バー回避用 */
+        }
+
+        header .subtitle {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        /* ぷっくり弾むボタン */
+        .cute-btn {
+            width: 100%;
+            background: var(--accent-yellow);
+            border: 3px solid var(--accent-yellow-border);
+            color: var(--text-dark);
+            padding: 16px;
+            border-radius: var(--border-radius-md);
+            font-family: var(--font-rounded);
+            font-size: 1.1rem;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 6px 0 var(--accent-yellow-border);
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .cute-btn:hover {
+            background: #FFFCE0;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 0 var(--accent-yellow-border);
+        }
+
+        .cute-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 var(--accent-yellow-border);
+        }
+
+        .cute-btn:disabled {
+            background: #EAEAEA;
+            border-color: #D3D3D3;
+            color: #A9A9A9;
+            box-shadow: 0 4px 0 #D3D3D3;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* インプット・テキストエリア */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 900;
+            color: var(--primary-pink-deep);
+            margin-bottom: 8px;
+        }
+
+        .cute-input {
+            width: 100%;
+            background: #FFF;
+            border: 3px solid var(--primary-pink);
+            border-radius: var(--border-radius-md);
+            padding: 14px 16px;
+            color: var(--text-dark);
+            font-family: var(--font-rounded);
+            font-size: 1rem;
+            font-weight: 700;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            appearance: none; /* セレクトボックス用 */
+            -webkit-appearance: none;
+        }
+
+        .cute-input:focus {
+            border-color: var(--primary-pink-deep);
+            box-shadow: 0 0 0 4px rgba(255, 141, 161, 0.25);
+        }
+
+        /* セレクトボックスの矢印カスタム */
+        select.cute-input {
+            background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z' fill='%23FF8DA1'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 20px;
+            padding-right: 40px;
+        }
+
+        /* ==========================================================================
+           3. 音声起動＆心の準備モーダル (iOS自動再生ブロック絶対防御)
+           ========================================================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 240, 245, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 1;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal-overlay.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .modal-box {
+            background: var(--bg-milk-white);
+            border: 5px solid var(--primary-pink);
+            border-radius: var(--border-radius-lg);
+            max-width: 90%;
+            width: 380px;
+            padding: 32px 24px;
+            box-shadow: 0 12px 0 var(--primary-pink);
+            text-align: center;
+            transform: scale(1);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modal-overlay.hide .modal-box {
+            transform: scale(0.8);
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--primary-pink-deep);
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .modal-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+
+        .modal-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+            animation: pulse-icon 1.5s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse-icon {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+
+        /* ==========================================================================
+           4. 診断フロー UI
+           ========================================================================== */
+        .section-view {
+            display: none;
+        }
+
+        .section-view.active {
+            display: block;
+        }
+
+        /* ニックネーム登録画面 */
+        #registerView .guide-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+            line-height: 1.4;
+        }
+
+        /* 質問回答画面 */
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--primary-pink-deep);
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .answer-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .answer-btn {
+            background: #FFF;
+            border: 3px solid var(--primary-pink);
+            border-radius: var(--border-radius-md);
+            padding: 16px;
+            font-family: var(--font-rounded);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-align: left;
+            cursor: pointer;
+            box-shadow: 0 4px 0 var(--primary-pink);
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            position: relative;
+        }
+
+        .answer-btn:hover {
+            border-color: var(--primary-pink-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 var(--primary-pink);
+        }
+
+        .answer-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 var(--primary-pink);
+        }
+
+        /* 進行バー */
+        .progress-bar-container {
+            width: 100%;
+            height: 12px;
+            background: #FFF;
+            border: 3px solid var(--primary-pink);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--primary-pink-deep);
+            transition: width 0.3s ease;
+        }
+
+        /* ==========================================================================
+           5. 3D Parallax チェキ風カードコンポーネント
+           ========================================================================== */
+        .cheki-wrapper {
+            perspective: 1200px;
+            width: 100%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cheki-card {
+            width: 320px;
+            background: #FFF;
+            border: 5px solid var(--primary-pink);
+            border-radius: 12px;
+            padding: 16px 16px 28px 16px;
+            box-shadow: 0 10px 25px rgba(255, 183, 197, 0.4);
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* チェキ画像スロット */
+        .cheki-img-slot {
+            width: 100%;
+            height: 260px;
+            background: #F5EAE6;
+            border: 3px solid var(--primary-pink);
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateZ(25px);
+        }
+
+        .cheki-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: transform 0.1s ease-out;
+            z-index: 2;
+        }
+
+        /* 画像がなかった場合のパステルプレースホルダーイラスト */
+        .cheki-placeholder {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #FFE4E1 0%, #E6E6FA 100%);
+            color: var(--primary-pink-deep);
+            font-weight: 900;
+            font-size: 0.95rem;
+            z-index: 1;
+        }
+
+        .cheki-placeholder .emoji {
+            font-size: 3.5rem;
+            margin-bottom: 8px;
+        }
+
+        /* チェキテキスト署名エリア */
+        .cheki-info {
+            width: 100%;
+            margin-top: 16px;
+            text-align: center;
+            transform: translateZ(35px);
+        }
+
+        .cheki-title {
+            font-size: clamp(0.9rem, 4vw, 1.3rem);
+            font-weight: 900;
+            color: var(--primary-pink-deep);
+            margin-bottom: 8px;
+            line-height: 1.3;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .cheki-metadata {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            border-top: 2px dashed var(--primary-pink);
+            padding-top: 8px;
+            margin-top: 8px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .cheki-meta-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cheki-serial {
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        /* ==========================================================================
+           6. 時限消滅システム ＆ プレミアムロック解除
+           ========================================================================== */
+        /* カウントダウン警告表示 */
+        .countdown-banner {
+            background: #FFE4E1;
+            border: 2px solid var(--primary-pink-deep);
+            border-radius: var(--border-radius-md);
+            padding: 10px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            font-weight: 700;
+            animation: pulse-border 1s infinite alternate ease-in-out;
+        }
+
+        .countdown-banner span {
+            color: #FF2E5B;
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+
+        @keyframes pulse-border {
+            0% { border-color: var(--primary-pink-deep); }
+            100% { border-color: #FF2E5B; }
+        }
+
+        /* 忘却ペナルティパステル霧オーバーレイ */
+        .fog-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 240, 245, 0);
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            pointer-events: none;
+            z-index: 9990;
+            transition: background 1.5s ease, backdrop-filter 1.5s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* 霧がかかってロックされたときの中身 */
+        .fog-overlay .lock-box {
+            background: var(--bg-milk-white);
+            border: 4px solid var(--primary-pink-deep);
+            border-radius: var(--border-radius-lg);
+            padding: 32px 24px;
+            box-shadow: 0 10px 0 var(--primary-pink-deep);
+            max-width: 90%;
+            width: 400px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            pointer-events: none;
+        }
+
+        .fog-overlay.active {
+            pointer-events: auto;
+        }
+
+        .fog-overlay.active .lock-box {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .lock-title {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--primary-pink-deep);
+            margin-bottom: 12px;
+        }
+
+        .lock-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* ==========================================================================
+           7. 診断結果詳細 ＆ AI解説表示
+           ========================================================================== */
+        .result-details-title {
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: var(--primary-pink-deep);
+            border-left: 5px solid var(--primary-pink-deep);
+            padding-left: 10px;
+            margin-bottom: 12px;
+        }
+
+        .ai-commentary-box {
+            background: #FFFDF0;
+            border: 3px dashed var(--accent-yellow-border);
+            border-radius: var(--border-radius-md);
+            padding: 16px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .ai-commentary-box::after {
+            content: "AI的神託";
+            position: absolute;
+            top: -12px;
+            right: 12px;
+            font-size: 0.75rem;
+            font-weight: 900;
+            background: var(--accent-yellow);
+            color: var(--text-dark);
+            padding: 2px 8px;
+            border: 2px solid var(--accent-yellow-border);
+            border-radius: 10px;
+        }
+
+        .type-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .monetize-slot {
+            display: none;
+            margin: 0 0 20px 0;
+            padding: 12px;
+            background: rgba(255, 253, 249, 0.78);
+            border: 2px dashed rgba(255, 183, 197, 0.8);
+            border-radius: 12px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.72rem;
+        }
+
+        .monetize-slot.active {
+            display: block;
+        }
+
+        .monetize-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .site-footer {
+            margin: 8px auto 0 auto;
+            padding: 14px 0 4px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
+        .site-footer a {
+            color: var(--primary-pink-deep);
+            font-weight: 700;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .consent-banner {
+            position: fixed;
+            left: 50%;
+            bottom: max(14px, var(--safe-bottom));
+            transform: translateX(-50%);
+            width: min(94vw, 520px);
+            z-index: 2000;
+            display: none;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px;
+            background: rgba(255, 253, 249, 0.96);
+            border: 3px solid var(--primary-pink);
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(74, 60, 63, 0.16);
+        }
+
+        .consent-banner.active {
+            display: flex;
+        }
+
+        .consent-text {
+            line-height: 1.55;
+            font-size: 0.78rem;
+            color: var(--text-dark);
+            text-align: left;
+        }
+
+        .consent-actions {
+            display: flex;
+            flex-shrink: 0;
+            gap: 8px;
+        }
+
+        .consent-btn {
+            border: 2px solid var(--primary-pink);
+            border-radius: 10px;
+            padding: 8px 10px;
+            background: #FFF;
+            color: var(--text-dark);
+            font-family: var(--font-rounded);
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        .consent-btn.primary {
+            background: var(--accent-yellow);
+            border-color: var(--accent-yellow-border);
+        }
+
+        @media (max-width: 560px) {
+            .consent-banner {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .consent-actions {
+                justify-content: flex-end;
+            }
+        }
+
+        /* ==========================================================================
+           8. html2canvas エクスポート用 iOS防弾レイヤー (3D Transform 完全無効化)
+           ========================================================================== */
+        body.export-mode * {
+            text-shadow: none !important;
+            box-shadow: none !important;
+            animation: none !important;
+            transition: none !important;
+        }
+
+        body.export-mode .cheki-wrapper {
+            perspective: none !important;
+            transform-style: flat !important;
+        }
+
+        body.export-mode .cheki-card {
+            border: 5px solid #FFB7C5 !important;
+            box-shadow: none !important;
+            transform: none !important;
+            transform-style: flat !important;
+        }
+
+        body.export-mode .cheki-img-slot {
+            transform: none !important;
+        }
+
+        body.export-mode .cheki-info {
+            transform: none !important;
+        }
+
+        body.export-mode .cheki-img {
+            transform: none !important;
+        }
+
+        /* ==========================================================================
+           9. 承認欲求スコアメーター
+           ========================================================================== */
+        .approval-meter-block {
+            background: linear-gradient(135deg, #FFF0F5 0%, #F5EAFF 100%);
+            border: 3px solid var(--primary-pink);
+            border-radius: var(--border-radius-md);
+            padding: 14px 16px;
+            margin-bottom: 20px;
+        }
+
+        .approval-meter-label {
+            font-size: 0.85rem;
+            font-weight: 900;
+            color: var(--primary-pink-deep);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .approval-meter-label .score-value {
+            font-size: 1.4rem;
+            color: var(--primary-pink-deep);
+        }
+
+        .approval-meter-bar-bg {
+            width: 100%;
+            height: 14px;
+            background: #FFD6E0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .approval-meter-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #FFB7C5, #FF6F9C);
+            border-radius: 10px;
+            transition: width 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .approval-meter-emoji-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* チェキ内スコア行 */
+        .cheki-score-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 4px;
+        }
+
+        .cheki-score-bar-bg {
+            width: 70%;
+            height: 6px;
+            background: #FFD6E0;
+            border-radius: 4px;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .cheki-score-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #FFB7C5, #FF6F9C);
+            border-radius: 4px;
+        }
+
+        /* トースト通知 */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--text-dark);
+            color: #FFF;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            z-index: 10005;
+            pointer-events: none;
+            opacity: 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+            text-align: center;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 忘却ペナルティパステル霧オーバーレイ (無料時限消滅) -->
+    <div id="fogOverlay" class="fog-overlay">
+        <div class="lock-box">
+            <div class="lock-title" id="lockTitle">🌸 神託は忘却の彼方へ 🌸</div>
+            <div class="lock-text" id="lockText">
+                無料体験枠の60秒が経過したため、診断結果のチェキはパステル霧に包まれて消滅しました。<br>
+                診断を永久保存したい場合は、パステルキーを入力してロックを解除してください。
+            </div>
+            <div class="form-group" style="text-align: left;">
+                <label id="premiumKeyLabel">プレミアムパステルキー入力</label>
+                <input type="password" id="premiumKeyInput" class="cute-input" placeholder="パスワードを入力">
+            </div>
+            <button class="cute-btn" id="unlockBtn">パステルロック解除</button>
+        </div>
+    </div>
+
+    <!-- iOS自動再生ブロック絶対防御用起動モーダル -->
+    <div id="iosModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="modal-icon">💓</span>
+            <div class="modal-title" id="iosModalTitle">心の準備はよろしいですか？</div>
+            <div class="modal-text" id="iosModalText">
+                これからあなたの承認欲求および生体反応スキャナーをロードします。<br>
+                タイピング速度と連動した心拍フィードバックが流れます。
+            </div>
+            <button class="cute-btn" id="iosStartBtn">進む</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- ヘッダー -->
+        <header>
+            <div class="lang-select-container">
+                <select id="langSelect" class="lang-select">
+                    <option value="ja">日本語 (JA)</option>
+                    <option value="en">English (EN)</option>
+                    <option value="ko">한국어 (KO)</option>
+                    <option value="zh">简体中文 (ZH)</option>
+                </select>
+            </div>
+            <h1 id="appTitle">SNS承認欲求モンスター診断</h1>
+            <div class="subtitle" id="appSubtitle">マズローの承認欲求2軸モデル診断</div>
+        </header>
+
+        <!-- 一、ユーザーニックネーム＆年齢登録画面 -->
+        <section id="registerView" class="cute-card section-view active">
+            <div class="form-group">
+                <label id="labelNickname">あなたのニックネームを入力してください</label>
+                <input type="text" id="nicknameInput" class="cute-input" placeholder="（例：ぽめちゃん）" maxlength="15">
+                <div id="typingFeedback" class="guide-text"></div>
+            </div>
+            <!-- 年齢選択フォームの新設 -->
+            <div class="form-group">
+                <label id="labelAge">あなたの年齢層を選択してください</label>
+                <select id="ageSelect" class="cute-input">
+                    <!-- JSにて多言語のオプションが挿入されます -->
+                </select>
+            </div>
+            <button class="cute-btn" id="startDiagnosisBtn" disabled>診断を開始する 💓</button>
+        </section>
+
+        <!-- 二、診断中の質問回答画面 -->
+        <section id="questionView" class="cute-card section-view">
+            <div class="progress-bar-container">
+                <div id="progressBarFill" class="progress-bar-fill"></div>
+            </div>
+            <div class="question-header">
+                <span id="questionNumber">Q1 / 8</span>
+                <span id="questionCategory">承認の源泉</span>
+            </div>
+            <div id="questionText" class="question-text">ここに質問テキストが入ります。</div>
+            <div class="answer-list" id="answerList">
+                <!-- 選択肢ボタンが動的に挿入される -->
+            </div>
+        </section>
+
+        <!-- 三、診断結果表示画面 (チェキ風 ＆ 毒舌解説) -->
+        <section id="resultView" class="section-view">
+            <div class="countdown-banner" id="countdownBanner">
+                ⚠️ 無料体験版: あと <span>60</span> 秒で神託チェキが灰（霧）になります！
+            </div>
+            
+            <div class="cheki-wrapper">
+                <div class="cheki-card" id="chekiCard">
+                    <!-- 画像スロット -->
+                    <div class="cheki-img-slot">
+                        <img src="" alt="診断モンスター" class="cheki-img" id="chekiImg">
+                        <div class="cheki-placeholder" id="chekiPlaceholder">
+                            <span class="emoji" id="chekiPlaceholderEmoji">🐙</span>
+                            <span id="chekiPlaceholderText">タイプ画像を読み込み中...</span>
+                        </div>
+                    </div>
+                    <!-- チェキ文字情報 -->
+                    <div class="cheki-info">
+                        <div class="cheki-title" id="chekiTitle">ポメラニアン型承認モンスター</div>
+                        <div class="cheki-metadata">
+                            <div class="cheki-meta-row">
+                                <span id="chekiUserName">ユーザー: ---</span>
+                                <span id="chekiUserAge">年齢層: ---</span>
+                            </div>
+                            <div class="cheki-meta-row" style="margin-top: 4px;">
+                                <span id="chekiSerialTitle">シリアル番号</span>
+                                <span class="cheki-serial" id="chekiSerial">NO. 00000000</span>
+                            </div>
+                            <div class="cheki-score-row">
+                                <span id="chekiScoreLabel" style="font-size:0.7rem;">承認欲求スコア:</span>
+                                <span class="cheki-score-bar-bg">
+                                    <span class="cheki-score-bar-fill" id="chekiScoreBarFill" style="width:0%"></span>
+                                </span>
+                                <span id="chekiScoreNum" style="font-size:0.7rem;font-weight:900;color:var(--primary-pink-deep);">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 診断解説およびAIコメント -->
+            <div class="cute-card" style="margin-bottom: 20px;">
+                <!-- 承認欲求スコアメーター -->
+                <div class="approval-meter-block" id="approvalMeterBlock">
+                    <div class="approval-meter-label">
+                        <span id="approvalMeterTitle">💓 承認欲求スコア</span>
+                        <span class="score-value" id="approvalScoreDisplay">0%</span>
+                    </div>
+                    <div class="approval-meter-bar-bg">
+                        <div class="approval-meter-bar-fill" id="approvalMeterFill" style="width: 0%;"></div>
+                    </div>
+                    <div class="approval-meter-emoji-row">
+                        <span>😌 達観</span>
+                        <span>😅 中間</span>
+                        <span>🔥 承認欲求モンスター</span>
+                    </div>
+                </div>
+                <div class="result-details-title" id="resultTitleLabel">あなたの承認欲求タイプ</div>
+                <p id="resultTypeDesc" class="type-description">
+                    タイプの説明テキストがここにロードされます。
+                </p>
+                
+                <div class="result-details-title" id="aiCommentTitleLabel">AIによる分析（毒舌解説）</div>
+                <div class="ai-commentary-box" id="aiCommentaryBox">
+                    AIがあなたの精神をスキャン中……
+                </div>
+            </div>
+
+            <div class="monetize-slot" id="resultAdSlot" aria-label="スポンサーリンク">
+                <span class="monetize-label">スポンサーリンク</span>
+            </div>
+
+            <!-- アクションボタン群 -->
+            <div class="action-buttons">
+                <button class="cute-btn" id="exportBtn" style="background: var(--accent-mint); border-color: #B2DFEE; box-shadow: 0 6px 0 #B2DFEE;">
+                    📸 チェキを画像として保存する
+                </button>
+                <button class="cute-btn" id="shareBtn" style="background: #1DA1F2; border-color: #1990DB; color: #FFF; box-shadow: 0 6px 0 #1990DB;">
+                    🐦 X（Twitter）に結果を共有する
+                </button>
+                <button class="cute-btn" id="retryBtn" style="background: #EAEAEA; border-color: #D3D3D3; box-shadow: 0 6px 0 #D3D3D3;">
+                    🔄 もう一度診断する
+                </button>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="site-footer">
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="about.html">運営情報</a>
+        <a href="articles/">承認欲求コラム</a>
+    </footer>
+
+    <div id="consentBanner" class="consent-banner" role="dialog" aria-live="polite" aria-label="Cookieと広告に関する設定">
+        <div class="consent-text">
+            利用状況の分析と広告表示のためにCookie等を使います。ニックネームや入力内容はGA4へ送信しません。
+        </div>
+        <div class="consent-actions">
+            <button type="button" class="consent-btn" id="consentRejectBtn">拒否</button>
+            <button type="button" class="consent-btn primary" id="consentAcceptBtn">同意</button>
+        </div>
+    </div>
+
+    <!-- トースト通知用 -->
+    <div id="customToast" class="toast"></div>
+
+    <!-- 外部ライブラリ: html2canvas ローカルコピー (file://プロトコル対応) -->
+    <script src="html2canvas.min.js"></script>
+    
+    <!-- 本番投入時にGA4/AdSense IDを設定する公開設定ファイル -->
+    <script src="site-config.js"></script>
+    
+    <!-- file:// でもチェキ画像をCanvasへ安全に描くためのローカル画像データ -->
+    <script src="monster-images-data.js"></script>
+    
+    <!-- アプリケーションスクリプト -->
+    <script src="app.js"></script>
+
+</body>
+</html>
