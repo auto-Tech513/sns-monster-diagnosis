@@ -646,6 +646,35 @@
             gap: 10px;
         }
 
+        .paid-save-cta {
+            display: none;
+            padding: 14px;
+            background: #FFF7FA;
+            border: 3px solid var(--primary-pink);
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 6px 0 var(--primary-pink);
+            text-align: center;
+        }
+
+        .paid-save-cta.active {
+            display: block;
+        }
+
+        .paid-save-btn {
+            min-height: 52px;
+            background: linear-gradient(180deg, #FFFACD 0%, #FFE8A3 100%);
+            border-color: var(--accent-yellow-border);
+            box-shadow: 0 6px 0 var(--accent-yellow-border);
+        }
+
+        .paid-save-hint {
+            margin-top: 10px;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-weight: 800;
+            line-height: 1.5;
+        }
+
         .monetize-slot {
             display: none;
             margin: 0 0 20px 0;
@@ -1131,6 +1160,12 @@
 
             <!-- アクションボタン群 -->
             <div class="action-buttons">
+                <div class="paid-save-cta" id="paidSaveCta" hidden>
+                    <button class="cute-btn paid-save-btn" id="paidSaveBtn" type="button">
+                        ✨ ¥120で永久保存
+                    </button>
+                    <div class="paid-save-hint" id="paidSaveHint">またはXで共有して無料保存</div>
+                </div>
                 <button class="cute-btn" id="exportBtn" style="background: var(--accent-mint); border-color: #B2DFEE; box-shadow: 0 6px 0 #B2DFEE;">
                     📸 チェキを画像として保存/共有する
                 </button>

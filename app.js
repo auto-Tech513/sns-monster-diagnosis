@@ -118,6 +118,9 @@
             consentReject: "拒否",
             consentAccept: "同意",
             adLabel: "スポンサーリンク",
+            paidSaveBtn: "✨ ¥{price}で永久保存",
+            paidSaveHint: "またはXで共有して無料保存",
+            paidUnlockSuccess: "永久保存が有効になりました！",
             
             // ポップ用語定義
             dimensionNeed: "ビビリなあんしん安全第一派",
@@ -192,6 +195,9 @@
             consentReject: "Reject",
             consentAccept: "Accept",
             adLabel: "Sponsored",
+            paidSaveBtn: "✨ Save permanently for ¥{price}",
+            paidSaveHint: "Or share on X to save for free",
+            paidUnlockSuccess: "Permanent save is now unlocked!",
 
             // ポップ用語定義
             dimensionNeed: "Timid Safety-First Group",
@@ -266,6 +272,9 @@
             consentReject: "거부",
             consentAccept: "동의",
             adLabel: "스폰서 링크",
+            paidSaveBtn: "✨ ¥{price}로 영구 저장",
+            paidSaveHint: "또는 X에 공유하고 무료로 저장",
+            paidUnlockSuccess: "영구 저장이 활성화되었습니다!",
 
             // ポップ用語定義
             dimensionNeed: "소심한 안심안전 제일파",
@@ -340,6 +349,9 @@
             consentReject: "拒绝",
             consentAccept: "同意",
             adLabel: "赞助链接",
+            paidSaveBtn: "✨ ¥{price}永久保存",
+            paidSaveHint: "或分享到X免费保存",
+            paidUnlockSuccess: "永久保存已启用！",
 
             // ポップ用語定義
             dimensionNeed: "胆小安心安全第一派",
@@ -973,6 +985,8 @@
         const consentAccept = document.getElementById('consentAcceptBtn');
         if (consentAccept) consentAccept.textContent = data.consentAccept;
 
+        updatePaidSaveCta();
+
         document.documentElement.lang = state.lang;
 
         // カウントダウン警告の更新
@@ -1032,6 +1046,38 @@
 
     function getSiteConfig() {
         return window.SNS_MONSTER_CONFIG || {};
+    }
+
+    function getPaidPremiumConfig() {
+        const config = getSiteConfig();
+        const stripeUrl = String(config.stripePermanentSaveUrl || '').trim();
+        const price = Number(config.permanentSavePrice || 120);
+
+        return {
+            enabled: Boolean(config.enablePaidPremium && stripeUrl),
+            stripeUrl,
+            price: Number.isFinite(price) && price > 0 ? price : 120
+        };
+    }
+
+    function isPremiumLockEnabled() {
+        const { enablePremiumLock } = getSiteConfig();
+        return Boolean(enablePremiumLock || getPaidPremiumConfig().enabled);
+    }
+
+    function updatePaidSaveCta() {
+        const cta = document.getElementById('paidSaveCta');
+        const btn = document.getElementById('paidSaveBtn');
+        const hint = document.getElementById('paidSaveHint');
+        if (!cta || !btn || !hint) return;
+
+        const paidConfig = getPaidPremiumConfig();
+        const shouldShow = paidConfig.enabled && !state.isPremium;
+        cta.hidden = !shouldShow;
+        cta.classList.toggle('active', shouldShow);
+        btn.textContent = (i18n[state.lang].paidSaveBtn || i18n.ja.paidSaveBtn)
+            .replace('{price}', paidConfig.price.toLocaleString('ja-JP'));
+        hint.textContent = i18n[state.lang].paidSaveHint || i18n.ja.paidSaveHint;
     }
 
     function hasConsent() {
@@ -1187,35 +1233,66 @@
     // 6. 初期化
     // ==========================================
     function init() {
-        setupEventListeners();
-        loadPremiumState();
-        setupConsentControls();
-        
-        // 初回の年齢層インジェクション
         state.lang = getInitialLang();
         const langSelect = document.getElementById('langSelect');
         if (langSelect) langSelect.value = state.lang;
         rememberLang();
+
+        setupEventListeners();
+        handlePaidReturn();
+        loadPremiumState();
+        setupConsentControls();
+
+        // 初回の年齢層インジェクション
         updateLanguage();
         showConsentBannerIfNeeded();
         enableMeasurementAndAds();
     }
 
     function loadPremiumState() {
-        const { enablePremiumLock } = getSiteConfig();
-        if (!enablePremiumLock) {
+        const premiumLockEnabled = isPremiumLockEnabled();
+        const unlocked = localStorage.getItem(PREMIUM_STORAGE_KEY) === 'true';
+
+        if (!premiumLockEnabled || unlocked) {
             state.isPremium = true;
             document.getElementById('countdownBanner').style.display = 'none';
             document.getElementById('fogOverlay').classList.remove('active');
+            updatePaidSaveCta();
             return;
         }
 
-        const unlocked = localStorage.getItem(PREMIUM_STORAGE_KEY) === 'true';
-        state.isPremium = unlocked;
-        if (unlocked) {
-            document.getElementById('countdownBanner').style.display = 'none';
-            document.getElementById('fogOverlay').classList.remove('active');
+        state.isPremium = false;
+        document.getElementById('countdownBanner').style.display = '';
+        updatePaidSaveCta();
+    }
+
+    function unlockPremium(source = 'key') {
+        state.isPremium = true;
+        localStorage.setItem(PREMIUM_STORAGE_KEY, 'true');
+        clearInterval(state.timerId);
+
+        const countdownBanner = document.getElementById('countdownBanner');
+        const fogOverlay = document.getElementById('fogOverlay');
+        if (countdownBanner) countdownBanner.style.display = 'none';
+        if (fogOverlay) {
+            fogOverlay.classList.remove('active');
+            fogOverlay.style.background = '';
+            fogOverlay.style.backdropFilter = '';
+            fogOverlay.style.webkitBackdropFilter = '';
         }
+        updatePaidSaveCta();
+        safeTrack('premium_unlock', { unlock_method: source });
+    }
+
+    function handlePaidReturn() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('paid') !== '1') return;
+
+        unlockPremium('stripe_payment_link');
+        showToast(i18n[state.lang].paidUnlockSuccess);
+        params.delete('paid');
+        const nextUrl = `${window.location.pathname}${params.toString() ? `?${params}` : ''}${window.location.hash}`;
+        window.history.replaceState({}, document.title, nextUrl || window.location.pathname);
     }
 
     function setupEventListeners() {
@@ -1303,17 +1380,27 @@
             unlockBtn.addEventListener('click', () => {
                 const val = premiumKeyInput.value.trim();
                 if (val === PREMIUM_KEY) {
-                    state.isPremium = true;
-                    localStorage.setItem(PREMIUM_STORAGE_KEY, 'true');
-                    clearInterval(state.timerId);
-                    
-                    document.getElementById('countdownBanner').style.display = 'none';
-                    document.getElementById('fogOverlay').classList.remove('active');
+                    unlockPremium('pastel_key');
                     showToast(i18n[state.lang].toastKeySuccess);
-                    safeTrack('premium_unlock');
                 } else {
                     showToast(i18n[state.lang].toastKeyFail);
                 }
+            });
+        }
+
+        const paidSaveBtn = document.getElementById('paidSaveBtn');
+        if (paidSaveBtn) {
+            paidSaveBtn.addEventListener('click', () => {
+                const paidConfig = getPaidPremiumConfig();
+                if (!paidConfig.enabled) {
+                    updatePaidSaveCta();
+                    return;
+                }
+
+                safeTrack('paid_permanent_save_click', {
+                    price_yen: paidConfig.price
+                });
+                window.location.assign(paidConfig.stripeUrl);
             });
         }
 

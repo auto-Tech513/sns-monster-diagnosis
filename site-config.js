@@ -8,6 +8,10 @@ window.SNS_MONSTER_CONFIG = {
     articleAdSlot: "",
     // true にすると、同意後に結果画面だけ広告枠を表示する。
     enableAds: false,
+    // Stripe Payment Link URLを設定し、enablePaidPremiumをtrueにすると永久保存CTAを表示する。
+    stripePermanentSaveUrl: "",
+    permanentSavePrice: 120,
+    enablePaidPremium: false,
     // 決済導線を用意するまでは公開版でロックを出さない。
     enablePremiumLock: false
 };
