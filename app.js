@@ -1505,7 +1505,13 @@
                 const name = info.name[state.lang] || info.name.ja;
                 const scorePct = state.approvalPercent;
                 const text = buildShareText(name, scorePct);
-                const shareUrl = (getSiteConfig().siteUrl || window.location.origin || '').replace(/\/$/, '');
+                const shareUrl = new URL(
+                    (getSiteConfig().siteUrl || window.location.origin || window.location.href).replace(/\/$/, '/')
+                );
+                shareUrl.searchParams.set('utm_source', 'x');
+                shareUrl.searchParams.set('utm_medium', 'social');
+                shareUrl.searchParams.set('utm_campaign', 'result_share');
+                shareUrl.searchParams.set('monster', state.typeCode || 'unknown');
                 const intentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}&hashtags=${encodeURIComponent('SNS承認欲求モンスター診断')}`;
                 safeTrack('shindan_share', {
                     share_platform: 'x',

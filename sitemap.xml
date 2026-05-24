@@ -13,8 +13,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sns-monster-diagnosis.pages.dev/articles/approval-desire-test</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://sns-monster-diagnosis.pages.dev/articles/likes-psychology</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://sns-monster-diagnosis.pages.dev/articles/maslow-social-media</loc>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sns-monster-diagnosis.pages.dev/articles/sns-comparison-fatigue</loc>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://sns-monster-diagnosis.pages.dev/articles/sns-fatigue</loc>
@@ -23,6 +35,10 @@
   <url>
     <loc>https://sns-monster-diagnosis.pages.dev/articles/result-types</loc>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sns-monster-diagnosis.pages.dev/articles/how-to-share-results</loc>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://sns-monster-diagnosis.pages.dev/privacy</loc>
