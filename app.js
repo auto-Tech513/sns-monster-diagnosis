@@ -23,7 +23,7 @@
         },
         typeCode: '', // 最終的な4文字コード (小文字)
         approvalPercent: 0, // 承認欲求スコア (0<100)
-        isPremium: false,
+        isPremium: true,
         countdown: 60,
         timerId: null,
         audioCtx: null,
@@ -64,7 +64,7 @@
             chekiSerialTitle: "シリアル番号",
             resultTitleLabel: "あなたの承認欲求タイプ",
             aiCommentTitleLabel: "AIによる分析（毒舌解説）",
-            exportBtn: "📸 チェキを画像として保存する",
+            exportBtn: "📸 チェキを画像として保存/共有する",
             shareBtn: "🐦 X（Twitter）に結果を共有する",
             retryBtn: "🔄 もう一度診断する",
             lockTitle: "🌸 神託は忘却の彼方へ 🌸",
@@ -78,8 +78,13 @@
             toastKeySuccess: "プレミアムライセンス適合。時限消滅を永久回避しました！",
             toastKeyFail: "パステルキーが適合しません！",
             toastExportStart: "チェキを物質化（現像）中...",
-            toastExportEnd: "現像完了！端末に保存してください。",
+            toastExportEnd: "現像完了！表示された画面から保存してください。",
             toastExportFail: "現像エラーが発生しました。",
+            saveModalTitle: "チェキ画像ができました",
+            saveModalText: "iPhoneでは共有画面から「画像を保存」を選んでください。開けない場合は画像を長押しして保存できます。",
+            saveModalShareBtn: "共有/保存を開く",
+            saveModalDownloadBtn: "ダウンロード",
+            saveModalCloseBtn: "閉じる",
             toastAiSuccess: "AIとの深層接続に成功 💓",
             toastAiFallback: "AIオフライン。防弾フォールバック適用。",
             toastShareSuccess: "共有しました！",
@@ -107,7 +112,7 @@
             chekiSerialTitle: "Serial Number",
             resultTitleLabel: "Your Approval Desire Type",
             aiCommentTitleLabel: "AI Analysis (Sarcastic Comments)",
-            exportBtn: "📸 Save Cheki as Image",
+            exportBtn: "📸 Save / Share Cheki",
             shareBtn: "🐦 Share on X (Twitter)",
             retryBtn: "🔄 Try Again",
             lockTitle: "🌸 Faded Into Forgetfulness 🌸",
@@ -121,8 +126,13 @@
             toastKeySuccess: "Premium license matched. Vanishing avoided permanently!",
             toastKeyFail: "Invalid pastel key!",
             toastExportStart: "Processing Cheki...",
-            toastExportEnd: "Saved! Check your device download folder.",
+            toastExportEnd: "Image is ready. Save it from the screen shown.",
             toastExportFail: "Failed to process image.",
+            saveModalTitle: "Your Cheki image is ready",
+            saveModalText: "On iPhone, choose Save Image from the share sheet. If it does not open, long-press the image to save it.",
+            saveModalShareBtn: "Open share/save",
+            saveModalDownloadBtn: "Download",
+            saveModalCloseBtn: "Close",
             toastAiSuccess: "AI deep connection succeeded 💓",
             toastAiFallback: "AI offline. Fallback applied.",
             toastShareSuccess: "Shared successfully!",
@@ -150,7 +160,7 @@
             chekiSerialTitle: "시리얼 번호",
             resultTitleLabel: "당신의 승인욕구 유형",
             aiCommentTitleLabel: "AI 심층 분석 (독설 해설)",
-            exportBtn: "📸 체키 이미지 저장하기",
+            exportBtn: "📸 체키 저장/공유하기",
             shareBtn: "🐦 X(Twitter)에 공유하기",
             retryBtn: "🔄 다시 도전하기",
             lockTitle: "🌸 신탁은 망각의 너머로 🌸",
@@ -164,8 +174,13 @@
             toastKeySuccess: "프리미엄 라이선스 인증 완료. 영구 해제되었습니다!",
             toastKeyFail: "파스텔 키가 일치하지 않습니다!",
             toastExportStart: "체키 인화 중...",
-            toastExportEnd: "저장 완료! 기기 내 다운로드 폴더를 확인해 주세요.",
+            toastExportEnd: "인화 완료! 표시된 화면에서 저장해 주세요.",
             toastExportFail: "인화 중 오류가 발생했습니다.",
+            saveModalTitle: "체키 이미지가 준비되었습니다",
+            saveModalText: "iPhone에서는 공유 화면에서 이미지 저장을 선택해 주세요. 열리지 않으면 이미지를 길게 눌러 저장할 수 있습니다.",
+            saveModalShareBtn: "공유/저장 열기",
+            saveModalDownloadBtn: "다운로드",
+            saveModalCloseBtn: "닫기",
             toastAiSuccess: "AI 심층 연결 성공 💓",
             toastAiFallback: "AI 오프라인. 백업 텍스트 적용.",
             toastShareSuccess: "공유되었습니다!",
@@ -193,7 +208,7 @@
             chekiSerialTitle: "序列号",
             resultTitleLabel: "您的认同感欲求类型",
             aiCommentTitleLabel: "AI毒舌分析",
-            exportBtn: "📸 保存拍立得图片",
+            exportBtn: "📸 保存/分享拍立得图片",
             shareBtn: "🐦 分享到 X (Twitter)",
             retryBtn: "🔄 重新诊断",
             lockTitle: "🌸 神谕已归于遗忘 🌸",
@@ -207,8 +222,13 @@
             toastKeySuccess: "钥匙验证成功！已为您永久保留拍立得。",
             toastKeyFail: "无效的钥匙！",
             toastExportStart: "正在冲印拍立得...",
-            toastExportEnd: "冲印完成！请在设备下载中查看。",
+            toastExportEnd: "冲印完成！请在显示的页面中保存。",
             toastExportFail: "冲印失败，发生了内部错误。",
+            saveModalTitle: "拍立得图片已生成",
+            saveModalText: "在 iPhone 上请从分享面板选择保存图片。若无法打开，请长按图片保存。",
+            saveModalShareBtn: "打开分享/保存",
+            saveModalDownloadBtn: "下载",
+            saveModalCloseBtn: "关闭",
             toastAiSuccess: "AI连接成功 💓",
             toastAiFallback: "AI已离线。已使用本地诊断。",
             toastShareSuccess: "分享成功！",
@@ -755,7 +775,9 @@
             'exportBtn', 'shareBtn', 'retryBtn',
             'lockTitle', 'lockText', 'premiumKeyLabel', 'unlockBtn',
             'iosModalTitle', 'iosModalText', 'iosStartBtn',
-            'chekiSerialTitle'
+            'chekiSerialTitle',
+            'saveModalTitle', 'saveModalText', 'saveModalShareBtn',
+            'saveModalDownloadBtn', 'saveModalCloseBtn'
         ];
 
         ids.forEach(id => {
@@ -957,6 +979,20 @@
         prepareResultAdSlot();
     }
 
+    async function requestMotionPermissionIfNeeded() {
+        const orientationApi = window.DeviceOrientationEvent;
+        if (!orientationApi || typeof orientationApi.requestPermission !== 'function') {
+            return;
+        }
+
+        try {
+            const permission = await orientationApi.requestPermission();
+            state.hasGyro = permission === 'granted';
+        } catch (err) {
+            console.warn('Device orientation permission was not granted:', err);
+        }
+    }
+
     // ==========================================
     // 6. 初期化
     // ==========================================
@@ -973,6 +1009,14 @@
     }
 
     function loadPremiumState() {
+        const { enablePremiumLock } = getSiteConfig();
+        if (!enablePremiumLock) {
+            state.isPremium = true;
+            document.getElementById('countdownBanner').style.display = 'none';
+            document.getElementById('fogOverlay').classList.remove('active');
+            return;
+        }
+
         const unlocked = localStorage.getItem(PREMIUM_STORAGE_KEY) === 'true';
         state.isPremium = unlocked;
         if (unlocked) {
@@ -1001,6 +1045,7 @@
         if (iosStartBtn && iosModal) {
             iosStartBtn.addEventListener('click', () => {
                 setupAudioContext();
+                requestMotionPermissionIfNeeded();
                 iosModal.classList.add('hide');
                 showToast(i18n[state.lang].toastAudioInit);
             });
@@ -1291,10 +1336,75 @@
             }
         });
 
+        const getChekiFilename = () => `sns-monster-${state.typeCode || 'result'}-${Date.now()}.png`;
+
+        const createImageFile = (blob, filename) => {
+            if (typeof File === 'undefined') return null;
+            return new File([blob], filename, { type: 'image/png' });
+        };
+
+        const canShareImageFile = file => (
+            file &&
+            navigator.share &&
+            navigator.canShare &&
+            navigator.canShare({ files: [file] })
+        );
+
+        const shareImageFile = async file => {
+            if (!canShareImageFile(file)) return false;
+            await navigator.share({
+                files: [file],
+                title: 'SNS承認欲求モンスター診断',
+                text: '診断結果チェキ画像'
+            });
+            return true;
+        };
+
+        const isIOSLikeDevice = () => (
+            /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+        );
+
+        let savePreviewUrl = '';
+        let savePreviewFile = null;
+
+        const closeSaveModal = () => {
+            const modal = document.getElementById('saveModal');
+            if (modal) {
+                modal.classList.remove('active');
+                modal.setAttribute('aria-hidden', 'true');
+            }
+            if (savePreviewUrl) {
+                URL.revokeObjectURL(savePreviewUrl);
+                savePreviewUrl = '';
+            }
+            savePreviewFile = null;
+        };
+
+        const showSaveModal = (blob, filename) => {
+            const modal = document.getElementById('saveModal');
+            const preview = document.getElementById('savePreviewImg');
+            const downloadLink = document.getElementById('saveModalDownloadBtn');
+            if (!modal || !preview || !downloadLink) return;
+
+            if (savePreviewUrl) {
+                URL.revokeObjectURL(savePreviewUrl);
+            }
+
+            savePreviewUrl = URL.createObjectURL(blob);
+            savePreviewFile = createImageFile(blob, filename);
+
+            preview.src = savePreviewUrl;
+            downloadLink.href = savePreviewUrl;
+            downloadLink.download = filename;
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+        };
+
         const triggerDownload = dataUrl => {
             const a = document.createElement('a');
             a.href = dataUrl;
-            a.download = `sns-monster-${state.typeCode || 'result'}-${Date.now()}.png`;
+            a.download = getChekiFilename();
             a.style.display = 'none';
             document.body.appendChild(a);
             a.click();
@@ -1310,13 +1420,49 @@
 
         const downloadCanvas = async canvas => {
             try {
+                const filename = getChekiFilename();
                 const blob = await canvasToBlob(canvas);
+                const file = createImageFile(blob, filename);
+
+                if (isIOSLikeDevice()) {
+                    try {
+                        if (await shareImageFile(file)) {
+                            return;
+                        }
+                    } catch (shareErr) {
+                        console.warn('Image share sheet was not completed, showing preview:', shareErr);
+                    }
+
+                    showSaveModal(blob, filename);
+                    return;
+                }
+
                 triggerDownload(URL.createObjectURL(blob));
             } catch (blobErr) {
                 console.warn('Blob export failed, using toDataURL fallback:', blobErr);
                 triggerDownload(canvas.toDataURL('image/png'));
             }
         };
+
+        const saveModalShareBtn = document.getElementById('saveModalShareBtn');
+        if (saveModalShareBtn) {
+            saveModalShareBtn.addEventListener('click', async () => {
+                if (!savePreviewFile) return;
+                try {
+                    if (await shareImageFile(savePreviewFile)) {
+                        showToast(i18n[state.lang].toastExportEnd);
+                    }
+                } catch (err) {
+                    console.warn('Image share from modal failed:', err);
+                    showToast(i18n[state.lang].saveModalText);
+                }
+            });
+        }
+
+        const saveModalCloseBtn = document.getElementById('saveModalCloseBtn');
+        if (saveModalCloseBtn) {
+            saveModalCloseBtn.addEventListener('click', closeSaveModal);
+        }
 
         const buildShareText = (name, scorePct) => (
             state.lang === 'ja' ? `【SNS承認欲求モンスター診断結果】\n\n私の承認欲求モンスターは『${name}』でした！\n承認欲求スコア: ${scorePct}%\nみんなも自分の承認欲求タイプをスキャンしよう！\n\n#SNS承認欲求モンスター診断` :
@@ -1359,7 +1505,8 @@
                 const name = info.name[state.lang] || info.name.ja;
                 const scorePct = state.approvalPercent;
                 const text = buildShareText(name, scorePct);
-                const intentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}`;
+                const shareUrl = (getSiteConfig().siteUrl || window.location.origin || '').replace(/\/$/, '');
+                const intentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}&hashtags=${encodeURIComponent('SNS承認欲求モンスター診断')}`;
                 safeTrack('shindan_share', {
                     share_platform: 'x',
                     monster_name_key: state.typeCode || 'none'
@@ -1719,8 +1866,17 @@ Please write the response entirely in ${langName}.`;
         if (!card) return;
 
         const update = () => {
-            state.currentRotateX += (state.targetRotateX - state.currentRotateX) * 0.1;
-            state.currentRotateY += (state.targetRotateY - state.currentRotateY) * 0.1;
+            let targetX = state.targetRotateX;
+            let targetY = state.targetRotateY;
+
+            if (!state.hasGyro && Math.abs(targetX) < 0.1 && Math.abs(targetY) < 0.1) {
+                const drift = Date.now() * 0.0012;
+                targetX = Math.sin(drift) * 2.2;
+                targetY = Math.cos(drift * 0.9) * 2.2;
+            }
+
+            state.currentRotateX += (targetX - state.currentRotateX) * 0.1;
+            state.currentRotateY += (targetY - state.currentRotateY) * 0.1;
 
             card.style.transform = `rotateX(${state.currentRotateX.toFixed(2)}deg) rotateY(${state.currentRotateY.toFixed(2)}deg)`;
             
@@ -1751,6 +1907,17 @@ Please write the response entirely in ${langName}.`;
         state.targetRotateX = -(mouseY / halfH) * 15;
         state.targetRotateY = (mouseX / halfW) * 15;
     });
+
+    document.addEventListener('touchmove', (e) => {
+        if (state.hasGyro || !e.touches || e.touches.length === 0) return;
+        const touch = e.touches[0];
+        const halfW = window.innerWidth / 2;
+        const halfH = window.innerHeight / 2;
+        const touchX = touch.clientX - halfW;
+        const touchY = touch.clientY - halfH;
+        state.targetRotateX = Math.max(-12, Math.min(12, -(touchY / halfH) * 12));
+        state.targetRotateY = Math.max(-12, Math.min(12, (touchX / halfW) * 12));
+    }, { passive: true });
 
     // ==========================================
     // 13. 時限消滅カウントダウン (無料版用)

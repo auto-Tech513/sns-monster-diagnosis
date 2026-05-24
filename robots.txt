@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://sns-monster-diagnosis.pages.dev/sitemap.xml

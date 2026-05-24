@@ -7,7 +7,9 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="SNS承認欲求モンスター診断">
     <meta property="og:description" content="あなたのSNS承認欲求タイプをポップなモンスターで診断。">
+    <meta property="og:url" content="https://sns-monster-diagnosis.pages.dev/">
     <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://sns-monster-diagnosis.pages.dev/">
     <title>SNS承認欲求モンスター診断</title>
     <!-- Google Fonts: Poppins (Sans-serif) & M PLUS Rounded 1c (Rounded Japanese) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -662,6 +664,10 @@
         }
 
         .site-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 16px;
             margin: 8px auto 0 auto;
             padding: 14px 0 4px;
             text-align: center;
@@ -673,7 +679,41 @@
             color: var(--primary-pink-deep);
             font-weight: 700;
             text-decoration: none;
-            margin: 0 8px;
+            margin: 0;
+            white-space: nowrap;
+            line-height: 1.4;
+        }
+
+        .result-growth-links {
+            margin-top: 22px;
+            padding: 18px;
+            background: #FFF7FA;
+            border: 3px solid var(--primary-pink);
+            border-radius: var(--border-radius-md);
+        }
+
+        .result-growth-title {
+            margin-bottom: 10px;
+            color: var(--primary-pink-deep);
+            font-size: 0.95rem;
+            font-weight: 900;
+        }
+
+        .result-growth-grid {
+            display: grid;
+            gap: 10px;
+        }
+
+        .result-growth-grid a {
+            display: block;
+            padding: 12px;
+            background: var(--bg-milk-white);
+            border: 2px dashed var(--primary-pink);
+            border-radius: 12px;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-decoration: none;
         }
 
         .consent-banner {
@@ -870,6 +910,68 @@
             opacity: 1;
         }
 
+        .save-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 10010;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            background: rgba(74, 60, 63, 0.62);
+        }
+
+        .save-modal.active {
+            display: flex;
+        }
+
+        .save-modal-box {
+            width: min(94vw, 420px);
+            max-height: 88vh;
+            overflow: auto;
+            padding: 18px;
+            background: var(--bg-milk-white);
+            border: 4px solid var(--primary-pink);
+            border-radius: 18px;
+            box-shadow: 0 10px 0 var(--primary-pink);
+            text-align: center;
+        }
+
+        .save-preview-img {
+            width: min(100%, 320px);
+            height: auto;
+            border: 3px solid var(--primary-pink);
+            border-radius: 12px;
+            background: #FFF;
+        }
+
+        .save-modal-title {
+            margin: 10px 0 6px;
+            color: var(--primary-pink-deep);
+            font-weight: 900;
+            font-size: 1.15rem;
+        }
+
+        .save-modal-text {
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
+        .save-modal-actions {
+            display: grid;
+            gap: 8px;
+        }
+
+        .save-modal-actions .cute-btn,
+        .save-modal-actions a.cute-btn {
+            display: block;
+            padding: 12px;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
@@ -1025,7 +1127,7 @@
             <!-- アクションボタン群 -->
             <div class="action-buttons">
                 <button class="cute-btn" id="exportBtn" style="background: var(--accent-mint); border-color: #B2DFEE; box-shadow: 0 6px 0 #B2DFEE;">
-                    📸 チェキを画像として保存する
+                    📸 チェキを画像として保存/共有する
                 </button>
                 <button class="cute-btn" id="shareBtn" style="background: #1DA1F2; border-color: #1990DB; color: #FFF; box-shadow: 0 6px 0 #1990DB;">
                     🐦 X（Twitter）に結果を共有する
@@ -1034,6 +1136,15 @@
                     🔄 もう一度診断する
                 </button>
             </div>
+
+            <nav class="result-growth-links" aria-label="診断後に読むコンテンツ">
+                <div class="result-growth-title">診断結果をもっと楽しむ</div>
+                <div class="result-growth-grid">
+                    <a href="articles/result-types.html">16タイプ診断結果の楽しみ方</a>
+                    <a href="articles/sns-approval-desire.html">SNSの承認欲求とは何か</a>
+                    <a href="articles/sns-fatigue.html">SNS疲れを軽くする投稿との付き合い方</a>
+                </div>
+            </nav>
         </section>
 
     </div>
@@ -1057,6 +1168,21 @@
 
     <!-- トースト通知用 -->
     <div id="customToast" class="toast"></div>
+
+    <div id="saveModal" class="save-modal" aria-hidden="true" role="dialog" aria-label="画像保存">
+        <div class="save-modal-box">
+            <img id="savePreviewImg" class="save-preview-img" alt="保存するチェキ画像">
+            <div class="save-modal-title" id="saveModalTitle">チェキ画像ができました</div>
+            <div class="save-modal-text" id="saveModalText">
+                iPhoneでは次の共有画面から「画像を保存」を選んでください。開けない場合は画像を長押しして保存できます。
+            </div>
+            <div class="save-modal-actions">
+                <button type="button" class="cute-btn" id="saveModalShareBtn">共有/保存を開く</button>
+                <a class="cute-btn" id="saveModalDownloadBtn" href="#" download="sns-monster-result.png">ダウンロード</a>
+                <button type="button" class="cute-btn" id="saveModalCloseBtn" style="background:#EAEAEA;border-color:#D3D3D3;box-shadow:0 6px 0 #D3D3D3;">閉じる</button>
+            </div>
+        </div>
+    </div>
 
     <!-- 外部ライブラリ: html2canvas ローカルコピー (file://プロトコル対応) -->
     <script src="html2canvas.min.js"></script>
