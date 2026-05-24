@@ -238,10 +238,10 @@
         const l = labels[lang];
         const home = link(inArticles ? "../index.html" : "index.html", lang);
         if (includeColumns) {
-            const columns = link(inArticles ? "./" : "articles/", lang);
+            const columns = link(inArticles ? "index.html" : "articles/index.html", lang);
             return `<p><a href="${home}">${l.back}</a> / <a href="${columns}">${l.articles}</a></p>`;
         }
-        if (inArticles) return `<p><a href="${link("./", lang)}">${l.columns}</a> / <a href="${home}">${l.back}</a></p>`;
+        if (inArticles) return `<p><a href="${link("index.html", lang)}">${l.columns}</a> / <a href="${home}">${l.back}</a></p>`;
         return `<p><a href="${home}">${l.back}</a></p>`;
     }
 

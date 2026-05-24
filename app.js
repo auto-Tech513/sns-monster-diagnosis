@@ -969,7 +969,7 @@
             { href: 'privacy.html', label: data.footerLinks.privacy },
             { href: 'contact.html', label: data.footerLinks.contact },
             { href: 'about.html', label: data.footerLinks.about },
-            { href: 'articles/', label: data.footerLinks.articles }
+            { href: 'articles/index.html', label: data.footerLinks.articles }
         ];
         footerLinks.forEach((link, idx) => {
             const item = footerData[idx];
