@@ -1465,10 +1465,10 @@
         }
 
         const buildShareText = (name, scorePct) => (
-            state.lang === 'ja' ? `【SNS承認欲求モンスター診断結果】\n\n私の承認欲求モンスターは『${name}』でした！\n承認欲求スコア: ${scorePct}%\nみんなも自分の承認欲求タイプをスキャンしよう！\n\n#SNS承認欲求モンスター診断` :
-            state.lang === 'en' ? `[SNS Recognition Monster Result]\n\nMy approval monster is "${name}"!\nApproval Score: ${scorePct}%\nScan yours now!\n\n#SNS_Recognition_Monster` :
-            state.lang === 'ko' ? `【SNS 승인욕구 몬스터 진단 결과】\n\n나의 승인욕구 몬스터는 『${name}』이었습니다!\n승인욕구 스코어: ${scorePct}%\n당신의 승인욕구도 지금 바로 스캔해 보세요!\n\n#SNS_승인욕구_몬스터_진단` :
-            `【SNS认同感怪物诊断结果】\n\n我的认同感怪物是『${name}』！\n认同感分数: ${scorePct}%\n快来扫描你的社交认同类型吧！\n\n#SNS认同感怪物诊断`
+            state.lang === 'ja' ? `【SNS承認欲求モンスター診断結果】\n\n私の承認欲求モンスターは『${name}』でした！\n承認欲求スコア: ${scorePct}%\nみんなも自分の承認欲求タイプをスキャンしよう！` :
+            state.lang === 'en' ? `[SNS Recognition Monster Result]\n\nMy approval monster is "${name}"!\nApproval Score: ${scorePct}%\nScan yours now!` :
+            state.lang === 'ko' ? `【SNS 승인욕구 몬스터 진단 결과】\n\n나의 승인욕구 몬스터는 『${name}』이었습니다!\n승인욕구 스코어: ${scorePct}%\n당신의 승인욕구도 지금 바로 스캔해 보세요!` :
+            `【SNS认同感怪物诊断结果】\n\n我的认同感怪物是『${name}』！\n认同感分数: ${scorePct}%\n快来扫描你的社交认同类型吧！`
         );
 
         // html2canvas エクスポート (document.fonts.ready 補償 ＆ iOS防弾 ＆ file://対応)
