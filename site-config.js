@@ -1,7 +1,7 @@
 window.SNS_MONSTER_CONFIG = {
     siteUrl: "https://sns-monster-diagnosis.pages.dev",
     // GA4 Measurement ID (例: G-XXXXXXXXXX)。公開IDなので秘密情報は入れない。
-    ga4MeasurementId: "",
+    ga4MeasurementId: "G-HRTJGYRZLF",
     // AdSense の公開クライアントID/広告枠ID。審査・承認後に設定する。
     adsenseClientId: "",
     resultAdSlot: "",
