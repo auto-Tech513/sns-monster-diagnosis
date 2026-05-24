@@ -1,5 +1,35 @@
 (function () {
     const CONSENT_STORAGE_KEY = "sns_monster_cookie_consent";
+    const UI = {
+        ja: {
+            adLabel: "スポンサーリンク",
+            consentLabel: "Cookieと広告に関する設定",
+            consentText: "利用状況の分析と広告表示のためにCookie等を使います。ニックネームや入力内容はGA4へ送信しません。",
+            reject: "拒否",
+            accept: "同意"
+        },
+        en: {
+            adLabel: "Sponsored",
+            consentLabel: "Cookie and advertising settings",
+            consentText: "We use cookies and similar technologies for analytics and ads. Nicknames and typed answers are not sent to GA4.",
+            reject: "Reject",
+            accept: "Accept"
+        },
+        ko: {
+            adLabel: "스폰서 링크",
+            consentLabel: "쿠키 및 광고 설정",
+            consentText: "이용 분석과 광고 표시를 위해 쿠키 등을 사용합니다. 닉네임과 입력 내용은 GA4로 보내지 않습니다.",
+            reject: "거부",
+            accept: "동의"
+        },
+        zh: {
+            adLabel: "赞助链接",
+            consentLabel: "Cookie和广告设置",
+            consentText: "我们会为使用情况分析和广告显示使用Cookie等技术。昵称和输入内容不会发送到GA4。",
+            reject: "拒绝",
+            accept: "同意"
+        }
+    };
 
     function getConfig() {
         return window.SNS_MONSTER_CONFIG || {};
@@ -7,6 +37,11 @@
 
     function hasConsent() {
         return localStorage.getItem(CONSENT_STORAGE_KEY) === "accepted";
+    }
+
+    function currentUi() {
+        const lang = (document.documentElement.lang || "ja").slice(0, 2);
+        return UI[lang] || UI.ja;
     }
 
     function loadExternalScript(src, id, attrs) {
@@ -53,7 +88,7 @@
     function hideAds() {
         document.querySelectorAll(".js-ad-slot").forEach(slot => {
             slot.classList.remove("active");
-            slot.innerHTML = '<span class="ad-label">スポンサーリンク</span>';
+            slot.innerHTML = `<span class="ad-label">${currentUi().adLabel}</span>`;
         });
     }
 
@@ -70,7 +105,7 @@
         slots.forEach(slot => {
             slot.classList.add("active");
             slot.innerHTML = `
-                <span class="ad-label">スポンサーリンク</span>
+                <span class="ad-label">${currentUi().adLabel}</span>
                 <ins class="adsbygoogle"
                      style="display:block"
                      data-ad-client="${adsenseClientId}"
@@ -94,14 +129,15 @@
         if (localStorage.getItem(CONSENT_STORAGE_KEY)) return;
 
         const banner = document.createElement("div");
+        const ui = currentUi();
         banner.className = "consent-banner active";
         banner.setAttribute("role", "dialog");
-        banner.setAttribute("aria-label", "Cookieと広告に関する設定");
+        banner.setAttribute("aria-label", ui.consentLabel);
         banner.innerHTML = `
-            <div>利用状況の分析と広告表示のためにCookie等を使います。ニックネームや入力内容はGA4へ送信しません。</div>
+            <div>${ui.consentText}</div>
             <div class="consent-actions">
-                <button type="button" class="consent-btn" data-consent="reject">拒否</button>
-                <button type="button" class="consent-btn primary" data-consent="accept">同意</button>
+                <button type="button" class="consent-btn" data-consent="reject">${ui.reject}</button>
+                <button type="button" class="consent-btn primary" data-consent="accept">${ui.accept}</button>
             </div>
         `;
         document.body.appendChild(banner);

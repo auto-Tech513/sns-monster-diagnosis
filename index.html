@@ -621,7 +621,7 @@
         }
 
         .ai-commentary-box::after {
-            content: "AI的神託";
+            content: attr(data-ai-label);
             position: absolute;
             top: -12px;
             right: 12px;
@@ -1120,7 +1120,7 @@
                 </p>
                 
                 <div class="result-details-title" id="aiCommentTitleLabel">AIによる分析（毒舌解説）</div>
-                <div class="ai-commentary-box" id="aiCommentaryBox">
+                <div class="ai-commentary-box" id="aiCommentaryBox" data-ai-label="AI的神託">
                     AIがあなたの精神をスキャン中……
                 </div>
             </div>
@@ -1194,13 +1194,13 @@
     <script src="html2canvas.min.js"></script>
     
     <!-- 本番投入時にGA4/AdSense IDを設定する公開設定ファイル -->
-    <script src="site-config.js"></script>
+    <script src="site-config.js?v=20260524-i18n"></script>
     
     <!-- file:// でもチェキ画像をCanvasへ安全に描くためのローカル画像データ -->
-    <script src="monster-images-data.js"></script>
+    <script src="monster-images-data.js?v=20260524-i18n"></script>
     
     <!-- アプリケーションスクリプト -->
-    <script src="app.js"></script>
+    <script src="app.js?v=20260524-i18n"></script>
 
 </body>
 </html>

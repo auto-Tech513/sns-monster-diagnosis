@@ -31,6 +31,7 @@
         currentBpm: 60,
         isTypingActive: false,
         psychAnimFrame: null,
+        aiCommentRequestId: 0,
         
         // 3D Parallax用
         currentRotateX: 0,
@@ -43,6 +44,8 @@
     const PREMIUM_KEY = "CUTE2026"; // プレミアムパステルキー
     const PREMIUM_STORAGE_KEY = "sns_monster_premium_unlocked";
     const CONSENT_STORAGE_KEY = "sns_monster_cookie_consent";
+    const LANG_STORAGE_KEY = "sns_monster_lang";
+    const SUPPORTED_LANGS = ["ja", "en", "ko", "zh"];
 
     // ==========================================
     // 2. 多言語辞書 (i18n)
@@ -89,6 +92,32 @@
             toastAiFallback: "AIオフライン。防弾フォールバック適用。",
             toastShareSuccess: "共有しました！",
             loadingAi: "AIがあなたの精神をスキャン中……",
+            shareImageTitle: "SNS承認欲求モンスター診断",
+            shareImageText: "診断結果チェキ画像",
+            xHashtag: "SNS承認欲求モンスター診断",
+            aiBadge: "AI的神託",
+            approvalMeterTitle: "💓 承認欲求スコア",
+            meterLow: "😌 達観",
+            meterMiddle: "😅 中間",
+            meterHigh: "🔥 承認欲求モンスター",
+            chekiScoreLabel: "承認欲求スコア:",
+            resultGrowthTitle: "診断結果をもっと楽しむ",
+            resultGrowthLinks: [
+                { href: "articles/result-types.html", label: "16タイプ診断結果の楽しみ方" },
+                { href: "articles/sns-approval-desire.html", label: "SNSの承認欲求とは何か" },
+                { href: "articles/sns-fatigue.html", label: "SNS疲れを軽くする投稿との付き合い方" },
+                { href: "articles/how-to-share-results.html", label: "結果をXでシェアして遊ぶコツ" }
+            ],
+            footerLinks: {
+                privacy: "プライバシーポリシー",
+                contact: "お問い合わせ",
+                about: "運営情報",
+                articles: "承認欲求コラム"
+            },
+            consentText: "利用状況の分析と広告表示のためにCookie等を使います。ニックネームや入力内容はGA4へ送信しません。",
+            consentReject: "拒否",
+            consentAccept: "同意",
+            adLabel: "スポンサーリンク",
             
             // ポップ用語定義
             dimensionNeed: "ビビリなあんしん安全第一派",
@@ -137,6 +166,32 @@
             toastAiFallback: "AI offline. Fallback applied.",
             toastShareSuccess: "Shared successfully!",
             loadingAi: "AI scanning your mind...",
+            shareImageTitle: "SNS Recognition Monster Diagnosis",
+            shareImageText: "My diagnosis result Cheki image",
+            xHashtag: "SNSRecognitionMonster",
+            aiBadge: "AI Oracle",
+            approvalMeterTitle: "💓 Approval Desire Score",
+            meterLow: "😌 Detached",
+            meterMiddle: "😅 Middle",
+            meterHigh: "🔥 Approval Monster",
+            chekiScoreLabel: "Approval Score:",
+            resultGrowthTitle: "Enjoy your result more",
+            resultGrowthLinks: [
+                { href: "articles/result-types.html", label: "How to enjoy the 16 result types" },
+                { href: "articles/sns-approval-desire.html", label: "What approval desire on SNS means" },
+                { href: "articles/sns-fatigue.html", label: "How to ease SNS fatigue" },
+                { href: "articles/how-to-share-results.html", label: "Tips for sharing your result on X" }
+            ],
+            footerLinks: {
+                privacy: "Privacy Policy",
+                contact: "Contact",
+                about: "About",
+                articles: "Approval Desire Columns"
+            },
+            consentText: "We use cookies and similar technologies for analytics and ads. Nicknames and typed answers are not sent to GA4.",
+            consentReject: "Reject",
+            consentAccept: "Accept",
+            adLabel: "Sponsored",
 
             // ポップ用語定義
             dimensionNeed: "Timid Safety-First Group",
@@ -185,6 +240,32 @@
             toastAiFallback: "AI 오프라인. 백업 텍스트 적용.",
             toastShareSuccess: "공유되었습니다!",
             loadingAi: "AI가 당신의 정신을 스캔 중……",
+            shareImageTitle: "SNS 승인욕구 몬스터 진단",
+            shareImageText: "진단 결과 체키 이미지",
+            xHashtag: "SNS승인욕구몬스터진단",
+            aiBadge: "AI 신탁",
+            approvalMeterTitle: "💓 승인욕구 점수",
+            meterLow: "😌 달관",
+            meterMiddle: "😅 중간",
+            meterHigh: "🔥 승인욕구 몬스터",
+            chekiScoreLabel: "승인욕구 점수:",
+            resultGrowthTitle: "진단 결과 더 즐기기",
+            resultGrowthLinks: [
+                { href: "articles/result-types.html", label: "16가지 진단 결과 즐기는 법" },
+                { href: "articles/sns-approval-desire.html", label: "SNS의 승인욕구란 무엇인가" },
+                { href: "articles/sns-fatigue.html", label: "SNS 피로를 줄이는 게시물과의 거리" },
+                { href: "articles/how-to-share-results.html", label: "결과를 X에 공유하며 즐기는 법" }
+            ],
+            footerLinks: {
+                privacy: "개인정보 처리방침",
+                contact: "문의",
+                about: "운영 정보",
+                articles: "승인욕구 칼럼"
+            },
+            consentText: "이용 분석과 광고 표시를 위해 쿠키 등을 사용합니다. 닉네임과 입력 내용은 GA4로 보내지 않습니다.",
+            consentReject: "거부",
+            consentAccept: "동의",
+            adLabel: "스폰서 링크",
 
             // ポップ用語定義
             dimensionNeed: "소심한 안심안전 제일파",
@@ -233,6 +314,32 @@
             toastAiFallback: "AI已离线。已使用本地诊断。",
             toastShareSuccess: "分享成功！",
             loadingAi: "AI正在深入扫描您的内心...",
+            shareImageTitle: "SNS认同感怪物诊断",
+            shareImageText: "诊断结果拍立得图片",
+            xHashtag: "SNS认同感怪物诊断",
+            aiBadge: "AI神谕",
+            approvalMeterTitle: "💓 认同感欲求分数",
+            meterLow: "😌 超然",
+            meterMiddle: "😅 中间",
+            meterHigh: "🔥 认同感怪物",
+            chekiScoreLabel: "认同感分数:",
+            resultGrowthTitle: "进一步享受诊断结果",
+            resultGrowthLinks: [
+                { href: "articles/result-types.html", label: "16种诊断结果的玩法" },
+                { href: "articles/sns-approval-desire.html", label: "SNS上的认同感欲求是什么" },
+                { href: "articles/sns-fatigue.html", label: "减轻SNS疲劳的相处方式" },
+                { href: "articles/how-to-share-results.html", label: "在X分享结果的玩法" }
+            ],
+            footerLinks: {
+                privacy: "隐私政策",
+                contact: "联系我们",
+                about: "运营信息",
+                articles: "认同感专栏"
+            },
+            consentText: "我们会为使用情况分析和广告显示使用Cookie等技术。昵称和输入内容不会发送到GA4。",
+            consentReject: "拒绝",
+            consentAccept: "同意",
+            adLabel: "赞助链接",
 
             // ポップ用語定義
             dimensionNeed: "胆小安心安全第一派",
@@ -816,8 +923,57 @@
         // 診断結果画面の更新 (結果表示中の場合)
         if (state.typeCode && document.getElementById('resultView').classList.contains('active')) {
             applyResultUI();
+            renderLocalizedAiFallback(state.typeCode, state.lang);
             prepareResultAdSlot();
         }
+
+        // 結果後導線、フッター、静的ラベルの更新
+        const aiBox = document.getElementById('aiCommentaryBox');
+        if (aiBox) aiBox.setAttribute('data-ai-label', data.aiBadge);
+
+        const approvalMeterTitle = document.getElementById('approvalMeterTitle');
+        if (approvalMeterTitle) approvalMeterTitle.textContent = data.approvalMeterTitle;
+
+        const meterLabels = document.querySelectorAll('.approval-meter-emoji-row span');
+        [data.meterLow, data.meterMiddle, data.meterHigh].forEach((label, idx) => {
+            if (meterLabels[idx]) meterLabels[idx].textContent = label;
+        });
+
+        const chekiScoreLabel = document.getElementById('chekiScoreLabel');
+        if (chekiScoreLabel) chekiScoreLabel.textContent = data.chekiScoreLabel;
+
+        const growthTitle = document.querySelector('.result-growth-title');
+        if (growthTitle) growthTitle.textContent = data.resultGrowthTitle;
+
+        document.querySelectorAll('.result-growth-grid a').forEach((link, idx) => {
+            const item = data.resultGrowthLinks[idx];
+            if (!item) return;
+            link.textContent = item.label;
+            link.href = withLangParam(item.href);
+        });
+
+        const footerLinks = document.querySelectorAll('.site-footer a');
+        const footerData = [
+            { href: 'privacy.html', label: data.footerLinks.privacy },
+            { href: 'contact.html', label: data.footerLinks.contact },
+            { href: 'about.html', label: data.footerLinks.about },
+            { href: 'articles/', label: data.footerLinks.articles }
+        ];
+        footerLinks.forEach((link, idx) => {
+            const item = footerData[idx];
+            if (!item) return;
+            link.textContent = item.label;
+            link.href = withLangParam(item.href);
+        });
+
+        const consentText = document.querySelector('#consentBanner .consent-text');
+        if (consentText) consentText.textContent = data.consentText;
+        const consentReject = document.getElementById('consentRejectBtn');
+        if (consentReject) consentReject.textContent = data.consentReject;
+        const consentAccept = document.getElementById('consentAcceptBtn');
+        if (consentAccept) consentAccept.textContent = data.consentAccept;
+
+        document.documentElement.lang = state.lang;
 
         // カウントダウン警告の更新
         updateCountdownBanner();
@@ -830,14 +986,48 @@
         banner.innerHTML = data.countdownText.replace("{sec}", `<span>${state.countdown}</span>`);
     }
 
-    function localizeDimensionTerms(text) {
-        const data = i18n[state.lang] || i18n.ja;
+    function localizeDimensionTerms(text, lang = state.lang) {
+        const data = i18n[lang] || i18n.ja;
         return String(text || '')
             .replace(/Need/g, data.dimensionNeed)
             .replace(/Growth/g, data.dimensionGrowth)
             .replace(/Internal/g, data.dimensionInternal)
             .replace(/External/g, data.dimensionExternal)
             .replace(/Subjective/g, data.dimensionInternal);
+    }
+
+    function normalizeLang(lang) {
+        return SUPPORTED_LANGS.includes(lang) ? lang : 'ja';
+    }
+
+    function getInitialLang() {
+        const params = new URLSearchParams(window.location.search);
+        const urlLang = normalizeLang(params.get('lang'));
+        if (urlLang !== 'ja' || params.has('lang')) return urlLang;
+
+        try {
+            const storedLang = normalizeLang(localStorage.getItem(LANG_STORAGE_KEY));
+            if (storedLang) return storedLang;
+        } catch (err) {
+            console.warn('Language storage could not be read:', err);
+        }
+
+        const browserLang = (navigator.language || '').slice(0, 2).toLowerCase();
+        return normalizeLang(browserLang);
+    }
+
+    function rememberLang() {
+        try {
+            localStorage.setItem(LANG_STORAGE_KEY, state.lang);
+        } catch (err) {
+            console.warn('Language storage could not be written:', err);
+        }
+    }
+
+    function withLangParam(href) {
+        const url = new URL(href, window.location.href);
+        url.searchParams.set('lang', state.lang);
+        return url.href;
     }
 
     function getSiteConfig() {
@@ -938,7 +1128,7 @@
         const slot = document.getElementById('resultAdSlot');
         if (slot) {
             slot.classList.remove('active');
-            slot.innerHTML = '<span class="monetize-label">スポンサーリンク</span>';
+            slot.innerHTML = `<span class="monetize-label">${i18n[state.lang].adLabel}</span>`;
         }
     }
 
@@ -954,7 +1144,7 @@
 
         slot.classList.add('active');
         slot.innerHTML = `
-            <span class="monetize-label">スポンサーリンク</span>
+            <span class="monetize-label">${i18n[state.lang].adLabel}</span>
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="${adsenseClientId}"
@@ -1002,7 +1192,10 @@
         setupConsentControls();
         
         // 初回の年齢層インジェクション
-        state.lang = document.getElementById('langSelect').value || 'ja';
+        state.lang = getInitialLang();
+        const langSelect = document.getElementById('langSelect');
+        if (langSelect) langSelect.value = state.lang;
+        rememberLang();
         updateLanguage();
         showConsentBannerIfNeeded();
         enableMeasurementAndAds();
@@ -1030,7 +1223,10 @@
         const langSelect = document.getElementById('langSelect');
         if (langSelect) {
             langSelect.addEventListener('change', (e) => {
-                state.lang = e.target.value;
+                state.lang = normalizeLang(e.target.value);
+                e.target.value = state.lang;
+                rememberLang();
+                state.aiCommentRequestId += 1;
                 updateLanguage();
                 showToast(state.lang === 'ja' ? "言語を日本語に切り替えました" :
                           state.lang === 'en' ? "Language switched to English" :
@@ -1354,8 +1550,8 @@
             if (!canShareImageFile(file)) return false;
             await navigator.share({
                 files: [file],
-                title: 'SNS承認欲求モンスター診断',
-                text: '診断結果チェキ画像'
+                title: i18n[state.lang].shareImageTitle,
+                text: i18n[state.lang].shareImageText
             });
             return true;
         };
@@ -1512,7 +1708,8 @@
                 shareUrl.searchParams.set('utm_medium', 'social');
                 shareUrl.searchParams.set('utm_campaign', 'result_share');
                 shareUrl.searchParams.set('monster', state.typeCode || 'unknown');
-                const intentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}&hashtags=${encodeURIComponent('SNS承認欲求モンスター診断')}`;
+                shareUrl.searchParams.set('lang', state.lang);
+                const intentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}&hashtags=${encodeURIComponent(i18n[state.lang].xHashtag)}`;
                 safeTrack('shindan_share', {
                     share_platform: 'x',
                     monster_name_key: state.typeCode || 'none'
@@ -1693,15 +1890,28 @@
     // ==========================================
     // 9. Ollama AI連携 ＆ タイムアウト防弾フォールバック (多言語・年齢考慮)
     // ==========================================
+    function renderLocalizedAiFallback(typeCode, lang = state.lang) {
+        const commentBox = document.getElementById('aiCommentaryBox');
+        const info = typeDatabase[typeCode];
+        if (!commentBox || !info) return;
+
+        const fallback = info.fallback[lang] || info.fallback.ja;
+        commentBox.textContent = localizeDimensionTerms(fallback, lang);
+    }
+
     function fetchOllamaCommentary(age, typeCode, typeName) {
         const commentBox = document.getElementById('aiCommentaryBox');
         if (!commentBox) return;
 
-        commentBox.textContent = i18n[state.lang].loadingAi;
+        const requestedLang = state.lang;
+        const requestId = ++state.aiCommentRequestId;
+        const requestedI18n = i18n[requestedLang] || i18n.ja;
 
-        const langName = state.lang === 'en' ? 'English' :
-                         state.lang === 'ko' ? 'Korean (한국어)' :
-                         state.lang === 'zh' ? 'Simplified Chinese (简体中文)' : 'Japanese (日本語)';
+        commentBox.textContent = requestedI18n.loadingAi;
+
+        const langName = requestedLang === 'en' ? 'English' :
+                         requestedLang === 'ko' ? 'Korean (한국어)' :
+                         requestedLang === 'zh' ? 'Simplified Chinese (简体中文)' : 'Japanese (日本語)';
 
         const systemPrompt = `診断結果コードは '${typeCode}' (小文字) で、名称は '${typeName}' です。年齢層は '${age}' です。
 この情報に基づき、このユーザーの「承認欲求」について、最高に皮肉が効いていてユーモラス、かつ精神的な深層をズバッと射抜くような「極めて辛辣でイタい毒舌解説」を、必ず「${langName}」で200字以内で作成してください。
@@ -1734,18 +1944,19 @@ Please write the response entirely in ${langName}.`;
 
         Promise.race([fetchPromise, timeoutPromise])
             .then(commentary => {
-                commentBox.textContent = localizeDimensionTerms(commentary);
-                showToast(i18n[state.lang].toastAiSuccess);
+                if (requestId !== state.aiCommentRequestId || state.lang !== requestedLang || state.typeCode !== typeCode) return;
+                commentBox.textContent = localizeDimensionTerms(commentary, requestedLang);
+                showToast(requestedI18n.toastAiSuccess);
             })
             .catch(err => {
                 console.warn("Ollama AI error or timeout, applying static fallback:", err);
-                const info = typeDatabase[typeCode];
-                if (info) {
-                    commentBox.textContent = localizeDimensionTerms(info.fallback[state.lang] || info.fallback.ja);
+                if (requestId !== state.aiCommentRequestId || state.lang !== requestedLang || state.typeCode !== typeCode) return;
+                if (typeDatabase[typeCode]) {
+                    renderLocalizedAiFallback(typeCode, requestedLang);
                 } else {
                     commentBox.textContent = "Error scanning approval desire.";
                 }
-                showToast(i18n[state.lang].toastAiFallback);
+                showToast(requestedI18n.toastAiFallback);
             });
     }
 
