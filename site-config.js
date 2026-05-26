@@ -13,7 +13,7 @@ window.SNS_MONSTER_CONFIG = {
     stripePermanentSaveUrl: "https://buy.stripe.com/fZuaEQ7De0Gv4la4F68AE00",
     permanentSavePrice: 120,
     // 相性診断（フェーズ2・後で実装）
-    enableCompatibilityFeature: false,
+    enableCompatibilityFeature: true,
     stripeCompatibilityUrl: "https://buy.stripe.com/cNi7sE9Lm9d104U6Ne8AE01",
     compatibilityPrice: 360,
     // 決済導線を用意するまでは公開版でロックを出さない。

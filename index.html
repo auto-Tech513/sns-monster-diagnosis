@@ -675,6 +675,89 @@
             line-height: 1.5;
         }
 
+        .compatibility-section {
+            display: none;
+            margin: 0 0 20px 0;
+        }
+
+        .compatibility-section.active {
+            display: block;
+        }
+
+        .compatibility-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .compatibility-card {
+            background: #FFFDF9;
+            border: 2px dashed var(--primary-pink);
+            border-radius: 14px;
+            padding: 12px;
+        }
+
+        .compatibility-card h4,
+        .compatibility-love h4 {
+            color: var(--primary-pink-deep);
+            font-size: 0.95rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .compatibility-item {
+            padding: 10px 0;
+            border-top: 1px solid rgba(255, 183, 197, 0.45);
+        }
+
+        .compatibility-item:first-of-type {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .compatibility-name {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        .compatibility-reason {
+            display: block;
+            margin-top: 4px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 700;
+            line-height: 1.45;
+        }
+
+        .compatibility-love {
+            background: #FFFDF0;
+            border: 3px dashed var(--accent-yellow-border);
+            border-radius: var(--border-radius-md);
+            padding: 14px;
+        }
+
+        .compatibility-love p {
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        .compatibility-btn {
+            min-height: 52px;
+            background: linear-gradient(180deg, #FFEAF1 0%, #FFD1DE 100%);
+            border-color: var(--primary-pink);
+            box-shadow: 0 6px 0 var(--primary-pink);
+        }
+
+        @media (max-width: 480px) {
+            .compatibility-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .monetize-slot {
             display: none;
             margin: 0 0 20px 0;
@@ -1174,6 +1257,8 @@
                 </div>
             </div>
 
+            <div class="cute-card compatibility-section" id="compatibility-section" style="display:none;"></div>
+
             <div class="monetize-slot" id="resultAdSlot" aria-label="スポンサーリンク">
                 <span class="monetize-label">スポンサーリンク</span>
             </div>
@@ -1186,6 +1271,9 @@
                     </button>
                     <div class="paid-save-hint" id="paidSaveHint">またはXで共有して無料保存</div>
                 </div>
+                <button class="cute-btn compatibility-btn" id="btn-compatibility" type="button" data-i18n="btnCompatibility" hidden>
+                    もう少し覗いてみる？ ¥360
+                </button>
                 <button class="cute-btn" id="exportBtn" style="background: var(--accent-mint); border-color: #B2DFEE; box-shadow: 0 6px 0 #B2DFEE;">
                     📸 チェキを画像として保存/共有する
                 </button>
@@ -1253,6 +1341,9 @@
     
     <!-- file:// でもチェキ画像をCanvasへ安全に描くためのローカル画像データ -->
     <script src="monster-images-data.js?v=20260524-i18n"></script>
+
+    <!-- 有料相性診断データ -->
+    <script src="compatibility-data.js?v=20260527-compat"></script>
     
     <!-- アプリケーションスクリプト -->
     <script src="app.js?v=20260524-i18n"></script>

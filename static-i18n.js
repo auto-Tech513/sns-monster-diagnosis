@@ -6,10 +6,10 @@
     const EMAIL = "pvac25471@gmail.com";
 
     const labels = {
-        ja: { select: "表示言語", back: "診断へ戻る", columns: "コラム一覧へ", privacy: "プライバシーポリシー", contact: "お問い合わせ", about: "運営情報", articles: "承認欲求コラム", ad: "スポンサーリンク", btnPermanentSave: "✦ ¥120で永久保存", btnLockPurchase: "✦ ¥120で永久保存して復元", orDivider: "─── または ───" },
-        en: { select: "Language", back: "Back to diagnosis", columns: "Back to columns", privacy: "Privacy Policy", contact: "Contact", about: "About", articles: "Approval Desire Columns", ad: "Sponsored", btnPermanentSave: "✦ Save forever for ¥120", btnLockPurchase: "✦ Restore forever for ¥120", orDivider: "─── or ───" },
-        ko: { select: "언어", back: "진단으로 돌아가기", columns: "칼럼 목록으로", privacy: "개인정보 처리방침", contact: "문의", about: "운영 정보", articles: "승인욕구 칼럼", ad: "스폰서 링크", btnPermanentSave: "✦ ¥120으로 영구 저장", btnLockPurchase: "✦ ¥120으로 영구 저장 & 복원", orDivider: "─── 또는 ───" },
-        zh: { select: "语言", back: "返回诊断", columns: "返回专栏", privacy: "隐私政策", contact: "联系我们", about: "运营信息", articles: "认同感专栏", ad: "赞助链接", btnPermanentSave: "✦ ¥120永久保存", btnLockPurchase: "✦ ¥120永久保存并恢复", orDivider: "─── 或者 ───" }
+        ja: { select: "表示言語", back: "診断へ戻る", columns: "コラム一覧へ", privacy: "プライバシーポリシー", contact: "お問い合わせ", about: "運営情報", articles: "承認欲求コラム", ad: "スポンサーリンク", btnPermanentSave: "✦ ¥120で永久保存", btnLockPurchase: "✦ ¥120で永久保存して復元", orDivider: "─── または ───", btnCompatibility: "もう少し覗いてみる？ ¥360", sectionCompatTitle: "💖 相性診断結果", sectionGoodMatch: "💚 相性◎ タイプ", sectionBadMatch: "💔 相性× タイプ", sectionLoveStyle: "📖 あなたの恋愛観" },
+        en: { select: "Language", back: "Back to diagnosis", columns: "Back to columns", privacy: "Privacy Policy", contact: "Contact", about: "About", articles: "Approval Desire Columns", ad: "Sponsored", btnPermanentSave: "✦ Save forever for ¥120", btnLockPurchase: "✦ Restore forever for ¥120", orDivider: "─── or ───", btnCompatibility: "Want to peek a little more? ¥360", sectionCompatTitle: "💖 Compatibility Results", sectionGoodMatch: "💚 Great Match", sectionBadMatch: "💔 Clash Type", sectionLoveStyle: "📖 Your Love Style" },
+        ko: { select: "언어", back: "진단으로 돌아가기", columns: "칼럼 목록으로", privacy: "개인정보 처리방침", contact: "문의", about: "운영 정보", articles: "승인욕구 칼럼", ad: "스폰서 링크", btnPermanentSave: "✦ ¥120으로 영구 저장", btnLockPurchase: "✦ ¥120으로 영구 저장 & 복원", orDivider: "─── 또는 ───", btnCompatibility: "좀 더 들여다볼래? ¥360", sectionCompatTitle: "💖 궁합 진단 결과", sectionGoodMatch: "💚 궁합 최고", sectionBadMatch: "💔 최악의 궁합", sectionLoveStyle: "📖 당신의 연애관" },
+        zh: { select: "语言", back: "返回诊断", columns: "返回专栏", privacy: "隐私政策", contact: "联系我们", about: "运营信息", articles: "认同感专栏", ad: "赞助链接", btnPermanentSave: "✦ ¥120永久保存", btnLockPurchase: "✦ ¥120永久保存并恢复", orDivider: "─── 或者 ───", btnCompatibility: "想再窥探一点吗？¥360", sectionCompatTitle: "💖 配对诊断结果", sectionGoodMatch: "💚 最佳搭档", sectionBadMatch: "💔 冲突类型", sectionLoveStyle: "📖 你的恋爱观" }
     };
 
     const articleList = {

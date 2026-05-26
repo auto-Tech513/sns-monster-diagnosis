@@ -44,6 +44,7 @@
     const PREMIUM_KEY = "CUTE2026"; // プレミアムパステルキー
     const PREMIUM_STORAGE_KEY = "sns_monster_premium_unlocked";
     const PERMANENT_PAID_STORAGE_KEY = "permanentPaid";
+    const COMPAT_PAID_STORAGE_KEY = "compatPaid";
     const CONSENT_STORAGE_KEY = "sns_monster_cookie_consent";
     const LANG_STORAGE_KEY = "sns_monster_lang";
     const SUPPORTED_LANGS = ["ja", "en", "ko", "zh"];
@@ -122,6 +123,11 @@
             btnPermanentSave: "✦ ¥120で永久保存",
             btnLockPurchase: "✦ ¥120で永久保存して復元",
             orDivider: "─── または ───",
+            btnCompatibility: "もう少し覗いてみる？ ¥360",
+            sectionCompatTitle: "💖 相性診断結果",
+            sectionGoodMatch: "💚 相性◎ タイプ",
+            sectionBadMatch: "💔 相性× タイプ",
+            sectionLoveStyle: "📖 あなたの恋愛観",
             paidSaveBtn: "✨ ¥{price}で永久保存",
             paidSaveHint: "またはXで共有して無料保存",
             paidSavedLabel: "保存済み",
@@ -203,6 +209,11 @@
             btnPermanentSave: "✦ Save forever for ¥120",
             btnLockPurchase: "✦ Restore forever for ¥120",
             orDivider: "─── or ───",
+            btnCompatibility: "Want to peek a little more? ¥360",
+            sectionCompatTitle: "💖 Compatibility Results",
+            sectionGoodMatch: "💚 Great Match",
+            sectionBadMatch: "💔 Clash Type",
+            sectionLoveStyle: "📖 Your Love Style",
             paidSaveBtn: "✨ Save permanently for ¥{price}",
             paidSaveHint: "Or share on X to save for free",
             paidSavedLabel: "Saved forever",
@@ -284,6 +295,11 @@
             btnPermanentSave: "✦ ¥120으로 영구 저장",
             btnLockPurchase: "✦ ¥120으로 영구 저장 & 복원",
             orDivider: "─── 또는 ───",
+            btnCompatibility: "좀 더 들여다볼래? ¥360",
+            sectionCompatTitle: "💖 궁합 진단 결과",
+            sectionGoodMatch: "💚 궁합 최고",
+            sectionBadMatch: "💔 최악의 궁합",
+            sectionLoveStyle: "📖 당신의 연애관",
             paidSaveBtn: "✨ ¥{price}로 영구 저장",
             paidSaveHint: "또는 X에 공유하고 무료로 저장",
             paidSavedLabel: "저장 완료",
@@ -365,6 +381,11 @@
             btnPermanentSave: "✦ ¥120永久保存",
             btnLockPurchase: "✦ ¥120永久保存并恢复",
             orDivider: "─── 或者 ───",
+            btnCompatibility: "想再窥探一点吗？¥360",
+            sectionCompatTitle: "💖 配对诊断结果",
+            sectionGoodMatch: "💚 最佳搭档",
+            sectionBadMatch: "💔 冲突类型",
+            sectionLoveStyle: "📖 你的恋爱观",
             paidSaveBtn: "✨ ¥{price}永久保存",
             paidSaveHint: "或分享到X免费保存",
             paidSavedLabel: "已保存",
@@ -1011,6 +1032,7 @@
 
         updatePaidSaveCta();
         updateLockPurchaseCta();
+        renderCompatibilitySection();
 
         document.documentElement.lang = state.lang;
 
@@ -1085,6 +1107,18 @@
         };
     }
 
+    function getCompatibilityConfig() {
+        const config = getSiteConfig();
+        const stripeUrl = String(config.stripeCompatibilityUrl || '').trim();
+        const price = Number(config.compatibilityPrice || 360);
+
+        return {
+            enabled: Boolean(config.enableCompatibilityFeature && stripeUrl),
+            stripeUrl,
+            price: Number.isFinite(price) && price > 0 ? price : 360
+        };
+    }
+
     function buildStripeUrlWithLocale(baseUrl) {
         if (!baseUrl) return "";
 
@@ -1101,6 +1135,10 @@
 
     function hasPermanentPaid() {
         return localStorage.getItem(PERMANENT_PAID_STORAGE_KEY) === 'true';
+    }
+
+    function hasCompatibilityPaid() {
+        return localStorage.getItem(COMPAT_PAID_STORAGE_KEY) === 'true';
     }
 
     function updatePaidSaveCta() {
@@ -1135,6 +1173,113 @@
         divider.textContent = i18n[state.lang].orDivider || i18n.ja.orDivider;
     }
 
+    function getCurrentTypeName(lang = state.lang) {
+        const info = typeDatabase[state.typeCode];
+        if (!info) return "";
+        return info.name[lang] || info.name.ja || "";
+    }
+
+    function updateCompatibilityCta() {
+        const btn = document.getElementById('btn-compatibility');
+        if (!btn) return;
+
+        const compatConfig = getCompatibilityConfig();
+        const shouldShow = compatConfig.enabled && !hasCompatibilityPaid();
+        btn.hidden = !shouldShow;
+        btn.style.display = shouldShow ? '' : 'none';
+        btn.textContent = i18n[state.lang].btnCompatibility || i18n.ja.btnCompatibility;
+    }
+
+    function setCompatibilitySectionVisible(section, visible) {
+        section.style.display = visible ? 'block' : 'none';
+        section.classList.toggle('active', visible);
+    }
+
+    function createCompatibilityMatchCard(title, matches) {
+        const card = document.createElement('div');
+        card.className = 'compatibility-card';
+
+        const heading = document.createElement('h4');
+        heading.textContent = title;
+        card.appendChild(heading);
+
+        matches.forEach(match => {
+            const item = document.createElement('div');
+            item.className = 'compatibility-item';
+
+            const name = document.createElement('span');
+            name.className = 'compatibility-name';
+            name.textContent = match.name;
+
+            const reason = document.createElement('span');
+            reason.className = 'compatibility-reason';
+            reason.textContent = match.reason;
+
+            item.append(name, reason);
+            card.appendChild(item);
+        });
+
+        return card;
+    }
+
+    function renderCompatibilitySection() {
+        const section = document.getElementById('compatibility-section');
+        if (!section) return;
+
+        try {
+            const compatConfig = getCompatibilityConfig();
+            if (!compatConfig.enabled || !hasCompatibilityPaid() || !state.typeCode) {
+                section.innerHTML = '';
+                setCompatibilitySectionVisible(section, false);
+                updateCompatibilityCta();
+                return;
+            }
+
+            const lang = normalizeLang(state.lang);
+            const typeName = getCurrentTypeName(lang);
+            const data = window.COMPATIBILITY_DATA && window.COMPATIBILITY_DATA[lang];
+            const record = data && data[typeName];
+
+            if (!record) {
+                section.innerHTML = '';
+                setCompatibilitySectionVisible(section, false);
+                updateCompatibilityCta();
+                return;
+            }
+
+            const copy = i18n[lang] || i18n.ja;
+            section.innerHTML = '';
+
+            const title = document.createElement('div');
+            title.className = 'result-details-title';
+            title.textContent = copy.sectionCompatTitle;
+
+            const grid = document.createElement('div');
+            grid.className = 'compatibility-grid';
+            grid.append(
+                createCompatibilityMatchCard(copy.sectionGoodMatch, record.goodMatch || []),
+                createCompatibilityMatchCard(copy.sectionBadMatch, record.badMatch || [])
+            );
+
+            const love = document.createElement('div');
+            love.className = 'compatibility-love';
+            const loveTitle = document.createElement('h4');
+            loveTitle.textContent = copy.sectionLoveStyle;
+            const loveText = document.createElement('p');
+            loveText.textContent = record.loveStyle || '';
+            love.append(loveTitle, loveText);
+
+            section.append(title, grid, love);
+            setCompatibilitySectionVisible(section, true);
+            updateCompatibilityCta();
+        } catch (err) {
+            console.warn('Compatibility section could not be rendered:', err);
+            section.innerHTML = '';
+            setCompatibilitySectionVisible(section, false);
+            updateCompatibilityCta();
+        }
+    }
+
     function goToPermanentSaveCheckout(source) {
         const paidConfig = getPaidPremiumConfig();
         if (!paidConfig.enabled) {
@@ -1148,6 +1293,21 @@
             source
         });
         window.location.assign(buildStripeUrlWithLocale(paidConfig.stripeUrl));
+    }
+
+    function goToCompatibilityCheckout(source) {
+        const compatConfig = getCompatibilityConfig();
+        if (!compatConfig.enabled) {
+            updateCompatibilityCta();
+            return;
+        }
+
+        safeTrack('paid_compatibility_click', {
+            price_yen: compatConfig.price,
+            source,
+            monster_code: state.typeCode || 'none'
+        });
+        window.location.assign(buildStripeUrlWithLocale(compatConfig.stripeUrl));
     }
 
     function hasConsent() {
@@ -1310,6 +1470,7 @@
 
         setupEventListeners();
         handlePaidReturn();
+        handleCompatibilityReturn();
         loadPremiumState();
         setupConsentControls();
 
@@ -1368,6 +1529,16 @@
         unlockPremium('stripe_payment_link');
         showToast(i18n[state.lang].paidUnlockSuccess);
         params.delete('paid');
+        const nextUrl = `${window.location.pathname}${params.toString() ? `?${params}` : ''}${window.location.hash}`;
+        window.history.replaceState({}, document.title, nextUrl || window.location.pathname);
+    }
+
+    function handleCompatibilityReturn() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('compat') !== '1') return;
+
+        localStorage.setItem(COMPAT_PAID_STORAGE_KEY, 'true');
+        params.delete('compat');
         const nextUrl = `${window.location.pathname}${params.toString() ? `?${params}` : ''}${window.location.hash}`;
         window.history.replaceState({}, document.title, nextUrl || window.location.pathname);
     }
@@ -1469,6 +1640,13 @@
         if (paidSaveBtn) {
             paidSaveBtn.addEventListener('click', () => {
                 goToPermanentSaveCheckout('result_screen');
+            });
+        }
+
+        const compatibilityBtn = document.getElementById('btn-compatibility');
+        if (compatibilityBtn) {
+            compatibilityBtn.addEventListener('click', () => {
+                goToCompatibilityCheckout('result_screen');
             });
         }
 
@@ -2047,6 +2225,8 @@
                 if (chekiScoreBarFill) chekiScoreBarFill.style.width = `${pct}%`;
             });
         });
+
+        renderCompatibilitySection();
     }
 
     // ==========================================
