@@ -1085,6 +1085,15 @@
         };
     }
 
+    function buildStripeUrlWithLocale(baseUrl) {
+        if (!baseUrl) return "";
+
+        const lang = normalizeLang(state.lang || document.documentElement.lang || "ja");
+        const url = new URL(baseUrl);
+        url.searchParams.set('locale', lang);
+        return url.href;
+    }
+
     function isPremiumLockEnabled() {
         const { enablePremiumLock } = getSiteConfig();
         return Boolean(enablePremiumLock || getPaidPremiumConfig().enabled);
@@ -1138,7 +1147,7 @@
             price_yen: paidConfig.price,
             source
         });
-        window.location.assign(paidConfig.stripeUrl);
+        window.location.assign(buildStripeUrlWithLocale(paidConfig.stripeUrl));
     }
 
     function hasConsent() {
