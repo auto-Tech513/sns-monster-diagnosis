@@ -43,6 +43,7 @@
 
     const PREMIUM_KEY = "CUTE2026"; // プレミアムパステルキー
     const PREMIUM_STORAGE_KEY = "sns_monster_premium_unlocked";
+    const PERMANENT_PAID_STORAGE_KEY = "permanentPaid";
     const CONSENT_STORAGE_KEY = "sns_monster_cookie_consent";
     const LANG_STORAGE_KEY = "sns_monster_lang";
     const SUPPORTED_LANGS = ["ja", "en", "ko", "zh"];
@@ -118,8 +119,10 @@
             consentReject: "拒否",
             consentAccept: "同意",
             adLabel: "スポンサーリンク",
+            btnPermanentSave: "✦ ¥120で永久保存",
             paidSaveBtn: "✨ ¥{price}で永久保存",
             paidSaveHint: "またはXで共有して無料保存",
+            paidSavedLabel: "保存済み",
             paidUnlockSuccess: "永久保存が有効になりました！",
             
             // ポップ用語定義
@@ -195,8 +198,10 @@
             consentReject: "Reject",
             consentAccept: "Accept",
             adLabel: "Sponsored",
+            btnPermanentSave: "✦ Save forever for ¥120",
             paidSaveBtn: "✨ Save permanently for ¥{price}",
             paidSaveHint: "Or share on X to save for free",
+            paidSavedLabel: "Saved forever",
             paidUnlockSuccess: "Permanent save is now unlocked!",
 
             // ポップ用語定義
@@ -272,8 +277,10 @@
             consentReject: "거부",
             consentAccept: "동의",
             adLabel: "스폰서 링크",
+            btnPermanentSave: "✦ ¥120으로 영구 저장",
             paidSaveBtn: "✨ ¥{price}로 영구 저장",
             paidSaveHint: "또는 X에 공유하고 무료로 저장",
+            paidSavedLabel: "저장 완료",
             paidUnlockSuccess: "영구 저장이 활성화되었습니다!",
 
             // ポップ用語定義
@@ -349,8 +356,10 @@
             consentReject: "拒绝",
             consentAccept: "同意",
             adLabel: "赞助链接",
+            btnPermanentSave: "✦ ¥120永久保存",
             paidSaveBtn: "✨ ¥{price}永久保存",
             paidSaveHint: "或分享到X免费保存",
+            paidSavedLabel: "已保存",
             paidUnlockSuccess: "永久保存已启用！",
 
             // ポップ用語定義
@@ -1065,19 +1074,28 @@
         return Boolean(enablePremiumLock || getPaidPremiumConfig().enabled);
     }
 
+    function hasPermanentPaid() {
+        return localStorage.getItem(PERMANENT_PAID_STORAGE_KEY) === 'true';
+    }
+
     function updatePaidSaveCta() {
         const cta = document.getElementById('paidSaveCta');
-        const btn = document.getElementById('paidSaveBtn');
+        const btn = document.getElementById('btn-permanent-save') || document.getElementById('paidSaveBtn');
         const hint = document.getElementById('paidSaveHint');
         if (!cta || !btn || !hint) return;
 
         const paidConfig = getPaidPremiumConfig();
-        const shouldShow = paidConfig.enabled && !state.isPremium;
+        const saved = hasPermanentPaid();
+        const shouldShow = paidConfig.enabled && (!state.isPremium || saved);
         cta.hidden = !shouldShow;
         cta.classList.toggle('active', shouldShow);
-        btn.textContent = (i18n[state.lang].paidSaveBtn || i18n.ja.paidSaveBtn)
+        btn.hidden = saved;
+        const btnTemplate = i18n[state.lang].btnPermanentSave || i18n[state.lang].paidSaveBtn || i18n.ja.btnPermanentSave || i18n.ja.paidSaveBtn;
+        btn.textContent = btnTemplate
             .replace('{price}', paidConfig.price.toLocaleString('ja-JP'));
-        hint.textContent = i18n[state.lang].paidSaveHint || i18n.ja.paidSaveHint;
+        hint.textContent = saved
+            ? (i18n[state.lang].paidSavedLabel || i18n.ja.paidSavedLabel)
+            : (i18n[state.lang].paidSaveHint || i18n.ja.paidSaveHint);
     }
 
     function hasConsent() {
@@ -1251,7 +1269,7 @@
 
     function loadPremiumState() {
         const premiumLockEnabled = isPremiumLockEnabled();
-        const unlocked = localStorage.getItem(PREMIUM_STORAGE_KEY) === 'true';
+        const unlocked = localStorage.getItem(PREMIUM_STORAGE_KEY) === 'true' || hasPermanentPaid();
 
         if (!premiumLockEnabled || unlocked) {
             state.isPremium = true;
@@ -1269,6 +1287,9 @@
     function unlockPremium(source = 'key') {
         state.isPremium = true;
         localStorage.setItem(PREMIUM_STORAGE_KEY, 'true');
+        if (source === 'stripe_payment_link') {
+            localStorage.setItem(PERMANENT_PAID_STORAGE_KEY, 'true');
+        }
         clearInterval(state.timerId);
 
         const countdownBanner = document.getElementById('countdownBanner');
@@ -1288,6 +1309,7 @@
         const params = new URLSearchParams(window.location.search);
         if (params.get('paid') !== '1') return;
 
+        localStorage.setItem(PERMANENT_PAID_STORAGE_KEY, 'true');
         unlockPremium('stripe_payment_link');
         showToast(i18n[state.lang].paidUnlockSuccess);
         params.delete('paid');
@@ -1388,7 +1410,7 @@
             });
         }
 
-        const paidSaveBtn = document.getElementById('paidSaveBtn');
+        const paidSaveBtn = document.getElementById('btn-permanent-save') || document.getElementById('paidSaveBtn');
         if (paidSaveBtn) {
             paidSaveBtn.addEventListener('click', () => {
                 const paidConfig = getPaidPremiumConfig();
