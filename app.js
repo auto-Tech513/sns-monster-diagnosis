@@ -120,6 +120,8 @@
             consentAccept: "同意",
             adLabel: "スポンサーリンク",
             btnPermanentSave: "✦ ¥120で永久保存",
+            btnLockPurchase: "✦ ¥120で永久保存して復元",
+            orDivider: "─── または ───",
             paidSaveBtn: "✨ ¥{price}で永久保存",
             paidSaveHint: "またはXで共有して無料保存",
             paidSavedLabel: "保存済み",
@@ -199,6 +201,8 @@
             consentAccept: "Accept",
             adLabel: "Sponsored",
             btnPermanentSave: "✦ Save forever for ¥120",
+            btnLockPurchase: "✦ Restore forever for ¥120",
+            orDivider: "─── or ───",
             paidSaveBtn: "✨ Save permanently for ¥{price}",
             paidSaveHint: "Or share on X to save for free",
             paidSavedLabel: "Saved forever",
@@ -278,6 +282,8 @@
             consentAccept: "동의",
             adLabel: "스폰서 링크",
             btnPermanentSave: "✦ ¥120으로 영구 저장",
+            btnLockPurchase: "✦ ¥120으로 영구 저장 & 복원",
+            orDivider: "─── 또는 ───",
             paidSaveBtn: "✨ ¥{price}로 영구 저장",
             paidSaveHint: "또는 X에 공유하고 무료로 저장",
             paidSavedLabel: "저장 완료",
@@ -357,6 +363,8 @@
             consentAccept: "同意",
             adLabel: "赞助链接",
             btnPermanentSave: "✦ ¥120永久保存",
+            btnLockPurchase: "✦ ¥120永久保存并恢复",
+            orDivider: "─── 或者 ───",
             paidSaveBtn: "✨ ¥{price}永久保存",
             paidSaveHint: "或分享到X免费保存",
             paidSavedLabel: "已保存",
@@ -915,6 +923,13 @@
             }
         });
 
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (key && data[key]) {
+                el.textContent = data[key];
+            }
+        });
+
         // プレースホルダーの多言語化
         const nicknameInput = document.getElementById('nicknameInput');
         if (nicknameInput) nicknameInput.placeholder = data.placeholderNickname;
@@ -995,6 +1010,7 @@
         if (consentAccept) consentAccept.textContent = data.consentAccept;
 
         updatePaidSaveCta();
+        updateLockPurchaseCta();
 
         document.documentElement.lang = state.lang;
 
@@ -1096,6 +1112,33 @@
         hint.textContent = saved
             ? (i18n[state.lang].paidSavedLabel || i18n.ja.paidSavedLabel)
             : (i18n[state.lang].paidSaveHint || i18n.ja.paidSaveHint);
+    }
+
+    function updateLockPurchaseCta() {
+        const btn = document.getElementById('btn-lock-stripe-purchase');
+        const divider = document.getElementById('lockOrDivider');
+        if (!btn || !divider) return;
+
+        const shouldShow = getPaidPremiumConfig().enabled && !state.isPremium && !hasPermanentPaid();
+        btn.hidden = !shouldShow;
+        divider.hidden = !shouldShow;
+        btn.textContent = i18n[state.lang].btnLockPurchase || i18n.ja.btnLockPurchase;
+        divider.textContent = i18n[state.lang].orDivider || i18n.ja.orDivider;
+    }
+
+    function goToPermanentSaveCheckout(source) {
+        const paidConfig = getPaidPremiumConfig();
+        if (!paidConfig.enabled) {
+            updatePaidSaveCta();
+            updateLockPurchaseCta();
+            return;
+        }
+
+        safeTrack('paid_permanent_save_click', {
+            price_yen: paidConfig.price,
+            source
+        });
+        window.location.assign(paidConfig.stripeUrl);
     }
 
     function hasConsent() {
@@ -1276,12 +1319,14 @@
             document.getElementById('countdownBanner').style.display = 'none';
             document.getElementById('fogOverlay').classList.remove('active');
             updatePaidSaveCta();
+            updateLockPurchaseCta();
             return;
         }
 
         state.isPremium = false;
         document.getElementById('countdownBanner').style.display = '';
         updatePaidSaveCta();
+        updateLockPurchaseCta();
     }
 
     function unlockPremium(source = 'key') {
@@ -1302,6 +1347,7 @@
             fogOverlay.style.webkitBackdropFilter = '';
         }
         updatePaidSaveCta();
+        updateLockPurchaseCta();
         safeTrack('premium_unlock', { unlock_method: source });
     }
 
@@ -1413,16 +1459,14 @@
         const paidSaveBtn = document.getElementById('btn-permanent-save') || document.getElementById('paidSaveBtn');
         if (paidSaveBtn) {
             paidSaveBtn.addEventListener('click', () => {
-                const paidConfig = getPaidPremiumConfig();
-                if (!paidConfig.enabled) {
-                    updatePaidSaveCta();
-                    return;
-                }
+                goToPermanentSaveCheckout('result_screen');
+            });
+        }
 
-                safeTrack('paid_permanent_save_click', {
-                    price_yen: paidConfig.price
-                });
-                window.location.assign(paidConfig.stripeUrl);
+        const lockStripeBtn = document.getElementById('btn-lock-stripe-purchase');
+        if (lockStripeBtn) {
+            lockStripeBtn.addEventListener('click', () => {
+                goToPermanentSaveCheckout('lock_screen');
             });
         }
 
@@ -2268,6 +2312,7 @@ Please write the response entirely in ${langName}.`;
                     fogOverlay.style.backdropFilter = "blur(15px)";
                     fogOverlay.style.webkitBackdropFilter = "blur(15px)";
                 }
+                updateLockPurchaseCta();
                 showToast(state.lang === 'ja' ? "神託はパステル霧に包まれました..." :
                           state.lang === 'en' ? "The Cheki has faded into pastel fog..." :
                           state.lang === 'ko' ? "체키가 파스텔 안개에 덮였습니다..." : "拍立得已被粉雾封闭...");

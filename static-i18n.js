@@ -6,10 +6,10 @@
     const EMAIL = "pvac25471@gmail.com";
 
     const labels = {
-        ja: { select: "表示言語", back: "診断へ戻る", columns: "コラム一覧へ", privacy: "プライバシーポリシー", contact: "お問い合わせ", about: "運営情報", articles: "承認欲求コラム", ad: "スポンサーリンク", btnPermanentSave: "✦ ¥120で永久保存" },
-        en: { select: "Language", back: "Back to diagnosis", columns: "Back to columns", privacy: "Privacy Policy", contact: "Contact", about: "About", articles: "Approval Desire Columns", ad: "Sponsored", btnPermanentSave: "✦ Save forever for ¥120" },
-        ko: { select: "언어", back: "진단으로 돌아가기", columns: "칼럼 목록으로", privacy: "개인정보 처리방침", contact: "문의", about: "운영 정보", articles: "승인욕구 칼럼", ad: "스폰서 링크", btnPermanentSave: "✦ ¥120으로 영구 저장" },
-        zh: { select: "语言", back: "返回诊断", columns: "返回专栏", privacy: "隐私政策", contact: "联系我们", about: "运营信息", articles: "认同感专栏", ad: "赞助链接", btnPermanentSave: "✦ ¥120永久保存" }
+        ja: { select: "表示言語", back: "診断へ戻る", columns: "コラム一覧へ", privacy: "プライバシーポリシー", contact: "お問い合わせ", about: "運営情報", articles: "承認欲求コラム", ad: "スポンサーリンク", btnPermanentSave: "✦ ¥120で永久保存", btnLockPurchase: "✦ ¥120で永久保存して復元", orDivider: "─── または ───" },
+        en: { select: "Language", back: "Back to diagnosis", columns: "Back to columns", privacy: "Privacy Policy", contact: "Contact", about: "About", articles: "Approval Desire Columns", ad: "Sponsored", btnPermanentSave: "✦ Save forever for ¥120", btnLockPurchase: "✦ Restore forever for ¥120", orDivider: "─── or ───" },
+        ko: { select: "언어", back: "진단으로 돌아가기", columns: "칼럼 목록으로", privacy: "개인정보 처리방침", contact: "문의", about: "운영 정보", articles: "승인욕구 칼럼", ad: "스폰서 링크", btnPermanentSave: "✦ ¥120으로 영구 저장", btnLockPurchase: "✦ ¥120으로 영구 저장 & 복원", orDivider: "─── 또는 ───" },
+        zh: { select: "语言", back: "返回诊断", columns: "返回专栏", privacy: "隐私政策", contact: "联系我们", about: "运营信息", articles: "认同感专栏", ad: "赞助链接", btnPermanentSave: "✦ ¥120永久保存", btnLockPurchase: "✦ ¥120永久保存并恢复", orDivider: "─── 或者 ───" }
     };
 
     const articleList = {

@@ -1006,6 +1006,22 @@
             text-decoration: none;
         }
 
+        .lock-purchase-btn {
+            margin: 12px 0 10px;
+            background: linear-gradient(135deg, #FF8FB0, #FFD166);
+            border-color: #FF7BA0;
+            color: #FFF;
+            box-shadow: 0 6px 0 #E96A8C;
+        }
+
+        .lock-or-divider {
+            margin: 8px 0 12px;
+            color: #8B7B7E;
+            font-weight: 900;
+            font-size: 0.86rem;
+            letter-spacing: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -1018,6 +1034,10 @@
                 無料体験枠の60秒が経過したため、診断結果のチェキはパステル霧に包まれて消滅しました。<br>
                 診断を永久保存したい場合は、パステルキーを入力してロックを解除してください。
             </div>
+            <button class="cute-btn lock-purchase-btn" id="btn-lock-stripe-purchase" type="button" data-i18n="btnLockPurchase" hidden>
+                ✦ ¥120で永久保存して復元
+            </button>
+            <div class="lock-or-divider" id="lockOrDivider" data-i18n="orDivider" hidden>─── または ───</div>
             <div class="form-group" style="text-align: left;">
                 <label id="premiumKeyLabel">プレミアムパステルキー入力</label>
                 <input type="password" id="premiumKeyInput" class="cute-input" placeholder="パスワードを入力">
