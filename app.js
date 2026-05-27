@@ -7,6 +7,8 @@
 (function () {
     'use strict';
 
+    const COUNTDOWN_SECONDS = 30;
+
     // ==========================================
     // 1. アプリケーション状態管理 (State)
     // ==========================================
@@ -24,7 +26,7 @@
         typeCode: '', // 最終的な4文字コード (小文字)
         approvalPercent: 0, // 承認欲求スコア (0<100)
         isPremium: true,
-        countdown: 60,
+        countdown: COUNTDOWN_SECONDS,
         timerId: null,
         audioCtx: null,
         heartbeatTimeout: null,
@@ -80,7 +82,7 @@
             shareBtn: "🐦 X（Twitter）に結果を共有する",
             retryBtn: "🔄 もう一度診断する",
             lockTitle: "🌸 神託は忘却の彼方へ 🌸",
-            lockText: "無料体験枠の60秒が経過したため、診断結果のチェキはパステル霧に包まれて消滅しました。診断を永久保存したい場合は、パステルキーを入力してロックを解除してください。",
+            lockText: "無料体験枠の30秒が経過したため、診断結果のチェキはパステル霧に包まれて消滅しました。診断を永久保存したい場合は、パステルキーを入力してロックを解除してください。",
             premiumKeyLabel: "プレミアムパステルキー入力",
             unlockBtn: "パステルロック解除",
             iosModalTitle: "心の準備はよろしいですか？",
@@ -166,7 +168,7 @@
             shareBtn: "🐦 Share on X (Twitter)",
             retryBtn: "🔄 Try Again",
             lockTitle: "🌸 Faded Into Forgetfulness 🌸",
-            lockText: "Because 60 seconds passed, your Cheki has faded into pastel fog. Enter the pastel key to unlock and save it permanently.",
+            lockText: "Because 30 seconds passed, your Cheki has faded into pastel fog. Enter the pastel key to unlock and save it permanently.",
             premiumKeyLabel: "Enter Premium Pastel Key",
             unlockBtn: "Unlock Pastel Card",
             iosModalTitle: "Are you ready?",
@@ -252,7 +254,7 @@
             shareBtn: "🐦 X(Twitter)에 공유하기",
             retryBtn: "🔄 다시 도전하기",
             lockTitle: "🌸 신탁은 망각의 너머로 🌸",
-            lockText: "무료 체험 시간 60초가 지나 진단 결과 체키가 파스텔 안개에 봉인되었습니다. 영구 보존하려면 파스텔 키를 입력하여 잠금을 해제하십시오.",
+            lockText: "무료 체험 시간 30초가 지나 진단 결과 체키가 파스텔 안개에 봉인되었습니다. 영구 보존하려면 파스텔 키를 입력하여 잠금을 해제하십시오.",
             premiumKeyLabel: "프리미엄 파스텔 키 입력",
             unlockBtn: "파스텔 락 해제",
             iosModalTitle: "마음의 준비는 되셨습니까?",
@@ -338,7 +340,7 @@
             shareBtn: "🐦 分享到 X (Twitter)",
             retryBtn: "🔄 重新诊断",
             lockTitle: "🌸 神谕已归于遗忘 🌸",
-            lockText: "由于免费体验的60秒已过，您的诊断结果已被封锁在粉雾中。请输入钥匙解锁以永久保存您的拍立得。",
+            lockText: "由于免费体验的30秒已过，您的诊断结果已被封锁在粉雾中。请输入钥匙解锁以永久保存您的拍立得。",
             premiumKeyLabel: "输入升级钥匙",
             unlockBtn: "解除粉色锁定",
             iosModalTitle: "准备好迎接真实的自己吗？",
@@ -1784,7 +1786,7 @@
                 state.typeCode = '';
                 state.approvalPercent = 0;
                 clearInterval(state.timerId);
-                state.countdown = 60;
+                state.countdown = COUNTDOWN_SECONDS;
                 
                 updateCountdownBanner();
 
@@ -2604,7 +2606,7 @@ Please write the response entirely in ${langName}.`;
     // ==========================================
     function startCountdownTimer() {
         clearInterval(state.timerId);
-        state.countdown = 60;
+        state.countdown = COUNTDOWN_SECONDS;
         
         const fogOverlay = document.getElementById('fogOverlay');
 
