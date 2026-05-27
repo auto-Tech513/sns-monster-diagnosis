@@ -686,7 +686,7 @@
 
         .compatibility-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 12px;
             margin-bottom: 16px;
         }
@@ -696,6 +696,7 @@
             border: 2px dashed var(--primary-pink);
             border-radius: 14px;
             padding: 12px;
+            min-width: 0;
         }
 
         .compatibility-card h4,
@@ -722,6 +723,10 @@
             font-weight: 900;
             color: var(--text-dark);
             line-height: 1.4;
+            letter-spacing: 0;
+            white-space: nowrap;
+            word-break: keep-all;
+            overflow-wrap: normal;
         }
 
         .compatibility-reason {
@@ -753,8 +758,12 @@
         }
 
         @media (max-width: 480px) {
-            .compatibility-grid {
-                grid-template-columns: 1fr;
+            .compatibility-card {
+                padding: 10px;
+            }
+
+            .compatibility-name {
+                font-size: 0.78rem;
             }
         }
 

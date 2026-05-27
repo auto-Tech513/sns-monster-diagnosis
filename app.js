@@ -45,6 +45,13 @@
     const PREMIUM_STORAGE_KEY = "sns_monster_premium_unlocked";
     const PERMANENT_PAID_STORAGE_KEY = "permanentPaid";
     const COMPAT_PAID_STORAGE_KEY = "compatPaid";
+    const LAST_RESULT_TYPE_KEY = "lastResultType";
+    const LAST_RESULT_TYPE_CODE_KEY = "lastResultTypeCode";
+    const LAST_RESULT_SCORE_KEY = "lastResultScore";
+    const LAST_RESULT_AI_KEY = "lastResultAi";
+    const LAST_RESULT_AI_LANG_KEY = "lastResultAiLang";
+    const LAST_RESULT_NICKNAME_KEY = "lastResultNickname";
+    const LAST_RESULT_AGE_KEY = "lastResultAge";
     const CONSENT_STORAGE_KEY = "sns_monster_cookie_consent";
     const LANG_STORAGE_KEY = "sns_monster_lang";
     const SUPPORTED_LANGS = ["ja", "en", "ko", "zh"];
@@ -1179,6 +1186,112 @@
         return info.name[lang] || info.name.ja || "";
     }
 
+    function resolveTypeCodeFromSavedResult(saved) {
+        if (!saved) return "";
+        if (saved.typeCode && typeDatabase[saved.typeCode]) return saved.typeCode;
+
+        const typeName = saved.typeName || "";
+        if (!typeName) return "";
+
+        return Object.keys(typeDatabase).find(code => {
+            const names = Object.values(typeDatabase[code].name || {});
+            return names.includes(typeName);
+        }) || "";
+    }
+
+    function readLastResult() {
+        try {
+            const typeName = localStorage.getItem(LAST_RESULT_TYPE_KEY) || "";
+            const typeCode = localStorage.getItem(LAST_RESULT_TYPE_CODE_KEY) || "";
+            const score = Number(localStorage.getItem(LAST_RESULT_SCORE_KEY));
+
+            if (!typeName && !typeCode) return null;
+
+            return {
+                typeName,
+                typeCode,
+                score: Number.isFinite(score) ? Math.max(0, Math.min(100, Math.round(score))) : 0,
+                ai: localStorage.getItem(LAST_RESULT_AI_KEY) || "",
+                aiLang: normalizeLang(localStorage.getItem(LAST_RESULT_AI_LANG_KEY)),
+                nickname: localStorage.getItem(LAST_RESULT_NICKNAME_KEY) || "",
+                age: localStorage.getItem(LAST_RESULT_AGE_KEY) || ""
+            };
+        } catch (err) {
+            console.warn('Last result could not be read:', err);
+            return null;
+        }
+    }
+
+    function persistLastResult(aiText) {
+        const info = typeDatabase[state.typeCode];
+        if (!info) return;
+
+        try {
+            const commentBox = document.getElementById('aiCommentaryBox');
+            const fallback = info.fallback[state.lang] || info.fallback.ja || "";
+            const ai = typeof aiText === 'string'
+                ? aiText
+                : (commentBox && commentBox.textContent ? commentBox.textContent.trim() : fallback);
+
+            localStorage.setItem(LAST_RESULT_TYPE_KEY, getCurrentTypeName(state.lang));
+            localStorage.setItem(LAST_RESULT_TYPE_CODE_KEY, state.typeCode);
+            localStorage.setItem(LAST_RESULT_SCORE_KEY, String(state.approvalPercent));
+            localStorage.setItem(LAST_RESULT_AI_KEY, localizeDimensionTerms(ai || fallback, state.lang));
+            localStorage.setItem(LAST_RESULT_AI_LANG_KEY, state.lang);
+            localStorage.setItem(LAST_RESULT_NICKNAME_KEY, state.username || "");
+            localStorage.setItem(LAST_RESULT_AGE_KEY, state.age || "");
+        } catch (err) {
+            console.warn('Last result could not be saved:', err);
+        }
+    }
+
+    function showResultViewDirectly() {
+        document.querySelectorAll('.section-view').forEach(view => {
+            view.classList.remove('active');
+        });
+
+        const resultView = document.getElementById('resultView');
+        const iosModal = document.getElementById('iosModal');
+        if (resultView) resultView.classList.add('active');
+        if (iosModal) iosModal.classList.add('hide');
+    }
+
+    function restoreLastResultView(source = 'stored_result') {
+        const saved = readLastResult();
+        const typeCode = resolveTypeCodeFromSavedResult(saved);
+        if (!saved || !typeCode) return false;
+
+        state.typeCode = typeCode;
+        state.approvalPercent = saved.score;
+        state.username = saved.nickname;
+        state.age = saved.age;
+        state.currentQuestionIndex = questions.length;
+        clearInterval(state.timerId);
+
+        showResultViewDirectly();
+        applyResultUI();
+        prepareResultAdSlot();
+
+        const commentBox = document.getElementById('aiCommentaryBox');
+        if (commentBox && saved.ai && saved.aiLang === state.lang) {
+            commentBox.textContent = saved.ai;
+        } else {
+            renderLocalizedAiFallback(typeCode, state.lang);
+        }
+
+        updatePaidSaveCta();
+        updateLockPurchaseCta();
+        renderCompatibilitySection();
+        startChekiParallax();
+        persistLastResult(commentBox ? commentBox.textContent.trim() : undefined);
+        safeTrack('result_restore', { source, monster_code: state.typeCode || 'none' });
+        return true;
+    }
+
+    function shouldRestoreStoredResultOnBoot(returnSource) {
+        return Boolean(returnSource || hasCompatibilityPaid() || hasPermanentPaid());
+    }
+
     function updateCompatibilityCta() {
         const btn = document.getElementById('btn-compatibility');
         if (!btn) return;
@@ -1469,13 +1582,16 @@
         rememberLang();
 
         setupEventListeners();
-        handlePaidReturn();
-        handleCompatibilityReturn();
+        const paidReturn = handlePaidReturn();
+        const compatibilityReturn = handleCompatibilityReturn();
         loadPremiumState();
         setupConsentControls();
 
         // 初回の年齢層インジェクション
         updateLanguage();
+        if (shouldRestoreStoredResultOnBoot(paidReturn || compatibilityReturn)) {
+            restoreLastResultView(paidReturn ? 'paid_return' : compatibilityReturn ? 'compatibility_return' : 'stored_paid_result');
+        }
         showConsentBannerIfNeeded();
         enableMeasurementAndAds();
     }
@@ -1523,7 +1639,7 @@
 
     function handlePaidReturn() {
         const params = new URLSearchParams(window.location.search);
-        if (params.get('paid') !== '1') return;
+        if (params.get('paid') !== '1') return false;
 
         localStorage.setItem(PERMANENT_PAID_STORAGE_KEY, 'true');
         unlockPremium('stripe_payment_link');
@@ -1531,16 +1647,18 @@
         params.delete('paid');
         const nextUrl = `${window.location.pathname}${params.toString() ? `?${params}` : ''}${window.location.hash}`;
         window.history.replaceState({}, document.title, nextUrl || window.location.pathname);
+        return true;
     }
 
     function handleCompatibilityReturn() {
         const params = new URLSearchParams(window.location.search);
-        if (params.get('compat') !== '1') return;
+        if (params.get('compat') !== '1') return false;
 
         localStorage.setItem(COMPAT_PAID_STORAGE_KEY, 'true');
         params.delete('compat');
         const nextUrl = `${window.location.pathname}${params.toString() ? `?${params}` : ''}${window.location.hash}`;
         window.history.replaceState({}, document.title, nextUrl || window.location.pathname);
+        return true;
     }
 
     function setupEventListeners() {
@@ -2126,6 +2244,7 @@
         state.approvalPercent = Math.round(rawScore * 100);
         
         applyResultUI();
+        persistLastResult(typeDatabase[state.typeCode].fallback[state.lang] || typeDatabase[state.typeCode].fallback.ja);
         prepareResultAdSlot();
         safeTrack('shindan_complete', {
             monster_code: state.typeCode,
@@ -2239,6 +2358,7 @@
 
         const fallback = info.fallback[lang] || info.fallback.ja;
         commentBox.textContent = localizeDimensionTerms(fallback, lang);
+        persistLastResult(commentBox.textContent.trim());
     }
 
     function fetchOllamaCommentary(age, typeCode, typeName) {
@@ -2288,6 +2408,7 @@ Please write the response entirely in ${langName}.`;
             .then(commentary => {
                 if (requestId !== state.aiCommentRequestId || state.lang !== requestedLang || state.typeCode !== typeCode) return;
                 commentBox.textContent = localizeDimensionTerms(commentary, requestedLang);
+                persistLastResult(commentBox.textContent.trim());
                 showToast(requestedI18n.toastAiSuccess);
             })
             .catch(err => {
