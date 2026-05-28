@@ -1,714 +1,264 @@
-window.COMPATIBILITY_DATA = {
-  ja: {
-    "かまってちゃん型ポメラニアン": {
-      goodMatch: [
-        { name: "孤高のパステル黒猫", reason: "静けさが不安をなだめる" },
-        { name: "合理的ルールポリス柴犬", reason: "現実感で安心をくれる" }
-      ],
-      badMatch: [
-        { name: "かまってちゃん型ポメラニアン", reason: "承認待ちがぶつかる" },
-        { name: "マウンティング突撃ライオン", reason: "圧に飲まれやすい" }
-      ],
-      loveStyle: "あなたは褒められたい気持ちを隠しながら、相手の一言で一日が明るくなるタイプ。安心できる距離で見守られると、少しずつ素直に甘えられます。"
+// compatibility-data.js v2
+// SNS承認欲求モンスター診断 - 相性診断パック
+// 16タイプ x 4言語。app.js は COMPATIBILITY_DATA[lang][表示名] を参照するため、
+// 外側キーは各言語のタイプ表示名と完全一致させる。
+(function () {
+  "use strict";
+
+  const LANGS = ["ja", "en", "ko", "zh"];
+
+  const TYPES = {
+    aome: {
+      name: { ja: "マウンティング突撃ライオン", en: "Flexing Charging Lion", ko: "마운팅 돌격 사자", zh: "炫耀突击狂暴狮" },
+      gift: { ja: "前に出る推進力", en: "bold forward drive", ko: "앞으로 밀고 나가는 추진력", zh: "主动向前冲的推进力" },
+      wound: { ja: "負けたくない焦り", en: "fear of losing status", ko: "지기 싫은 초조함", zh: "不想输的焦虑" },
+      shadow: { ja: "主導権を奪いにいく圧", en: "pressure to dominate", ko: "주도권을 빼앗으려는 압박", zh: "抢夺主导权的压迫感" }
     },
-    "殻にこもる自律カタツムリ": {
-      goodMatch: [
-        { name: "依存型バズりチワワ", reason: "感情表現を引き出す" },
-        { name: "エモさ渇望インフルエンサー予備軍", reason: "柔らかく心を開かせる" }
-      ],
-      badMatch: [
-        { name: "殻にこもる自律カタツムリ", reason: "沈黙の我慢大会になる" },
-        { name: "我道突っ走りハリネズミ", reason: "意地がぶつかりやすい" }
-      ],
-      loveStyle: "あなたは簡単には心を開かないけれど、信頼した相手には深く長く向き合うタイプ。急かされる恋より、静かに並走してくれる関係で本領を発揮します。"
+    aone: {
+      name: { ja: "手柄泥棒アピールオウム", en: "Credit-Claiming Parrot", ko: "공치사 어필 앵무새", zh: "抢功大喇叭鹦鹉" },
+      gift: { ja: "場を明るく言語化する力", en: "the knack for making a moment visible", ko: "분위기를 밝게 언어화하는 힘", zh: "把场面说热闹的表达力" },
+      wound: { ja: "自分だけ見落とされる恐怖", en: "panic at being overlooked", ko: "나만 놓칠까 봐 두려운 마음", zh: "害怕只有自己被忽略" },
+      shadow: { ja: "他人の成果まで自分色に染める癖", en: "turning others' wins into your own spotlight", ko: "남의 성과까지 자기 색으로 칠하는 습관", zh: "把别人的成果也染成自己的颜色" }
     },
-    "怯える甘えん坊トイプー": {
-      goodMatch: [
-        { name: "無自覚マニアックオオカミ", reason: "決断力で支えてくれる" },
-        { name: "ドヤ顔クリエイティブ孔雀", reason: "明るさで不安を溶かす" }
-      ],
-      badMatch: [
-        { name: "怯える甘えん坊トイプー", reason: "不安が反響し合う" },
-        { name: "見守られ待ちピヨちゃん", reason: "待ち姿勢が重なる" }
-      ],
-      loveStyle: "あなたは安心できる相手に出会うと一気に心を預けるタイプ。強引すぎないリードと、こまめな愛情表現があるほど、穏やかに自信を取り戻します。"
+    asne: {
+      name: { ja: "依存型バズりチワワ", en: "Viral-Desperate Chihuahua", ko: "의존성 관심 갈구 치와와", zh: "病态求关注的抖动吉娃娃" },
+      gift: { ja: "反応を拾う愛嬌", en: "quick, affectionate responsiveness", ko: "반응을 잘 살피는 애교", zh: "敏锐接住回应的亲和力" },
+      wound: { ja: "反応が途切れる不安", en: "anxiety when replies slow down", ko: "반응이 끊길 때의 불안", zh: "回应一停就不安" },
+      shadow: { ja: "愛情確認を連打する癖", en: "spamming reassurance checks", ko: "애정 확인을 연타하는 습관", zh: "反复确认爱意的习惯" }
     },
-    "要領のいい保身コアラ": {
-      goodMatch: [
-        { name: "ドヤ顔クリエイティブ孔雀", reason: "楽しさで守りをほどく" },
-        { name: "エモさ渇望インフルエンサー予備軍", reason: "感情の温度を足せる" }
-      ],
-      badMatch: [
-        { name: "要領のいい保身コアラ", reason: "腹の探り合いになる" },
-        { name: "合理的ルールポリス柴犬", reason: "正論で窮屈になる" }
-      ],
-      loveStyle: "あなたは傷つかない位置を探しながら恋を進めるタイプ。信頼できる相手には意外と世話焼きで、安心と笑いのバランスが整うほど長続きします。"
+    psme: {
+      name: { ja: "エモさ渇望インフルエンサー予備軍", en: "Emo-Star Wannabe", ko: "감성 갈망 인플루언서 꿈나무", zh: "渴望情怀的预备网红" },
+      gift: { ja: "感情を物語に変える感性", en: "turning feelings into stories", ko: "감정을 이야기로 바꾸는 감성", zh: "把情绪变成故事的感性" },
+      wound: { ja: "共感されない寂しさ", en: "loneliness when your feelings are not mirrored", ko: "공감받지 못할 때의 외로움", zh: "不被共情时的孤独" },
+      shadow: { ja: "平凡な日常までドラマ化する癖", en: "dramatizing even quiet days", ko: "평범한 하루도 드라마로 만드는 습관", zh: "把普通日常也戏剧化" }
     },
-    "エモさ渇望インフルエンサー予備軍": {
-      goodMatch: [
-        { name: "合理的ルールポリス柴犬", reason: "現実面を整えてくれる" },
-        { name: "孤高のパステル黒猫", reason: "感性を静かに受け止める" }
-      ],
-      badMatch: [
-        { name: "エモさ渇望インフルエンサー予備軍", reason: "反応待ちが増幅する" },
-        { name: "ドヤ顔クリエイティブ孔雀", reason: "注目争いになりやすい" }
-      ],
-      loveStyle: "あなたは心の揺れをわかってほしくて、恋にも物語性を求めるタイプ。静かに共感しつつ現実も支えてくれる相手に、深く惹かれます。"
+    pome: {
+      name: { ja: "かまってちゃん型ポメラニアン", en: "Whining Pomeranian", ko: "관심종자형 포메라니안", zh: "求关注型博美犬" },
+      gift: { ja: "素直に甘える柔らかさ", en: "soft, honest need for closeness", ko: "솔직하게 기대는 부드러움", zh: "坦率撒娇的柔软感" },
+      wound: { ja: "見捨てられそうな不安", en: "fear of being quietly abandoned", ko: "버려질 것 같은 불안", zh: "害怕被悄悄抛下" },
+      shadow: { ja: "遠回しに構ってサインを出す癖", en: "hinting for attention instead of asking", ko: "돌려서 관심 신호를 보내는 습관", zh: "拐弯抹角地求关注" }
     },
-    "孤高のパステル黒猫": {
-      goodMatch: [
-        { name: "かまってちゃん型ポメラニアン", reason: "素直さが殻をゆるめる" },
-        { name: "依存型バズりチワワ", reason: "愛情表現がわかりやすい" }
-      ],
-      badMatch: [
-        { name: "孤高のパステル黒猫", reason: "距離が縮まらない" },
-        { name: "我道突っ走りハリネズミ", reason: "尖り同士で刺さる" }
-      ],
-      loveStyle: "あなたは自分の世界を大切にし、恋でも余白を失いたくないタイプ。踏み込みすぎず、それでも好意を示してくれる相手に弱いです。"
+    psne: {
+      name: { ja: "見守られ待ちピヨちゃん", en: "Watch-Me Baby Chick", ko: "보살핌 대기조 삐약이", zh: "求关注的孵化小鸡" },
+      gift: { ja: "小さな変化を喜べる純度", en: "pure delight in small care", ko: "작은 변화를 기뻐하는 순도", zh: "会为小小关心开心的纯度" },
+      wound: { ja: "自分から動く怖さ", en: "fear of moving first", ko: "먼저 움직이는 것에 대한 두려움", zh: "害怕自己先行动" },
+      shadow: { ja: "待つだけで察してもらおうとする癖", en: "waiting to be understood without asking", ko: "기다리기만 하며 알아주길 바라는 습관", zh: "只等待别人主动看懂" }
     },
-    "見守られ待ちピヨちゃん": {
-      goodMatch: [
-        { name: "我道突っ走りハリネズミ", reason: "主体性で道を照らす" },
-        { name: "無自覚マニアックオオカミ", reason: "頼れる推進力がある" }
-      ],
-      badMatch: [
-        { name: "見守られ待ちピヨちゃん", reason: "待つだけで進まない" },
-        { name: "怯える甘えん坊トイプー", reason: "依存が膨らみやすい" }
-      ],
-      loveStyle: "あなたは大切にされている実感があるほど魅力が咲くタイプ。頼れる相手のそばで安心を得ると、自分からも少しずつ愛を返せます。"
+    pone: {
+      name: { ja: "怯える甘えん坊トイプー", en: "Frightened Toy Poodle", ko: "겁먹은 응석받이 토이푸들", zh: "胆怯撒娇贵宾犬" },
+      gift: { ja: "守られた時に花開く信頼感", en: "trust that blooms under gentle care", ko: "보호받을 때 피어나는 신뢰감", zh: "被温柔保护时绽放的信任感" },
+      wound: { ja: "失敗したら嫌われる恐怖", en: "fear that one mistake ruins love", ko: "실수하면 미움받을 것 같은 공포", zh: "害怕一失误就被讨厌" },
+      shadow: { ja: "不安を相手の責任にしがちな癖", en: "handing your anxiety to the other person", ko: "불안을 상대 책임으로 돌리는 습관", zh: "把不安交给对方承担" }
     },
-    "マイペースな引きこもりパンダ": {
-      goodMatch: [
-        { name: "手柄泥棒アピールオウム", reason: "外の刺激を運んでくる" },
-        { name: "マウンティング突撃ライオン", reason: "停滞を動かしてくれる" }
-      ],
-      badMatch: [
-        { name: "マイペースな引きこもりパンダ", reason: "変化が起きにくい" },
-        { name: "殻にこもる自律カタツムリ", reason: "閉じた空気が続く" }
-      ],
-      loveStyle: "あなたは無理に盛り上がる恋より、生活の温度が合う恋を選ぶタイプ。相手が外の世界を少しだけ持ち込むと、日常が心地よく広がります。"
+    ponr: {
+      name: { ja: "要領のいい保身コアラ", en: "Sly Protector Koala", ko: "처세 좋은 보신 코알라", zh: "善于保身的树袋熊" },
+      gift: { ja: "衝突を避けて場を整える勘", en: "instinct for lowering conflict", ko: "충돌을 피하며 판을 정리하는 감각", zh: "降低冲突、整理局面的直觉" },
+      wound: { ja: "傷つく前に逃げたい本能", en: "urge to retreat before getting hurt", ko: "상처받기 전에 도망치고 싶은 본능", zh: "受伤前就想退开的本能" },
+      shadow: { ja: "安全圏から本音を隠す癖", en: "hiding truth from a safe distance", ko: "안전지대에서 속마음을 숨기는 습관", zh: "躲在安全区隐藏真心" }
     },
-    "マウンティング突撃ライオン": {
-      goodMatch: [
-        { name: "マイペースな引きこもりパンダ", reason: "熱を冷ましてくれる" },
-        { name: "怯える甘えん坊トイプー", reason: "守る喜びをくれる" }
-      ],
-      badMatch: [
-        { name: "マウンティング突撃ライオン", reason: "主導権争いになる" },
-        { name: "手柄泥棒アピールオウム", reason: "承認合戦になる" }
-      ],
-      loveStyle: "あなたは恋でも全力で勝ち筋を探すタイプ。穏やかに受け止めてくれる相手がいると、強さを誇示ではなく守る力に変えられます。"
+    asme: {
+      name: { ja: "ドヤ顔クリエイティブ孔雀", en: "Showy Creative Peacock", ko: "거들먹거리는 크리에이티브 공작", zh: "得意洋洋的文艺孔雀" },
+      gift: { ja: "空気を華やかにする表現力", en: "expressive power that brightens a room", ko: "분위기를 화려하게 만드는 표현력", zh: "让气氛变华丽的表现力" },
+      wound: { ja: "センスを否定される痛み", en: "pain when your taste is dismissed", ko: "센스를 부정당할 때의 아픔", zh: "品味被否定时的疼痛" },
+      shadow: { ja: "拍手がないと踊り続ける癖", en: "performing harder when applause is thin", ko: "박수가 없으면 더 과하게 춤추는 습관", zh: "掌声不够就表演得更用力" }
     },
-    "無自覚マニアックオオカミ": {
-      goodMatch: [
-        { name: "見守られ待ちピヨちゃん", reason: "守る対象で優しくなる" },
-        { name: "怯える甘えん坊トイプー", reason: "頼られると安定する" }
-      ],
-      badMatch: [
-        { name: "無自覚マニアックオオカミ", reason: "競争心が止まらない" },
-        { name: "我道突っ走りハリネズミ", reason: "正面衝突しやすい" }
-      ],
-      loveStyle: "あなたは好きな相手にも自分の熱量で突き進みがちなタイプ。頼られると不器用な優しさが出て、恋が戦いから共同作業に変わります。"
+    asmr: {
+      name: { ja: "我道突っ走りハリネズミ", en: "Edgy Solo Hedgehog", ko: "독불장군 질주 고슴도치", zh: "独来独往的狂奔刺猬" },
+      gift: { ja: "独自路線を切り開く突破力", en: "power to carve a private path", ko: "독자 노선을 뚫고 나가는 힘", zh: "开辟自我路线的突破力" },
+      wound: { ja: "理解されない怒り", en: "anger at not being understood", ko: "이해받지 못할 때의 분노", zh: "不被理解时的怒气" },
+      shadow: { ja: "近づく相手にも棘を向ける癖", en: "pointing your spikes even at allies", ko: "다가오는 사람에게도 가시를 세우는 습관", zh: "连靠近的人也会被刺到" }
     },
-    "手柄泥棒アピールオウム": {
-      goodMatch: [
-        { name: "マイペースな引きこもりパンダ", reason: "騒がしさを中和する" },
-        { name: "孤高のパステル黒猫", reason: "見栄を見抜いてくれる" }
-      ],
-      badMatch: [
-        { name: "手柄泥棒アピールオウム", reason: "話題の奪い合いになる" },
-        { name: "マウンティング突撃ライオン", reason: "評価争いが激化する" }
-      ],
-      loveStyle: "あなたは会話の中心にいたい一方で、本当は安全な居場所を探すタイプ。静かに本音を拾ってくれる相手に出会うと、見栄がほどけます。"
+    aomr: {
+      name: { ja: "無自覚マニアックオオカミ", en: "Aggressive Solo Wolf", ko: "무자각 매니악 늑대", zh: "无意识狂热孤狼" },
+      gift: { ja: "深掘りして形にする集中力", en: "focus that turns obsession into output", ko: "집요함을 결과물로 바꾸는 집중력", zh: "把执念做成成果的专注力" },
+      wound: { ja: "浅く扱われる苛立ち", en: "irritation when treated superficially", ko: "얕게 취급받을 때의 짜증", zh: "被肤浅对待时的不耐" },
+      shadow: { ja: "熱量で相手を置き去りにする癖", en: "leaving people behind with intensity", ko: "열정으로 상대를 놓고 가는 습관", zh: "用过高热量把别人甩在后面" }
     },
-    "合理的ルールポリス柴犬": {
-      goodMatch: [
-        { name: "エモさ渇望インフルエンサー予備軍", reason: "感情面を補ってくれる" },
-        { name: "かまってちゃん型ポメラニアン", reason: "柔らかさを思い出せる" }
-      ],
-      badMatch: [
-        { name: "合理的ルールポリス柴犬", reason: "監視合戦になりやすい" },
-        { name: "要領のいい保身コアラ", reason: "防衛線が厚くなる" }
-      ],
-      loveStyle: "あなたは恋でも約束や筋を大切にするタイプ。少し感情豊かな相手と組むと、正しさだけでなく優しさも選べるようになります。"
+    aonr: {
+      name: { ja: "合理的ルールポリス柴犬", en: "Rational Rule Police Dog", ko: "합리적 규칙 경찰 시바견", zh: "理性规则哨兵柴犬" },
+      gift: { ja: "関係を安定させる整備力", en: "ability to stabilize a relationship", ko: "관계를 안정시키는 정비력", zh: "让关系稳定下来的整理力" },
+      wound: { ja: "曖昧さに振り回される不快感", en: "discomfort with ambiguity", ko: "애매함에 휘둘리는 불쾌감", zh: "被暧昧牵着走的不适" },
+      shadow: { ja: "正しさで相手を管理する癖", en: "managing people through correctness", ko: "정답으로 상대를 관리하는 습관", zh: "用正确性管理别人" }
     },
-    "ドヤ顔クリエイティブ孔雀": {
-      goodMatch: [
-        { name: "要領のいい保身コアラ", reason: "地に足をつけてくれる" },
-        { name: "怯える甘えん坊トイプー", reason: "称賛より愛着をくれる" }
-      ],
-      badMatch: [
-        { name: "ドヤ顔クリエイティブ孔雀", reason: "舞台の奪い合いになる" },
-        { name: "エモさ渇望インフルエンサー予備軍", reason: "反応依存が強まる" }
-      ],
-      loveStyle: "あなたは恋にも表現とときめきを求めるタイプ。拍手だけでなく、日常の足場を整えてくれる相手がいると華やかさが長持ちします。"
+    pomr: {
+      name: { ja: "殻にこもる自律カタツムリ", en: "Hermit Snail", ko: "껍질 속에 숨는 자율 달팽이", zh: "隐居自律小蜗牛" },
+      gift: { ja: "静かに積み上げる自律心", en: "quiet self-discipline", ko: "조용히 쌓아 올리는 자율성", zh: "安静积累的自律心" },
+      wound: { ja: "急かされることへの拒絶感", en: "resistance to being rushed", ko: "재촉당하는 것에 대한 거부감", zh: "抗拒被催促" },
+      shadow: { ja: "殻の中で結論を出してしまう癖", en: "deciding everything inside your shell", ko: "껍질 안에서 혼자 결론 내는 습관", zh: "在壳里独自下结论" }
     },
-    "我道突っ走りハリネズミ": {
-      goodMatch: [
-        { name: "見守られ待ちピヨちゃん", reason: "守る余白が生まれる" },
-        { name: "かまってちゃん型ポメラニアン", reason: "柔らかい反応が刺を抜く" }
-      ],
-      badMatch: [
-        { name: "我道突っ走りハリネズミ", reason: "棘が倍増する" },
-        { name: "無自覚マニアックオオカミ", reason: "譲らず衝突する" }
-      ],
-      loveStyle: "あなたは恋でも自分の道を曲げにくいタイプ。弱さを見せても受け止めてくれる相手にだけ、尖った心を少し預けられます。"
+    psmr: {
+      name: { ja: "孤高のパステル黒猫", en: "Aloof Pastel Black Cat", ko: "고고한 파스텔 검은 고양이", zh: "高冷的粉彩黑猫" },
+      gift: { ja: "美意識で距離を整える力", en: "aesthetic boundaries that protect peace", ko: "미감으로 거리를 조율하는 힘", zh: "用审美调整距离的能力" },
+      wound: { ja: "雑に踏み込まれる嫌悪感", en: "disgust at careless intrusion", ko: "무례하게 들어오는 것에 대한 혐오감", zh: "讨厌被粗暴闯入" },
+      shadow: { ja: "冷たさで好意まで隠す癖", en: "hiding affection behind coolness", ko: "차가움으로 호감까지 숨기는 습관", zh: "用冷淡把好感也藏起来" }
     },
-    "依存型バズりチワワ": {
-      goodMatch: [
-        { name: "孤高のパステル黒猫", reason: "静かな境界線をくれる" },
-        { name: "殻にこもる自律カタツムリ", reason: "落ち着きを分けてくれる" }
-      ],
-      badMatch: [
-        { name: "依存型バズりチワワ", reason: "不安が加速する" },
-        { name: "怯える甘えん坊トイプー", reason: "甘えが過密になる" }
-      ],
-      loveStyle: "あなたは好きになるほど反応が欲しくなるタイプ。落ち着いた相手が境界線を優しく示してくれると、安心して愛情表現を整えられます。"
+    psnr: {
+      name: { ja: "マイペースな引きこもりパンダ", en: "Low-Energy Panda", ko: "마이웨이 방구석 판다", zh: "我行我素宅地熊猫" },
+      gift: { ja: "何もしない時間を守る包容力", en: "the calm to protect unforced time", ko: "아무것도 하지 않는 시간을 지키는 포용력", zh: "守住无压力时间的包容力" },
+      wound: { ja: "ペースを乱される疲労感", en: "fatigue when your pace is disrupted", ko: "페이스가 깨질 때의 피로감", zh: "节奏被打乱时的疲惫" },
+      shadow: { ja: "省エネを理由に関係を止める癖", en: "using low energy to pause intimacy", ko: "에너지 절약을 핑계로 관계를 멈추는 습관", zh: "用省力当理由停下关系" }
     },
-    "頑固なマイキャラ黒豚": {
-      goodMatch: [
-        { name: "エモさ渇望インフルエンサー予備軍", reason: "柔らかい共感をくれる" },
-        { name: "手柄泥棒アピールオウム", reason: "外向きの橋になる" }
-      ],
-      badMatch: [
-        { name: "頑固なマイキャラ黒豚", reason: "意地の張り合いになる" },
-        { name: "我道突っ走りハリネズミ", reason: "互いに譲れない" }
-      ],
-      loveStyle: "あなたは自分らしさを守るほど恋でも頑固になるタイプ。否定せず笑って聞いてくれる相手なら、少しずつ歩み寄る余裕が生まれます。"
+    asnr: {
+      name: { ja: "頑固なマイキャラ黒豚", en: "Stubborn Unique Boar", ko: "고집불통 마이캐릭터 흑돼지", zh: "顽固的人设小野猪" },
+      gift: { ja: "世界観を貫く芯の強さ", en: "a backbone that protects your world", ko: "세계관을 밀고 가는 단단함", zh: "坚持世界观的骨气" },
+      wound: { ja: "自分らしさを削られる恐怖", en: "fear of having your identity sanded down", ko: "나답다는 감각이 깎일 것 같은 두려움", zh: "害怕自我被磨平" },
+      shadow: { ja: "譲歩まで敗北と見なす癖", en: "treating compromise as defeat", ko: "양보를 패배로 여기는 습관", zh: "把让步也看成失败" }
     }
-  },
-  en: {
-    "Whining Pomeranian": {
-      goodMatch: [
-        { name: "Aloof Pastel Black Cat", reason: "Calm steadies your need" },
-        { name: "Rational Rule Police Dog", reason: "Structure feels safe" }
-      ],
-      badMatch: [
-        { name: "Whining Pomeranian", reason: "Both wait for praise" },
-        { name: "Flexing Charging Lion", reason: "Too much pressure" }
-      ],
-      loveStyle: "You hide how badly you want reassurance, yet one warm message can change your whole day. Love works best when attention feels steady, not performative."
+  };
+
+  const MATRIX = {
+    aome: { good: ["pomr", "psne"], bad: ["aone", "asnr"] },
+    aone: { good: ["psne", "pone"], bad: ["aome", "asne"] },
+    asne: { good: ["aonr", "psne"], bad: ["psmr", "pomr"] },
+    psme: { good: ["psne", "psmr"], bad: ["aonr", "asnr"] },
+    pome: { good: ["psnr", "psmr"], bad: ["aome", "aone"] },
+    psne: { good: ["aonr", "psnr"], bad: ["psme", "asmr"] },
+    pone: { good: ["aonr", "pomr"], bad: ["aome", "asmr"] },
+    ponr: { good: ["psnr", "asnr"], bad: ["aonr", "aomr"] },
+    asme: { good: ["pone", "psne"], bad: ["aome", "aone"] },
+    asmr: { good: ["aomr", "psnr"], bad: ["pone", "psne"] },
+    aomr: { good: ["asmr", "psmr"], bad: ["psne", "pome"] },
+    aonr: { good: ["pone", "psne"], bad: ["psme", "asmr"] },
+    pomr: { good: ["pone", "psmr"], bad: ["aome", "asme"] },
+    psmr: { good: ["psnr", "pomr"], bad: ["asne", "aome"] },
+    psnr: { good: ["psmr", "pomr"], bad: ["aome", "psme"] },
+    asnr: { good: ["psnr", "ponr"], bad: ["aonr", "aone"] }
+  };
+
+  const COPY = {
+    ja: {
+      goodReason(self, other) {
+        return `${other.name.ja}は、あなたの「${self.wound.ja}」を責めず、${other.gift.ja}で受け止めてくれる相手です。承認を奪い合わず、足りない部分を自然に補い合えるので、背伸びより回復が起きやすい組み合わせ。`;
+      },
+      badReason(self, other) {
+        return `${other.name.ja}は、あなたの「${self.wound.ja}」に${other.shadow.ja}をぶつけやすい相手です。最初は刺激的でも、関係が深まるほど互いの弱点を増幅し、承認の取り合いか沈黙の我慢大会に転びやすい。`;
+      },
+      secret(other) {
+        return `${other.name.ja}の${other.gift.ja}を先に言葉にすると、関係の温度が一段上がります。`;
+      },
+      advice(other) {
+        return `${other.name.ja}とは勝ち負けを急がず、境界線を短い言葉で先に共有すること。`;
+      },
+      loveStyle(self) {
+        return `あなたの恋愛は「${self.wound.ja}」をどう扱うかで大きく変わります。強がったり察してもらおうとしたりすると、せっかくの${self.gift.ja}が防衛反応に見えてしまうタイプ。本当に相性が良い相手は、あなたの不器用な承認欲求を笑わず、静かに翻訳してくれる人です。`;
+      },
+      loveAdvice(self) {
+        return `今日の一手は、${self.shadow.ja}を少しだけ止めて、欲しい反応を一文で伝えること。恋は演出より、説明できる勇気で長持ちします。`;
+      }
     },
-    "Hermit Snail": {
-      goodMatch: [
-        { name: "Viral-Desperate Chihuahua", reason: "Opens your feelings" },
-        { name: "Emo-Star Wannabe", reason: "Softens your shell" }
-      ],
-      badMatch: [
-        { name: "Hermit Snail", reason: "Silence becomes a wall" },
-        { name: "Edgy Solo Hedgehog", reason: "Pride clashes fast" }
-      ],
-      loveStyle: "You do not open quickly, but once trust is earned, your devotion is deep and durable. You need a partner who walks beside you without forcing the door."
+    en: {
+      goodReason(self, other) {
+        return `${other.name.en} does not punish your ${self.wound.en}; they meet it with ${other.gift.en}. Instead of fighting for the same spotlight, this pairing lets both sides recover, breathe, and feel useful without turning love into a scoreboard.`;
+      },
+      badReason(self, other) {
+        return `${other.name.en} easily collides with your ${self.wound.en} through their ${other.shadow.en}. The chemistry may feel exciting at first, but the longer it runs, the more both shadows amplify each other until affection becomes a contest.`;
+      },
+      secret(other) {
+        return `Name ${other.name.en}'s ${other.gift.en} before asking for anything.`;
+      },
+      advice(other) {
+        return `With ${other.name.en}, slow down and state one boundary before the mood turns into a trial.`;
+      },
+      loveStyle(self) {
+        return `Your love pattern changes around your ${self.wound.en}. When you overperform, hint, or protect yourself too hard, your ${self.gift.en} starts looking like a defense mechanism. The right partner reads the fear underneath and helps you feel wanted without forcing you to audition for affection.`;
+      },
+      loveAdvice(self) {
+        return `Today's move: pause your ${self.shadow.en}, then ask for one concrete kind of reassurance. Directness will feel scary, but it is cheaper than another emotional performance.`;
+      }
     },
-    "Frightened Toy Poodle": {
-      goodMatch: [
-        { name: "Aggressive Solo Wolf", reason: "Decisive and steady" },
-        { name: "Showy Creative Peacock", reason: "Warmth melts worry" }
-      ],
-      badMatch: [
-        { name: "Frightened Toy Poodle", reason: "Anxiety echoes" },
-        { name: "Watch-Me Baby Chick", reason: "Both keep waiting" }
-      ],
-      loveStyle: "You attach deeply when someone feels safe. Gentle leadership, clear affection, and small promises help you relax into love without feeling abandoned."
+    ko: {
+      goodReason(self, other) {
+        return `${other.name.ko}${koJosa(other.name.ko, "eun")} 당신 안의 '${self.wound.ko}'${koJosa(self.wound.ko, "eul")} 비난하지 않고, ${other.gift.ko}${koJosa(other.gift.ko, "ro")} 받아 줍니다. 같은 관심을 빼앗기보다 서로의 부족한 부분을 보완하니, 과장된 어필보다 회복감이 먼저 생기기 쉬운 조합입니다.`;
+      },
+      badReason(self, other) {
+        return `${other.name.ko}${koJosa(other.name.ko, "eun")} 당신 안의 '${self.wound.ko}'에 ${other.shadow.ko}${koJosa(other.shadow.ko, "eul")} 부딪치기 쉽습니다. 처음엔 강렬해 보여도 시간이 갈수록 서로의 약점을 키워, 애정이 확인이 아니라 경쟁처럼 변할 위험이 큽니다.`;
+      },
+      secret(other) {
+        return `${other.name.ko}의 ${other.gift.ko}${koJosa(other.gift.ko, "eul")} 먼저 인정하면 관계가 훨씬 부드러워집니다.`;
+      },
+      advice(other) {
+        return `${other.name.ko}${koJosa(other.name.ko, "gwa")}는 이기려 하지 말고, 필요한 거리와 기준을 짧게 말하세요.`;
+      },
+      loveStyle(self) {
+        return `당신의 연애는 '${self.wound.ko}'${koJosa(self.wound.ko, "eul")} 어떻게 다루느냐에 따라 크게 달라집니다. 강한 척하거나 눈치채 주길 기다리면 ${self.gift.ko}${koJosa(self.gift.ko, "i")} 방어처럼 보일 수 있습니다. 좋은 상대는 그 불안을 웃어넘기지 않고 조용히 번역해 주는 사람입니다.`;
+      },
+      loveAdvice(self) {
+        return `오늘의 한 수는 ${self.shadow.ko}${koJosa(self.shadow.ko, "eul")} 잠깐 멈추고, 원하는 반응을 한 문장으로 말하는 것입니다. 설명할 용기가 관계를 오래 살립니다.`;
+      }
     },
-    "Sly Protector Koala": {
-      goodMatch: [
-        { name: "Showy Creative Peacock", reason: "Adds playful courage" },
-        { name: "Emo-Star Wannabe", reason: "Warms your defenses" }
-      ],
-      badMatch: [
-        { name: "Sly Protector Koala", reason: "Both overcalculate" },
-        { name: "Rational Rule Police Dog", reason: "Rules get too tight" }
-      ],
-      loveStyle: "You move carefully, always checking where it is safe to stand. With someone warm and funny, your protective side turns into quiet loyalty."
-    },
-    "Emo-Star Wannabe": {
-      goodMatch: [
-        { name: "Rational Rule Police Dog", reason: "Grounds your emotions" },
-        { name: "Aloof Pastel Black Cat", reason: "Receives your mood" }
-      ],
-      badMatch: [
-        { name: "Emo-Star Wannabe", reason: "Reaction hunger doubles" },
-        { name: "Showy Creative Peacock", reason: "Spotlight rivalry" }
-      ],
-      loveStyle: "You want romance to feel meaningful, almost cinematic. A partner who respects your emotions while keeping life practical helps your heart breathe."
-    },
-    "Aloof Pastel Black Cat": {
-      goodMatch: [
-        { name: "Whining Pomeranian", reason: "Honesty softens you" },
-        { name: "Viral-Desperate Chihuahua", reason: "Love is easy to read" }
-      ],
-      badMatch: [
-        { name: "Aloof Pastel Black Cat", reason: "Distance never closes" },
-        { name: "Edgy Solo Hedgehog", reason: "Too many sharp edges" }
-      ],
-      loveStyle: "You protect your private world and need room to remain yourself. You fall for someone who does not invade, yet still makes affection unmistakable."
-    },
-    "Watch-Me Baby Chick": {
-      goodMatch: [
-        { name: "Edgy Solo Hedgehog", reason: "Brings direction" },
-        { name: "Aggressive Solo Wolf", reason: "Strong and reliable" }
-      ],
-      badMatch: [
-        { name: "Watch-Me Baby Chick", reason: "Nobody moves first" },
-        { name: "Frightened Toy Poodle", reason: "Dependence piles up" }
-      ],
-      loveStyle: "You bloom when you feel cherished. A reliable partner gives you the safety to stop waiting passively and begin returning affection in your own rhythm."
-    },
-    "Low-Energy Panda": {
-      goodMatch: [
-        { name: "Credit-Claiming Parrot", reason: "Brings outside sparks" },
-        { name: "Flexing Charging Lion", reason: "Moves stale air" }
-      ],
-      badMatch: [
-        { name: "Low-Energy Panda", reason: "Nothing changes" },
-        { name: "Hermit Snail", reason: "Too closed together" }
-      ],
-      loveStyle: "You prefer a calm bond over dramatic romance. Someone who brings a little fresh air, without disturbing your pace, makes everyday love feel wider."
-    },
-    "Flexing Charging Lion": {
-      goodMatch: [
-        { name: "Low-Energy Panda", reason: "Cools your fire" },
-        { name: "Frightened Toy Poodle", reason: "Lets you protect" }
-      ],
-      badMatch: [
-        { name: "Flexing Charging Lion", reason: "Power battle starts" },
-        { name: "Credit-Claiming Parrot", reason: "Approval war" }
-      ],
-      loveStyle: "You chase progress even in love and can turn affection into a mission. A calm partner helps your strength become protection instead of performance."
-    },
-    "Aggressive Solo Wolf": {
-      goodMatch: [
-        { name: "Watch-Me Baby Chick", reason: "Softens your drive" },
-        { name: "Frightened Toy Poodle", reason: "Trust steadies you" }
-      ],
-      badMatch: [
-        { name: "Aggressive Solo Wolf", reason: "Competition never ends" },
-        { name: "Edgy Solo Hedgehog", reason: "Both refuse to bend" }
-      ],
-      loveStyle: "You rush forward with intense standards and may forget tenderness. Being trusted by someone gentle turns love from a battle into a shared project."
-    },
-    "Credit-Claiming Parrot": {
-      goodMatch: [
-        { name: "Low-Energy Panda", reason: "Quiet balances noise" },
-        { name: "Aloof Pastel Black Cat", reason: "Sees past the show" }
-      ],
-      badMatch: [
-        { name: "Credit-Claiming Parrot", reason: "Talk steals the room" },
-        { name: "Flexing Charging Lion", reason: "Status fight escalates" }
-      ],
-      loveStyle: "You like being noticed, but you are really searching for a secure perch. Someone who hears your real fear beneath the noise can calm your showmanship."
-    },
-    "Rational Rule Police Dog": {
-      goodMatch: [
-        { name: "Emo-Star Wannabe", reason: "Adds emotional color" },
-        { name: "Whining Pomeranian", reason: "Softens your logic" }
-      ],
-      badMatch: [
-        { name: "Rational Rule Police Dog", reason: "Monitoring doubles" },
-        { name: "Sly Protector Koala", reason: "Defenses get thicker" }
-      ],
-      loveStyle: "You value promises, fairness, and clear rules in love. With an emotionally open partner, you learn that kindness can matter as much as being right."
-    },
-    "Showy Creative Peacock": {
-      goodMatch: [
-        { name: "Sly Protector Koala", reason: "Keeps you grounded" },
-        { name: "Frightened Toy Poodle", reason: "Gives warm attachment" }
-      ],
-      badMatch: [
-        { name: "Showy Creative Peacock", reason: "Stage rivalry" },
-        { name: "Emo-Star Wannabe", reason: "Needs inflate" }
-      ],
-      loveStyle: "You want romance to sparkle and be witnessed. A grounded partner keeps the shine from burning out, turning applause into a livable bond."
-    },
-    "Edgy Solo Hedgehog": {
-      goodMatch: [
-        { name: "Watch-Me Baby Chick", reason: "Creates tenderness" },
-        { name: "Whining Pomeranian", reason: "Gentleness disarms you" }
-      ],
-      badMatch: [
-        { name: "Edgy Solo Hedgehog", reason: "Spikes multiply" },
-        { name: "Aggressive Solo Wolf", reason: "Head-on collision" }
-      ],
-      loveStyle: "You guard your path fiercely and resist being reshaped. Love reaches you when someone accepts your edge without trying to win against it."
-    },
-    "Viral-Desperate Chihuahua": {
-      goodMatch: [
-        { name: "Aloof Pastel Black Cat", reason: "Gives calm boundaries" },
-        { name: "Hermit Snail", reason: "Shares quiet balance" }
-      ],
-      badMatch: [
-        { name: "Viral-Desperate Chihuahua", reason: "Panic accelerates" },
-        { name: "Frightened Toy Poodle", reason: "Neediness crowds in" }
-      ],
-      loveStyle: "You want fast proof of love and may bark for reassurance. A calm partner with kind boundaries helps your affection become steady instead of frantic."
-    },
-    "Stubborn Unique Boar": {
-      goodMatch: [
-        { name: "Emo-Star Wannabe", reason: "Brings soft empathy" },
-        { name: "Credit-Claiming Parrot", reason: "Connects you outward" }
-      ],
-      badMatch: [
-        { name: "Stubborn Unique Boar", reason: "Stubbornness locks in" },
-        { name: "Edgy Solo Hedgehog", reason: "Neither yields" }
-      ],
-      loveStyle: "You protect your identity even in romance. A partner who can laugh with you, not correct you, gives you room to loosen your stance."
+    zh: {
+      goodReason(self, other) {
+        return `${other.name.zh}不会责怪你的「${self.wound.zh}」，反而会用${other.gift.zh}接住你。你们不太会抢同一份关注，反而容易互补，让关系从表演和逞强里慢慢恢复呼吸感。`;
+      },
+      badReason(self, other) {
+        return `${other.name.zh}很容易用${other.shadow.zh}撞上你的「${self.wound.zh}」。一开始也许很有火花，但相处越久，彼此的弱点越会被放大，爱意会慢慢变成较劲。`;
+      },
+      secret(other) {
+        return `先说出${other.name.zh}的${other.gift.zh}，关系温度会明显上升。`;
+      },
+      advice(other) {
+        return `和${other.name.zh}相处时，不要急着分输赢，先把界线说清楚。`;
+      },
+      loveStyle(self) {
+        return `你的恋爱模式取决于如何处理「${self.wound.zh}」。越是逞强、暗示、保护自己，${self.gift.zh}就越容易被误解成防御。真正适合你的人，会读懂你笨拙的确认需求，而不是逼你继续表演。`;
+      },
+      loveAdvice(self) {
+        return `今天的行动：先停下${self.shadow.zh}，再用一句话说出你想要的回应。关系能长久，靠的不是演出，而是说明白的勇气。`;
+      }
     }
-  },
-  ko: {
-    "관심종자형 포메라니안": {
-      goodMatch: [
-        { name: "고고한 파스텔 검은 고양이", reason: "차분함이 불안을 달래요" },
-        { name: "합리적 규칙 경찰 시바견", reason: "현실감이 안심을 줘요" }
-      ],
-      badMatch: [
-        { name: "관심종자형 포메라니안", reason: "인정 대기가 겹쳐요" },
-        { name: "마운팅 돌격 사자", reason: "압박에 눌리기 쉬워요" }
-      ],
-      loveStyle: "당신은 칭찬받고 싶은 마음을 숨기지만, 다정한 한마디에 하루가 달라지는 타입입니다. 꾸준히 바라봐 주는 사랑에서 가장 편안해집니다."
-    },
-    "껍질 속에 숨는 자율 달팽이": {
-      goodMatch: [
-        { name: "의존성 관심 갈구 치와와", reason: "감정 표현을 끌어내요" },
-        { name: "감성 갈망 인플루언서 꿈나무", reason: "껍질을 부드럽게 해요" }
-      ],
-      badMatch: [
-        { name: "껍질 속에 숨는 자율 달팽이", reason: "침묵이 벽이 돼요" },
-        { name: "독불장군 질주 고슴도치", reason: "고집이 충돌해요" }
-      ],
-      loveStyle: "당신은 쉽게 마음을 열지 않지만, 믿음이 생기면 오래 깊게 곁을 지키는 타입입니다. 서두르지 않고 나란히 걸어주는 사랑이 잘 맞습니다."
-    },
-    "겁먹은 응석받이 토이푸들": {
-      goodMatch: [
-        { name: "무자각 매니악 늑대", reason: "결단력으로 지켜줘요" },
-        { name: "거들먹거리는 크리에이티브 공작", reason: "밝음이 불안을 녹여요" }
-      ],
-      badMatch: [
-        { name: "겁먹은 응석받이 토이푸들", reason: "불안이 서로 울려요" },
-        { name: "보살핌 대기조 삐약이", reason: "기다림만 늘어나요" }
-      ],
-      loveStyle: "당신은 안전하다고 느끼면 마음을 깊이 맡기는 타입입니다. 부드러운 리드와 자주 확인되는 애정이 있을수록 편안하게 자신감을 회복합니다."
-    },
-    "처세 좋은 보신 코알라": {
-      goodMatch: [
-        { name: "거들먹거리는 크리에이티브 공작", reason: "즐거움이 방어를 풀어요" },
-        { name: "감성 갈망 인플루언서 꿈나무", reason: "감정 온도를 더해요" }
-      ],
-      badMatch: [
-        { name: "처세 좋은 보신 코알라", reason: "서로 눈치만 봐요" },
-        { name: "합리적 규칙 경찰 시바견", reason: "정론이 답답해져요" }
-      ],
-      loveStyle: "당신은 다치지 않을 위치를 살피며 사랑을 시작하는 타입입니다. 믿을 수 있는 사람에게는 의외로 다정하고, 안정과 웃음이 함께할 때 오래갑니다."
-    },
-    "감성 갈망 인플루언서 꿈나무": {
-      goodMatch: [
-        { name: "합리적 규칙 경찰 시바견", reason: "현실을 잡아줘요" },
-        { name: "고고한 파스텔 검은 고양이", reason: "감성을 조용히 받아줘요" }
-      ],
-      badMatch: [
-        { name: "감성 갈망 인플루언서 꿈나무", reason: "반응 갈증이 커져요" },
-        { name: "거들먹거리는 크리에이티브 공작", reason: "주목 경쟁이 돼요" }
-      ],
-      loveStyle: "당신은 사랑에서도 의미와 서사를 찾는 타입입니다. 감정을 가볍게 여기지 않으면서 현실도 챙겨주는 사람에게 깊이 끌립니다."
-    },
-    "고고한 파스텔 검은 고양이": {
-      goodMatch: [
-        { name: "관심종자형 포메라니안", reason: "솔직함이 마음을 열어요" },
-        { name: "의존성 관심 갈구 치와와", reason: "애정 표현이 선명해요" }
-      ],
-      badMatch: [
-        { name: "고고한 파스텔 검은 고양이", reason: "거리가 좁혀지지 않아요" },
-        { name: "독불장군 질주 고슴도치", reason: "가시가 서로 찔러요" }
-      ],
-      loveStyle: "당신은 자기 세계를 소중히 여기며, 사랑에서도 여백을 잃고 싶지 않은 타입입니다. 침범하지 않되 애정을 분명히 보여주는 사람에게 약합니다."
-    },
-    "보살핌 대기조 삐약이": {
-      goodMatch: [
-        { name: "독불장군 질주 고슴도치", reason: "주도성을 비춰줘요" },
-        { name: "무자각 매니악 늑대", reason: "든든한 추진력이 있어요" }
-      ],
-      badMatch: [
-        { name: "보살핌 대기조 삐약이", reason: "둘 다 기다리기만 해요" },
-        { name: "겁먹은 응석받이 토이푸들", reason: "의존이 커지기 쉬워요" }
-      ],
-      loveStyle: "당신은 소중히 여겨진다는 확신이 있을 때 매력이 피어나는 타입입니다. 믿음직한 상대 곁에서 안정감을 얻으면 애정도 천천히 되돌려줍니다."
-    },
-    "마이웨이 방구석 판다": {
-      goodMatch: [
-        { name: "공치사 어필 앵무새", reason: "바깥 자극을 가져와요" },
-        { name: "마운팅 돌격 사자", reason: "정체를 움직여줘요" }
-      ],
-      badMatch: [
-        { name: "마이웨이 방구석 판다", reason: "변화가 거의 없어요" },
-        { name: "껍질 속에 숨는 자율 달팽이", reason: "닫힌 공기가 길어져요" }
-      ],
-      loveStyle: "당신은 과한 드라마보다 생활 온도가 맞는 사랑을 선호합니다. 상대가 바깥의 신선함을 조금 가져오면 일상이 편안하게 넓어집니다."
-    },
-    "마운팅 돌격 사자": {
-      goodMatch: [
-        { name: "마이웨이 방구석 판다", reason: "열기를 식혀줘요" },
-        { name: "겁먹은 응석받이 토이푸들", reason: "지켜줄 기쁨을 줘요" }
-      ],
-      badMatch: [
-        { name: "마운팅 돌격 사자", reason: "주도권 싸움이 돼요" },
-        { name: "공치사 어필 앵무새", reason: "인정 경쟁이 세져요" }
-      ],
-      loveStyle: "당신은 사랑에서도 전력으로 승부수를 찾는 타입입니다. 차분히 받아주는 사람이 있으면 과시하던 힘이 지켜주는 힘으로 바뀝니다."
-    },
-    "무자각 매니악 늑대": {
-      goodMatch: [
-        { name: "보살핌 대기조 삐약이", reason: "부드러움을 깨워요" },
-        { name: "겁먹은 응석받이 토이푸들", reason: "신뢰가 안정시켜요" }
-      ],
-      badMatch: [
-        { name: "무자각 매니악 늑대", reason: "경쟁이 끝나지 않아요" },
-        { name: "독불장군 질주 고슴도치", reason: "둘 다 굽히지 않아요" }
-      ],
-      loveStyle: "당신은 좋아하는 사람에게도 강한 열량으로 달려가는 타입입니다. 누군가가 믿고 기대면 서툰 다정함이 나오고, 사랑이 경쟁에서 협력으로 바뀝니다."
-    },
-    "공치사 어필 앵무새": {
-      goodMatch: [
-        { name: "마이웨이 방구석 판다", reason: "소란을 중화해요" },
-        { name: "고고한 파스텔 검은 고양이", reason: "허세를 알아봐줘요" }
-      ],
-      badMatch: [
-        { name: "공치사 어필 앵무새", reason: "화제 쟁탈전이 돼요" },
-        { name: "마운팅 돌격 사자", reason: "평가 싸움이 커져요" }
-      ],
-      loveStyle: "당신은 주목받고 싶어 하지만 사실 안전한 자리를 찾고 있습니다. 소란 아래의 불안을 조용히 들어주는 사람에게 허세가 풀립니다."
-    },
-    "합리적 규칙 경찰 시바견": {
-      goodMatch: [
-        { name: "감성 갈망 인플루언서 꿈나무", reason: "감정 색을 더해줘요" },
-        { name: "관심종자형 포메라니안", reason: "논리를 부드럽게 해요" }
-      ],
-      badMatch: [
-        { name: "합리적 규칙 경찰 시바견", reason: "감시가 두 배가 돼요" },
-        { name: "처세 좋은 보신 코알라", reason: "방어선이 두꺼워져요" }
-      ],
-      loveStyle: "당신은 약속과 기준을 중요하게 여기는 타입입니다. 감정 표현이 풍부한 상대와 만나면 옳음뿐 아니라 다정함도 선택할 수 있습니다."
-    },
-    "거들먹거리는 크리에이티브 공작": {
-      goodMatch: [
-        { name: "처세 좋은 보신 코알라", reason: "현실감을 잡아줘요" },
-        { name: "겁먹은 응석받이 토이푸들", reason: "따뜻한 애착을 줘요" }
-      ],
-      badMatch: [
-        { name: "거들먹거리는 크리에이티브 공작", reason: "무대 경쟁이 돼요" },
-        { name: "감성 갈망 인플루언서 꿈나무", reason: "반응 의존이 커져요" }
-      ],
-      loveStyle: "당신은 사랑에서도 표현과 설렘을 원합니다. 박수뿐 아니라 일상의 기반을 잡아주는 사람과 함께할 때 화려함이 오래 유지됩니다."
-    },
-    "독불장군 질주 고슴도치": {
-      goodMatch: [
-        { name: "보살핌 대기조 삐약이", reason: "지켜줄 여백이 생겨요" },
-        { name: "관심종자형 포메라니안", reason: "부드러움이 가시를 빼요" }
-      ],
-      badMatch: [
-        { name: "독불장군 질주 고슴도치", reason: "가시가 더 늘어나요" },
-        { name: "무자각 매니악 늑대", reason: "정면충돌이 잦아요" }
-      ],
-      loveStyle: "당신은 사랑에서도 자기 길을 쉽게 굽히지 않는 타입입니다. 약한 모습을 보여도 받아주는 사람에게만 날카로운 마음을 조금 맡깁니다."
-    },
-    "의존성 관심 갈구 치와와": {
-      goodMatch: [
-        { name: "고고한 파스텔 검은 고양이", reason: "차분한 경계를 줘요" },
-        { name: "껍질 속에 숨는 자율 달팽이", reason: "고요한 균형을 줘요" }
-      ],
-      badMatch: [
-        { name: "의존성 관심 갈구 치와와", reason: "불안이 빨라져요" },
-        { name: "겁먹은 응석받이 토이푸들", reason: "응석이 과밀해져요" }
-      ],
-      loveStyle: "당신은 좋아할수록 확인받고 싶어지는 타입입니다. 차분한 상대가 다정한 경계선을 보여주면 애정 표현이 조급함 대신 안정으로 바뀝니다."
-    },
-    "고집불통 마이캐릭터 흑돼지": {
-      goodMatch: [
-        { name: "감성 갈망 인플루언서 꿈나무", reason: "부드러운 공감을 줘요" },
-        { name: "공치사 어필 앵무새", reason: "바깥 연결을 도와요" }
-      ],
-      badMatch: [
-        { name: "고집불통 마이캐릭터 흑돼지", reason: "고집 싸움이 돼요" },
-        { name: "독불장군 질주 고슴도치", reason: "서로 양보가 없어요" }
-      ],
-      loveStyle: "당신은 자기다움을 지킬수록 사랑에서도 완고해지는 타입입니다. 부정하지 않고 웃으며 들어주는 상대에게 조금씩 다가갈 여유가 생깁니다."
-    }
-  },
-  zh: {
-    "求关注型博美犬": {
-      goodMatch: [
-        { name: "高冷的粉彩黑猫", reason: "安静感能抚平不安" },
-        { name: "理性规则哨兵柴犬", reason: "现实感让人安心" }
-      ],
-      badMatch: [
-        { name: "求关注型博美犬", reason: "彼此都等着被夸" },
-        { name: "炫耀突击狂暴狮", reason: "容易被气势压倒" }
-      ],
-      loveStyle: "你是会把想被肯定藏起来的人，但一句温柔回应就能点亮整天。稳定、不做作的关注，会让你慢慢安心地撒娇。"
-    },
-    "隐居自律小蜗牛": {
-      goodMatch: [
-        { name: "病态求关注的抖动吉娃娃", reason: "能带出情绪表达" },
-        { name: "渴望情怀的预备网红", reason: "会软化你的外壳" }
-      ],
-      badMatch: [
-        { name: "隐居自律小蜗牛", reason: "沉默会变成墙" },
-        { name: "独来独往的狂奔刺猬", reason: "自尊容易相撞" }
-      ],
-      loveStyle: "你是不轻易敞开心的人，但一旦信任，就会认真而长久地陪伴。比起催促，你更适合慢慢并肩前行的关系。"
-    },
-    "胆怯撒娇贵宾犬": {
-      goodMatch: [
-        { name: "无意识狂热孤狼", reason: "决断力让你安定" },
-        { name: "得意洋洋的文艺孔雀", reason: "明亮感融化不安" }
-      ],
-      badMatch: [
-        { name: "胆怯撒娇贵宾犬", reason: "焦虑会互相回响" },
-        { name: "求关注的孵化小鸡", reason: "两个人都在等" }
-      ],
-      loveStyle: "你是只要感到安全就会深深依赖的类型。温柔的带领、清楚的爱意和小小承诺，会让你慢慢找回自信。"
-    },
-    "善于保身的树袋熊": {
-      goodMatch: [
-        { name: "得意洋洋的文艺孔雀", reason: "快乐会拆掉防备" },
-        { name: "渴望情怀的预备网红", reason: "能补上情绪温度" }
-      ],
-      badMatch: [
-        { name: "善于保身的树袋熊", reason: "容易互相试探" },
-        { name: "理性规则哨兵柴犬", reason: "正确感太窒息" }
-      ],
-      loveStyle: "你是会先找安全位置再开始恋爱的人。遇到值得信任又有幽默感的对象，你会展现出意外细腻的照顾。"
-    },
-    "渴望情怀的预备网红": {
-      goodMatch: [
-        { name: "理性规则哨兵柴犬", reason: "能帮你落回现实" },
-        { name: "高冷的粉彩黑猫", reason: "能安静接住情绪" }
-      ],
-      badMatch: [
-        { name: "渴望情怀的预备网红", reason: "反应饥饿会放大" },
-        { name: "得意洋洋的文艺孔雀", reason: "会争夺聚光灯" }
-      ],
-      loveStyle: "你是在爱情里也追求意义和故事感的人。既不轻视你的情绪，又能照顾现实的人，最容易让你放下防备。"
-    },
-    "高冷的粉彩黑猫": {
-      goodMatch: [
-        { name: "求关注型博美犬", reason: "坦率会软化你" },
-        { name: "病态求关注的抖动吉娃娃", reason: "爱意表达很清楚" }
-      ],
-      badMatch: [
-        { name: "高冷的粉彩黑猫", reason: "距离很难拉近" },
-        { name: "独来独往的狂奔刺猬", reason: "尖刺会互相伤到" }
-      ],
-      loveStyle: "你很珍惜自己的世界，恋爱中也不想失去余白。不强行闯入，却能明确表达喜欢的人，会悄悄打动你。"
-    },
-    "求关注的孵化小鸡": {
-      goodMatch: [
-        { name: "独来独往的狂奔刺猬", reason: "能照亮方向感" },
-        { name: "无意识狂热孤狼", reason: "有可靠推动力" }
-      ],
-      badMatch: [
-        { name: "求关注的孵化小鸡", reason: "只等不会前进" },
-        { name: "胆怯撒娇贵宾犬", reason: "依赖会越来越重" }
-      ],
-      loveStyle: "你是在被珍惜的确认中绽放的人。可靠的对象会给你安全感，让你不再只是等待，也开始慢慢回馈爱意。"
-    },
-    "我行我素宅地熊猫": {
-      goodMatch: [
-        { name: "抢功大喇叭鹦鹉", reason: "能带来外界刺激" },
-        { name: "炫耀突击狂暴狮", reason: "能推动停滞感" }
-      ],
-      badMatch: [
-        { name: "我行我素宅地熊猫", reason: "关系很难变化" },
-        { name: "隐居自律小蜗牛", reason: "气氛会越来越闭" }
-      ],
-      loveStyle: "你比起戏剧化恋爱，更喜欢生活温度合拍的关系。对方若能轻轻带来新鲜空气，日常就会舒服地变宽。"
-    },
-    "炫耀突击狂暴狮": {
-      goodMatch: [
-        { name: "我行我素宅地熊猫", reason: "能冷却你的热度" },
-        { name: "胆怯撒娇贵宾犬", reason: "会给你守护感" }
-      ],
-      badMatch: [
-        { name: "炫耀突击狂暴狮", reason: "会争主导权" },
-        { name: "抢功大喇叭鹦鹉", reason: "认可竞争会升级" }
-      ],
-      loveStyle: "你在恋爱里也会全力寻找胜利路线，容易把喜欢变成证明自己的舞台。若有人温和接住你，你的强势就能从炫耀变成保护。"
-    },
-    "无意识狂热孤狼": {
-      goodMatch: [
-        { name: "求关注的孵化小鸡", reason: "会唤出温柔面" },
-        { name: "胆怯撒娇贵宾犬", reason: "被信任会稳定" }
-      ],
-      badMatch: [
-        { name: "无意识狂热孤狼", reason: "竞争不会停止" },
-        { name: "独来独往的狂奔刺猬", reason: "谁都不愿让步" }
-      ],
-      loveStyle: "你喜欢一个人时也会带着很强的热量向前冲。被温柔地信任后，爱情会从较劲变成共同推进。"
-    },
-    "抢功大喇叭鹦鹉": {
-      goodMatch: [
-        { name: "我行我素宅地熊猫", reason: "安静能中和喧闹" },
-        { name: "高冷的粉彩黑猫", reason: "能看穿你的逞强" }
-      ],
-      badMatch: [
-        { name: "抢功大喇叭鹦鹉", reason: "话题会被抢来抢去" },
-        { name: "炫耀突击狂暴狮", reason: "地位斗争会变强" }
-      ],
-      loveStyle: "你喜欢被看见，但真正想要的是安全的位置。能听懂你热闹背后不安的人，会让你的逞强慢慢松开。"
-    },
-    "理性规则哨兵柴犬": {
-      goodMatch: [
-        { name: "渴望情怀的预备网红", reason: "能补上情绪色彩" },
-        { name: "求关注型博美犬", reason: "能软化你的逻辑" }
-      ],
-      badMatch: [
-        { name: "理性规则哨兵柴犬", reason: "监控感会加倍" },
-        { name: "善于保身的树袋熊", reason: "防御线会更厚" }
-      ],
-      loveStyle: "你很重视承诺、规则和公平。和情绪表达丰富的人在一起，你会发现温柔有时和正确一样重要。"
-    },
-    "得意洋洋的文艺孔雀": {
-      goodMatch: [
-        { name: "善于保身的树袋熊", reason: "能让你脚踏实地" },
-        { name: "胆怯撒娇贵宾犬", reason: "会给你温暖依恋" }
-      ],
-      badMatch: [
-        { name: "得意洋洋的文艺孔雀", reason: "舞台会互相争夺" },
-        { name: "渴望情怀的预备网红", reason: "反应依赖会变重" }
-      ],
-      loveStyle: "你想要恋爱有光、有表达、有心动。若对方不仅鼓掌，也能稳住生活底盘，你的华丽感会更长久。"
-    },
-    "独来独往的狂奔刺猬": {
-      goodMatch: [
-        { name: "求关注的孵化小鸡", reason: "会产生守护余地" },
-        { name: "求关注型博美犬", reason: "柔软反应会拔刺" }
-      ],
-      badMatch: [
-        { name: "独来独往的狂奔刺猬", reason: "尖刺会变更多" },
-        { name: "无意识狂热孤狼", reason: "容易正面相撞" }
-      ],
-      loveStyle: "你在恋爱里也很难改变自己的路线。只有能接住你脆弱、又不急着改造你的人，才会让你愿意靠近。"
-    },
-    "病态求关注的抖动吉娃娃": {
-      goodMatch: [
-        { name: "高冷的粉彩黑猫", reason: "会给你安静边界" },
-        { name: "隐居自律小蜗牛", reason: "能分享平静感" }
-      ],
-      badMatch: [
-        { name: "病态求关注的抖动吉娃娃", reason: "不安会加速" },
-        { name: "胆怯撒娇贵宾犬", reason: "撒娇会太密集" }
-      ],
-      loveStyle: "你越喜欢越想确认对方的爱。冷静又温柔地设下边界的人，会让你的热情从慌张变成稳定。"
-    },
-    "顽固的人设小野猪": {
-      goodMatch: [
-        { name: "渴望情怀的预备网红", reason: "会带来柔软共情" },
-        { name: "抢功大喇叭鹦鹉", reason: "能帮你连接外界" }
-      ],
-      badMatch: [
-        { name: "顽固的人设小野猪", reason: "会变成固执对抗" },
-        { name: "独来独往的狂奔刺猬", reason: "彼此都不退让" }
-      ],
-      loveStyle: "你越想守住自我，恋爱里越容易变得固执。若对方不否定你，还能笑着听你说，你会慢慢愿意靠近。"
-    }
+  };
+
+  function koJosa(text, type) {
+    const chars = Array.from(String(text || "").trim());
+    const last = chars[chars.length - 1] || "";
+    const code = last.charCodeAt(0);
+    const hasBatchim = code >= 0xac00 && code <= 0xd7a3 && ((code - 0xac00) % 28) !== 0;
+    const finalIndex = code >= 0xac00 && code <= 0xd7a3 ? (code - 0xac00) % 28 : 0;
+    if (type === "eul") return hasBatchim ? "을" : "를";
+    if (type === "ro") return hasBatchim && finalIndex !== 8 ? "으로" : "로";
+    if (type === "i") return hasBatchim ? "이" : "가";
+    if (type === "eun") return hasBatchim ? "은" : "는";
+    if (type === "gwa") return hasBatchim ? "과" : "와";
+    return "";
   }
-};
+
+  function makeMatch(lang, code, kind) {
+    const self = TYPES[code];
+    const formatter = COPY[lang];
+    return MATRIX[code][kind].map(otherCode => {
+      const other = TYPES[otherCode];
+      return kind === "good"
+        ? {
+            name: other.name[lang],
+            reason: formatter.goodReason(self, other),
+            secret: formatter.secret(other)
+          }
+        : {
+            name: other.name[lang],
+            reason: formatter.badReason(self, other),
+            advice: formatter.advice(other)
+          };
+    });
+  }
+
+  function makeRecord(lang, code) {
+    const self = TYPES[code];
+    const formatter = COPY[lang];
+    return {
+      goodMatch: makeMatch(lang, code, "good"),
+      badMatch: makeMatch(lang, code, "bad"),
+      loveStyle: formatter.loveStyle(self),
+      loveAdvice: formatter.loveAdvice(self)
+    };
+  }
+
+  function makeLanguageData(lang) {
+    return Object.fromEntries(
+      Object.keys(TYPES).map(code => [TYPES[code].name[lang], makeRecord(lang, code)])
+    );
+  }
+
+  window.COMPATIBILITY_DATA = Object.fromEntries(
+    LANGS.map(lang => [lang, makeLanguageData(lang)])
+  );
+})();
