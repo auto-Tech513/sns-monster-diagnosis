@@ -684,6 +684,15 @@
             display: block;
         }
 
+        .talent-section {
+            display: none;
+            margin: 0 0 20px 0;
+        }
+
+        .talent-section.active {
+            display: block;
+        }
+
         .compatibility-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -755,6 +764,65 @@
             background: linear-gradient(180deg, #FFEAF1 0%, #FFD1DE 100%);
             border-color: var(--primary-pink);
             box-shadow: 0 6px 0 var(--primary-pink);
+        }
+
+        .talent-btn {
+            min-height: 52px;
+            background: linear-gradient(180deg, #FFF5C8 0%, #FFE6A7 100%);
+            border-color: var(--accent-yellow-border);
+            box-shadow: 0 6px 0 var(--accent-yellow-border);
+        }
+
+        .talent-grid {
+            display: grid;
+            gap: 12px;
+        }
+
+        .talent-block,
+        .talent-placeholder {
+            background: #FFFDF0;
+            border: 2px dashed var(--accent-yellow-border);
+            border-radius: 14px;
+            padding: 12px;
+            line-height: 1.6;
+        }
+
+        .talent-block h4 {
+            color: var(--primary-pink-deep);
+            font-size: 0.95rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .talent-block p,
+        .talent-placeholder {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .talent-job-item {
+            padding: 9px 0;
+            border-top: 1px solid rgba(252, 225, 125, 0.75);
+        }
+
+        .talent-job-item:first-of-type {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .talent-job-name {
+            display: block;
+            color: var(--text-dark);
+            font-weight: 900;
+        }
+
+        .talent-job-reason {
+            display: block;
+            margin-top: 3px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 700;
         }
 
         @media (max-width: 480px) {
@@ -1268,6 +1336,8 @@
 
             <div class="cute-card compatibility-section" id="compatibility-section" style="display:none;"></div>
 
+            <div class="cute-card talent-section" id="talent-section" style="display:none;"></div>
+
             <div class="monetize-slot" id="resultAdSlot" aria-label="スポンサーリンク">
                 <span class="monetize-label">スポンサーリンク</span>
             </div>
@@ -1282,6 +1352,9 @@
                 </div>
                 <button class="cute-btn compatibility-btn" id="btn-compatibility" type="button" data-i18n="btnCompatibility" hidden>
                     もう少し覗いてみる？ ¥360
+                </button>
+                <button class="cute-btn talent-btn" id="btnTalent" type="button" data-i18n="btnTalent" hidden>
+                    眠った才能、起こしてみない？ ¥360
                 </button>
                 <button class="cute-btn" id="exportBtn" style="background: var(--accent-mint); border-color: #B2DFEE; box-shadow: 0 6px 0 #B2DFEE;">
                     📸 チェキを画像として保存/共有する
@@ -1353,6 +1426,9 @@
 
     <!-- 有料相性診断データ -->
     <script src="compatibility-data.js?v=20260527-compat"></script>
+
+    <!-- 有料才能診断データ -->
+    <script src="hidden-talent-data.js?v=20260528-talent"></script>
     
     <!-- アプリケーションスクリプト -->
     <script src="app.js?v=20260524-i18n"></script>

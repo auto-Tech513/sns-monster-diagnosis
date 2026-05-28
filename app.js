@@ -47,6 +47,8 @@
     const PREMIUM_STORAGE_KEY = "sns_monster_premium_unlocked";
     const PERMANENT_PAID_STORAGE_KEY = "permanentPaid";
     const COMPAT_PAID_STORAGE_KEY = "compatPaid";
+    const TALENT_PAID_STORAGE_KEY = "talentPaid";
+    const TALENT_STRIPE_URL = "https://buy.stripe.com/aFa7sE5v64WL8Bqb3u8AE02";
     const LAST_RESULT_TYPE_KEY = "lastResultType";
     const LAST_RESULT_TYPE_CODE_KEY = "lastResultTypeCode";
     const LAST_RESULT_SCORE_KEY = "lastResultScore";
@@ -133,6 +135,15 @@
             btnLockPurchase: "✦ ¥120で永久保存して復元",
             orDivider: "─── または ───",
             btnCompatibility: "もう少し覗いてみる？ ¥360",
+            btnTalent: "眠った才能、起こしてみない？ ¥360",
+            sectionTalentTitle: "🌟 眠った才能パック",
+            sectionTalentLocked: "才能データを準備中です。購入後にここへ表示されます。",
+            sectionTalentHidden: "眠った才能",
+            sectionTalentWhy: "なぜその才能なのか",
+            sectionTalentJobs: "向いている仕事",
+            sectionTalentStrength: "弱みの中の強み",
+            sectionTalentFuture: "未来のヒント",
+            sectionTalentAction: "今日の一手",
             sectionCompatTitle: "💖 相性診断結果",
             sectionGoodMatch: "💚 相性◎ タイプ",
             sectionBadMatch: "💔 相性× タイプ",
@@ -219,6 +230,15 @@
             btnLockPurchase: "✦ Restore forever for ¥120",
             orDivider: "─── or ───",
             btnCompatibility: "Want to peek a little more? ¥360",
+            btnTalent: "Wanna wake your sleeping talent? ¥360",
+            sectionTalentTitle: "🌟 Sleeping Talent Pack",
+            sectionTalentLocked: "Talent data is being prepared. It will appear here after purchase.",
+            sectionTalentHidden: "Hidden Talent",
+            sectionTalentWhy: "Why This Fits",
+            sectionTalentJobs: "Ideal Jobs",
+            sectionTalentStrength: "Strength in the Weakness",
+            sectionTalentFuture: "Future Hint",
+            sectionTalentAction: "Action Advice",
             sectionCompatTitle: "💖 Compatibility Results",
             sectionGoodMatch: "💚 Great Match",
             sectionBadMatch: "💔 Clash Type",
@@ -305,6 +325,15 @@
             btnLockPurchase: "✦ ¥120으로 영구 저장 & 복원",
             orDivider: "─── 또는 ───",
             btnCompatibility: "좀 더 들여다볼래? ¥360",
+            btnTalent: "잠든 재능, 깨워볼래? ¥360",
+            sectionTalentTitle: "🌟 잠든 재능 팩",
+            sectionTalentLocked: "재능 데이터는 준비 중입니다. 구매 후 이곳에 표시됩니다.",
+            sectionTalentHidden: "잠든 재능",
+            sectionTalentWhy: "왜 이 재능인가",
+            sectionTalentJobs: "어울리는 일",
+            sectionTalentStrength: "약점 속 강점",
+            sectionTalentFuture: "미래 힌트",
+            sectionTalentAction: "오늘의 한 수",
             sectionCompatTitle: "💖 궁합 진단 결과",
             sectionGoodMatch: "💚 궁합 최고",
             sectionBadMatch: "💔 최악의 궁합",
@@ -391,6 +420,15 @@
             btnLockPurchase: "✦ ¥120永久保存并恢复",
             orDivider: "─── 或者 ───",
             btnCompatibility: "想再窥探一点吗？¥360",
+            btnTalent: "唤醒沉睡的才能？ ¥360",
+            sectionTalentTitle: "🌟 沉睡才能包",
+            sectionTalentLocked: "才能数据正在准备中。购买后会显示在这里。",
+            sectionTalentHidden: "沉睡的才能",
+            sectionTalentWhy: "为什么适合你",
+            sectionTalentJobs: "适合的工作",
+            sectionTalentStrength: "弱点中的强项",
+            sectionTalentFuture: "未来提示",
+            sectionTalentAction: "今日行动",
             sectionCompatTitle: "💖 配对诊断结果",
             sectionGoodMatch: "💚 最佳搭档",
             sectionBadMatch: "💔 冲突类型",
@@ -1042,6 +1080,7 @@
         updatePaidSaveCta();
         updateLockPurchaseCta();
         renderCompatibilitySection();
+        renderTalentSection();
 
         document.documentElement.lang = state.lang;
 
@@ -1148,6 +1187,10 @@
 
     function hasCompatibilityPaid() {
         return localStorage.getItem(COMPAT_PAID_STORAGE_KEY) === 'true';
+    }
+
+    function hasTalentPaid() {
+        return localStorage.getItem(TALENT_PAID_STORAGE_KEY) === 'true';
     }
 
     function updatePaidSaveCta() {
@@ -1284,6 +1327,7 @@
         updatePaidSaveCta();
         updateLockPurchaseCta();
         renderCompatibilitySection();
+        renderTalentSection();
         startChekiParallax();
         persistLastResult(commentBox ? commentBox.textContent.trim() : undefined);
         safeTrack('result_restore', { source, monster_code: state.typeCode || 'none' });
@@ -1291,7 +1335,7 @@
     }
 
     function shouldRestoreStoredResultOnBoot(returnSource) {
-        return Boolean(returnSource || hasCompatibilityPaid() || hasPermanentPaid());
+        return Boolean(returnSource || hasTalentPaid() || hasCompatibilityPaid() || hasPermanentPaid());
     }
 
     function updateCompatibilityCta() {
@@ -1305,7 +1349,22 @@
         btn.textContent = i18n[state.lang].btnCompatibility || i18n.ja.btnCompatibility;
     }
 
+    function updateTalentCta() {
+        const btn = document.getElementById('btnTalent') || document.getElementById('btn-talent');
+        if (!btn) return;
+
+        const shouldShow = Boolean(TALENT_STRIPE_URL) && !hasTalentPaid();
+        btn.hidden = !shouldShow;
+        btn.style.display = shouldShow ? '' : 'none';
+        btn.textContent = i18n[state.lang].btnTalent || i18n.ja.btnTalent;
+    }
+
     function setCompatibilitySectionVisible(section, visible) {
+        section.style.display = visible ? 'block' : 'none';
+        section.classList.toggle('active', visible);
+    }
+
+    function setTalentSectionVisible(section, visible) {
         section.style.display = visible ? 'block' : 'none';
         section.classList.toggle('active', visible);
     }
@@ -1395,6 +1454,100 @@
         }
     }
 
+    function appendTalentBlock(parent, title, content) {
+        const block = document.createElement('div');
+        block.className = 'talent-block';
+
+        const heading = document.createElement('h4');
+        heading.textContent = title;
+        block.appendChild(heading);
+
+        if (Array.isArray(content)) {
+            content.forEach(item => {
+                const row = document.createElement('div');
+                row.className = 'talent-job-item';
+
+                const name = document.createElement('span');
+                name.className = 'talent-job-name';
+                name.textContent = item.name || '';
+
+                const reason = document.createElement('span');
+                reason.className = 'talent-job-reason';
+                reason.textContent = item.reason || '';
+
+                row.append(name, reason);
+                block.appendChild(row);
+            });
+        } else {
+            const text = document.createElement('p');
+            text.textContent = content || '';
+            block.appendChild(text);
+        }
+
+        parent.appendChild(block);
+    }
+
+    function renderTalentSection() {
+        const section = document.getElementById('talent-section');
+        if (!section) return;
+
+        try {
+            if (!hasTalentPaid() || !state.typeCode) {
+                section.innerHTML = '';
+                setTalentSectionVisible(section, false);
+                updateTalentCta();
+                return;
+            }
+
+            const lang = normalizeLang(state.lang);
+            const typeName = getCurrentTypeName('ja');
+
+            if (!window.TALENT_DATA || !window.TALENT_DATA[lang] || !window.TALENT_DATA[lang][typeName]) {
+                const copy = i18n[lang] || i18n.ja;
+                section.innerHTML = '';
+
+                const title = document.createElement('div');
+                title.className = 'result-details-title';
+                title.textContent = copy.sectionTalentTitle;
+
+                const pending = document.createElement('div');
+                pending.className = 'talent-placeholder';
+                pending.textContent = copy.sectionTalentLocked;
+
+                section.append(title, pending);
+                setTalentSectionVisible(section, true);
+                updateTalentCta();
+                return;
+            }
+
+            const copy = i18n[lang] || i18n.ja;
+            const record = window.TALENT_DATA[lang][typeName];
+            section.innerHTML = '';
+
+            const title = document.createElement('div');
+            title.className = 'result-details-title';
+            title.textContent = copy.sectionTalentTitle;
+
+            const body = document.createElement('div');
+            body.className = 'talent-grid';
+            appendTalentBlock(body, copy.sectionTalentHidden, record.hiddenTalent);
+            appendTalentBlock(body, copy.sectionTalentWhy, record.whyThisFits);
+            appendTalentBlock(body, copy.sectionTalentJobs, record.idealJobs || []);
+            appendTalentBlock(body, copy.sectionTalentStrength, record.strengthInWeakness);
+            appendTalentBlock(body, copy.sectionTalentFuture, record.futureHint);
+            appendTalentBlock(body, copy.sectionTalentAction, record.actionAdvice);
+
+            section.append(title, body);
+            setTalentSectionVisible(section, true);
+            updateTalentCta();
+        } catch (err) {
+            console.warn('Talent section could not be rendered:', err);
+            section.innerHTML = '';
+            setTalentSectionVisible(section, false);
+            updateTalentCta();
+        }
+    }
+
     function goToPermanentSaveCheckout(source) {
         const paidConfig = getPaidPremiumConfig();
         if (!paidConfig.enabled) {
@@ -1423,6 +1576,20 @@
             monster_code: state.typeCode || 'none'
         });
         window.location.assign(buildStripeUrlWithLocale(compatConfig.stripeUrl));
+    }
+
+    function goToTalentCheckout(source) {
+        if (!TALENT_STRIPE_URL) {
+            updateTalentCta();
+            return;
+        }
+
+        safeTrack('paid_talent_click', {
+            price_yen: 360,
+            source,
+            monster_code: state.typeCode || 'none'
+        });
+        window.location.assign(buildStripeUrlWithLocale(TALENT_STRIPE_URL));
     }
 
     function hasConsent() {
@@ -1586,13 +1753,14 @@
         setupEventListeners();
         const paidReturn = handlePaidReturn();
         const compatibilityReturn = handleCompatibilityReturn();
+        const talentReturn = handleTalentReturn();
         loadPremiumState();
         setupConsentControls();
 
         // 初回の年齢層インジェクション
         updateLanguage();
-        if (shouldRestoreStoredResultOnBoot(paidReturn || compatibilityReturn)) {
-            restoreLastResultView(paidReturn ? 'paid_return' : compatibilityReturn ? 'compatibility_return' : 'stored_paid_result');
+        if (shouldRestoreStoredResultOnBoot(paidReturn || compatibilityReturn || talentReturn)) {
+            restoreLastResultView(paidReturn ? 'paid_return' : compatibilityReturn ? 'compatibility_return' : talentReturn ? 'talent_return' : 'stored_paid_result');
         }
         showConsentBannerIfNeeded();
         enableMeasurementAndAds();
@@ -1658,6 +1826,17 @@
 
         localStorage.setItem(COMPAT_PAID_STORAGE_KEY, 'true');
         params.delete('compat');
+        const nextUrl = `${window.location.pathname}${params.toString() ? `?${params}` : ''}${window.location.hash}`;
+        window.history.replaceState({}, document.title, nextUrl || window.location.pathname);
+        return true;
+    }
+
+    function handleTalentReturn() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('talent') !== '1') return false;
+
+        localStorage.setItem(TALENT_PAID_STORAGE_KEY, 'true');
+        params.delete('talent');
         const nextUrl = `${window.location.pathname}${params.toString() ? `?${params}` : ''}${window.location.hash}`;
         window.history.replaceState({}, document.title, nextUrl || window.location.pathname);
         return true;
@@ -1767,6 +1946,13 @@
         if (compatibilityBtn) {
             compatibilityBtn.addEventListener('click', () => {
                 goToCompatibilityCheckout('result_screen');
+            });
+        }
+
+        const talentBtn = document.getElementById('btnTalent') || document.getElementById('btn-talent');
+        if (talentBtn) {
+            talentBtn.addEventListener('click', () => {
+                goToTalentCheckout('result_screen');
             });
         }
 
@@ -2348,6 +2534,7 @@
         });
 
         renderCompatibilitySection();
+        renderTalentSection();
     }
 
     // ==========================================
