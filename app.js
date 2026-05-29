@@ -1342,6 +1342,9 @@
         renderTalentSection();
         startChekiParallax();
         persistLastResult(commentBox ? commentBox.textContent.trim() : undefined);
+        // 復元ビュー（課金済み/購入からの復帰）では無料体験カウントダウンのバナーは表示しない
+        const restoredCountdownBanner = document.getElementById('countdownBanner');
+        if (restoredCountdownBanner) restoredCountdownBanner.style.display = 'none';
         safeTrack('result_restore', { source, monster_code: state.typeCode || 'none' });
         return true;
     }
