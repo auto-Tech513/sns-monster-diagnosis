@@ -1365,7 +1365,8 @@
         const btn = document.getElementById('btnTalent') || document.getElementById('btn-talent');
         if (!btn) return;
 
-        const shouldShow = Boolean(TALENT_STRIPE_URL) && !hasTalentPaid();
+        // 才能パックは「相性パック購入済み」の人にのみ表示（段階的アップセル導線）
+        const shouldShow = Boolean(TALENT_STRIPE_URL) && hasCompatibilityPaid() && !hasTalentPaid();
         btn.hidden = !shouldShow;
         btn.style.display = shouldShow ? '' : 'none';
         btn.textContent = i18n[state.lang].btnTalent || i18n.ja.btnTalent;
