@@ -48,6 +48,8 @@
     const PERMANENT_PAID_STORAGE_KEY = "permanentPaid";
     const COMPAT_PAID_STORAGE_KEY = "compatPaid";
     const TALENT_PAID_STORAGE_KEY = "talentPaid";
+    const COMPAT_PAID_TYPES_KEY = "compatPaidTypes";
+    const TALENT_PAID_TYPES_KEY = "talentPaidTypes";
     const TALENT_STRIPE_URL = "https://buy.stripe.com/aFa7sE5v64WL8Bqb3u8AE02";
     const LAST_RESULT_TYPE_KEY = "lastResultType";
     const LAST_RESULT_TYPE_CODE_KEY = "lastResultTypeCode";
@@ -1197,12 +1199,30 @@
         return localStorage.getItem(PERMANENT_PAID_STORAGE_KEY) === 'true';
     }
 
+    function readPaidTypeList(key) {
+        try { const v = JSON.parse(localStorage.getItem(key) || "[]"); return Array.isArray(v) ? v : []; }
+        catch (err) { return []; }
+    }
+
+    function addPaidType(key, typeCode) {
+        if (!typeCode) return;
+        const list = readPaidTypeList(key);
+        if (!list.includes(typeCode)) {
+            list.push(typeCode);
+            try { localStorage.setItem(key, JSON.stringify(list)); } catch (err) {}
+        }
+    }
+
+    function hasAnyCompatibilityPaid() { return readPaidTypeList(COMPAT_PAID_TYPES_KEY).length > 0; }
+    function hasAnyTalentPaid() { return readPaidTypeList(TALENT_PAID_TYPES_KEY).length > 0; }
+
+    // 課金は「購入時に診断していたタイプ」に紐付く。別タイプは未購入扱い。
     function hasCompatibilityPaid() {
-        return localStorage.getItem(COMPAT_PAID_STORAGE_KEY) === 'true';
+        return Boolean(state.typeCode) && readPaidTypeList(COMPAT_PAID_TYPES_KEY).includes(state.typeCode);
     }
 
     function hasTalentPaid() {
-        return localStorage.getItem(TALENT_PAID_STORAGE_KEY) === 'true';
+        return Boolean(state.typeCode) && readPaidTypeList(TALENT_PAID_TYPES_KEY).includes(state.typeCode);
     }
 
     function updatePaidSaveCta() {
@@ -1350,7 +1370,7 @@
     }
 
     function shouldRestoreStoredResultOnBoot(returnSource) {
-        return Boolean(returnSource || hasTalentPaid() || hasCompatibilityPaid() || hasPermanentPaid());
+        return Boolean(returnSource || hasAnyTalentPaid() || hasAnyCompatibilityPaid() || hasPermanentPaid());
     }
 
     function updateCompatibilityCta() {
@@ -1871,7 +1891,7 @@
         const params = new URLSearchParams(window.location.search);
         if (params.get('compat') !== '1') return false;
 
-        localStorage.setItem(COMPAT_PAID_STORAGE_KEY, 'true');
+        addPaidType(COMPAT_PAID_TYPES_KEY, resolveTypeCodeFromSavedResult(readLastResult()));
         params.delete('compat');
         const nextUrl = `${window.location.pathname}${params.toString() ? `?${params}` : ''}${window.location.hash}`;
         window.history.replaceState({}, document.title, nextUrl || window.location.pathname);
@@ -1882,7 +1902,7 @@
         const params = new URLSearchParams(window.location.search);
         if (params.get('talent') !== '1') return false;
 
-        localStorage.setItem(TALENT_PAID_STORAGE_KEY, 'true');
+        addPaidType(TALENT_PAID_TYPES_KEY, resolveTypeCodeFromSavedResult(readLastResult()));
         params.delete('talent');
         const nextUrl = `${window.location.pathname}${params.toString() ? `?${params}` : ''}${window.location.hash}`;
         window.history.replaceState({}, document.title, nextUrl || window.location.pathname);
