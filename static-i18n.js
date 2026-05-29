@@ -284,7 +284,9 @@
             return;
         }
 
-        main.innerHTML = `${languageControl(lang)}${html}${bottomLinks(lang, inArticles, key === "404.html")}`;
+        const heroEl = main.querySelector(".article-hero");
+        const heroHtml = heroEl ? heroEl.outerHTML : "";
+        main.innerHTML = `${languageControl(lang)}${heroHtml}${html}${bottomLinks(lang, inArticles, key === "404.html")}`;
         const select = document.getElementById("staticLangSelect");
         if (select) {
             select.value = lang;
