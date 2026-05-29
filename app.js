@@ -2554,6 +2554,20 @@
         const commentBox = document.getElementById('aiCommentaryBox');
         if (!commentBox) return;
 
+        // 本番ガード: Ollama (http://localhost:11434) はローカル開発専用。
+        // 本番(HTTPS/非localhost)では混在コンテンツでブロックされ常にフォールバックになるため、
+        // fetchを行わず静的フォールバックを直接描画する(混在コンテンツ/接続失敗のconsoleエラー回避)。
+        const __ollamaHost = location.hostname;
+        const __isLocalDev = __ollamaHost === 'localhost' || __ollamaHost === '127.0.0.1' || __ollamaHost === '0.0.0.0';
+        if (!__isLocalDev) {
+            if (typeDatabase[typeCode]) {
+                renderLocalizedAiFallback(typeCode, state.lang);
+            } else {
+                commentBox.textContent = "Error scanning approval desire.";
+            }
+            return;
+        }
+
         const requestedLang = state.lang;
         const requestId = ++state.aiCommentRequestId;
         const requestedI18n = i18n[requestedLang] || i18n.ja;
