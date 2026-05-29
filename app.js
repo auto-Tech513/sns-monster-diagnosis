@@ -148,6 +148,9 @@
             sectionGoodMatch: "💚 相性◎ タイプ",
             sectionBadMatch: "💔 相性× タイプ",
             sectionLoveStyle: "📖 あなたの恋愛観",
+            sectionGoodSecret: "💡 相性を活かすコツ",
+            sectionBadAdvice: "🛠 こじらせない接し方",
+            sectionLoveAdvice: "💞 恋愛ワンポイント",
             paidSaveBtn: "✨ ¥{price}で永久保存",
             paidSaveHint: "またはXで共有して無料保存",
             paidSavedLabel: "保存済み",
@@ -243,6 +246,9 @@
             sectionGoodMatch: "💚 Great Match",
             sectionBadMatch: "💔 Clash Type",
             sectionLoveStyle: "📖 Your Love Style",
+            sectionGoodSecret: "💡 How to make it click",
+            sectionBadAdvice: "🛠 How to keep the peace",
+            sectionLoveAdvice: "💞 Love tip",
             paidSaveBtn: "✨ Save permanently for ¥{price}",
             paidSaveHint: "Or share on X to save for free",
             paidSavedLabel: "Saved forever",
@@ -338,6 +344,9 @@
             sectionGoodMatch: "💚 궁합 최고",
             sectionBadMatch: "💔 최악의 궁합",
             sectionLoveStyle: "📖 당신의 연애관",
+            sectionGoodSecret: "💡 궁합을 살리는 비결",
+            sectionBadAdvice: "🛠 충돌을 줄이는 법",
+            sectionLoveAdvice: "💞 연애 한마디",
             paidSaveBtn: "✨ ¥{price}로 영구 저장",
             paidSaveHint: "또는 X에 공유하고 무료로 저장",
             paidSavedLabel: "저장 완료",
@@ -433,6 +442,9 @@
             sectionGoodMatch: "💚 最佳搭档",
             sectionBadMatch: "💔 冲突类型",
             sectionLoveStyle: "📖 你的恋爱观",
+            sectionGoodSecret: "💡 加分小秘诀",
+            sectionBadAdvice: "🛠 减少摩擦的建议",
+            sectionLoveAdvice: "💞 恋爱小建议",
             paidSaveBtn: "✨ ¥{price}永久保存",
             paidSaveHint: "或分享到X免费保存",
             paidSavedLabel: "已保存",
@@ -1369,7 +1381,7 @@
         section.classList.toggle('active', visible);
     }
 
-    function createCompatibilityMatchCard(title, matches) {
+    function createCompatibilityMatchCard(title, matches, tipLabel) {
         const card = document.createElement('div');
         card.className = 'compatibility-card';
 
@@ -1390,6 +1402,23 @@
             reason.textContent = match.reason;
 
             item.append(name, reason);
+
+            const tipText = match.secret || match.advice;
+            if (tipText) {
+                const tip = document.createElement('span');
+                tip.className = 'compatibility-tip';
+
+                const label = document.createElement('span');
+                label.className = 'compatibility-tip-label';
+                label.textContent = tipLabel || '';
+
+                const body = document.createElement('span');
+                body.textContent = tipText;
+
+                tip.append(label, body);
+                item.appendChild(tip);
+            }
+
             card.appendChild(item);
         });
 
@@ -1431,8 +1460,8 @@
             const grid = document.createElement('div');
             grid.className = 'compatibility-grid';
             grid.append(
-                createCompatibilityMatchCard(copy.sectionGoodMatch, record.goodMatch || []),
-                createCompatibilityMatchCard(copy.sectionBadMatch, record.badMatch || [])
+                createCompatibilityMatchCard(copy.sectionGoodMatch, record.goodMatch || [], copy.sectionGoodSecret),
+                createCompatibilityMatchCard(copy.sectionBadMatch, record.badMatch || [], copy.sectionBadAdvice)
             );
 
             const love = document.createElement('div');
@@ -1442,6 +1471,20 @@
             const loveText = document.createElement('p');
             loveText.textContent = record.loveStyle || '';
             love.append(loveTitle, loveText);
+
+            if (record.loveAdvice) {
+                const loveAdvice = document.createElement('p');
+                loveAdvice.className = 'compatibility-love-advice';
+
+                const adviceLabel = document.createElement('strong');
+                adviceLabel.textContent = copy.sectionLoveAdvice;
+
+                const adviceText = document.createElement('span');
+                adviceText.textContent = ` ${record.loveAdvice}`;
+
+                loveAdvice.append(adviceLabel, adviceText);
+                love.appendChild(loveAdvice);
+            }
 
             section.append(title, grid, love);
             setCompatibilitySectionVisible(section, true);
