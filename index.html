@@ -527,16 +527,17 @@
 
         .cheki-footer-brand {
             display: flex;
-            justify-content: space-between;
-            gap: 8px;
-            align-items: center;
-            white-space: nowrap;
+            flex-direction: column;
+            gap: 2px;
+            align-items: flex-start;
+            white-space: normal;
         }
 
         .cheki-footer-url {
             color: var(--text-muted);
-            font-size: 0.62rem;
+            font-size: 0.56rem;
             letter-spacing: 0;
+            overflow-wrap: anywhere;
         }
 
         .cheki-footer-cta {
