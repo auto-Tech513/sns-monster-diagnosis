@@ -84,6 +84,8 @@
             aiCommentTitleLabel: "AIによる分析（毒舌解説）",
             exportBtn: "📸 チェキを画像として保存/共有する",
             shareBtn: "🐦 X（Twitter）に結果を共有する",
+            lineShareBtn: "💬 LINEで友だちに送る",
+            copyShareBtn: "🔗 リンクをコピー",
             retryBtn: "🔄 もう一度診断する",
             lockTitle: "🌸 神託は忘却の彼方へ 🌸",
             lockText: "無料体験枠の30秒が経過したため、診断結果のチェキはパステル霧に包まれて消滅しました。診断を永久保存したい場合は、パステルキーを入力してロックを解除してください。",
@@ -106,6 +108,8 @@
             toastAiSuccess: "AIとの深層接続に成功 💓",
             toastAiFallback: "AIオフライン。防弾フォールバック適用。",
             toastShareSuccess: "共有しました！",
+            toastCopySuccess: "リンクをコピーしました",
+            toastCopyFail: "コピーに失敗しました",
             loadingAi: "AIがあなたの精神をスキャン中……",
             shareImageTitle: "SNS承認欲求モンスター診断",
             shareImageText: "診断結果チェキ画像",
@@ -183,6 +187,8 @@
             aiCommentTitleLabel: "AI Analysis (Sarcastic Comments)",
             exportBtn: "📸 Save / Share Cheki",
             shareBtn: "🐦 Share on X (Twitter)",
+            lineShareBtn: "💬 Share on LINE",
+            copyShareBtn: "🔗 Copy link",
             retryBtn: "🔄 Try Again",
             lockTitle: "🌸 Faded Into Forgetfulness 🌸",
             lockText: "Because 30 seconds passed, your Cheki has faded into pastel fog. Enter the pastel key to unlock and save it permanently.",
@@ -205,6 +211,8 @@
             toastAiSuccess: "AI deep connection succeeded 💓",
             toastAiFallback: "AI offline. Fallback applied.",
             toastShareSuccess: "Shared successfully!",
+            toastCopySuccess: "Link copied",
+            toastCopyFail: "Copy failed",
             loadingAi: "AI scanning your mind...",
             shareImageTitle: "SNS Recognition Monster Diagnosis",
             shareImageText: "My diagnosis result Cheki image",
@@ -282,6 +290,8 @@
             aiCommentTitleLabel: "AI 심층 분석 (독설 해설)",
             exportBtn: "📸 체키 저장/공유하기",
             shareBtn: "🐦 X(Twitter)에 공유하기",
+            lineShareBtn: "💬 LINE에 공유하기",
+            copyShareBtn: "🔗 링크 복사",
             retryBtn: "🔄 다시 도전하기",
             lockTitle: "🌸 신탁은 망각의 너머로 🌸",
             lockText: "무료 체험 시간 30초가 지나 진단 결과 체키가 파스텔 안개에 봉인되었습니다. 영구 보존하려면 파스텔 키를 입력하여 잠금을 해제하십시오.",
@@ -304,6 +314,8 @@
             toastAiSuccess: "AI 심층 연결 성공 💓",
             toastAiFallback: "AI 오프라인. 백업 텍스트 적용.",
             toastShareSuccess: "공유되었습니다!",
+            toastCopySuccess: "링크가 복사되었습니다",
+            toastCopyFail: "복사 실패",
             loadingAi: "AI가 당신의 정신을 스캔 중……",
             shareImageTitle: "SNS 승인욕구 몬스터 진단",
             shareImageText: "진단 결과 체키 이미지",
@@ -381,6 +393,8 @@
             aiCommentTitleLabel: "AI毒舌分析",
             exportBtn: "📸 保存/分享拍立得图片",
             shareBtn: "🐦 分享到 X (Twitter)",
+            lineShareBtn: "💬 分享到 LINE",
+            copyShareBtn: "🔗 复制链接",
             retryBtn: "🔄 重新诊断",
             lockTitle: "🌸 神谕已归于遗忘 🌸",
             lockText: "由于免费体验的30秒已过，您的诊断结果已被封锁在粉雾中。请输入钥匙解锁以永久保存您的拍立得。",
@@ -403,6 +417,8 @@
             toastAiSuccess: "AI连接成功 💓",
             toastAiFallback: "AI已离线。已使用本地诊断。",
             toastShareSuccess: "分享成功！",
+            toastCopySuccess: "链接已复制",
+            toastCopyFail: "复制失败",
             loadingAi: "AI正在深入扫描您的内心...",
             shareImageTitle: "SNS认同感怪物诊断",
             shareImageText: "诊断结果拍立得图片",
@@ -2270,6 +2286,7 @@
                 title: i18n[state.lang].shareImageTitle,
                 text: i18n[state.lang].shareImageText
             });
+            safeTrack('shindan_share', { channel: 'webshare' });
             return true;
         };
 
@@ -2384,6 +2401,52 @@
             `【SNS认同感怪物诊断结果】\n\n我的认同感怪物是『${name}』！\n认同感分数: ${scorePct}%\n快来扫描你的社交认同类型吧！`
         );
 
+        const buildResultShareUrl = source => {
+            const siteUrl = String(getSiteConfig().siteUrl || window.location.origin || window.location.href || '').trim();
+            const shareUrl = new URL(siteUrl || window.location.href, window.location.href);
+            shareUrl.searchParams.set('utm_source', source);
+            shareUrl.searchParams.set('utm_medium', 'social');
+            shareUrl.searchParams.set('utm_campaign', 'result_share');
+            shareUrl.searchParams.set('monster', state.typeCode || 'unknown');
+            shareUrl.searchParams.set('lang', state.lang);
+            return shareUrl;
+        };
+
+        const buildLineShareUrl = () => {
+            const lineUrl = buildResultShareUrl('line');
+            return `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(lineUrl.toString())}`;
+        };
+
+        const copyTextToClipboard = async text => {
+            if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+                try {
+                    await navigator.clipboard.writeText(text);
+                    return true;
+                } catch (err) {
+                    console.warn('Clipboard API failed, trying fallback:', err);
+                }
+            }
+
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'fixed';
+            textarea.style.top = '-1000px';
+            textarea.style.left = '-1000px';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+
+            try {
+                return document.execCommand('copy');
+            } finally {
+                if (textarea.parentNode) {
+                    textarea.parentNode.removeChild(textarea);
+                }
+            }
+        };
+
         // html2canvas エクスポート (document.fonts.ready 補償 ＆ iOS防弾 ＆ file://対応)
         const exportBtn = document.getElementById('exportBtn');
         if (exportBtn) {
@@ -2418,23 +2481,49 @@
                 const name = info.name[state.lang] || info.name.ja;
                 const scorePct = state.approvalPercent;
                 const text = buildShareText(name, scorePct);
-                const shareUrl = new URL(
-                    (getSiteConfig().siteUrl || window.location.origin || window.location.href).replace(/\/$/, '/')
-                );
-                shareUrl.searchParams.set('utm_source', 'x');
-                shareUrl.searchParams.set('utm_medium', 'social');
-                shareUrl.searchParams.set('utm_campaign', 'result_share');
-                shareUrl.searchParams.set('monster', state.typeCode || 'unknown');
-                shareUrl.searchParams.set('lang', state.lang);
+                const shareUrl = buildResultShareUrl('x');
                 const intentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}&hashtags=${encodeURIComponent(i18n[state.lang].xHashtag)}`;
                 safeTrack('shindan_share', {
-                    share_platform: 'x',
-                    monster_name_key: state.typeCode || 'none'
+                    channel: 'x',
+                    share_platform: 'x'
                 });
 
                 showToast(i18n[state.lang].toastShareSuccess);
                 window.location.assign(intentUrl);
             });
+        }
+
+        const lineShareBtn = document.getElementById('lineShareBtn');
+        if (lineShareBtn) {
+            lineShareBtn.addEventListener('click', () => {
+                safeTrack('shindan_share', { channel: 'line' });
+                showToast(i18n[state.lang].toastShareSuccess);
+                const opened = window.open(buildLineShareUrl(), '_blank', 'noopener,noreferrer');
+                if (!opened) {
+                    window.location.assign(buildLineShareUrl());
+                }
+            });
+        }
+
+        const copyShareBtn = document.getElementById('copyShareBtn');
+        if (copyShareBtn) {
+            if (typeof navigator.share === 'function') {
+                copyShareBtn.hidden = true;
+                copyShareBtn.style.display = 'none';
+            } else {
+                copyShareBtn.addEventListener('click', async () => {
+                    const shareUrl = buildResultShareUrl('copy').toString();
+                    try {
+                        const copied = await copyTextToClipboard(shareUrl);
+                        if (!copied) throw new Error('Copy command returned false');
+                        showToast(i18n[state.lang].toastCopySuccess);
+                        safeTrack('shindan_share', { channel: 'copy' });
+                    } catch (err) {
+                        console.warn('Copy share URL failed:', err);
+                        showToast(i18n[state.lang].toastCopyFail);
+                    }
+                });
+            }
         }
     }
 

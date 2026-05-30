@@ -681,6 +681,31 @@
             gap: 10px;
         }
 
+        .share-button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .share-button-group .cute-btn {
+            min-height: 48px;
+        }
+
+        .share-btn-line {
+            background: #06C755;
+            border-color: #00A948;
+            color: #FFF;
+            box-shadow: 0 6px 0 #00A948;
+        }
+
+        .share-btn-copy {
+            background: #FFF8FC;
+            border-color: var(--primary-pink);
+            color: var(--text-dark);
+            box-shadow: 0 6px 0 var(--primary-pink);
+        }
+
         .paid-save-cta {
             display: none;
             padding: 14px;
@@ -1432,12 +1457,20 @@
                 <button class="cute-btn talent-btn" id="btnTalent" type="button" data-i18n="btnTalent" hidden>
                     眠った才能、起こしてみない？ ¥360
                 </button>
-                <button class="cute-btn" id="exportBtn" style="background: var(--accent-mint); border-color: #B2DFEE; box-shadow: 0 6px 0 #B2DFEE;">
-                    📸 チェキを画像として保存/共有する
-                </button>
-                <button class="cute-btn" id="shareBtn" style="background: #1DA1F2; border-color: #1990DB; color: #FFF; box-shadow: 0 6px 0 #1990DB;">
-                    🐦 X（Twitter）に結果を共有する
-                </button>
+                <div class="share-button-group" aria-label="共有">
+                    <button class="cute-btn" id="exportBtn" style="background: var(--accent-mint); border-color: #B2DFEE; box-shadow: 0 6px 0 #B2DFEE;">
+                        📸 チェキを画像として保存/共有する
+                    </button>
+                    <button class="cute-btn" id="shareBtn" style="background: #1DA1F2; border-color: #1990DB; color: #FFF; box-shadow: 0 6px 0 #1990DB;">
+                        🐦 X（Twitter）に結果を共有する
+                    </button>
+                    <button class="cute-btn share-btn-line" id="lineShareBtn" type="button" data-i18n="lineShareBtn">
+                        💬 LINEで友だちに送る
+                    </button>
+                    <button class="cute-btn share-btn-copy" id="copyShareBtn" type="button" data-i18n="copyShareBtn">
+                        🔗 リンクをコピー
+                    </button>
+                </div>
                 <button class="cute-btn" id="retryBtn" style="background: #EAEAEA; border-color: #D3D3D3; box-shadow: 0 6px 0 #D3D3D3;">
                     🔄 もう一度診断する
                 </button>
@@ -1507,7 +1540,7 @@
     <script src="hidden-talent-data.js?v=20260528-talent"></script>
     
     <!-- アプリケーションスクリプト -->
-    <script src="app.js?v=20260530-viral1"></script>
+    <script src="app.js?v=20260530-share4ch"></script>
 
 </body>
 </html>
