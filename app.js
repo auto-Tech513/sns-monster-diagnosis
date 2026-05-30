@@ -117,6 +117,11 @@
             shareImageText: "診断結果チェキ画像",
             xHashtag: "SNS承認欲求モンスター診断",
             chekiFooterCta: "あなたは何モンスター？→",
+            shareVariants: [
+                "私の承認欲求モンスターは『${name}』でした（スコア${scorePct}%）。当たりすぎて笑う…あなたは何タイプ？",
+                "【閲覧注意】承認欲求、可視化されました→『${name}』(${scorePct}%)。あなたのモンスター、当ててみて👀",
+                "承認欲求モンスター診断、『${name}』(${scorePct}%)だった。みんなのタイプも知りたい！やったら教えて👇"
+            ],
             aiBadge: "AI的神託",
             approvalMeterTitle: "💓 承認欲求スコア",
             meterLow: "😌 達観",
@@ -221,6 +226,11 @@
             shareImageText: "My diagnosis result Cheki image",
             xHashtag: "SNSRecognitionMonster",
             chekiFooterCta: "Which monster are you? →",
+            shareVariants: [
+                "My SNS approval monster is \"${name}\" (score ${scorePct}%). Honestly too accurate 😂 What's yours?",
+                "I got my approval desire scanned… it's \"${name}\" (${scorePct}%). Bet you can't guess yours 👀",
+                "Just got \"${name}\" (${scorePct}%) on the SNS approval monster test. Drop yours, let's compare 👇"
+            ],
             aiBadge: "AI Oracle",
             approvalMeterTitle: "💓 Approval Desire Score",
             meterLow: "😌 Detached",
@@ -325,6 +335,11 @@
             shareImageText: "진단 결과 체키 이미지",
             xHashtag: "SNS승인욕구몬스터진단",
             chekiFooterCta: "당신은 무슨 몬스터? →",
+            shareVariants: [
+                "내 SNS 승인욕구 몬스터는 『${name}』! (점수 ${scorePct}%) 너무 잘 맞아서 소름… 당신은?",
+                "내 승인욕구가 스캔당했다… 결과는 『${name}』(${scorePct}%). 당신의 몬스터, 맞혀볼래요? 👀",
+                "『${name}』(${scorePct}%) 나왔어요! 다들 무슨 타입인지 궁금… 해보고 댓글로 알려줘요 👇"
+            ],
             aiBadge: "AI 신탁",
             approvalMeterTitle: "💓 승인욕구 점수",
             meterLow: "😌 달관",
@@ -429,6 +444,11 @@
             shareImageText: "诊断结果拍立得图片",
             xHashtag: "SNS认同感怪物诊断",
             chekiFooterCta: "你是什么怪物？→",
+            shareVariants: [
+                "我的社交认同感怪物是『${name}』！（分数${scorePct}%）准到笑出来…你是哪一种？",
+                "我的认同感被扫描了……结果是『${name}』(${scorePct}%)。猜猜你的怪物是什么？👀",
+                "测出来是『${name}』(${scorePct}%)！好奇大家都是什么类型，快测一下评论告诉我 👇"
+            ],
             aiBadge: "AI神谕",
             approvalMeterTitle: "💓 认同感欲求分数",
             meterLow: "😌 超然",
@@ -2405,12 +2425,19 @@
             saveModalCloseBtn.addEventListener('click', closeSaveModal);
         }
 
-        const buildShareText = (name, scorePct) => (
-            state.lang === 'ja' ? `【SNS承認欲求モンスター診断結果】\n\n私の承認欲求モンスターは『${name}』でした！\n承認欲求スコア: ${scorePct}%\nみんなも自分の承認欲求タイプをスキャンしよう！` :
-            state.lang === 'en' ? `[SNS Recognition Monster Result]\n\nMy approval monster is "${name}"!\nApproval Score: ${scorePct}%\nScan yours now!` :
-            state.lang === 'ko' ? `【SNS 승인욕구 몬스터 진단 결과】\n\n나의 승인욕구 몬스터는 『${name}』이었습니다!\n승인욕구 스코어: ${scorePct}%\n당신의 승인욕구도 지금 바로 스캔해 보세요!` :
-            `【SNS认同感怪物诊断结果】\n\n我的认同感怪物是『${name}』！\n认同感分数: ${scorePct}%\n快来扫描你的社交认同类型吧！`
-        );
+        const buildShareText = (name, scorePct) => {
+            const copy = i18n[state.lang] || i18n.ja;
+            const variants = Array.isArray(copy.shareVariants) && copy.shareVariants.length
+                ? copy.shareVariants
+                : i18n.ja.shareVariants;
+            const index = Math.floor(Math.random() * variants.length);
+            const variant = ['a', 'b', 'c'][index] || 'a';
+            const template = variants[index] || variants[0] || '';
+            const text = template
+                .replace(/\$\{name\}/g, name)
+                .replace(/\$\{scorePct\}/g, String(scorePct));
+            return { text, variant };
+        };
 
         const buildResultShareUrl = source => {
             const siteUrl = String(getSiteConfig().siteUrl || window.location.origin || window.location.href || '').trim();
@@ -2491,12 +2518,13 @@
 
                 const name = info.name[state.lang] || info.name.ja;
                 const scorePct = state.approvalPercent;
-                const text = buildShareText(name, scorePct);
+                const shareCopy = buildShareText(name, scorePct);
                 const shareUrl = buildResultShareUrl('x');
-                const intentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}&hashtags=${encodeURIComponent(i18n[state.lang].xHashtag)}`;
+                const intentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(shareCopy.text)}&url=${encodeURIComponent(shareUrl)}&hashtags=${encodeURIComponent(i18n[state.lang].xHashtag)}`;
                 safeTrack('shindan_share', {
                     channel: 'x',
-                    share_platform: 'x'
+                    share_platform: 'x',
+                    share_variant: shareCopy.variant
                 });
 
                 showToast(i18n[state.lang].toastShareSuccess);
