@@ -377,6 +377,35 @@
             box-shadow: 0 2px 0 var(--primary-pink);
         }
 
+        .question-back-wrap {
+            margin-top: 12px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .back-btn {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--text-muted);
+            border-radius: 999px;
+            padding: 10px 18px;
+            font-family: var(--font-rounded);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.15s ease;
+            min-height: 38px;
+        }
+
+        .back-btn:hover {
+            opacity: 0.7;
+        }
+
+        .back-btn:disabled,
+        .back-btn.is-hidden {
+            display: none;
+        }
+
         /* 進行バー */
         .progress-bar-container {
             width: 100%;
@@ -1358,6 +1387,11 @@
             <div class="answer-list" id="answerList">
                 <!-- 選択肢ボタンが動的に挿入される -->
             </div>
+            <div class="question-back-wrap">
+                <button class="back-btn is-hidden" id="backBtn" type="button" aria-label="前の質問へ戻る">
+                    <span data-i18n="backBtn">← 1つ前に戻る</span>
+                </button>
+            </div>
         </section>
 
         <!-- 三、診断結果表示画面 (チェキ風 ＆ 毒舌解説) -->
@@ -1540,7 +1574,7 @@
     <script src="hidden-talent-data.js?v=20260528-talent"></script>
     
     <!-- アプリケーションスクリプト -->
-    <script src="app.js?v=20260530-share4ch"></script>
+    <script src="app.js?v=20260530-backbtn"></script>
 
 </body>
 </html>

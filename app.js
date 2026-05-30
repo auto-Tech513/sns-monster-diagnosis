@@ -23,6 +23,7 @@
             m: 0, n: 0, // 次元3: Growth (Maslow) / Need
             e: 0, r: 0  // 次元4: External / Reflexive (Internal)
         },
+        answerHistory: [],
         typeCode: '', // 最終的な4文字コード (小文字)
         approvalPercent: 0, // 承認欲求スコア (0<100)
         isPremium: true,
@@ -76,6 +77,7 @@
             startDiagnosisBtn: "診断を開始する 💓",
             scanBpm: "スキャン深度上昇中...",
             qHeader: "Q{num} / {total}",
+            backBtn: "← 1つ前に戻る",
             countdownText: "⚠️ 無料体験版: あと <span>{sec}</span> 秒で神託チェキが灰（霧）になります！",
             chekiUserName: "ユーザー: {name}",
             chekiUserAge: "年齢層: {age}",
@@ -179,6 +181,7 @@
             startDiagnosisBtn: "Start Diagnosis 💓",
             scanBpm: "Scanning depth rising...",
             qHeader: "Q{num} / {total}",
+            backBtn: "← Previous",
             countdownText: "⚠️ Free trial: <span>{sec}</span>s until the Cheki fades into pastel fog!",
             chekiUserName: "User: {name}",
             chekiUserAge: "Age: {age}",
@@ -282,6 +285,7 @@
             startDiagnosisBtn: "진단 시작하기 💓",
             scanBpm: "스캔 깊이 상승 중...",
             qHeader: "Q{num} / {total}",
+            backBtn: "← 이전 문제",
             countdownText: "⚠️ 무료 체험판: 앞으로 <span>{sec}</span>초 뒤 체키가 안개 속으로 사라집니다!",
             chekiUserName: "유저: {name}",
             chekiUserAge: "연령대: {age}",
@@ -385,6 +389,7 @@
             startDiagnosisBtn: "开始诊断 💓",
             scanBpm: "扫描深度上升中...",
             qHeader: "Q{num} / {total}",
+            backBtn: "← 上一题",
             countdownText: "⚠️ 免费体验版: 剩 <span>{sec}</span> 秒神谕拍立得就会化为粉雾！",
             chekiUserName: "用户: {name}",
             chekiUserAge: "年龄段: {age}",
@@ -2050,12 +2055,18 @@
             });
         }
 
+        const backBtn = document.getElementById('backBtn');
+        if (backBtn) {
+            backBtn.addEventListener('click', handleBack);
+        }
+
         // 再チャレンジ
         const retryBtn = document.getElementById('retryBtn');
         if (retryBtn) {
             retryBtn.addEventListener('click', () => {
                 state.currentQuestionIndex = 0;
                 state.answers = { p: 0, a: 0, o: 0, s: 0, m: 0, n: 0, e: 0, r: 0 };
+                state.answerHistory = [];
                 state.typeCode = '';
                 state.approvalPercent = 0;
                 clearInterval(state.timerId);
@@ -2556,6 +2567,7 @@
             btn.textContent = ans.text[state.lang] || ans.text.ja;
             btn.addEventListener('click', () => {
                 state.answers[ans.value] = (state.answers[ans.value] || 0) + 1;
+                state.answerHistory[state.currentQuestionIndex] = ans.value;
                 
                 // 心拍BPM一時上昇
                 state.currentBpm = Math.min(200, state.currentBpm + 15);
@@ -2570,6 +2582,25 @@
             });
             ansList.appendChild(btn);
         });
+
+        const backBtn = document.getElementById('backBtn');
+        if (backBtn) {
+            backBtn.classList.toggle('is-hidden', state.currentQuestionIndex === 0);
+            backBtn.setAttribute('aria-label', data.backBtn);
+        }
+    }
+
+    function handleBack() {
+        if (state.currentQuestionIndex <= 0) return;
+
+        state.currentQuestionIndex--;
+        const prevValue = state.answerHistory[state.currentQuestionIndex];
+        if (prevValue && state.answers[prevValue] > 0) {
+            state.answers[prevValue]--;
+        }
+        state.answerHistory.length = state.currentQuestionIndex;
+        safeTrack('shindan_back');
+        showQuestion();
     }
 
     // ==========================================
