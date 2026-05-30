@@ -2441,7 +2441,7 @@
 
         const buildResultShareUrl = source => {
             const siteUrl = String(getSiteConfig().siteUrl || window.location.origin || window.location.href || '').trim();
-            const shareUrl = new URL(siteUrl || window.location.href, window.location.href);
+            const shareUrl = new URL('/r', siteUrl || window.location.href);
             shareUrl.searchParams.set('utm_source', source);
             shareUrl.searchParams.set('utm_medium', 'social');
             shareUrl.searchParams.set('utm_campaign', 'result_share');
