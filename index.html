@@ -400,7 +400,7 @@
             text-align: left;
             cursor: pointer;
             box-shadow: 0 4px 0 var(--primary-pink);
-            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease, transform 0.1s ease, box-shadow 0.1s ease;
             position: relative;
         }
 
@@ -413,6 +413,35 @@
         .answer-btn:active {
             transform: translateY(2px);
             box-shadow: 0 2px 0 var(--primary-pink);
+        }
+
+        .answer-btn.is-selected {
+            background: var(--primary-pink);
+            color: #FFF;
+            border-color: var(--primary-pink-deep);
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 var(--primary-pink-deep);
+        }
+
+        .answer-btn:disabled {
+            cursor: default;
+        }
+
+        .answer-btn:disabled:hover,
+        .answer-btn:disabled:active {
+            transform: none;
+            box-shadow: 0 4px 0 var(--primary-pink);
+            border-color: var(--primary-pink);
+        }
+
+        .answer-btn.is-selected:disabled,
+        .answer-btn.is-selected:disabled:hover,
+        .answer-btn.is-selected:disabled:active {
+            background: var(--primary-pink);
+            color: #FFF;
+            border-color: var(--primary-pink-deep);
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 var(--primary-pink-deep);
         }
 
         .question-back-wrap {
@@ -1612,7 +1641,7 @@
     <script src="hidden-talent-data.js?v=20260528-talent"></script>
     
     <!-- アプリケーションスクリプト -->
-    <script src="app.js?v=20260531-typeog"></script>
+    <script src="app.js?v=20260531-answerfb"></script>
 
 </body>
 </html>

@@ -2589,24 +2589,36 @@
         barFill.style.width = `${progressPercent}%`;
 
         ansList.innerHTML = '';
+        let isAnswerSubmitting = false;
         q.answers.forEach((ans) => {
             const btn = document.createElement('button');
             btn.className = 'answer-btn';
             btn.textContent = ans.text[state.lang] || ans.text.ja;
             btn.addEventListener('click', () => {
-                state.answers[ans.value] = (state.answers[ans.value] || 0) + 1;
-                state.answerHistory[state.currentQuestionIndex] = ans.value;
-                
-                // 心拍BPM一時上昇
-                state.currentBpm = Math.min(200, state.currentBpm + 15);
-                triggerHeartbeatLoop();
+                if (isAnswerSubmitting || btn.disabled) return;
+                isAnswerSubmitting = true;
 
-                state.currentQuestionIndex++;
-                if (state.currentQuestionIndex < questions.length) {
-                    showQuestion();
-                } else {
-                    finishDiagnosis();
-                }
+                const selectedIndex = state.currentQuestionIndex;
+                btn.classList.add('is-selected');
+                ansList.querySelectorAll('.answer-btn').forEach((answerBtn) => {
+                    answerBtn.disabled = true;
+                });
+
+                setTimeout(() => {
+                    state.answers[ans.value] = (state.answers[ans.value] || 0) + 1;
+                    state.answerHistory[selectedIndex] = ans.value;
+
+                    // 心拍BPM一時上昇
+                    state.currentBpm = Math.min(200, state.currentBpm + 15);
+                    triggerHeartbeatLoop();
+
+                    state.currentQuestionIndex = selectedIndex + 1;
+                    if (state.currentQuestionIndex < questions.length) {
+                        showQuestion();
+                    } else {
+                        finishDiagnosis();
+                    }
+                }, 220);
             });
             ansList.appendChild(btn);
         });
