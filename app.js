@@ -7,7 +7,7 @@
 (function () {
     'use strict';
 
-    const COUNTDOWN_SECONDS = 30;
+    const COUNTDOWN_SECONDS = 60;
 
     // ==========================================
     // 1. アプリケーション状態管理 (State)
@@ -85,12 +85,13 @@
             resultTitleLabel: "あなたの承認欲求タイプ",
             aiCommentTitleLabel: "AIによる分析（毒舌解説）",
             exportBtn: "📸 チェキを画像として保存/共有する",
+            exportHint: "👆タップで画像保存（スクショ不要・キレイに保存）",
             shareBtn: "🐦 X（Twitter）に結果を共有する",
             lineShareBtn: "💬 LINEで友だちに送る",
             copyShareBtn: "🔗 リンクをコピー",
             retryBtn: "🔄 もう一度診断する",
             lockTitle: "🌸 神託は忘却の彼方へ 🌸",
-            lockText: "無料体験枠の30秒が経過したため、診断結果のチェキはパステル霧に包まれて消滅しました。診断を永久保存したい場合は、パステルキーを入力してロックを解除してください。",
+            lockText: "無料体験枠の60秒が経過したため、診断結果のチェキはパステル霧に包まれて消滅しました。診断を永久保存したい場合は、パステルキーを入力してロックを解除してください。",
             premiumKeyLabel: "プレミアムパステルキー入力",
             unlockBtn: "パステルロック解除",
             iosModalTitle: "心の準備はよろしいですか？",
@@ -145,8 +146,8 @@
             consentReject: "拒否",
             consentAccept: "同意",
             adLabel: "スポンサーリンク",
-            btnPermanentSave: "✦ ¥120で永久保存",
-            btnLockPurchase: "✦ ¥120で永久保存して復元",
+            btnPermanentSave: "✦ 詳細AI診断書を保存＋永久保存 ¥120",
+            btnLockPurchase: "✦ 詳細AI診断書を保存＋永久保存 ¥120",
             orDivider: "─── または ───",
             btnCompatibility: "もう少し覗いてみる？ ¥360",
             btnTalent: "眠った才能、起こしてみない？ ¥360",
@@ -165,7 +166,16 @@
             sectionGoodSecret: "💡 相性を活かすコツ",
             sectionBadAdvice: "🛠 こじらせない接し方",
             sectionLoveAdvice: "💞 恋愛ワンポイント",
-            paidSaveBtn: "✨ ¥{price}で永久保存",
+            detailedReportTitle: "📄 詳細AI診断書",
+            detailedReportUnlockedText: "タイプ説明とAI毒舌を1枚の画像で保存できます。",
+            detailedReportLockedTitle: "🔒 詳細AI診断書は永久保存版で解放",
+            detailedReportLockedText: "タイプ説明＋AI毒舌の詳細診断書を画像で残せるのは¥120だけ。60秒で霧に消える前に。",
+            detailedReportSaveBtn: "📄 詳細AI診断書を画像で保存",
+            detailedReportPurchaseBtn: "✦ ¥120で詳細診断書を保存＋永久保存",
+            detailedReportLossCopy: "タイプ説明＋AI毒舌の詳細診断書を画像で残せるのは¥120だけ。60秒で霧に消える前に。",
+            detailedReportScoreLabel: "承認欲求スコア",
+            detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
+            paidSaveBtn: "✨ 詳細AI診断書を保存＋永久保存 ¥{price}",
             paidSaveHint: "またはXで共有して無料保存",
             paidSavedLabel: "保存済み",
             paidUnlockSuccess: "永久保存が有効になりました！",
@@ -194,12 +204,13 @@
             resultTitleLabel: "Your Approval Desire Type",
             aiCommentTitleLabel: "AI Analysis (Sarcastic Comments)",
             exportBtn: "📸 Save / Share Cheki",
+            exportHint: "Tap to save (no screenshot needed)",
             shareBtn: "🐦 Share on X (Twitter)",
             lineShareBtn: "💬 Share on LINE",
             copyShareBtn: "🔗 Copy link",
             retryBtn: "🔄 Try Again",
             lockTitle: "🌸 Faded Into Forgetfulness 🌸",
-            lockText: "Because 30 seconds passed, your Cheki has faded into pastel fog. Enter the pastel key to unlock and save it permanently.",
+            lockText: "Because 60 seconds passed, your Cheki has faded into pastel fog. Enter the pastel key to unlock and save it permanently.",
             premiumKeyLabel: "Enter Premium Pastel Key",
             unlockBtn: "Unlock Pastel Card",
             iosModalTitle: "Are you ready?",
@@ -254,8 +265,8 @@
             consentReject: "Reject",
             consentAccept: "Accept",
             adLabel: "Sponsored",
-            btnPermanentSave: "✦ Save forever for ¥120",
-            btnLockPurchase: "✦ Restore forever for ¥120",
+            btnPermanentSave: "✦ Save full AI report + keep forever ¥120",
+            btnLockPurchase: "✦ Save full AI report + keep forever ¥120",
             orDivider: "─── or ───",
             btnCompatibility: "Want to peek a little more? ¥360",
             btnTalent: "Wanna wake your sleeping talent? ¥360",
@@ -274,7 +285,16 @@
             sectionGoodSecret: "💡 How to make it click",
             sectionBadAdvice: "🛠 How to keep the peace",
             sectionLoveAdvice: "💞 Love tip",
-            paidSaveBtn: "✨ Save permanently for ¥{price}",
+            detailedReportTitle: "📄 Full AI Report",
+            detailedReportUnlockedText: "Save your type description and AI roast as one clean image.",
+            detailedReportLockedTitle: "🔒 Full AI report unlocks with the forever-save version",
+            detailedReportLockedText: "Only the ¥120 version lets you keep the type notes and AI roast as an image before it fades in 60 seconds.",
+            detailedReportSaveBtn: "📄 Save full AI report as image",
+            detailedReportPurchaseBtn: "✦ Save full AI report + keep forever ¥120",
+            detailedReportLossCopy: "Only ¥120 lets you keep the type notes and AI roast as an image before the 60-second fog takes it.",
+            detailedReportScoreLabel: "Approval Desire Score",
+            detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
+            paidSaveBtn: "✨ Save full AI report + keep forever ¥{price}",
             paidSaveHint: "Or share on X to save for free",
             paidSavedLabel: "Saved forever",
             paidUnlockSuccess: "Permanent save is now unlocked!",
@@ -303,12 +323,13 @@
             resultTitleLabel: "당신의 승인욕구 유형",
             aiCommentTitleLabel: "AI 심층 분석 (독설 해설)",
             exportBtn: "📸 체키 저장/공유하기",
+            exportHint: "탭하면 이미지 저장 (스크린샷 불필요)",
             shareBtn: "🐦 X(Twitter)에 공유하기",
             lineShareBtn: "💬 LINE에 공유하기",
             copyShareBtn: "🔗 링크 복사",
             retryBtn: "🔄 다시 도전하기",
             lockTitle: "🌸 신탁은 망각의 너머로 🌸",
-            lockText: "무료 체험 시간 30초가 지나 진단 결과 체키가 파스텔 안개에 봉인되었습니다. 영구 보존하려면 파스텔 키를 입력하여 잠금을 해제하십시오.",
+            lockText: "무료 체험 시간 60초가 지나 진단 결과 체키가 파스텔 안개에 봉인되었습니다. 영구 보존하려면 파스텔 키를 입력하여 잠금을 해제하십시오.",
             premiumKeyLabel: "프리미엄 파스텔 키 입력",
             unlockBtn: "파스텔 락 해제",
             iosModalTitle: "마음의 준비는 되셨습니까?",
@@ -363,8 +384,8 @@
             consentReject: "거부",
             consentAccept: "동의",
             adLabel: "스폰서 링크",
-            btnPermanentSave: "✦ ¥120으로 영구 저장",
-            btnLockPurchase: "✦ ¥120으로 영구 저장 & 복원",
+            btnPermanentSave: "✦ 상세 AI 진단서 저장＋영구 보존 ¥120",
+            btnLockPurchase: "✦ 상세 AI 진단서 저장＋영구 보존 ¥120",
             orDivider: "─── 또는 ───",
             btnCompatibility: "좀 더 들여다볼래? ¥360",
             btnTalent: "잠든 재능, 깨워볼래? ¥360",
@@ -383,7 +404,16 @@
             sectionGoodSecret: "💡 궁합을 살리는 비결",
             sectionBadAdvice: "🛠 충돌을 줄이는 법",
             sectionLoveAdvice: "💞 연애 한마디",
-            paidSaveBtn: "✨ ¥{price}로 영구 저장",
+            detailedReportTitle: "📄 상세 AI 진단서",
+            detailedReportUnlockedText: "유형 설명과 AI 독설을 한 장의 이미지로 저장할 수 있습니다.",
+            detailedReportLockedTitle: "🔒 상세 AI 진단서는 영구 보존판에서 열립니다",
+            detailedReportLockedText: "유형 설명＋AI 독설 진단서를 이미지로 남길 수 있는 건 ¥120뿐입니다. 60초 뒤 안개 속으로 사라지기 전에.",
+            detailedReportSaveBtn: "📄 상세 AI 진단서를 이미지로 저장",
+            detailedReportPurchaseBtn: "✦ ¥120으로 상세 진단서 저장＋영구 보존",
+            detailedReportLossCopy: "유형 설명＋AI 독설 진단서를 이미지로 남길 수 있는 건 ¥120뿐입니다. 60초 뒤 안개 속으로 사라지기 전에.",
+            detailedReportScoreLabel: "승인욕구 점수",
+            detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
+            paidSaveBtn: "✨ 상세 AI 진단서 저장＋영구 보존 ¥{price}",
             paidSaveHint: "또는 X에 공유하고 무료로 저장",
             paidSavedLabel: "저장 완료",
             paidUnlockSuccess: "영구 저장이 활성화되었습니다!",
@@ -412,12 +442,13 @@
             resultTitleLabel: "您的认同感欲求类型",
             aiCommentTitleLabel: "AI毒舌分析",
             exportBtn: "📸 保存/分享拍立得图片",
+            exportHint: "点击保存图片（无需截图）",
             shareBtn: "🐦 分享到 X (Twitter)",
             lineShareBtn: "💬 分享到 LINE",
             copyShareBtn: "🔗 复制链接",
             retryBtn: "🔄 重新诊断",
             lockTitle: "🌸 神谕已归于遗忘 🌸",
-            lockText: "由于免费体验的30秒已过，您的诊断结果已被封锁在粉雾中。请输入钥匙解锁以永久保存您的拍立得。",
+            lockText: "由于免费体验的60秒已过，您的诊断结果已被封锁在粉雾中。请输入钥匙解锁以永久保存您的拍立得。",
             premiumKeyLabel: "输入升级钥匙",
             unlockBtn: "解除粉色锁定",
             iosModalTitle: "准备好迎接真实的自己吗？",
@@ -472,8 +503,8 @@
             consentReject: "拒绝",
             consentAccept: "同意",
             adLabel: "赞助链接",
-            btnPermanentSave: "✦ ¥120永久保存",
-            btnLockPurchase: "✦ ¥120永久保存并恢复",
+            btnPermanentSave: "✦ 保存详细AI诊断书＋永久保存 ¥120",
+            btnLockPurchase: "✦ 保存详细AI诊断书＋永久保存 ¥120",
             orDivider: "─── 或者 ───",
             btnCompatibility: "想再窥探一点吗？¥360",
             btnTalent: "唤醒沉睡的才能？ ¥360",
@@ -492,7 +523,16 @@
             sectionGoodSecret: "💡 加分小秘诀",
             sectionBadAdvice: "🛠 减少摩擦的建议",
             sectionLoveAdvice: "💞 恋爱小建议",
-            paidSaveBtn: "✨ ¥{price}永久保存",
+            detailedReportTitle: "📄 详细AI诊断书",
+            detailedReportUnlockedText: "可将类型说明和AI毒舌分析保存为一张清晰图片。",
+            detailedReportLockedTitle: "🔒 详细AI诊断书将在永久保存版中解锁",
+            detailedReportLockedText: "只有¥120版本能把类型说明＋AI毒舌诊断书保存成图片。请在60秒粉雾消失前保存。",
+            detailedReportSaveBtn: "📄 保存详细AI诊断书图片",
+            detailedReportPurchaseBtn: "✦ ¥120保存详细诊断书＋永久保存",
+            detailedReportLossCopy: "只有¥120版本能把类型说明＋AI毒舌诊断书保存成图片。请在60秒粉雾消失前保存。",
+            detailedReportScoreLabel: "认同感欲求分数",
+            detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
+            paidSaveBtn: "✨ 保存详细AI诊断书＋永久保存 ¥{price}",
             paidSaveHint: "或分享到X免费保存",
             paidSavedLabel: "已保存",
             paidUnlockSuccess: "永久保存已启用！",
@@ -1035,12 +1075,15 @@
         const ids = [
             'appTitle', 'appSubtitle', 'labelNickname', 'labelAge',
             'startDiagnosisBtn', 'resultTitleLabel', 'aiCommentTitleLabel',
-            'exportBtn', 'shareBtn', 'retryBtn',
+            'exportBtn', 'exportHint', 'shareBtn', 'retryBtn',
             'lockTitle', 'lockText', 'premiumKeyLabel', 'unlockBtn',
             'iosModalTitle', 'iosModalText', 'iosStartBtn',
             'chekiSerialTitle',
             'saveModalTitle', 'saveModalText', 'saveModalShareBtn',
-            'saveModalDownloadBtn', 'saveModalCloseBtn'
+            'saveModalDownloadBtn', 'saveModalCloseBtn',
+            'detailedReportTitle', 'detailedReportLossCopy',
+            'detailedReportLockedTitle', 'detailedReportLockedText',
+            'detailedReportSaveBtn', 'detailedReportPurchaseBtn'
         ];
 
         ids.forEach(id => {
@@ -1138,6 +1181,7 @@
 
         updatePaidSaveCta();
         updateLockPurchaseCta();
+        updateDetailedReportCard();
         renderCompatibilitySection();
         renderTalentSection();
 
@@ -1302,6 +1346,54 @@
         divider.textContent = i18n[state.lang].orDivider || i18n.ja.orDivider;
     }
 
+    function updateDetailedReportCard() {
+        const section = document.getElementById('detailedReportSection');
+        const card = document.getElementById('detailedReportCard');
+        if (!section || !card || !state.typeCode || !typeDatabase[state.typeCode]) return;
+
+        const copy = i18n[state.lang] || i18n.ja;
+        const paidConfig = getPaidPremiumConfig();
+        const unlocked = Boolean(state.isPremium || hasPermanentPaid());
+        const info = typeDatabase[state.typeCode];
+        const typeName = getCurrentTypeName(state.lang);
+        const descriptionEl = document.getElementById('resultTypeDesc');
+        const aiBox = document.getElementById('aiCommentaryBox');
+        const description = descriptionEl && descriptionEl.textContent.trim()
+            ? descriptionEl.textContent.trim()
+            : localizeDimensionTerms(info.description[state.lang] || info.description.ja || "", state.lang);
+        const aiText = aiBox && aiBox.textContent.trim()
+            ? aiBox.textContent.trim()
+            : localizeDimensionTerms(info.fallback[state.lang] || info.fallback.ja || "", state.lang);
+
+        const nameEl = document.getElementById('detailedReportMonsterName');
+        const scoreEl = document.getElementById('detailedReportScore');
+        const descEl = document.getElementById('detailedReportTypeDesc');
+        const aiEl = document.getElementById('detailedReportAiComment');
+        const footerEl = document.getElementById('detailedReportFooter');
+        const lockOverlay = document.getElementById('detailedReportLockOverlay');
+        const saveBtn = document.getElementById('detailedReportSaveBtn');
+        const purchaseBtn = document.getElementById('detailedReportPurchaseBtn');
+        const lossCopy = document.getElementById('detailedReportLossCopy');
+        const lockedTitle = document.getElementById('detailedReportLockedTitle');
+        const lockedText = document.getElementById('detailedReportLockedText');
+
+        if (nameEl) nameEl.textContent = typeName;
+        if (scoreEl) scoreEl.textContent = `${copy.detailedReportScoreLabel || i18n.ja.detailedReportScoreLabel} ${state.approvalPercent}%`;
+        if (descEl) descEl.textContent = description;
+        if (aiEl) aiEl.textContent = aiText;
+        if (footerEl) footerEl.textContent = copy.detailedReportFooter || i18n.ja.detailedReportFooter;
+        if (lossCopy) lossCopy.textContent = unlocked
+            ? (copy.detailedReportUnlockedText || i18n.ja.detailedReportUnlockedText)
+            : (copy.detailedReportLossCopy || i18n.ja.detailedReportLossCopy);
+        if (lockedTitle) lockedTitle.textContent = copy.detailedReportLockedTitle || i18n.ja.detailedReportLockedTitle;
+        if (lockedText) lockedText.textContent = copy.detailedReportLockedText || i18n.ja.detailedReportLockedText;
+
+        card.classList.toggle('is-blurred', !unlocked);
+        if (lockOverlay) lockOverlay.hidden = unlocked;
+        if (saveBtn) saveBtn.hidden = !unlocked;
+        if (purchaseBtn) purchaseBtn.hidden = unlocked || !paidConfig.enabled;
+    }
+
     function getCurrentTypeName(lang = state.lang) {
         const info = typeDatabase[state.typeCode];
         if (!info) return "";
@@ -1403,6 +1495,7 @@
 
         updatePaidSaveCta();
         updateLockPurchaseCta();
+        updateDetailedReportCard();
         renderCompatibilitySection();
         renderTalentSection();
         startChekiParallax();
@@ -1916,6 +2009,7 @@
         }
         updatePaidSaveCta();
         updateLockPurchaseCta();
+        updateDetailedReportCard();
         safeTrack('premium_unlock', { unlock_method: source });
     }
 
@@ -2051,6 +2145,13 @@
         if (paidSaveBtn) {
             paidSaveBtn.addEventListener('click', () => {
                 goToPermanentSaveCheckout('result_screen');
+            });
+        }
+
+        const detailedReportPurchaseBtn = document.getElementById('detailedReportPurchaseBtn');
+        if (detailedReportPurchaseBtn) {
+            detailedReportPurchaseBtn.addEventListener('click', () => {
+                goToPermanentSaveCheckout('detailed_report');
             });
         }
 
@@ -2273,6 +2374,59 @@
             }
         };
 
+        const prepareDetailedReportClone = clonedDoc => {
+            clonedDoc.body.classList.add('export-mode');
+            clonedDoc.body.style.backgroundImage = 'none';
+            clonedDoc.body.style.background = 'none';
+
+            const clonedCard = clonedDoc.querySelector('#detailedReportCard');
+            if (clonedCard) {
+                clonedCard.classList.remove('is-blurred');
+                clonedCard.style.filter = 'none';
+                clonedCard.style.boxShadow = 'none';
+                clonedCard.style.transform = 'none';
+            }
+
+            clonedDoc.querySelectorAll('*').forEach(el => {
+                el.style.animation = 'none';
+                el.style.transition = 'none';
+            });
+        };
+
+        const createDetailedReportCanvas = async () => {
+            if (!state.isPremium && !hasPermanentPaid()) {
+                throw new Error('Detailed report is locked');
+            }
+
+            const target = document.getElementById('detailedReportCard');
+            if (!target) {
+                throw new Error('detailedReportCard is missing');
+            }
+
+            if (typeof html2canvas === 'undefined') {
+                throw new Error('html2canvas is not loaded');
+            }
+
+            updateDetailedReportCard();
+            const restoreExportState = beginExportMode();
+
+            try {
+                await waitForFonts();
+                await waitForPaint();
+                return await html2canvas(target, {
+                    scale: Math.min(2, window.devicePixelRatio || 2),
+                    useCORS: true,
+                    allowTaint: false,
+                    backgroundColor: '#FFFFFF',
+                    logging: false,
+                    imageTimeout: 15000,
+                    onclone: prepareDetailedReportClone
+                });
+            } finally {
+                restoreExportState();
+            }
+        };
+
         const canvasToBlob = canvas => new Promise((resolve, reject) => {
             if (!canvas.toBlob) {
                 try {
@@ -2297,6 +2451,7 @@
         });
 
         const getChekiFilename = () => `sns-monster-${state.typeCode || 'result'}-${Date.now()}.png`;
+        const getDetailedReportFilename = () => `sns-monster-report-${state.typeCode || 'result'}-${Date.now()}.png`;
 
         const createImageFile = (blob, filename) => {
             if (typeof File === 'undefined') return null;
@@ -2362,10 +2517,10 @@
             modal.setAttribute('aria-hidden', 'false');
         };
 
-        const triggerDownload = dataUrl => {
+        const triggerDownload = (dataUrl, filename = getChekiFilename()) => {
             const a = document.createElement('a');
             a.href = dataUrl;
-            a.download = getChekiFilename();
+            a.download = filename;
             a.style.display = 'none';
             document.body.appendChild(a);
             a.click();
@@ -2379,9 +2534,8 @@
             }, 1000);
         };
 
-        const downloadCanvas = async canvas => {
+        const downloadCanvas = async (canvas, filename = getChekiFilename()) => {
             try {
-                const filename = getChekiFilename();
                 const blob = await canvasToBlob(canvas);
                 const file = createImageFile(blob, filename);
 
@@ -2398,10 +2552,10 @@
                     return;
                 }
 
-                triggerDownload(URL.createObjectURL(blob));
+                triggerDownload(URL.createObjectURL(blob), filename);
             } catch (blobErr) {
                 console.warn('Blob export failed, using toDataURL fallback:', blobErr);
-                triggerDownload(canvas.toDataURL('image/png'));
+                triggerDownload(canvas.toDataURL('image/png'), filename);
             }
         };
 
@@ -2502,6 +2656,31 @@
                     showToast(i18n[state.lang].toastExportFail);
                 } finally {
                     exportBtn.disabled = false;
+                }
+            });
+        }
+
+        const detailedReportSaveBtn = document.getElementById('detailedReportSaveBtn');
+        if (detailedReportSaveBtn) {
+            detailedReportSaveBtn.addEventListener('click', async () => {
+                if (!state.isPremium && !hasPermanentPaid()) {
+                    goToPermanentSaveCheckout('detailed_report_locked');
+                    return;
+                }
+
+                showToast(i18n[state.lang].toastExportStart);
+
+                try {
+                    detailedReportSaveBtn.disabled = true;
+                    const canvas = await createDetailedReportCanvas();
+                    await downloadCanvas(canvas, getDetailedReportFilename());
+                    showToast(i18n[state.lang].toastExportEnd);
+                    safeTrack('detailed_report_download');
+                } catch (err) {
+                    console.error('Detailed report export failed:', err);
+                    showToast(i18n[state.lang].toastExportFail);
+                } finally {
+                    detailedReportSaveBtn.disabled = false;
                 }
             });
         }
@@ -2766,6 +2945,7 @@
 
         renderCompatibilitySection();
         renderTalentSection();
+        updateDetailedReportCard();
     }
 
     // ==========================================
@@ -2779,6 +2959,7 @@
         const fallback = info.fallback[lang] || info.fallback.ja;
         commentBox.textContent = localizeDimensionTerms(fallback, lang);
         persistLastResult(commentBox.textContent.trim());
+        updateDetailedReportCard();
     }
 
     function fetchOllamaCommentary(age, typeCode, typeName) {
@@ -2843,6 +3024,7 @@ Please write the response entirely in ${langName}.`;
                 if (requestId !== state.aiCommentRequestId || state.lang !== requestedLang || state.typeCode !== typeCode) return;
                 commentBox.textContent = localizeDimensionTerms(commentary, requestedLang);
                 persistLastResult(commentBox.textContent.trim());
+                updateDetailedReportCard();
                 showToast(requestedI18n.toastAiSuccess);
             })
             .catch(err => {
