@@ -812,6 +812,22 @@
             100% { transform: translateY(0) scale(1); }
         }
 
+        .cheki-save-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: -8px 0 22px;
+            width: 100%;
+        }
+
+        .cheki-save-actions .export-primary-btn {
+            width: 100%;
+        }
+
+        .cheki-save-actions .export-hint {
+            margin: 0;
+        }
+
         .share-button-group {
             display: flex;
             flex-direction: column;
@@ -1342,9 +1358,12 @@
 
         .consent-actions {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 8px;
             margin-top: 14px;
+            max-width: 360px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .consent-btn {
@@ -1362,12 +1381,6 @@
         .consent-btn.primary {
             background: var(--accent-yellow);
             border-color: var(--accent-yellow-border);
-        }
-
-        @media (max-width: 560px) {
-            .consent-actions {
-                grid-template-columns: 1fr;
-            }
         }
 
         /* ==========================================================================
@@ -1720,6 +1733,13 @@
                 </div>
             </div>
 
+            <div class="cheki-save-actions" aria-label="チェキ保存">
+                <button class="cute-btn export-primary-btn" id="exportBtn">
+                    📸 チェキを画像として保存/共有する
+                </button>
+                <div class="export-hint" id="exportHint">👆タップで画像保存（スクショ不要・キレイに保存）</div>
+            </div>
+
             <!-- 診断解説およびAIコメント -->
             <div class="cute-card" style="margin-bottom: 20px;">
                 <!-- 承認欲求スコアメーター -->
@@ -1788,12 +1808,6 @@
 
             <!-- アクションボタン群 -->
             <div class="action-buttons">
-                <div class="paid-save-cta" id="paidSaveCta" hidden>
-                    <button class="cute-btn paid-save-btn" id="btn-permanent-save" type="button" data-i18n="btnPermanentSave">
-                        ✦ 詳細AI診断書を保存＋永久保存 ¥120
-                    </button>
-                    <div class="paid-save-hint" id="paidSaveHint">またはXで共有して無料保存</div>
-                </div>
                 <button class="cute-btn compatibility-btn" id="btn-compatibility" type="button" data-i18n="btnCompatibility" hidden>
                     もう少し覗いてみる？ ¥360
                 </button>
@@ -1801,10 +1815,6 @@
                     眠った才能、起こしてみない？ ¥360
                 </button>
                 <div class="share-button-group" aria-label="共有">
-                    <button class="cute-btn export-primary-btn" id="exportBtn">
-                        📸 チェキを画像として保存/共有する
-                    </button>
-                    <div class="export-hint" id="exportHint">👆タップで画像保存（スクショ不要・キレイに保存）</div>
                     <button class="cute-btn" id="shareBtn" style="background: #1DA1F2; border-color: #1990DB; color: #FFF; box-shadow: 0 6px 0 #1990DB;">
                         🐦 X（Twitter）に結果を共有する
                     </button>
@@ -1846,8 +1856,8 @@
                 利用状況の分析と広告表示のためにCookie等を使います。ニックネームや入力内容はGA4へ送信しません。
             </div>
             <div class="consent-actions">
-                <button type="button" class="consent-btn" id="consentRejectBtn">拒否</button>
                 <button type="button" class="consent-btn primary" id="consentAcceptBtn">同意</button>
+                <button type="button" class="consent-btn" id="consentRejectBtn">拒否</button>
             </div>
         </div>
     </div>
