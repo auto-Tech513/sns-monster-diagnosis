@@ -59,9 +59,12 @@
     const LAST_RESULT_AI_LANG_KEY = "lastResultAiLang";
     const LAST_RESULT_NICKNAME_KEY = "lastResultNickname";
     const LAST_RESULT_AGE_KEY = "lastResultAge";
+    const LAST_RESULT_DESCRIPTION_KEY = "lastResultDescription";
+    const LAST_RESULT_ANSWERS_KEY = "lastResultAnswers";
     const CONSENT_STORAGE_KEY = "sns_monster_cookie_consent";
     const LANG_STORAGE_KEY = "sns_monster_lang";
     const SUPPORTED_LANGS = ["ja", "en", "ko", "zh"];
+    const ANSWER_KEYS = ["p", "a", "o", "s", "m", "n", "e", "r"];
 
     // ==========================================
     // 2. 多言語辞書 (i18n)
@@ -546,7 +549,7 @@
     };
 
     // ==========================================
-    // 3. 多言語質問データベース (全8問)
+    // 3. 多言語質問データベース (全16問)
     // ==========================================
     const questions = [
         {
@@ -792,6 +795,254 @@
                         en: "Experiencing emotional bonding and intuitive fun with others.",
                         ko: "그 자리에서 싹튼 「동료들과의 에모한 연대감이나 직관적인 즐거움」을 맛보는 것.",
                         zh: "体验当时产生的「与同伴之间的感性纽带，或直观的乐趣」。"
+                    },
+                    value: 's'
+                }
+            ]
+        },
+        {
+            category: {
+                ja: "承認の源泉", en: "Approval Source", ko: "승인의 원천", zh: "认同的源泉"
+            },
+            text: {
+                ja: "ストーリーの閲覧数はあるのに反応が少ないとき、つい考えるのは？",
+                en: "When your story has views but almost no reactions, what do you tend to think?",
+                ko: "스토리 조회수는 있는데 반응이 거의 없을 때, 무심코 드는 생각은?",
+                zh: "动态有浏览量却几乎没人互动时，你最容易想到什么？"
+            },
+            answers: [
+                {
+                    text: {
+                        ja: "「見てるなら何か押してよ」と、誰が見たかまで確認してしまう。",
+                        en: "I check who saw it and think, 'If you looked, react to it.'",
+                        ko: "「봤으면 뭐라도 눌러주지」 싶어서 누가 봤는지까지 확인한다.",
+                        zh: "会想「都看了怎么不点一下」，甚至去查是谁看过。"
+                    },
+                    value: 'e'
+                },
+                {
+                    text: {
+                        ja: "記録として残せたなら十分で、反応の有無はあまり引きずらない。",
+                        en: "If it works as my own record, reactions do not linger much.",
+                        ko: "내 기록으로 남겼다면 충분해서 반응 유무를 오래 끌지 않는다.",
+                        zh: "能作为自己的记录留下就够了，不太纠结有没有反应。"
+                    },
+                    value: 'r'
+                }
+            ]
+        },
+        {
+            category: {
+                ja: "欲求の動機", en: "Motivations", ko: "욕구의 동기", zh: "欲求的动机"
+            },
+            text: {
+                ja: "知らないSNSの流行が急に周りで盛り上がったとき、最初の反応は？",
+                en: "When a new SNS trend suddenly spreads around you, what is your first reaction?",
+                ko: "모르는 SNS 유행이 갑자기 주변에서 뜰 때, 첫 반응은?",
+                zh: "身边突然流行起一个你不了解的社交媒体玩法时，你的第一反应是？"
+            },
+            answers: [
+                {
+                    text: {
+                        ja: "「乗り遅れたら存在感が薄くなるかも」と急いで把握する。",
+                        en: "I rush to understand it because being late might make me invisible.",
+                        ko: "「늦으면 존재감이 옅어질지도」 싶어서 급히 파악한다.",
+                        zh: "会赶紧弄懂，担心「跟不上就会没存在感」。"
+                    },
+                    value: 'n'
+                },
+                {
+                    text: {
+                        ja: "面白そうなら自分なりの使い方を試し、違えば静かに見送る。",
+                        en: "If it seems fun, I test my own spin; if not, I let it pass.",
+                        ko: "재밌어 보이면 내 방식으로 써 보고, 아니면 조용히 넘긴다.",
+                        zh: "觉得有趣就用自己的方式试试，不合适就安静略过。"
+                    },
+                    value: 'm'
+                }
+            ]
+        },
+        {
+            category: {
+                ja: "表出アプローチ", en: "Approach Style", ko: "표출 어프로치", zh: "表出态度"
+            },
+            text: {
+                ja: "いい感じの作品や成果ができた直後、あなたが取りがちな行動は？",
+                en: "Right after making something you feel proud of, what do you usually do?",
+                ko: "마음에 드는 작품이나 성과가 생긴 직후, 주로 어떤 행동을 하나요?",
+                zh: "刚做出自己满意的作品或成果时，你通常会怎么做？"
+            },
+            answers: [
+                {
+                    text: {
+                        ja: "熱が冷めないうちに、制作過程やこだわりも含めて投稿する。",
+                        en: "I post it while the energy is fresh, including the process and details.",
+                        ko: "열기가 식기 전에 과정과 포인트까지 함께 올린다.",
+                        zh: "趁热度还在，把过程和讲究也一起发出来。"
+                    },
+                    value: 'a'
+                },
+                {
+                    text: {
+                        ja: "まず自分だけで眺め、見せる相手やタイミングをかなり選ぶ。",
+                        en: "I enjoy it privately first and carefully choose who and when to show.",
+                        ko: "먼저 혼자 감상하고, 보여줄 사람과 타이밍을 꽤 고른다.",
+                        zh: "先自己欣赏，再慎重选择给谁看、什么时候发。"
+                    },
+                    value: 'p'
+                }
+            ]
+        },
+        {
+            category: {
+                ja: "評価基準", en: "Evaluation Criteria", ko: "평가 기준", zh: "评价标准"
+            },
+            text: {
+                ja: "投稿が伸びた日の夜、あとで見返したくなるのはどちら？",
+                en: "On a day when a post performs well, what do you want to revisit later?",
+                ko: "게시물이 잘 된 날 밤, 나중에 다시 보고 싶은 것은?",
+                zh: "帖子表现不错的那天晚上，你之后更想回看哪一种？"
+            },
+            answers: [
+                {
+                    text: {
+                        ja: "伸びた数字、ランキング、保存数などの結果画面。",
+                        en: "The result screen: numbers, ranking, saves, and reach.",
+                        ko: "올라간 숫자, 순위, 저장 수 같은 결과 화면.",
+                        zh: "增长的数据、排名、收藏数等结果画面。"
+                    },
+                    value: 'o'
+                },
+                {
+                    text: {
+                        ja: "誰かの一言コメントや、空気が変わった瞬間の感触。",
+                        en: "A single comment from someone, or the feeling that the mood shifted.",
+                        ko: "누군가의 한마디 댓글이나 분위기가 바뀐 순간의 감각.",
+                        zh: "某个人的一句评论，或氛围突然变化的那种感觉。"
+                    },
+                    value: 's'
+                }
+            ]
+        },
+        {
+            category: {
+                ja: "承認の源泉", en: "Approval Source", ko: "승인의 원천", zh: "认同的源泉"
+            },
+            text: {
+                ja: "投稿前に最後まで迷うとき、判断基準になりやすいのは？",
+                en: "When you hesitate before posting, what usually decides it?",
+                ko: "게시 전 끝까지 망설일 때, 판단 기준이 되기 쉬운 것은?",
+                zh: "发布前犹豫到最后时，最容易成为判断标准的是？"
+            },
+            answers: [
+                {
+                    text: {
+                        ja: "これを出したらどう見られるか、変に思われないか。",
+                        en: "How people will see it, and whether it might look weird.",
+                        ko: "이걸 올리면 어떻게 보일지, 이상하게 보이지 않을지.",
+                        zh: "别人会怎么看，会不会觉得奇怪。"
+                    },
+                    value: 'e'
+                },
+                {
+                    text: {
+                        ja: "今の自分の好みや感覚にちゃんと合っているか。",
+                        en: "Whether it honestly matches my own taste and sense right now.",
+                        ko: "지금 내 취향과 감각에 제대로 맞는지.",
+                        zh: "是否真的符合此刻自己的喜好和感觉。"
+                    },
+                    value: 'r'
+                }
+            ]
+        },
+        {
+            category: {
+                ja: "欲求の動機", en: "Motivations", ko: "욕구의 동기", zh: "欲求的动机"
+            },
+            text: {
+                ja: "同年代の誰かが急に注目されたとき、心の奥で強く出る反応は？",
+                en: "When someone your age suddenly gets attention, what rises inside first?",
+                ko: "또래 누군가가 갑자기 주목받을 때, 마음속에서 강하게 올라오는 반응은?",
+                zh: "同龄人突然受到关注时，你内心最强烈的反应是？"
+            },
+            answers: [
+                {
+                    text: {
+                        ja: "「自分だけ取り残されているかも」と焦りが出る。",
+                        en: "I feel anxious that I might be the only one falling behind.",
+                        ko: "「나만 뒤처지는 건가」 하는 조급함이 올라온다.",
+                        zh: "会焦虑「是不是只有我被落下了」。"
+                    },
+                    value: 'n'
+                },
+                {
+                    text: {
+                        ja: "刺激を受けるが、最後は自分の伸ばし方を考える。",
+                        en: "I feel stimulated, then think about how I want to grow.",
+                        ko: "자극은 받지만 결국 내 성장 방식을 생각한다.",
+                        zh: "会受到刺激，但最后会思考自己的成长方式。"
+                    },
+                    value: 'm'
+                }
+            ]
+        },
+        {
+            category: {
+                ja: "表出アプローチ", en: "Approach Style", ko: "표출 어프로치", zh: "表出态度"
+            },
+            text: {
+                ja: "オンラインの会話で、自分の考えに近い話題が出たときは？",
+                en: "When an online conversation touches a topic close to your thoughts, what do you do?",
+                ko: "온라인 대화에서 내 생각과 가까운 주제가 나왔을 때는?",
+                zh: "线上聊天中出现和你想法很接近的话题时，你会？"
+            },
+            answers: [
+                {
+                    text: {
+                        ja: "流れに入って、自分の視点も早めに差し込む。",
+                        en: "I join the flow and add my perspective fairly quickly.",
+                        ko: "흐름에 들어가 내 관점도 빠르게 보탠다.",
+                        zh: "进入话题，很快加入自己的观点。"
+                    },
+                    value: 'a'
+                },
+                {
+                    text: {
+                        ja: "場の空気を見て、言えそうな隙があればそっと出す。",
+                        en: "I read the room and speak only if a good opening appears.",
+                        ko: "분위기를 보고 말할 틈이 있으면 조심히 꺼낸다.",
+                        zh: "先观察气氛，有合适空隙才轻轻说出来。"
+                    },
+                    value: 'p'
+                }
+            ]
+        },
+        {
+            category: {
+                ja: "評価基準", en: "Evaluation Criteria", ko: "평가 기준", zh: "评价标准"
+            },
+            text: {
+                ja: "SNSを続ける意味を感じるのは、どちらの瞬間に近い？",
+                en: "Which moment makes SNS feel worth continuing for you?",
+                ko: "SNS를 계속할 의미를 느끼는 순간은 어느 쪽에 가까운가요?",
+                zh: "哪一种时刻更会让你觉得继续玩社交媒体有意义？"
+            },
+            answers: [
+                {
+                    text: {
+                        ja: "フォロワーや閲覧数がじわじわ伸びて、積み上がりが見えたとき。",
+                        en: "When followers or views steadily grow and I can see the accumulation.",
+                        ko: "팔로워나 조회수가 조금씩 늘어 쌓이는 게 보일 때.",
+                        zh: "粉丝数或浏览量慢慢增长，看得见积累的时候。"
+                    },
+                    value: 'o'
+                },
+                {
+                    text: {
+                        ja: "少人数でも濃い反応があり、自分の感覚が届いたと感じたとき。",
+                        en: "When a small but deep reaction makes me feel my sensibility reached someone.",
+                        ko: "소수라도 깊은 반응이 있어 내 감각이 닿았다고 느낄 때.",
+                        zh: "即使人数不多，但有很深的回应，让你觉得自己的感觉传达到了。"
                     },
                     value: 's'
                 }
@@ -1208,6 +1459,302 @@
             .replace(/Subjective/g, data.dimensionInternal);
     }
 
+    function createEmptyAnswerCounts() {
+        return { p: 0, a: 0, o: 0, s: 0, m: 0, n: 0, e: 0, r: 0 };
+    }
+
+    function normalizeAnswerCounts(value) {
+        const normalized = createEmptyAnswerCounts();
+        if (!value || typeof value !== 'object') return normalized;
+
+        ANSWER_KEYS.forEach(key => {
+            const count = Number(value[key]);
+            normalized[key] = Number.isFinite(count) && count > 0 ? Math.round(count) : 0;
+        });
+
+        return normalized;
+    }
+
+    function axisRatio(primary, secondary) {
+        const p = Number(primary) || 0;
+        const s = Number(secondary) || 0;
+        const total = p + s;
+        return total > 0 ? p / total : 0;
+    }
+
+    function calculateApprovalPercent() {
+        const answers = normalizeAnswerCounts(state.answers);
+        const externalScore = axisRatio(answers.e, answers.r);
+        const activeScore = axisRatio(answers.a, answers.p);
+        const objectiveScore = axisRatio(answers.o, answers.s);
+        const belongingAnxietyScore = axisRatio(answers.n, answers.m);
+
+        const rawScore =
+            (externalScore * 0.45) +
+            (activeScore * 0.25) +
+            (objectiveScore * 0.2) +
+            (belongingAnxietyScore * 0.1);
+
+        return Math.max(0, Math.min(100, Math.round(rawScore * 100)));
+    }
+
+    function getAgeVariantKey(ageText = state.age) {
+        const age = String(ageText || '').toLowerCase();
+        if (age.includes('10')) return 'teen';
+        if (age.includes('20')) return 'twenties';
+        if (age.includes('30')) return 'thirties';
+        if (age.includes('40') || age.includes('above') || age.includes('以上') || age.includes('이상')) return 'forties';
+        return 'unknown';
+    }
+
+    function getScoreBand(score = state.approvalPercent) {
+        const value = Number.isFinite(Number(score)) ? Number(score) : 0;
+        if (value <= 0) return 'zero';
+        if (value <= 14) return 'low';
+        if (value <= 34) return 'mild';
+        if (value <= 54) return 'medium';
+        if (value <= 74) return 'high';
+        return 'extreme';
+    }
+
+    function getPersonalizationCopy(lang = state.lang) {
+        const copies = {
+            ja: {
+                age: {
+                    teen: "10代らしく、周囲の反応がその日の気分に直結しやすい年代補正が出ています。",
+                    twenties: "20代らしく、見られ方と自分の伸びしろを同時に気にする分岐です。",
+                    thirties: "30代らしく、実績・役割・納得感のバランスで承認を測る傾向が出ています。",
+                    forties: "40代以上らしく、場の信用や自分の基準を守る方向に承認欲求が現れています。",
+                    unknown: "年齢を伏せたぶん、回答そのものの癖を強めに読んでいます。"
+                },
+                score: {
+                    zero: "承認欲求度0%帯。見られたいというより、他人の評価圏からそっと離れたい反応です。",
+                    low: "承認欲求度はかなり低め。反応は視界に入るものの、自分の世界を守る力が勝っています。",
+                    mild: "承認欲求度は控えめ。気にはなるが、最後は自分の基準に戻れるタイプです。",
+                    medium: "承認欲求度は中間。自分軸と他人の視線が綱引きしています。",
+                    high: "承認欲求度は高め。反応・数字・居場所への感度が行動を押しています。",
+                    extreme: "承認欲求度はかなり強め。通知と評価が心の操縦席に座りがちです。"
+                },
+                patternIntro: "回答傾向は「{parts}」。",
+                patternUnknown: "回答履歴が復元できないため、タイプコードとスコア中心に読んでいます。",
+                patternJoiner: " / ",
+                labels: {
+                    active: "自分から見せにいく",
+                    passive: "見つけてほしい",
+                    objective: "数字や実績で測る",
+                    subjective: "空気や言葉で感じる",
+                    growth: "成長で満たす",
+                    safety: "置いていかれ不安で動く",
+                    external: "他者評価で安心する",
+                    internal: "自分基準で納得する"
+                },
+                aiScore: {
+                    zero: "0%帯なので、承認欲求というより承認回避である。褒められる前に通知圏外へ避難し、心の平穏を守る省エネ設計だ。",
+                    low: "低スコア帯なので、反応待ちで溶けるほど繊細ではない。ただし興味のある相手の一言だけは、地味に刺さって長持ちする。",
+                    mild: "控えめスコア帯なので、見られたい気持ちを冗談で薄める癖がある。『別にいいけど』の裏で、少しだけ通知を見ている。",
+                    medium: "中間スコア帯なので、自分軸と他人軸の押し合いが激しい。投稿ボタンの前で、脳内会議だけがやけに民主的だ。",
+                    high: "高スコア帯なので、評価の気配に反射神経が良すぎる。数字と空気を同時に読もうとして、心の通知欄が常に満員である。",
+                    extreme: "超高スコア帯なので、承認は嗜好品ではなく燃料である。反応が薄いだけで、自尊心の通信環境まで圏外になる。"
+                },
+                aiAge: {
+                    teen: "10代補正で、仲間内の空気がかなり強く効く。軽い既読や未反応でも、脳内では小さな社会裁判が始まりやすい。",
+                    twenties: "20代補正で、比較と自己実現が同時に走る。『自分らしく』と言いながら、同年代の伸びだけは妙に鮮明に見えている。",
+                    thirties: "30代補正で、単なる人気よりも役割・実績・信用への執着が混ざる。承認欲求が少し社会人顔をしているだけだ。",
+                    forties: "40代以上補正で、派手な反応よりも信頼と品位を気にする。とはいえ評価されたい心が消えたわけではなく、表札を付け替えただけである。",
+                    unknown: "年齢非公開なので、年齢という逃げ道を使わせず回答だけを読む。隠した分だけ、癖はむしろ輪郭を持つ。"
+                },
+                aiPattern: "回答の核は「{parts}」。つまりこの結果はキャラ絵の雰囲気ではなく、あなたが選んだ逃げ方・見せ方・測り方の合成である。"
+            },
+            en: {
+                age: {
+                    teen: "The 10s age band adds a peer-response filter: reactions can swing the mood fast.",
+                    twenties: "The 20s age band splits you between image management and personal growth.",
+                    thirties: "The 30s age band makes approval pass through achievement, role, and self-respect.",
+                    forties: "The 40s+ age band shifts approval toward trust, credibility, and personal standards.",
+                    unknown: "Because age is hidden, the reading leans harder on the answer pattern itself."
+                },
+                score: {
+                    zero: "Approval desire sits at 0%. This is less 'notice me' and more 'please leave my inner room untouched.'",
+                    low: "Approval desire is very low. Reactions register, but your private standard wins first.",
+                    mild: "Approval desire is mild. You notice attention, then usually return to your own baseline.",
+                    medium: "Approval desire is in the middle. Your self-image and outside gaze are pulling the same rope.",
+                    high: "Approval desire is high. Reactions, numbers, and belonging cues push your behavior.",
+                    extreme: "Approval desire is intense. Notifications and evaluation tend to sit in the control seat."
+                },
+                patternIntro: "Answer pattern: {parts}.",
+                patternUnknown: "Answer history was not restored, so this reading leans on type code and score.",
+                patternJoiner: " / ",
+                labels: {
+                    active: "shows up actively",
+                    passive: "wants to be discovered",
+                    objective: "trusts numbers and proof",
+                    subjective: "reads mood and words",
+                    growth: "seeks growth",
+                    safety: "moves from exclusion anxiety",
+                    external: "rests on outside approval",
+                    internal: "returns to self-approval"
+                },
+                aiScore: {
+                    zero: "At 0%, this is not approval hunger but approval avoidance. You protect your peace by stepping outside the scoreboard before anyone can grade you.",
+                    low: "With a low score, you are not melting over every reaction. Still, one well-placed comment from the right person can live rent-free.",
+                    mild: "With a mild score, you downplay wanting attention as a joke. The notification check still happens; it is just dressed as irony.",
+                    medium: "At midrange, self-approval and public gaze keep negotiating. The post button becomes a tiny committee meeting.",
+                    high: "With a high score, your reflexes around feedback are too sharp. You read numbers and vibes at once, then call it intuition.",
+                    extreme: "At the extreme end, approval is not a snack; it is fuel. A quiet post can make your whole self-image lose signal."
+                },
+                aiAge: {
+                    teen: "The 10s filter makes peer atmosphere heavy. Even a small silence can feel like a referendum.",
+                    twenties: "The 20s filter mixes comparison with self-making. You say 'my own path' while watching your peers with suspicious clarity.",
+                    thirties: "The 30s filter turns popularity into role, record, and credibility. The desire is simply wearing business clothes.",
+                    forties: "The 40s+ filter cares about trust and dignity more than flash. The need to be seen is still there; it just changed costume.",
+                    unknown: "With age undisclosed, the answers have no demographic hiding place. The pattern becomes the evidence."
+                },
+                aiPattern: "The core pattern is {parts}. This result is not just the character image; it is the combined shape of how you hide, show, measure, and seek safety."
+            },
+            ko: {
+                age: {
+                    teen: "10대 보정으로 또래 반응이 그날의 기분에 바로 닿는 흐름이 보입니다.",
+                    twenties: "20대 보정으로 보여지는 모습과 성장 욕구가 동시에 흔들리는 분기입니다.",
+                    thirties: "30대 보정으로 성과, 역할, 납득감의 균형 속에서 인정 욕구가 드러납니다.",
+                    forties: "40대 이상 보정으로 신뢰, 품위, 자기 기준을 지키는 쪽으로 인정 욕구가 나타납니다.",
+                    unknown: "나이를 숨긴 만큼, 답변 패턴 자체를 더 강하게 읽었습니다."
+                },
+                score: {
+                    zero: "인정욕구 0%대입니다. 봐 달라는 마음보다 평가권 밖에 있고 싶은 반응이 더 큽니다.",
+                    low: "인정욕구는 매우 낮은 편입니다. 반응은 보이지만 자기 세계를 지키는 힘이 앞섭니다.",
+                    mild: "인정욕구는 약한 편입니다. 신경은 쓰지만 결국 자기 기준으로 돌아옵니다.",
+                    medium: "인정욕구는 중간입니다. 자기축과 타인의 시선이 줄다리기 중입니다.",
+                    high: "인정욕구는 높은 편입니다. 반응, 숫자, 소속감의 신호가 행동을 밀어냅니다.",
+                    extreme: "인정욕구가 상당히 강합니다. 알림과 평가가 마음의 운전석에 앉기 쉽습니다."
+                },
+                patternIntro: "답변 경향은 「{parts}」입니다.",
+                patternUnknown: "답변 기록이 복원되지 않아 타입 코드와 점수 중심으로 읽었습니다.",
+                patternJoiner: " / ",
+                labels: {
+                    active: "직접 보여주려 함",
+                    passive: "발견되길 기다림",
+                    objective: "숫자와 성과로 판단",
+                    subjective: "분위기와 말로 느낌",
+                    growth: "성장으로 채움",
+                    safety: "뒤처짐 불안으로 움직임",
+                    external: "타인 평가로 안심",
+                    internal: "자기 기준으로 납득"
+                },
+                aiScore: {
+                    zero: "0%대라서 인정욕구라기보다 인정 회피에 가깝습니다. 평가받기 전에 조용히 빠져나가 마음의 평온을 지키는 구조입니다.",
+                    low: "낮은 점수대라 모든 반응에 녹아내리지는 않습니다. 다만 중요한 사람의 한마디는 오래 남습니다.",
+                    mild: "약한 점수대라 관심받고 싶은 마음을 농담으로 흐립니다. 그래도 알림 확인은 합니다. 단지 아닌 척할 뿐입니다.",
+                    medium: "중간 점수대라 자기 기준과 타인의 시선이 계속 협상합니다. 게시 버튼 앞에서 마음속 회의가 길어집니다.",
+                    high: "높은 점수대라 피드백에 대한 반사신경이 너무 빠릅니다. 숫자와 분위기를 동시에 읽고 직감이라고 부릅니다.",
+                    extreme: "최고 점수대라 인정은 간식이 아니라 연료입니다. 반응이 조용하면 자존감의 신호까지 약해집니다."
+                },
+                aiAge: {
+                    teen: "10대 보정으로 또래 분위기의 영향이 큽니다. 작은 무반응도 마음속에서는 사회적 판정처럼 커질 수 있습니다.",
+                    twenties: "20대 보정으로 비교와 자기실현이 동시에 달립니다. 내 길을 말하면서도 또래의 성장은 유난히 선명하게 보입니다.",
+                    thirties: "30대 보정으로 단순한 인기보다 역할, 성과, 신뢰가 섞입니다. 인정욕구가 사회생활 말투를 배운 셈입니다.",
+                    forties: "40대 이상 보정으로 화려한 반응보다 신뢰와 품위를 중시합니다. 인정받고 싶은 마음이 사라진 것은 아닙니다.",
+                    unknown: "나이 비공개라서 도망갈 배경이 없습니다. 답변의 습관이 그대로 증거가 됩니다."
+                },
+                aiPattern: "핵심 패턴은 「{parts}」입니다. 이 결과는 캐릭터 분위기가 아니라, 당신이 고른 숨는 법, 보이는 법, 평가하는 법의 합성입니다."
+            },
+            zh: {
+                age: {
+                    teen: "10代年龄层会让同伴反应更直接影响当天情绪。",
+                    twenties: "20代年龄层让你在外界形象和自我成长之间同时摇摆。",
+                    thirties: "30代年龄层会把认同感放进成果、角色和自我说服的平衡里。",
+                    forties: "40代以上年龄层更容易把认同感转向信任、体面和个人标准。",
+                    unknown: "因为隐藏了年龄，所以这次更重视回答模式本身。"
+                },
+                score: {
+                    zero: "认同感欲求为0%。这不是想被看见，而是想暂时离开别人的评价范围。",
+                    low: "认同感欲求很低。你会看到反应，但保护自己世界的力量更强。",
+                    mild: "认同感欲求偏弱。会在意，但最后通常回到自己的判断。",
+                    medium: "认同感欲求处于中间。自我标准和外界目光正在拉扯。",
+                    high: "认同感欲求偏高。互动、数字和归属感信号会推动你的行为。",
+                    extreme: "认同感欲求非常强。通知和评价很容易坐到内心驾驶位上。"
+                },
+                patternIntro: "回答倾向是「{parts}」。",
+                patternUnknown: "回答记录未能恢复，因此主要根据类型代码和分数判断。",
+                patternJoiner: " / ",
+                labels: {
+                    active: "主动展示自己",
+                    passive: "希望被发现",
+                    objective: "用数字和成果判断",
+                    subjective: "用氛围和话语感受",
+                    growth: "通过成长获得满足",
+                    safety: "由落后焦虑驱动",
+                    external: "靠他人评价安心",
+                    internal: "回到自我标准"
+                },
+                aiScore: {
+                    zero: "0%区间更像是回避认同，而不是渴望认同。你在被评价前先撤出赛道，以此保护内心安静。",
+                    low: "低分区间说明你不会为每个反应崩塌。但关键对象的一句话，仍然能在心里停留很久。",
+                    mild: "偏低分区间会把想被看见包装成玩笑。通知还是会看，只是会装作顺手而已。",
+                    medium: "中间分数代表自我标准和外界视线一直谈判。发布按钮前，内心会议格外漫长。",
+                    high: "高分区间说明你对反馈太敏感。你同时读数字和氛围，然后把它称为直觉。",
+                    extreme: "最高区间里，认同不是点心而是燃料。帖子一安静，自我形象的信号也跟着变弱。"
+                },
+                aiAge: {
+                    teen: "10代补正让同伴气氛影响很大。一个小小的沉默，也容易被内心放大成社会审判。",
+                    twenties: "20代补正把比较和自我实现混在一起。你说走自己的路，却把同龄人的进度看得格外清楚。",
+                    thirties: "30代补正让人气变成角色、履历和可信度。认同欲只是换上了成熟外衣。",
+                    forties: "40代以上补正更在意信任与体面，而不是表面热闹。想被认可的心没有消失，只是换了名字。",
+                    unknown: "年龄未公开，所以无法用年龄解释自己。回答习惯本身就是证据。"
+                },
+                aiPattern: "核心模式是「{parts}」。这个结果不是角色图的气氛，而是你选择的隐藏方式、展示方式、衡量方式的组合。"
+            }
+        };
+
+        return copies[normalizeLang(lang)] || copies.ja;
+    }
+
+    function getAnswerPatternParts(lang = state.lang) {
+        const answers = normalizeAnswerCounts(state.answers);
+        const total = ANSWER_KEYS.reduce((sum, key) => sum + (answers[key] || 0), 0);
+        const copy = getPersonalizationCopy(lang);
+        if (!total) return [];
+
+        return [
+            answers.a >= answers.p ? copy.labels.active : copy.labels.passive,
+            answers.s >= answers.o ? copy.labels.subjective : copy.labels.objective,
+            answers.m >= answers.n ? copy.labels.growth : copy.labels.safety,
+            answers.r >= answers.e ? copy.labels.internal : copy.labels.external
+        ];
+    }
+
+    function getAnswerPatternSummary(lang = state.lang) {
+        const copy = getPersonalizationCopy(lang);
+        const parts = getAnswerPatternParts(lang);
+        if (!parts.length) return copy.patternUnknown;
+        return copy.patternIntro.replace("{parts}", parts.join(copy.patternJoiner));
+    }
+
+    function getPersonalizedResultDescription(info, lang = state.lang) {
+        if (!info) return "";
+        const copy = getPersonalizationCopy(lang);
+        const base = info.description[lang] || info.description.ja || "";
+        const scoreLine = copy.score[getScoreBand()] || "";
+        const ageLine = copy.age[getAgeVariantKey()] || "";
+        const patternLine = getAnswerPatternSummary(lang);
+
+        return [base, scoreLine, ageLine, patternLine].filter(Boolean).join(" ");
+    }
+
+    function getPersonalizedAiFallback(typeCode, lang = state.lang) {
+        const info = typeDatabase[typeCode];
+        if (!info) return "";
+        const copy = getPersonalizationCopy(lang);
+        const base = info.fallback[lang] || info.fallback.ja || "";
+        const scoreLine = copy.aiScore[getScoreBand()] || "";
+        const ageLine = copy.aiAge[getAgeVariantKey()] || "";
+        const parts = getAnswerPatternParts(lang);
+        const patternLine = parts.length
+            ? copy.aiPattern.replace("{parts}", parts.join(copy.patternJoiner))
+            : copy.patternUnknown;
+
+        return [base, scoreLine, ageLine, patternLine].filter(Boolean).join(" ");
+    }
+
     function normalizeLang(lang) {
         return SUPPORTED_LANGS.includes(lang) ? lang : 'ja';
     }
@@ -1418,6 +1965,13 @@
             const typeName = localStorage.getItem(LAST_RESULT_TYPE_KEY) || "";
             const typeCode = localStorage.getItem(LAST_RESULT_TYPE_CODE_KEY) || "";
             const score = Number(localStorage.getItem(LAST_RESULT_SCORE_KEY));
+            let answers = createEmptyAnswerCounts();
+
+            try {
+                answers = normalizeAnswerCounts(JSON.parse(localStorage.getItem(LAST_RESULT_ANSWERS_KEY) || '{}'));
+            } catch (parseErr) {
+                console.warn('Last result answers could not be parsed:', parseErr);
+            }
 
             if (!typeName && !typeCode) return null;
 
@@ -1428,7 +1982,9 @@
                 ai: localStorage.getItem(LAST_RESULT_AI_KEY) || "",
                 aiLang: normalizeLang(localStorage.getItem(LAST_RESULT_AI_LANG_KEY)),
                 nickname: localStorage.getItem(LAST_RESULT_NICKNAME_KEY) || "",
-                age: localStorage.getItem(LAST_RESULT_AGE_KEY) || ""
+                age: localStorage.getItem(LAST_RESULT_AGE_KEY) || "",
+                description: localStorage.getItem(LAST_RESULT_DESCRIPTION_KEY) || "",
+                answers
             };
         } catch (err) {
             console.warn('Last result could not be read:', err);
@@ -1442,10 +1998,14 @@
 
         try {
             const commentBox = document.getElementById('aiCommentaryBox');
-            const fallback = info.fallback[state.lang] || info.fallback.ja || "";
+            const descBox = document.getElementById('resultTypeDesc');
+            const fallback = getPersonalizedAiFallback(state.typeCode, state.lang) || info.fallback[state.lang] || info.fallback.ja || "";
             const ai = typeof aiText === 'string'
                 ? aiText
                 : (commentBox && commentBox.textContent ? commentBox.textContent.trim() : fallback);
+            const description = descBox && descBox.textContent
+                ? descBox.textContent.trim()
+                : getPersonalizedResultDescription(info, state.lang);
 
             localStorage.setItem(LAST_RESULT_TYPE_KEY, getCurrentTypeName(state.lang));
             localStorage.setItem(LAST_RESULT_TYPE_CODE_KEY, state.typeCode);
@@ -1454,6 +2014,8 @@
             localStorage.setItem(LAST_RESULT_AI_LANG_KEY, state.lang);
             localStorage.setItem(LAST_RESULT_NICKNAME_KEY, state.username || "");
             localStorage.setItem(LAST_RESULT_AGE_KEY, state.age || "");
+            localStorage.setItem(LAST_RESULT_DESCRIPTION_KEY, description);
+            localStorage.setItem(LAST_RESULT_ANSWERS_KEY, JSON.stringify(normalizeAnswerCounts(state.answers)));
         } catch (err) {
             console.warn('Last result could not be saved:', err);
         }
@@ -1479,6 +2041,7 @@
         state.approvalPercent = saved.score;
         state.username = saved.nickname;
         state.age = saved.age;
+        state.answers = normalizeAnswerCounts(saved.answers);
         state.currentQuestionIndex = questions.length;
         clearInterval(state.timerId);
 
@@ -2833,16 +3396,13 @@
         
         state.typeCode = `${d1}${d2}${d3}${d4}`;
 
-        // 承認欲求スコアを計算 (e度合いが高いほど、a度合いが高いほどスコア高)
-        const totalAnswers = state.currentQuestionIndex || 8;
-        const eScore = state.answers.e / Math.max(1, state.answers.e + state.answers.r);
-        const aScore = state.answers.a / Math.max(1, state.answers.a + state.answers.p);
-        const oScore = state.answers.o / Math.max(1, state.answers.o + state.answers.s);
-        const rawScore = (eScore * 0.5) + (aScore * 0.3) + (oScore * 0.2);
-        state.approvalPercent = Math.round(rawScore * 100);
+        // 承認欲求スコアを計算:
+        // 外部評価・能動発信・数字評価に加え、所属不安を軽く反映する。
+        // これにより同じタイプコードでも、回答の濃淡に応じて0/10/40/80%帯が分岐する。
+        state.approvalPercent = calculateApprovalPercent();
         
         applyResultUI();
-        persistLastResult(typeDatabase[state.typeCode].fallback[state.lang] || typeDatabase[state.typeCode].fallback.ja);
+        persistLastResult(getPersonalizedAiFallback(state.typeCode, state.lang));
         prepareResultAdSlot();
         safeTrack('shindan_complete', {
             monster_code: state.typeCode,
@@ -2873,7 +3433,7 @@
         if (!info) return;
 
         const name = info.name[state.lang] || info.name.ja;
-        const description = info.description[state.lang] || info.description.ja;
+        const description = getPersonalizedResultDescription(info, state.lang);
 
         const chekiTitle = document.getElementById('chekiTitle');
         const chekiUserName = document.getElementById('chekiUserName');
@@ -2956,7 +3516,7 @@
         const info = typeDatabase[typeCode];
         if (!commentBox || !info) return;
 
-        const fallback = info.fallback[lang] || info.fallback.ja;
+        const fallback = getPersonalizedAiFallback(typeCode, lang) || info.fallback[lang] || info.fallback.ja;
         commentBox.textContent = localizeDimensionTerms(fallback, lang);
         persistLastResult(commentBox.textContent.trim());
         updateDetailedReportCard();
@@ -2990,14 +3550,17 @@
                          requestedLang === 'ko' ? 'Korean (한국어)' :
                          requestedLang === 'zh' ? 'Simplified Chinese (简体中文)' : 'Japanese (日本語)';
 
-        const systemPrompt = `診断結果コードは '${typeCode}' (小文字) で、名称は '${typeName}' です。年齢層は '${age}' です。
+        const scoreBand = getScoreBand();
+        const answerPattern = getAnswerPatternSummary(requestedLang);
+        const systemPrompt = `診断結果コードは '${typeCode}' (小文字) で、名称は '${typeName}' です。年齢層は '${age}' です。承認欲求スコアは '${state.approvalPercent}%'、スコア帯は '${scoreBand}'、回答傾向は '${answerPattern}' です。
 この情報に基づき、このユーザーの「承認欲求」について、最高に皮肉が効いていてユーモラス、かつ精神的な深層をズバッと射抜くような「極めて辛辣でイタい毒舌解説」を、必ず「${langName}」で200字以内で作成してください。
 
 【制約ルール】
 1. 甘やかす言葉、お世辞、ポジティブな励ましやフォローは一切禁止です。純粋な辛口ユーモアと冷酷な分析だけで構成してください。
 2. SNSでのありがちな「痛い行動パターン」（いいね欲しさに必死な姿、見栄、過剰な自意識、マウンティングなど）を具体的に挙げ、抉るように批判してください。
 3. 語尾は「〜ですね」「〜のようです」といった日和った表現を避け、「〜である」「〜なのだ」や鋭いツッコミの口調など、断定的でシャープな口調にしてください。
-4. 挨拶や自己紹介、判定コード自体の説明などは一切不要です。最初から鋭い毒舌だけで開始してください。
+4. 年齢層・承認欲求スコア・回答傾向に必ず触れ、同じタイプ名でもスコアや年齢が違えば別内容になるようにしてください。
+5. 挨拶や自己紹介、判定コード自体の説明などは一切不要です。最初から鋭い毒舌だけで開始してください。
 Please write the response entirely in ${langName}.`;
 
         const fetchPromise = fetch('http://localhost:11434/api/chat', {
