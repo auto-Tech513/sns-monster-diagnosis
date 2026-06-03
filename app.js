@@ -152,8 +152,8 @@
             btnPermanentSave: "✦ 詳細AI診断書を保存＋永久保存 ¥120",
             btnLockPurchase: "✦ 詳細AI診断書を保存＋永久保存 ¥120",
             orDivider: "─── または ───",
-            btnCompatibility: "もう少し覗いてみる？ ¥360",
-            btnTalent: "眠った才能、起こしてみない？ ¥360",
+            btnCompatibility: "相性まで暴く？ ¥360",
+            btnTalent: "隠れ才能、暴いてOK？ ¥360",
             sectionTalentTitle: "🌟 眠った才能パック",
             sectionTalentLocked: "才能データを準備中です。購入後にここへ表示されます。",
             sectionTalentHidden: "眠った才能",
@@ -172,10 +172,10 @@
             detailedReportTitle: "📄 詳細AI診断書",
             detailedReportUnlockedText: "タイプ説明とAI毒舌を1枚の画像で保存できます。",
             detailedReportLockedTitle: "🔒 詳細AI診断書は永久保存版で解放",
-            detailedReportLockedText: "タイプ説明＋AI毒舌の詳細診断書を画像で残せるのは¥120だけ。60秒で霧に消える前に。",
+            detailedReportLockedText: "この詳しい結果、60秒で霧に消えます。詳細AI診断書（タイプ説明＋AI毒舌）を画像で保存できます。",
             detailedReportSaveBtn: "📄 詳細AI診断書を画像で保存",
-            detailedReportPurchaseBtn: "✦ ¥120で詳細診断書を保存＋永久保存",
-            detailedReportLossCopy: "タイプ説明＋AI毒舌の詳細診断書を画像で残せるのは¥120だけ。60秒で霧に消える前に。",
+            detailedReportPurchaseBtn: "✦ 詳細AI診断書を保存＋永久保存 ¥120",
+            detailedReportLossCopy: "この詳しい結果、60秒で霧に消えます。詳細AI診断書（タイプ説明＋AI毒舌）を画像で保存＋永久保存 →¥120",
             detailedReportScoreLabel: "承認欲求スコア",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
             paidSaveBtn: "✨ 詳細AI診断書を保存＋永久保存 ¥{price}",
@@ -268,11 +268,11 @@
             consentReject: "Reject",
             consentAccept: "Accept",
             adLabel: "Sponsored",
-            btnPermanentSave: "✦ Save full AI report + keep forever ¥120",
-            btnLockPurchase: "✦ Save full AI report + keep forever ¥120",
+            btnPermanentSave: "✦ Save full result image forever ¥120",
+            btnLockPurchase: "✦ Restore full result forever ¥120",
             orDivider: "─── or ───",
-            btnCompatibility: "Want to peek a little more? ¥360",
-            btnTalent: "Wanna wake your sleeping talent? ¥360",
+            btnCompatibility: "Reveal your best and worst match? ¥360",
+            btnTalent: "Expose your hidden SNS talent? ¥360",
             sectionTalentTitle: "🌟 Sleeping Talent Pack",
             sectionTalentLocked: "Talent data is being prepared. It will appear here after purchase.",
             sectionTalentHidden: "Hidden Talent",
@@ -291,13 +291,13 @@
             detailedReportTitle: "📄 Full AI Report",
             detailedReportUnlockedText: "Save your type description and AI roast as one clean image.",
             detailedReportLockedTitle: "🔒 Full AI report unlocks with the forever-save version",
-            detailedReportLockedText: "Only the ¥120 version lets you keep the type notes and AI roast as an image before it fades in 60 seconds.",
+            detailedReportLockedText: "This full result fades in 60 seconds. Save the AI report, type breakdown and roast, as an image for ¥120.",
             detailedReportSaveBtn: "📄 Save full AI report as image",
-            detailedReportPurchaseBtn: "✦ Save full AI report + keep forever ¥120",
-            detailedReportLossCopy: "Only ¥120 lets you keep the type notes and AI roast as an image before the 60-second fog takes it.",
+            detailedReportPurchaseBtn: "✦ Save the full AI report forever for ¥120",
+            detailedReportLossCopy: "This full result fades in 60 seconds. Save the AI report, type breakdown and roast, as an image forever →¥120",
             detailedReportScoreLabel: "Approval Desire Score",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
-            paidSaveBtn: "✨ Save full AI report + keep forever ¥{price}",
+            paidSaveBtn: "✨ Save full result image forever ¥{price}",
             paidSaveHint: "Or share on X to save for free",
             paidSavedLabel: "Saved forever",
             paidUnlockSuccess: "Permanent save is now unlocked!",
@@ -390,8 +390,8 @@
             btnPermanentSave: "✦ 상세 AI 진단서 저장＋영구 보존 ¥120",
             btnLockPurchase: "✦ 상세 AI 진단서 저장＋영구 보존 ¥120",
             orDivider: "─── 또는 ───",
-            btnCompatibility: "좀 더 들여다볼래? ¥360",
-            btnTalent: "잠든 재능, 깨워볼래? ¥360",
+            btnCompatibility: "최고/최악 궁합까지 볼래? ¥360",
+            btnTalent: "숨은 SNS 재능, 밝혀볼래? ¥360",
             sectionTalentTitle: "🌟 잠든 재능 팩",
             sectionTalentLocked: "재능 데이터는 준비 중입니다. 구매 후 이곳에 표시됩니다.",
             sectionTalentHidden: "잠든 재능",
@@ -410,10 +410,10 @@
             detailedReportTitle: "📄 상세 AI 진단서",
             detailedReportUnlockedText: "유형 설명과 AI 독설을 한 장의 이미지로 저장할 수 있습니다.",
             detailedReportLockedTitle: "🔒 상세 AI 진단서는 영구 보존판에서 열립니다",
-            detailedReportLockedText: "유형 설명＋AI 독설 진단서를 이미지로 남길 수 있는 건 ¥120뿐입니다. 60초 뒤 안개 속으로 사라지기 전에.",
+            detailedReportLockedText: "이 자세한 결과는 60초 뒤 사라져요. 유형 설명＋AI 독설 진단서를 이미지로 저장할 수 있어요.",
             detailedReportSaveBtn: "📄 상세 AI 진단서를 이미지로 저장",
-            detailedReportPurchaseBtn: "✦ ¥120으로 상세 진단서 저장＋영구 보존",
-            detailedReportLossCopy: "유형 설명＋AI 독설 진단서를 이미지로 남길 수 있는 건 ¥120뿐입니다. 60초 뒤 안개 속으로 사라지기 전에.",
+            detailedReportPurchaseBtn: "✦ 상세 AI 진단서 저장＋영구 보존 ¥120",
+            detailedReportLossCopy: "이 자세한 결과는 60초 뒤 사라져요. 유형 설명＋AI 독설 진단서를 이미지로 저장＋영구 보존 →¥120",
             detailedReportScoreLabel: "승인욕구 점수",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
             paidSaveBtn: "✨ 상세 AI 진단서 저장＋영구 보존 ¥{price}",
@@ -509,8 +509,8 @@
             btnPermanentSave: "✦ 保存详细AI诊断书＋永久保存 ¥120",
             btnLockPurchase: "✦ 保存详细AI诊断书＋永久保存 ¥120",
             orDivider: "─── 或者 ───",
-            btnCompatibility: "想再窥探一点吗？¥360",
-            btnTalent: "唤醒沉睡的才能？ ¥360",
+            btnCompatibility: "要揭开最佳/最糟配对吗？¥360",
+            btnTalent: "要揭开你的隐藏SNS才能吗？¥360",
             sectionTalentTitle: "🌟 沉睡才能包",
             sectionTalentLocked: "才能数据正在准备中。购买后会显示在这里。",
             sectionTalentHidden: "沉睡的才能",
@@ -529,10 +529,10 @@
             detailedReportTitle: "📄 详细AI诊断书",
             detailedReportUnlockedText: "可将类型说明和AI毒舌分析保存为一张清晰图片。",
             detailedReportLockedTitle: "🔒 详细AI诊断书将在永久保存版中解锁",
-            detailedReportLockedText: "只有¥120版本能把类型说明＋AI毒舌诊断书保存成图片。请在60秒粉雾消失前保存。",
+            detailedReportLockedText: "这份详细结果将在60秒后消失。可将类型说明＋AI吐槽诊断书保存为图片。",
             detailedReportSaveBtn: "📄 保存详细AI诊断书图片",
-            detailedReportPurchaseBtn: "✦ ¥120保存详细诊断书＋永久保存",
-            detailedReportLossCopy: "只有¥120版本能把类型说明＋AI毒舌诊断书保存成图片。请在60秒粉雾消失前保存。",
+            detailedReportPurchaseBtn: "✦ 保存详细AI诊断书＋永久保存 ¥120",
+            detailedReportLossCopy: "这份详细结果将在60秒后消失。类型说明＋AI吐槽诊断书可保存为图片并永久保留 →¥120",
             detailedReportScoreLabel: "认同感欲求分数",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
             paidSaveBtn: "✨ 保存详细AI诊断书＋永久保存 ¥{price}",
@@ -1399,269 +1399,417 @@
 
     function getViralCopy(lang = state.lang) {
         const copies = {
-            ja: {
-                score: {
-                    zero: "通知欄に人生を預けていないタイプ。バズより静かな夜、かなり強い。",
-                    low: "反応は見る。でも心の家賃までは払わせない。いい距離感で生きている。",
-                    mild: "気にしてない顔で、ちょっとだけ見る。そういう可愛い嘘がある。",
-                    medium: "自分軸と他人の目が綱引き中。投稿前の脳内会議、たぶん長い。",
-                    high: "数字と空気を同時に読んで疲れるタイプ。通知欄、もはや第二の心臓。",
-                    extreme: "いいねが来ないだけで世界の彩度が落ちる。承認が完全に主食。"
-                },
-                aiScore: {
-                    zero: "もう他人の評価通知はだいぶミュート済み。と言いつつ、たまに見て秒で閉じるのも知ってる🐾",
-                    low: "反応に振り回されないフリがかなり上手い。でも刺さる一言だけは、なぜか保存版になる。",
-                    mild: "『別にいいけど』の顔で通知を見る才能がある。平気なふり、だいぶ板についてます。",
-                    medium: "投稿ボタンの前で、自分会議と世間会議が同時開催。議長はだいたい不安。",
-                    high: "反応の気配に敏感すぎる。数字を見てないと言いながら、増減だけは秒速で察知する。",
-                    extreme: "いいね3秒来ないだけで『私、消えた？』の顔。通知ひとつで復活する燃費の悪い心です。"
-                },
-                age: {
-                    teen: "身内の空気を読みすぎて、既読の温度まで天気予報みたいに見ている。",
-                    twenties: "同世代の伸びが妙にまぶしい時期。『自分は自分』と言いながら横目は速い。",
-                    thirties: "人気そのものより、信用・役割・ちゃんとやってる感が刺さりやすい。",
-                    forties: "派手なバズより、わかる人にわかる安心感。大人の顔をした承認欲求です。",
-                    unknown: "年齢を隠しても、回答のクセはちゃんと足跡を残している。"
-                },
-                aiAge: {
-                    teen: "教室でもグループLINEでも、空気の揺れにすぐ気づくタイプ。感度よすぎて自分で自分を疲れさせがち。",
-                    twenties: "比べたくないのに同年代の伸びだけは見える。目が勝手にスクショしてくる時期です。",
-                    thirties: "『ちゃんとしてる人』に見られたい気持ちが混ざる。承認欲求も社会人マナーを覚えました。",
-                    forties: "もう若いノリは追わない顔をして、信頼される位置だけはしっかり確保しにいく。渋い。",
-                    unknown: "年齢非公開で逃げ道を塞いだ結果、選択肢の癖がそのまま出ています。隠しきれません。"
-                },
-                pattern: "行動のクセは「{parts}」寄り。ここまで揃うと、もう偶然じゃなくて日常の手癖。",
-                aiPattern: "選び方は「{parts}」。逃げ方・見せ方・測り方がきれいに出ています。図星ならごめん🐾",
-                patternUnknown: "回答履歴が足りないので、今回はモンスター名とスコアだけでざっくり刺します。",
-                patternJoiner: " / ",
-                labels: {
-                    active: "自分から見せる",
-                    passive: "見つけてほしい",
-                    objective: "数字を信じる",
-                    subjective: "空気を読む",
-                    growth: "伸びしろで燃える",
-                    safety: "置いてかれ不安",
-                    external: "反応で安心",
-                    internal: "自分基準で納得"
-                }
-            },
-            en: {
-                score: {
-                    zero: "You are not renting your self-worth to notifications. Quiet nights beat viral noise.",
-                    low: "You notice reactions, but you do not let them move into your head for free.",
-                    mild: "You say you do not care, then check once. A tiny, very human lie.",
-                    medium: "Your own taste and the public gaze are arm-wrestling before every post.",
-                    high: "You read numbers and vibes at the same time. Your notification tab has a pulse.",
-                    extreme: "No likes for three seconds and the room gets darker. Approval is basically breakfast."
-                },
-                aiScore: {
-                    zero: "Most approval alerts are muted in your soul. You still peek sometimes and close it instantly. Very elegant denial.",
-                    low: "You are good at not being ruled by reactions. One sharp comment from the right person still becomes emotional wallpaper.",
-                    mild: "You have the skill of checking notifications with a face that says 'whatever.' It is theatre, but convincing.",
-                    medium: "Before posting, your inner committee and imaginary audience both demand minutes. Anxiety usually chairs the meeting.",
-                    high: "Your feedback radar is too fast. You say you are not watching numbers while sensing every microscopic wobble.",
-                    extreme: "Three silent seconds and you look personally deleted. One notification revives you. Terrible battery life, strong drama."
-                },
-                age: {
-                    teen: "Peer atmosphere hits quickly; even silence can feel weirdly loud.",
-                    twenties: "You say 'my own path' while side-eyeing everyone else's growth chart.",
-                    thirties: "Approval now wears the costume of credibility, role, and being seen as capable.",
-                    forties: "You prefer being understood by the right few over loud buzz. Mature-looking approval hunger.",
-                    unknown: "Age is hidden, but the answer pattern still leaves fingerprints."
-                },
-                aiAge: {
-                    teen: "You notice group energy fast, sometimes too fast. Your social weather app never shuts up.",
-                    twenties: "You do not want to compare, but peer progress somehow arrives in HD.",
-                    thirties: "The desire is less 'look at me' and more 'please notice I am competent.' Very adult, still needy.",
-                    forties: "You pretend not to chase young noise, while carefully protecting the position where trusted people can see you.",
-                    unknown: "No age clue, so the choices had to confess for you. They did."
-                },
-                pattern: "Your habit leans toward {parts}. At this point it is not random; it is muscle memory.",
-                aiPattern: "Your choices say {parts}. The way you hide, show, and measure yourself is all over the floor.",
-                patternUnknown: "Not enough answer history survived, so this reading stings from type and score alone.",
-                patternJoiner: " / ",
-                labels: {
-                    active: "showing yourself",
-                    passive: "waiting to be found",
-                    objective: "trusting numbers",
-                    subjective: "reading the room",
-                    growth: "burning on growth",
-                    safety: "fearing being left behind",
-                    external: "needing reactions",
-                    internal: "self-standard first"
-                }
-            },
-            ko: {
-                score: {
-                    zero: "알림창에 자존감을 맡기지 않는 타입입니다. 조용한 밤이 바이럴보다 강합니다.",
-                    low: "반응은 봅니다. 하지만 마음속 월세까지 내주진 않습니다.",
-                    mild: "신경 안 쓰는 얼굴로 한 번 봅니다. 귀여운 거짓말이죠.",
-                    medium: "자기 기준과 남의 시선이 게시 버튼 앞에서 줄다리기 중입니다.",
-                    high: "숫자와 분위기를 동시에 읽느라 피곤한 타입. 알림창이 거의 두 번째 심장입니다.",
-                    extreme: "좋아요가 3초 안 오면 세상이 흐려집니다. 인정이 완전히 주식입니다."
-                },
-                aiScore: {
-                    zero: "타인의 평가 알림은 마음속에서 거의 음소거했습니다. 그래도 가끔 보고 바로 닫는 건 들켰습니다🐾",
-                    low: "반응에 휘둘리지 않는 척이 꽤 능숙합니다. 하지만 꽂히는 한마디는 오래 저장됩니다.",
-                    mild: "『별로 상관없는데』라는 얼굴로 알림을 보는 재능이 있습니다. 아닌 척이 제법 자연스럽습니다.",
-                    medium: "게시 버튼 앞에서 자기회의와 세상회의가 동시에 열립니다. 의장은 대체로 불안입니다.",
-                    high: "반응의 기척에 너무 민감합니다. 숫자 안 본다면서 변화는 초 단위로 알아챕니다.",
-                    extreme: "좋아요가 3초 안 오면 『나 사라졌나?』 표정. 알림 하나로 부활하는 연비 나쁜 마음입니다."
-                },
-                age: {
-                    teen: "또래 분위기를 너무 잘 읽어서, 읽씹의 온도까지 날씨처럼 봅니다.",
-                    twenties: "또래의 성장이 유난히 눈부신 시기. 『나는 나』라면서 곁눈질은 빠릅니다.",
-                    thirties: "인기보다 신뢰, 역할, 제대로 해내는 느낌이 더 잘 꽂힙니다.",
-                    forties: "화려한 바이럴보다 알아주는 사람의 안정감. 어른 얼굴을 한 인정욕구입니다.",
-                    unknown: "나이를 숨겨도 답변 습관은 발자국을 남깁니다."
-                },
-                aiAge: {
-                    teen: "교실이든 단톡이든 공기의 흔들림을 빨리 눈치챕니다. 감도가 좋아서 스스로를 지치게 합니다.",
-                    twenties: "비교하기 싫은데 또래의 성장만은 이상하게 선명합니다. 눈이 자동 캡처를 합니다.",
-                    thirties: "『제대로 하는 사람』으로 보이고 싶은 마음이 섞입니다. 인정욕구도 사회생활 말투를 배웠습니다.",
-                    forties: "젊은 소음은 안 좇는 얼굴로, 신뢰받는 자리는 조용히 확보합니다. 묵직합니다.",
-                    unknown: "나이 비공개로 도망길을 막았더니, 선택지의 습관이 그대로 나왔습니다."
-                },
-                pattern: "행동 습관은 「{parts}」 쪽입니다. 이쯤 되면 우연이 아니라 손버릇입니다.",
-                aiPattern: "선택은 「{parts}」입니다. 숨는 법, 보이는 법, 재는 법이 꽤 선명합니다. 찔렸다면 죄송🐾",
-                patternUnknown: "답변 기록이 부족해 이번엔 몬스터명과 점수만으로 가볍게 찌릅니다.",
-                patternJoiner: " / ",
-                labels: {
-                    active: "직접 보여줌",
-                    passive: "발견되길 기다림",
-                    objective: "숫자를 믿음",
-                    subjective: "공기를 읽음",
-                    growth: "성장에 불탐",
-                    safety: "뒤처짐 불안",
-                    external: "반응으로 안심",
-                    internal: "자기 기준 납득"
-                }
-            },
-            zh: {
-                score: {
-                    zero: "你没有把自尊租给通知栏。比起爆红，安静的夜晚更适合你。",
-                    low: "你会看反应，但不会让它免费住进脑子里。",
-                    mild: "嘴上不在意，手上看一下。很人类的小谎言。",
-                    medium: "自我标准和外界眼光，在发布按钮前拔河。",
-                    high: "你同时读数据和氛围，通知栏几乎成了第二颗心脏。",
-                    extreme: "三秒没点赞，世界就暗一点。认同感基本是主食。"
-                },
-                aiScore: {
-                    zero: "别人的评价通知在你心里基本静音了。但偶尔偷看又秒关，这点也藏不住🐾",
-                    low: "你很会装作不被反应牵着走。可关键的一句话，还是会被你悄悄珍藏很久。",
-                    mild: "你有一种『我才不在乎』脸检查通知的本事。演得不错。",
-                    medium: "发布前，自我会议和观众会议同时召开。主席通常叫不安。",
-                    high: "你对反馈的气味太敏感了。嘴上说不看数据，波动却能秒懂。",
-                    extreme: "三秒没点赞就像被世界删号。一个通知又立刻复活，内心续航很差但戏很足。"
-                },
-                age: {
-                    teen: "你很会读身边气氛，连已读不回的温度都像天气预报一样看。",
-                    twenties: "同龄人的成长格外刺眼。嘴上说走自己的路，余光却很快。",
-                    thirties: "比起人气，信用、角色、被认为靠谱更容易打中你。",
-                    forties: "比起热闹爆红，更想被懂的人理解。成熟外壳里的认同欲。",
-                    unknown: "年龄藏住了，但回答习惯还是留下了脚印。"
-                },
-                aiAge: {
-                    teen: "无论班级还是群聊，你都太快察觉气氛变化。灵敏到会把自己累到。",
-                    twenties: "不想比较，却把同龄人的进度看得高清。眼睛自动截图。",
-                    thirties: "想被看作『靠谱的人』的心混了进来。认同欲也学会了成熟说法。",
-                    forties: "表面不追年轻热闹，实际会安静地守住能被信任的位置。很稳，也很真。",
-                    unknown: "年龄不公开，选择项只能替你招供。它们已经招了。"
-                },
-                pattern: "行动习惯偏向「{parts}」。到这一步，已经不是偶然，是手癖。",
-                aiPattern: "你的选择是「{parts}」。怎么躲、怎么展示、怎么衡量，都写得很清楚。说中就抱歉🐾",
-                patternUnknown: "回答记录不足，所以这次只用怪物名和分数轻轻扎一下。",
-                patternJoiner: " / ",
-                labels: {
-                    active: "主动展示",
-                    passive: "等人发现",
-                    objective: "相信数字",
-                    subjective: "读空气",
-                    growth: "靠成长燃烧",
-                    safety: "怕被落下",
-                    external: "靠反应安心",
-                    internal: "按自我标准"
-                }
-            }
-        };
+          "ja": {
+                    "score": {
+                              "zero": "もう悟りの域、SNS菩薩。反応より静かな自分時間が勝ち。",
+                              "low": "重すぎない承認欲求。たまに見る、でも沼には住まない。",
+                              "mild": "気にしてない顔で少し見る。かわいい見栄、出てます。",
+                              "medium": "ほどよく気にする民。「別に」の裏で通知は見る。",
+                              "high": "重症だね（褒めてる）。いいねの増減で少し顔が変わる。",
+                              "extreme": "承認欲求、かなり濃いめ。通知ひとつで天気が変わるタイプ。"
+                    },
+                    "aiScore": {
+                              "zero": "SNS菩薩レベル。褒められ待ちより、自分の静けさを優先できる人。強い🐾",
+                              "low": "反応は気になるけど飲まれない。ちゃんと距離を取れる、かなり健全な民🐾",
+                              "mild": "平気な顔で少し期待するタイプ。ほどよい承認欲求、むしろ人間味🐾",
+                              "medium": "「気にしてない」は半分本当、半分演出。通知の気配にはちゃんと敏感🐾",
+                              "high": "重症だね（褒めてる）。反応ひとつで気分が上下する、SNS適性高めの魂🐾",
+                              "extreme": "承認欲求が濃厚。通知の一音で世界が明るくなる、かなり正直なタイプ🐾"
+                    },
+                    "age": {
+                              "teen": "教室の空気は今日も全集中。",
+                              "twenties": "同世代の伸び、見ないふりして見えてる。",
+                              "thirties": "ちゃんとしてる感まで承認に入ってくる。",
+                              "forties": "大人の余裕…の裏でこっそりエゴサ。",
+                              "unknown": "年齢非公開でもクセは隠れない。"
+                    },
+                    "aiAge": {
+                              "teen": "10代らしく、周りの空気へのセンサーが鋭い。教室の温度まで読んでる🐾",
+                              "twenties": "20代の比較疲れが少し出てる。同世代の伸び、見ないふりで見てるね🐾",
+                              "thirties": "30代らしく、評価に「ちゃんとしてる感」も混ざる。大人の承認欲求です🐾",
+                              "forties": "大人の余裕をまといつつ、内側では静かに反応を確認する職人芸🐾",
+                              "unknown": "年齢を伏せても、回答のクセはなかなか正直。隠しきれてません🐾"
+                    },
+                    "pattern": "得意技は「{parts}」。",
+                    "aiPattern": "クセは「{parts}」。隠したつもりで、かなり出てます🐾",
+                    "patternUnknown": "まだ本性を隠し気味。"
+          },
+          "en": {
+                    "score": {
+                              "zero": "You have reached SNS monk mode. Quiet wins over reactions.",
+                              "low": "Your approval craving is light. You peek, but you do not live in the swamp.",
+                              "mild": "You pretend not to care, then check a little. Cute vanity detected.",
+                              "medium": "You care just enough. Behind that “whatever,” you still check notifications.",
+                              "high": "Severe, in a good way. A few likes can change your face.",
+                              "extreme": "Your approval craving is extra rich. One notification can change the weather."
+                    },
+                    "aiScore": {
+                              "zero": "SNS monk tier. You can choose your own calm over waiting to be praised. Powerful🐾",
+                              "low": "Reactions matter, but they do not own you. That distance is honestly healthy🐾",
+                              "mild": "You look calm while hoping a little. A small approval craving makes you human🐾",
+                              "medium": "“I do not care” is half true, half performance. You still sense every ping🐾",
+                              "high": "Severe, in a flattering way. Your mood follows reactions, which makes you very SNS-ready🐾",
+                              "extreme": "A dense approval craving. One ping brightens the whole room. Painfully honest🐾"
+                    },
+                    "age": {
+                              "teen": "The classroom mood has your full attention today too.",
+                              "twenties": "You pretend not to see your peers growing, but you see it.",
+                              "thirties": "Now “looking put together” is part of the approval game.",
+                              "forties": "Adult composure outside, quiet ego-searching inside.",
+                              "unknown": "Even with age hidden, your habits are showing."
+                    },
+                    "aiAge": {
+                              "teen": "That teen radar is sharp. You read the room temperature like a weather app🐾",
+                              "twenties": "A bit of twenties comparison fatigue is showing. You see the peer growth you pretend to ignore🐾",
+                              "thirties": "Very thirties: approval now includes being seen as competent and composed🐾",
+                              "forties": "You wear adult calm well, while quietly checking reactions with professional skill🐾",
+                              "unknown": "Age hidden, habits visible. Your answers were more honest than planned🐾"
+                    },
+                    "pattern": "Your signature move is “{parts}.”",
+                    "aiPattern": "Your habit says “{parts}.” You tried to hide it, but it leaked🐾",
+                    "patternUnknown": "You are still hiding your true form."
+          },
+          "ko": {
+                    "score": {
+                              "zero": "이미 SNS 보살 경지예요. 반응보다 조용한 자기 시간이 이겨요.",
+                              "low": "승인욕구가 가벼운 편. 가끔 보지만 늪에 살지는 않아요.",
+                              "mild": "신경 안 쓰는 척하면서 살짝 봐요. 귀여운 허세, 보입니다.",
+                              "medium": "적당히 신경 쓰는 타입. “별로” 뒤에서 알림은 확인해요.",
+                              "high": "중증이네요, 칭찬입니다. 좋아요 수에 표정이 조금 바뀌어요.",
+                              "extreme": "승인욕구가 꽤 진해요. 알림 하나로 하루 날씨가 바뀌는 타입."
+                    },
+                    "aiScore": {
+                              "zero": "SNS 보살 레벨. 칭찬을 기다리기보다 자기 평온을 고를 수 있는 사람, 강해요🐾",
+                              "low": "반응은 신경 쓰지만 휘둘리지는 않아요. 거리 조절이 꽤 건강합니다🐾",
+                              "mild": "괜찮은 척하면서 조금 기대하는 타입. 적당한 승인욕구라 오히려 인간적이에요🐾",
+                              "medium": "“신경 안 써”는 반은 진심, 반은 연출. 알림 기척에는 꽤 민감해요🐾",
+                              "high": "중증이네요, 칭찬입니다. 반응 하나에 기분이 오르내리는 SNS 적성형🐾",
+                              "extreme": "승인욕구 농도가 진합니다. 알림 한 번에 세상이 밝아지는 솔직한 타입🐾"
+                    },
+                    "age": {
+                              "teen": "교실 분위기에 오늘도 온 신경 집중.",
+                              "twenties": "또래가 커지는 모습, 안 보는 척 다 보고 있어요.",
+                              "thirties": "이제 “제대로 사는 느낌”까지 인정욕구에 들어와요.",
+                              "forties": "어른의 여유 뒤에서 조용히 에고서치.",
+                              "unknown": "나이를 숨겨도 습관은 숨지 않아요."
+                    },
+                    "aiAge": {
+                              "teen": "10대다운 공기 감지 센서가 날카로워요. 교실 온도까지 읽고 있네요🐾",
+                              "twenties": "20대식 비교 피로가 살짝 보여요. 또래의 성장을 모른 척 보죠🐾",
+                              "thirties": "30대답게 평가에 “제대로 하고 있다”는 느낌도 섞여 있어요🐾",
+                              "forties": "어른의 여유를 두르면서도 안쪽에서는 조용히 반응을 확인하는 장인🐾",
+                              "unknown": "나이를 숨겨도 답변의 버릇은 정직해요. 다 보입니다🐾"
+                    },
+                    "pattern": "주특기는 “{parts}”.",
+                    "aiPattern": "버릇은 “{parts}”. 숨긴 줄 알았겠지만 꽤 드러났어요🐾",
+                    "patternUnknown": "아직 본모습을 살짝 숨기고 있어요."
+          },
+          "zh": {
+                    "score": {
+                              "zero": "已经是SNS菩萨境界。比起反应，你更赢在安静的自我时间。",
+                              "low": "认可欲不重。会偶尔看看，但不住在那片沼泽里。",
+                              "mild": "装作不在意，其实会偷偷看一眼。可爱的逞强出现了。",
+                              "medium": "适度在意型。嘴上说“无所谓”，手上还是会看通知。",
+                              "high": "有点重症呢，这是夸你。点赞涨跌会悄悄改变你的表情。",
+                              "extreme": "认可欲浓度很高。一个通知就能改变你今天的天气。"
+                    },
+                    "aiScore": {
+                              "zero": "SNS菩萨级。比起等人夸，你更能选择自己的安静，很强🐾",
+                              "low": "会在意反应，但不会被它牵着走。这个距离感相当健康🐾",
+                              "mild": "表面淡定，心里小小期待。适量的认可欲，反而很有人味🐾",
+                              "medium": "“我不在意”一半是真，一半是演。通知一响你还是很敏感🐾",
+                              "high": "有点重症呢，这是夸你。反应一来一去，心情也会跟着走🐾",
+                              "extreme": "认可欲很浓。一个提示音就能让世界变亮，诚实得可爱🐾"
+                    },
+                    "age": {
+                              "teen": "教室里的空气，今天也被你全神贯注读取。",
+                              "twenties": "同龄人的成长，你假装没看见，其实看得很清楚。",
+                              "thirties": "“看起来很可靠”也开始进入认可游戏。",
+                              "forties": "外表是成年人的从容，背后偷偷搜自己。",
+                              "unknown": "年龄不公开，习惯还是藏不住。"
+                    },
+                    "aiAge": {
+                              "teen": "十几岁的空气雷达很敏锐。连教室温度都读得出来🐾",
+                              "twenties": "二十多岁的比较疲惫有点露出来了。同龄人的进展你其实看见了🐾",
+                              "thirties": "很三十代：认可里也混进了“看起来很稳”的需求🐾",
+                              "forties": "披着成年人的余裕，内心安静地确认反应，很熟练🐾",
+                              "unknown": "年龄藏住了，回答习惯没藏住。比你想的更诚实🐾"
+                    },
+                    "pattern": "你的拿手戏是“{parts}”。",
+                    "aiPattern": "习惯写着“{parts}”。你以为藏住了，其实露出来了🐾",
+                    "patternUnknown": "你还在稍微隐藏本性。"
+          }
+};
         return copies[normalizeLang(lang)] || copies.ja;
     }
 
     function getTypeTone(typeCode, lang = state.lang) {
         const tones = {
-            ja: {
-                pome: ["褒められたいのに、自分から尻尾を振るのは怖いポメ。過去の数字を抱えて、誰かが気づくのを待っている。", "『すごいね』待ちの圧がすごいのに、投稿は控えめ。物陰から拍手の気配だけ探す忠犬スタイル。"],
-                pomr: ["殻の中で静かに成果を磨くカタツムリ。見せびらかさないけど、内心ではかなり自分を高く見積もっている。", "『わかる人だけわかればいい』と言いつつ、わからない人類に少し腹を立てている殻こもり賢者。"],
-                pone: ["安全な場所で『ちゃんと見てて』と震えるトイプー。ラベルや実績を抱えて、優しい誰かの回収待ち。", "自分からは出ない。でも放っておかれるのは無理。保護されたい欲が小型犬サイズでは収まっていない。"],
-                ponr: ["数字とルールで自分を守るコアラ。揉めない位置取りがうますぎて、もはや保身の職人。", "正論の木にしがみついて安全確認。落ちない代わりに、景色はだいたい同じです。"],
-                psme: ["エモい感性を誰かに見つけてほしいハムスター。投稿前に妄想の拍手だけ先に浴びている。", "『私の世界観、刺さる人には刺さる』と思いながら、出す勇気だけ家に忘れてきたタイプ。"],
-                psmr: ["自分の小さな世界で満足できる黒猫。見つけられたいより、乱されずにいたい気持ちが強い。", "孤高の顔で静かにログアウト。高尚な趣味を守るためなら、世間の通知など秒で無視。"],
-                psne: ["見守られたいピヨちゃん。頑張るより先に、誰かの『大丈夫？』で充電したい。", "何も言わなくても気づいてほしい。察して文化の真ん中で、ぬくぬく温められ待ち。"],
-                psnr: ["マイペースに竹をかじるパンダ。世間の波より、自分の部屋の平和が最優先。", "バズ？成長？それより今の省エネ姿勢が美しい。世界から静かにログアウトする天才。"],
-                aome: ["実績も努力も見せたい突撃ライオン。拍手があるほど走るし、拍手がないと急に荒野。", "『見て、私がやりました』の圧が強い。スポットライトの電源を自分で持ち歩いている。"],
-                aomr: ["我が道を突っ走るオオカミ。評価はいらない顔で、成果の見せ方だけは妙に鋭い。", "『他人の評価は気にしない』と言いながら、強さの証拠はきっちり並べる無自覚マウンター。"],
-                aone: ["少しの手柄も逃さず鳴らすオウム。場の中心にいたいけど、嫌われるのはかなり怖い。", "『私がやりました』の羽ばたきが早い。実績を盛るスピードだけは通信環境が強い。"],
-                aonr: ["ルールと数字で場を管理する柴犬。正しさの首輪をつけて、かなり堂々と吠える。", "正論を持つと急に強い。安全圏から『それ違います』を投げるフォームが美しい。"],
-                asme: ["感性を全開で広げる孔雀。褒められると羽が増え、スルーされると急に雨季。", "『センス良すぎ』が主食。拍手が止まると羽のボリュームまでしぼむクリエイティブ孔雀。"],
-                asmr: ["独自センスで突き進むハリネズミ。わかる人だけ来い、と言いながら刺はかなり長め。", "近づく人を少し刺しながら進む芸術家ロード。孤独だけど、本人はけっこう満足そう。"],
-                asne: ["愛されたい気持ちを全力で鳴らすチワワ。怖い、でも見てほしい、でも怖い。忙しい。", "かまってほしい気持ちが小型犬の声量を超えている。優しい反応を探して今日も震えています。"],
-                asnr: ["自分ルールを押し通す黒豚。納得できない助言は全部ノイズ箱へ直行。", "『私はこういうキャラなので』を盾に突進。柔らかそうで、実はかなり曲がらない。"]
-            },
-            en: {
-                pome: ["You want praise but fear wagging first. You hold old proof and wait for someone to notice.", "You radiate 'please praise me' while posting softly. A loyal dog watching for applause from the shadows."],
-                pomr: ["A snail polishing results inside the shell. You do not flex loudly, but your inner estimate is high.", "You say only the right people need to get it, then quietly resent everyone who does not."],
-                pone: ["A toy poodle trembling in a safe corner, clutching labels and waiting to be rescued kindly.", "You do not step out, but being ignored is impossible. The need for protection is bigger than the dog."],
-                ponr: ["A koala guarding itself with numbers and rules. Your defensive positioning is almost professional.", "You cling to the tree of correctness. You do not fall, but the view rarely changes."],
-                psme: ["A hamster waiting for someone to discover your emotional universe. You hear imaginary applause before posting.", "You think your world will hit the right people, but the courage to publish stayed home."],
-                psmr: ["A black cat content in a private little world. You would rather stay undisturbed than be found by everyone.", "You log out with an aloof face. Notifications are beneath your protected little taste kingdom."],
-                psne: ["A baby chick waiting to be watched over. Before effort, you want a soft 'are you okay?' recharge.", "You want people to notice without being told. Warm-nest approval, basically."],
-                psnr: ["A panda calmly chewing its own bamboo. Worldly waves lose to peace in your room.", "Buzz? Growth? Your energy-saving posture is the real masterpiece."],
-                aome: ["A charging lion who wants effort and results seen. Applause makes you run; silence becomes desert.", "Your 'I did this' aura is loud. You carry your own spotlight battery."],
-                aomr: ["A wolf on its own road. You claim not to need evaluation, but display proof with sharp precision.", "You say others do not matter while arranging evidence of superiority very neatly."],
-                aone: ["A parrot that never misses credit. You want the center, but being disliked still scares you.", "Your 'I did it' wings flap fast. Your talent for inflating achievements has great Wi-Fi."],
-                aonr: ["A police dog managing the room with rules and numbers. Correctness makes you bark with confidence.", "With a rule in hand, you get strong fast. Throwing 'actually' from safety is your sport."],
-                asme: ["A peacock spreading full aesthetic feathers. Praise adds plumage; silence brings rainy season.", "'So stylish' is your staple food. Without applause, the feathers lose volume."],
-                asmr: ["A hedgehog charging with personal taste. You say only the right people may enter, but the spikes are long.", "You walk the artist road while lightly stabbing visitors. Lonely, but you seem pleased."],
-                asne: ["A chihuahua barking the wish to be loved. Scared, but look at me, but scary. Busy heart.", "Your need for attention is louder than a small dog should be. Still searching for kind reactions."],
-                asnr: ["A boar pushing its own rules through. Unwanted advice goes straight to the noise bin.", "You charge behind 'this is my character.' Soft-looking, very unbendable."]
-            },
-            ko: {
-                pome: ["칭찬은 받고 싶은데 먼저 꼬리 흔들기는 무서운 포메. 예전 숫자를 안고 누가 알아봐 주길 기다립니다.", "『잘했네』를 기다리는 압은 큰데 표현은 조심스럽습니다. 그늘에서 박수 기척을 찾는 충견 스타일."],
-                pomr: ["껍질 속에서 조용히 성과를 닦는 달팽이. 자랑은 안 해도 속으로는 자신을 꽤 높게 칩니다.", "『알 사람만 알면 돼』라면서 못 알아보는 인류에게 살짝 화난 은둔 현자."],
-                pone: ["안전한 자리에서 『보고 있어줘』 하고 떠는 토이푸들. 라벨과 실적을 안고 다정한 구조를 기다립니다.", "먼저 나가진 않습니다. 하지만 방치도 못 견딥니다. 보호받고 싶은 마음이 강아지 사이즈를 넘었습니다."],
-                ponr: ["숫자와 규칙으로 자신을 지키는 코알라. 안 다치는 위치 선정이 거의 장인급입니다.", "정론의 나무에 매달려 안전 확인. 떨어지진 않지만 풍경은 대체로 같습니다."],
-                psme: ["감성 세계를 누가 발견해 주길 바라는 햄스터. 올리기 전 상상 박수부터 먼저 듣습니다.", "『내 세계관은 꽂히는 사람에겐 꽂혀』라고 생각하지만, 올릴 용기는 집에 두고 왔습니다."],
-                psmr: ["작은 자기 세계에서 만족하는 검은 고양이. 발견되기보다 흐트러지지 않는 쪽이 더 중요합니다.", "고고한 얼굴로 조용히 로그아웃. 취향 왕국을 지키기 위해 알림 따위는 무시합니다."],
-                psne: ["지켜봐 주길 기다리는 삐약이. 노력보다 먼저 누군가의 『괜찮아?』로 충전하고 싶습니다.", "말 안 해도 알아줬으면 합니다. 눈치껏 보살핌 문화의 중심에서 따뜻하게 품어지길 기다립니다."],
-                psnr: ["마이웨이로 대나무를 씹는 판다. 세상 물결보다 내 방의 평화가 우선입니다.", "바이럴? 성장? 지금의 에너지 절약 자세가 더 아름답습니다. 조용히 로그아웃하는 천재."],
-                aome: ["성과도 노력도 보여주고 싶은 돌격 사자. 박수가 있으면 달리고, 없으면 갑자기 황야입니다.", "『제가 했습니다』의 압이 강합니다. 스포트라이트 배터리를 직접 들고 다닙니다."],
-                aomr: ["제 길을 달리는 늑대. 평가는 필요 없다면서 성과 전시는 꽤 날카롭습니다.", "『남의 평가는 신경 안 써』라면서 강함의 증거는 깔끔하게 진열하는 무자각 마운터."],
-                aone: ["작은 공도 놓치지 않고 떠드는 앵무새. 중심에는 있고 싶지만 미움받는 건 꽤 무섭습니다.", "『제가 했어요』의 날갯짓이 빠릅니다. 성과를 부풀리는 속도만큼은 통신 상태가 좋습니다."],
-                aonr: ["규칙과 숫자로 판을 관리하는 시바견. 옳음의 목줄을 차고 당당히 짖습니다.", "정론을 쥐면 갑자기 강해집니다. 안전지대에서 『그건 아닌데요』를 던지는 폼이 좋습니다."],
-                asme: ["감성을 활짝 펼치는 공작. 칭찬받으면 깃이 늘고, 무반응이면 바로 장마입니다.", "『센스 좋다』가 주식입니다. 박수가 멈추면 깃털 볼륨도 줄어드는 크리에이티브 공작."],
-                asmr: ["독자 감성으로 돌진하는 고슴도치. 알 사람만 오라면서 가시는 꽤 깁니다.", "다가오는 사람을 조금씩 찌르며 예술가 길을 갑니다. 외롭지만 본인은 꽤 만족스러워 보입니다."],
-                asne: ["사랑받고 싶은 마음을 전력으로 짖는 치와와. 무섭고, 봐줬으면 하고, 또 무섭습니다. 바쁩니다.", "관심받고 싶은 마음이 소형견 성량을 넘었습니다. 오늘도 다정한 반응을 찾아 떨고 있습니다."],
-                asnr: ["자기 규칙을 밀어붙이는 흑돼지. 납득 안 되는 조언은 전부 소음함으로 직행합니다.", "『나는 이런 캐릭터라서』를 방패로 돌진합니다. 부드러워 보여도 꽤 안 굽힙니다."]
-            },
-            zh: {
-                pome: ["想被夸，却不敢先摇尾巴的博美。抱着过去的数据，等别人自己发现。", "等一句『好厉害』的压力很强，行动却很克制。躲在角落寻找掌声气息的忠犬。"],
-                pomr: ["在壳里安静打磨成果的蜗牛。不大声炫耀，但内心给自己的估值很高。", "嘴上说懂的人自然懂，心里却对不懂的人类有点生气。"],
-                pone: ["在安全角落发抖的贵宾犬，抱着标签和成绩，等温柔的人来接住。", "不主动走出去，但也受不了被放着不管。想被保护的心已经超过小狗尺寸。"],
-                ponr: ["用数字和规则保护自己的树袋熊。找安全位置的能力几乎是职业级。", "抱着正确之树确认安全。不会掉下来，但风景也基本不变。"],
-                psme: ["等别人发现自己感性宇宙的仓鼠。还没发布，脑内掌声已经响过。", "觉得自己的世界观会打中对的人，可发布勇气被忘在家里。"],
-                psmr: ["满足于私人小世界的黑猫。比起被所有人发现，更想不被打扰。", "用高冷表情安静退出。为了守护品味王国，通知什么的可以秒无视。"],
-                psne: ["等待被守护的小鸡。比起先努力，更想先听到一句『没事吧？』来充电。", "不说也希望别人察觉。在温暖窝里等待被照顾。"],
-                psnr: ["按自己节奏啃竹子的熊猫。世界浪潮不如房间和平重要。", "爆红？成长？现在这个省电姿势才是杰作。安静登出的天才。"],
-                aome: ["想让努力和成果都被看见的突击狮。掌声越多越能跑，没掌声就是荒野。", "『这是我做的』气场很强。随身携带聚光灯电池。"],
-                aomr: ["走自己路的狼。说不需要评价，但展示成果的手法很锋利。", "嘴上不在乎别人，强大的证据却摆得整整齐齐。"],
-                aone: ["一点功劳都不放过的鹦鹉。想站中心，又很怕被讨厌。", "『是我做的』翅膀扇得很快。放大成绩的网速特别好。"],
-                aonr: ["用规则和数字管理现场的柴犬。套上正确的项圈后，吠得很有底气。", "一拿到正论就突然变强。从安全区丢出『其实不对』的姿势很漂亮。"],
-                asme: ["全力展开感性羽毛的孔雀。被夸就加羽毛，没人理就进入雨季。", "『好有品味』是主食。掌声停了，羽毛体积也会缩。"],
-                asmr: ["靠独特审美往前冲的刺猬。说懂的人来就好，但刺真的很长。", "一边轻轻扎人一边走艺术家路线。孤独，但本人好像挺满意。"],
-                asne: ["把想被爱的心全力叫出来的吉娃娃。害怕，但想被看见，但又害怕。很忙。", "求关注的心已经超过小型犬音量。今天也在寻找温柔反应。"],
-                asnr: ["坚持自己规则的小野猪。不认同的建议全部丢进噪音箱。", "用『我就是这种人』当盾牌往前冲。看着柔软，其实很不弯。"]
-            }
-        };
+          "ja": {
+                    "aome": [
+                              "見て見て！の権化、突撃ライオン。実績は盛って当然、いいねは燃料。伸びてる時は無敵、伸びないと急に「…別に」。通知が3秒来ないだけで世界が終わる。",
+                              "「私がやりました」の圧、強め。誰かの「すごい」が来るまで充電できない充電式。今日も自分のポストを3分おきに見に行ってるでしょ、図星🐾"
+                    ],
+                    "aomr": [
+                              "語りたいオオカミ。好きなことは聞かれてなくても全力プレゼン。数字は気にするけど、評価より「極めたい」が勝つ。気づけば長文、気づけば一人語り。",
+                              "布教の熱量、業界トップ。バズるかより「分かるやつにだけ刺されば良し」。フォロワーよりニッチな同志を探してる、その孤高、嫌いじゃない🐾"
+                    ],
+                    "aone": [
+                              "盛り担当、アピールオウム。ちっちゃい実績を100倍デコって発信。根は怖がりで、叩かれない範囲で目立ちたい。みんなの「いいね」がないと不安で眠れない。",
+                              "声はデカいが中身はふわふわ。「すごいね」が主食で、既読スルーはどんな攻撃より効く。今日も“安全に目立てる投稿”を計算中、バレてるよ🐾"
+                    ],
+                    "aonr": [
+                              "正論担当、ルールポリス柴犬。リプ欄の「それ違くない？」はだいたい君。目立ちたいけど叩かれたくないから理論武装は完璧。安全圏から正しさで殴る派。",
+                              "マナー違反を見つける嗅覚、警察犬級。「論破」が承認の代わり。本当は「正しいね」より「あなたが好き」が欲しいの、知ってる🐾"
+                    ],
+                    "asme": [
+                              "世界観で殴る、クリエイティブ孔雀。センスとエモさ全開で披露、バズれば世界一の気分。空気は読むけど、最後は「どう、エモいでしょ？」。",
+                              "「分かる人にだけ分かればいい」と言いつつ保存数は秒で確認。共感されると無敵、スルーされると三日へこむ。その繊細な自信、かわいい🐾"
+                    ],
+                    "asmr": [
+                              "我が道トゲトゲ、ハリネズミ。「お前らの理解とかいらん」と言いつつ、発信はやめない。刺さる人にだけ刺さればいいで突っ走る孤高の作家肌。",
+                              "「どう思われてもいい」が口癖、なのにアンチには秒で噛みつく。本当は分かってほしい量、人一倍。トゲの下、めっちゃ甘えん坊でしょ🐾"
+                    ],
+                    "asne": [
+                              "かまって全開、バズりチワワ。寂しいと即ポスト、反応が来ると即復活。みんなの「大丈夫？」で生きてる愛されたがり。空気を読みすぎて自爆もする。",
+                              "「誰か構って」の電波、24時間発信中。いいねが減ると「嫌われた？」で情緒ジェットコースター。重いけど、それ含めて愛おしいやつ🐾"
+                    ],
+                    "asnr": [
+                              "キャラ貫き勢、マイキャラ黒豚。「これが私だから」で押し通す。発信はするけど流行には乗らない。自分の世界が一番落ち着く頑固な安定派。",
+                              "ブレない、というか曲げない。共感より「分かる人だけでいい」。でも実はリプ全部読んでる。マイペースの皮をかぶった、ちゃっかり寂しがり🐾"
+                    ],
+                    "pome": [
+                              "察してほしいポメ。自分からは行けないけど、見てほしい気持ちは満タン。数字は気になるしフォロワーも伸ばしたい、でも「自分からアピール」は無理。",
+                              "いいね、こっそり全部数えてる。「なんで反応くれないの」と思いつつ自分からは絶対動かない。待ちの達人、そろそろ自分から行こ？🐾"
+                    ],
+                    "pomr": [
+                              "マイペース職人、自律カタツムリ。アピールはしないけど、こっそり実績は積む。誰かのためじゃなく自分の成長のために黙々。バズより自己ベスト更新。",
+                              "静かなのに負けず嫌い。人の数字は見ないフリして自分の伸びだけはチェック。承認いらないと言いつつ、たまに「誰か気づいて」が漏れてる🐾"
+                    ],
+                    "pone": [
+                              "びくびく甘えん坊、トイプー。嫌われるのが何より怖くて、安全な人にだけ甘える。自分から動けないけど、反応がないと不安で死にそう。",
+                              "「これ送って大丈夫かな」を100回考えて結局送らない。既読つくまでスマホ握りしめ。怖がりだけど、懐いた相手にはとことん尽くす良い子🐾"
+                    ],
+                    "ponr": [
+                              "省エネ保身、コアラ。目立たず、叩かれず、評価だけは守る。無理はしないし流行も追わない。安全地帯でまったり生きるのが正義。",
+                              "炎上は対岸の火事、リスクは全回避。「どう見られるか」より「平穏」。承認欲求ある？と聞くと「別に」、でもプロフはちゃんと整えてる、ね？🐾"
+                    ],
+                    "psme": [
+                              "エモ売り志望、インフルエンサー予備軍。共感とエモさで心を満たしたい。空気を読んで刺さる言葉を狙うけど、自分から大きくは出られない伸びしろ型。",
+                              "「これ共感されるかな」で投稿前に5回推敲。バズりたい気持ちと怖さが同居。いいね通知が来た瞬間の顔、たぶん世界一かわいい🐾"
+                    ],
+                    "psmr": [
+                              "孤高の世界観、パステル黒猫。自分の感性が全て。群れず、媚びず、静かに自分を磨く。バズらなくていい、分かる人がいればそれでいい。",
+                              "「他人の評価？知らんな」の顔して、たまにエゴサして秒で閉じる。媚びないのは本物、でもふと寂しくなる夜もある。…猫だもんね🐾"
+                    ],
+                    "psne": [
+                              "かまってほしいピヨちゃん。自分から動くより「大丈夫？」のひと言で充電完了。空気を読みすぎて疲れるし、置いてかれるのが怖い甘えん坊。",
+                              "察してちゃんの中心地で、ぬくぬく温められ待ち。既読ついて返信ないと脳内で小さな裁判が開廷。さみしがりは罪じゃない、かわいいだけ🐾"
+                    ],
+                    "psnr": [
+                              "省エネ見る専、パンダ。自分の感性だけ信じて、群れない・焦らない・無理しない。通知より自分の世界、SNSはROM専でも全然OK。",
+                              "「どう思われるか」はミュート済み。バズより、わかってる数人がいれば充分。…と言いつつ、たまにエゴサして秒で閉じるの、知ってる🐾"
+                    ]
+          },
+          "en": {
+                    "aome": [
+                              "The pure embodiment of “look at me,” the Charging Lion. Achievements are meant to be polished, and likes are fuel. When the post grows, you feel invincible. When it stalls, suddenly it is “whatever.” Three silent seconds and the world ends.",
+                              "That “I did this” pressure is loud. You are rechargeable, but only after someone says “amazing.” You checked your own post every three minutes today, didn’t you? Got you🐾"
+                    ],
+                    "aomr": [
+                              "The Wolf Who Must Explain. Even if nobody asked, your favorite thing becomes a full presentation. Numbers matter, but “mastering it” matters more. Before you notice, it is a long post and a solo lecture.",
+                              "Your evangelist energy is top tier. You care less about going viral than hitting the few people who get it. You are hunting niche comrades over followers. That lone-wolf thing is not bad🐾"
+                    ],
+                    "aone": [
+                              "The Hype Parrot in charge of embellishment. Tiny wins become sparkling headlines. Deep down you are cautious, so you want to stand out only where it is safe. Without everyone’s likes, sleep gets difficult.",
+                              "Your voice is big, but the inside is soft. “Amazing” is your staple food, and being left on read hurts more than any attack. You are calculating a safe way to stand out again today. We see you🐾"
+                    ],
+                    "aonr": [
+                              "The Rule-Police Shiba with the correct take. The “isn’t that wrong?” in the replies is probably you. You want attention, but not backlash, so the logic armor is perfect. You strike from the safe zone with correctness.",
+                              "Your nose for bad manners is police-dog level. “Winning the argument” replaces approval. But honestly, you want “I like you” more than “you are right.” We know🐾"
+                    ],
+                    "asme": [
+                              "The Creative Peacock who attacks with a whole world. Sense and emotion turned all the way up. If it goes viral, you feel like the center of the universe. You read the room, then still ask, “So, it is emotional, right?”",
+                              "You say “only the right people need to get it,” then check saves in seconds. When people relate, you are unstoppable. When they ignore it, you sink for three days. That delicate confidence is cute🐾"
+                    ],
+                    "asmr": [
+                              "The Spiky Hedgehog on your own road. You say you do not need anyone’s understanding, yet you never stop posting. If it pierces the right few people, that is enough. A solitary creator with sharp little spines.",
+                              "“I do not care what people think” is your catchphrase, yet you bite back at haters instantly. You want to be understood more than most. Under those spikes, you are extremely needy🐾"
+                    ],
+                    "asne": [
+                              "The fully needy Viral Chihuahua. Lonely means instant post, one reaction means instant revival. You live on everyone’s “are you okay?” You read the room so hard you sometimes crash into it.",
+                              "Your “someone please notice me” signal broadcasts 24/7. Fewer likes and your brain asks “am I hated?” Emotional roller coaster included. Heavy, yes, but lovable with it🐾"
+                    ],
+                    "asnr": [
+                              "The My-Character Boar who never breaks character. “This is who I am” is your shield. You post, but you do not chase trends. Your own world feels safest, and your stubborn stability is the point.",
+                              "You do not bend, or maybe you simply cannot. You say “only the right people need to get it,” yet you read every reply. Under that laid-back skin, you are quietly lonely🐾"
+                    ],
+                    "pome": [
+                              "The Pomeranian who wants people to notice without asking. You cannot go first, but the desire to be seen is full. Numbers matter and follower growth sounds nice, yet “self-promotion” feels impossible.",
+                              "You quietly count every like. You wonder why nobody reacts, while refusing to move first. Master of waiting, maybe it is time to take one step yourself?🐾"
+                    ],
+                    "pomr": [
+                              "The Self-Driven Snail, a craftsperson at your own pace. You do not show off, but you quietly stack real progress. Not for anyone else, just for your own growth. Personal best beats buzz.",
+                              "Quiet, but secretly competitive. You pretend not to watch other people’s numbers, then check only your own growth. You say you do not need approval, but sometimes “please notice” leaks out🐾"
+                    ],
+                    "pone": [
+                              "The timid Toy Poodle who loves safe people. Being disliked scares you most, so you only soften around trusted people. You cannot move first, but no reaction makes you feel like you might collapse.",
+                              "You think “is this okay to send?” a hundred times and send nothing. You hold your phone until it is read. Scared, yes, but once attached, you are deeply loyal🐾"
+                    ],
+                    "ponr": [
+                              "The Energy-Saving Koala of self-protection. Do not stand out, do not get attacked, keep your evaluation intact. No forcing it, no trend chasing. Living slowly in the safe zone is justice.",
+                              "Drama is a fire across the river, and you avoid every risk. Peace matters more than how you look. Ask if you crave approval and you say “not really,” but your profile is neatly polished, right?🐾"
+                    ],
+                    "psme": [
+                              "The Influencer-in-Training who sells emotion. You want to fill hearts with empathy and aesthetic feeling. You read the room and aim for words that land, but stepping forward too loudly still scares you. Huge potential.",
+                              "Before posting, you revise five times asking, “will people relate?” The wish to go viral and the fear of it live together. Your face when a like arrives is probably the cutest in the world🐾"
+                    ],
+                    "psmr": [
+                              "The Aloof Pastel Black Cat with a private worldview. Your own sensitivity is everything. No crowds, no begging, just quietly refining yourself. You do not need to go viral. One person who gets it is enough.",
+                              "You wear the face of “other people’s opinions? irrelevant,” then sometimes ego-search and close it instantly. The non-neediness is real, but some nights still get lonely. You are a cat, after all🐾"
+                    ],
+                    "psne": [
+                              "The Baby Chick who wants to be checked on. One “are you okay?” charges you more than moving first ever could. You read the room until you are tired, and being left behind scares you.",
+                              "You are the capital of “please understand without me saying it,” waiting to be gently warmed. Read with no reply and a tiny courtroom opens in your head. Loneliness is not a crime, just cute🐾"
+                    ],
+                    "psnr": [
+                              "The Low-Energy Panda who mostly watches. You trust your own taste, do not herd, do not rush, do not force it. Your world matters more than notifications, and lurking on SNS is completely valid.",
+                              "“What people think” is muted. A few who truly get it are enough, not a viral hit. And yet, sometimes you ego-search and close it instantly. We know🐾"
+                    ]
+          },
+          "ko": {
+                    "aome": [
+                              "“나 좀 봐!”의 화신, 돌격 사자. 실적은 당연히 반짝이게 포장하고, 좋아요는 연료예요. 잘 나갈 땐 무적, 안 오르면 갑자기 “뭐, 별로.” 알림이 3초 조용하면 세상이 끝납니다.",
+                              "“제가 했습니다” 압이 꽤 세요. 누군가 “대단해”라고 해줘야 충전되는 충전식 인간. 오늘도 자기 게시물 3분마다 보러 갔죠? 정답🐾"
+                    ],
+                    "aomr": [
+                              "말하고 싶은 늑대. 좋아하는 건 누가 묻지 않아도 전력 프레젠테이션. 숫자는 신경 쓰지만 평가보다 “더 파고들고 싶다”가 이겨요. 정신 차리면 장문, 정신 차리면 혼자 강연.",
+                              "전도 열정은 업계 최고. 바이럴보다 “아는 사람한테만 꽂히면 됨”이 중요해요. 팔로워보다 니치한 동지를 찾는 그 고독함, 나쁘지 않아요🐾"
+                    ],
+                    "aone": [
+                              "부풀리기 담당 어필 앵무새. 작은 성과도 100배 데코해서 발신해요. 속은 겁이 많아서 맞지 않을 만큼만 눈에 띄고 싶죠. 모두의 좋아요가 없으면 불안해서 잠이 안 와요.",
+                              "목소리는 큰데 속은 말랑말랑. “대단하다”가 주식이고, 읽씹은 어떤 공격보다 아파요. 오늘도 안전하게 눈에 띄는 게시물을 계산 중, 다 보여요🐾"
+                    ],
+                    "aonr": [
+                              "정론 담당 룰 폴리스 시바견. 답글창의 “그건 좀 아니지 않나?”는 대체로 당신. 눈에 띄고 싶지만 맞기는 싫어서 논리 무장은 완벽해요. 안전지대에서 올바름으로 찌르는 타입.",
+                              "매너 위반을 찾아내는 후각은 경찰견급. “논파”가 인정의 대체품이에요. 사실은 “네가 맞아”보다 “네가 좋아”를 듣고 싶은 거, 알고 있어요🐾"
+                    ],
+                    "asme": [
+                              "세계관으로 치는 크리에이티브 공작. 센스와 감성을 풀파워로 펼쳐요. 터지면 세상에서 제일 잘난 기분. 분위기는 읽지만 마지막엔 “어때, 감성 있지?”가 나와요.",
+                              "“알 사람만 알면 돼”라고 하면서 저장 수는 바로 확인하죠. 공감받으면 무적, 스루당하면 사흘은 꺼져요. 그 섬세한 자신감, 귀여워요🐾"
+                    ],
+                    "asmr": [
+                              "내 길을 가는 뾰족한 고슴도치. “너희 이해 필요 없음”이라면서 발신은 멈추지 않아요. 꽂힐 사람에게만 꽂히면 된다는 고독한 작가 기질.",
+                              "“남들이 뭐라 생각하든 상관없어”가 말버릇인데, 안티에게는 즉시 물어요. 사실 이해받고 싶은 양은 남들보다 많죠. 가시 아래, 엄청 응석쟁이죠?🐾"
+                    ],
+                    "asne": [
+                              "관심 풀가동 버즈 치와와. 외로우면 바로 포스트, 반응이 오면 바로 부활. 모두의 “괜찮아?”로 살아가는 사랑받고 싶은 타입. 분위기를 너무 읽다가 자폭도 해요.",
+                              "“누가 나 좀 봐줘” 전파를 24시간 송신 중. 좋아요가 줄면 “나 미움받나?”로 감정 롤러코스터. 무겁지만, 그걸 포함해서 사랑스러운 쪽🐾"
+                    ],
+                    "asnr": [
+                              "캐릭터 고수 마이캐릭터 흑돼지. “이게 나니까”로 밀고 나가요. 발신은 하지만 유행에는 타지 않아요. 자기 세계가 제일 편한 고집 있는 안정파.",
+                              "흔들리지 않는다기보다 안 굽혀요. 공감보다 “알 사람만 알면 돼.” 그래도 사실 답글은 전부 읽죠. 마이페이스의 껍질을 쓴 은근한 외로움쟁이🐾"
+                    ],
+                    "pome": [
+                              "눈치채 줬으면 하는 포메. 먼저 다가가진 못하지만 봐줬으면 하는 마음은 가득해요. 숫자도 신경 쓰이고 팔로워도 늘고 싶지만, “내가 나를 홍보”는 무리.",
+                              "좋아요, 몰래 전부 세고 있어요. “왜 반응 안 해주지”라고 생각하면서 먼저 움직이진 않죠. 기다림의 달인, 이제 슬슬 한 발 가볼래요?🐾"
+                    ],
+                    "pomr": [
+                              "마이페이스 장인, 자율 달팽이. 어필은 안 하지만 조용히 실적은 쌓아요. 누군가를 위해서가 아니라 자기 성장을 위해 묵묵히. 버즈보다 개인 기록 갱신.",
+                              "조용한데 은근히 지기 싫어해요. 남의 숫자는 안 보는 척하고 자기 성장만 확인. 인정 필요 없다면서 가끔 “누가 좀 알아줘”가 새어 나와요🐾"
+                    ],
+                    "pone": [
+                              "덜덜 떠는 응석쟁이 토이푸들. 미움받는 게 제일 무서워서 안전한 사람에게만 기대요. 먼저 움직이진 못하지만 반응이 없으면 불안해서 죽을 것 같죠.",
+                              "“이거 보내도 괜찮을까”를 100번 생각하고 결국 안 보내요. 읽힐 때까지 폰을 꼭 쥐고 있죠. 겁은 많지만, 마음 연 사람에게는 끝까지 다정한 아이🐾"
+                    ],
+                    "ponr": [
+                              "에너지 절약형 보신 코알라. 눈에 띄지 않고, 맞지 않고, 평판만 지켜요. 무리는 안 하고 유행도 쫓지 않아요. 안전지대에서 느긋하게 사는 게 정의.",
+                              "불길은 강 건너 이야기, 리스크는 전부 회피. “어떻게 보일까”보다 “평온”이 먼저. 승인욕구 있냐고 물으면 “별로”라지만 프로필은 깔끔하게 다듬었죠?🐾"
+                    ],
+                    "psme": [
+                              "감성 판매 지망 인플루언서 예비군. 공감과 감성으로 마음을 채우고 싶어요. 분위기를 읽고 꽂히는 말을 노리지만, 크게 나서는 건 아직 무서운 성장형.",
+                              "“이거 공감받을까”로 올리기 전 다섯 번 고쳐요. 뜨고 싶은 마음과 무서움이 같이 살아요. 좋아요 알림이 온 순간의 얼굴, 아마 세상에서 제일 귀여워요🐾"
+                    ],
+                    "psmr": [
+                              "고고한 세계관, 파스텔 검은 고양이. 자기 감성이 전부예요. 무리 짓지 않고, 아부하지 않고, 조용히 자신을 갈고닦아요. 안 떠도 돼요. 알아주는 사람이 있으면 충분.",
+                              "“남의 평가? 모르겠는데”라는 얼굴로 가끔 에고서치하고 바로 닫죠. 아부하지 않는 건 진짜지만, 문득 외로운 밤도 있어요. 고양이니까요🐾"
+                    ],
+                    "psne": [
+                              "관심받고 싶은 삐약이. 먼저 움직이는 것보다 “괜찮아?” 한마디로 충전 완료. 분위기를 너무 읽어 지치고, 뒤처지는 게 무서운 응석쟁이.",
+                              "눈치채 주길 기다리는 중심지에서 따뜻하게 품어지길 기다리는 중. 읽었는데 답이 없으면 머릿속 작은 재판이 열려요. 외로움은 죄가 아니고, 그냥 귀여움🐾"
+                    ],
+                    "psnr": [
+                              "에너지 절약 관전 판다. 자기 감성만 믿고, 무리하지 않고, 조급해하지 않고, 억지로 하지 않아요. 알림보다 자기 세계, SNS는 눈팅이어도 충분히 OK.",
+                              "“남들이 어떻게 보든”은 음소거 완료. 버즈보다 알아주는 몇 명이면 충분. …라면서 가끔 에고서치하고 바로 닫는 거, 알고 있어요🐾"
+                    ]
+          },
+          "zh": {
+                    "aome": [
+                              "“快看我！”的化身，突击狂暴狮。成果当然要包装，点赞就是燃料。涨起来时无敌，没动静就突然“……也没什么”。通知安静3秒，世界就要结束。",
+                              "“这是我做的”压迫感很强。必须等别人说“好厉害”才会充电。今天也每3分钟看一次自己的帖子吧？被说中了🐾"
+                    ],
+                    "aomr": [
+                              "想讲到底的狼。喜欢的东西没人问也要全力演讲。数字会在意，但比起评价，“钻研到底”更重要。一不小心就是长文，一不小心就是独白。",
+                              "布教热量业内顶级。比起爆不爆，更想“只戳中懂的人”。你找的不是粉丝，是小众同盟。这份孤高，不讨厌🐾"
+                    ],
+                    "aone": [
+                              "负责加戏的表现鹦鹉。小小成绩也要装饰成100倍发出去。内心其实怕受伤，所以只想在安全范围里显眼。没有大家的点赞，就会不安到睡不着。",
+                              "声音很大，里面很软。“好厉害”是主食，被已读不回比任何攻击都痛。今天也在计算怎样安全地显眼，被看穿了🐾"
+                    ],
+                    "aonr": [
+                              "正确担当，规则警察柴犬。评论区那句“这不太对吧？”大概率就是你。想被看见又怕被骂，所以逻辑盔甲穿得很满。在安全区用正确性出击。",
+                              "发现失礼行为的嗅觉，警犬级。“辩赢”成了认可的替代品。其实比起“你是对的”，你更想听“我喜欢你”，我知道🐾"
+                    ],
+                    "asme": [
+                              "用世界观攻击的创意孔雀。审美和情绪值全开展示。只要爆了，就觉得自己站在世界中心。会读空气，但最后还是想问：“怎么样，很有感觉吧？”",
+                              "嘴上说“懂的人懂就好”，保存数却秒看。被共鸣就无敌，被无视就低落三天。这种纤细的自信，很可爱🐾"
+                    ],
+                    "asmr": [
+                              "走自己的刺刺刺猬。嘴上说“不需要你们理解”，但发信从不停止。只要刺中该刺中的人就够了，孤高的创作者体质。",
+                              "口头禅是“不在乎别人怎么想”，可被黑就秒回咬。其实比谁都想被理解。刺下面，明明超会撒娇吧🐾"
+                    ],
+                    "asne": [
+                              "求关注全开的爆红吉娃娃。寂寞就立刻发帖，有反应就立刻复活。靠大家一句“你还好吗？”活着的被爱型。太会读空气，偶尔也会自爆。",
+                              "“谁来理理我”的信号24小时发送中。点赞变少就开始想“是不是讨厌我？”情绪过山车。是有点重，但连这点也可爱🐾"
+                    ],
+                    "asnr": [
+                              "坚持人设的自我黑猪。“这就是我”一路推到底。会发信，但不追流行。自己的世界最安心，是顽固又稳定的一派。",
+                              "不是不动摇，是根本不弯。比起共鸣，更像“懂的人懂就好”。但其实每条回复都会看。披着慢节奏外皮的小寂寞鬼🐾"
+                    ],
+                    "pome": [
+                              "希望别人察觉的博美犬。自己先上不去，但想被看见的心满满。数字会在意，也想涨粉，可是“主动推销自己”真的做不到。",
+                              "点赞，你偷偷全数了。心里想着“为什么没人回应我”，但自己绝不先动。等待大师，差不多该自己迈一步了吧？🐾"
+                    ],
+                    "pomr": [
+                              "自我节奏职人，自律蜗牛。不主动表现，却悄悄积累成绩。不是为了别人，而是为了自己的成长。比起爆红，更想刷新个人最好。",
+                              "安静，却很不服输。假装不看别人的数字，只确认自己的成长。说着不需要认可，偶尔还是会漏出“谁能发现我”🐾"
+                    ],
+                    "pone": [
+                              "怕怕的撒娇玩具贵宾。最怕被讨厌，所以只对安全的人撒娇。自己不敢先动，但没有反应就不安到快要碎掉。",
+                              "“这样发可以吗”想100遍，最后还是不发。直到已读前都紧握手机。胆小归胆小，一旦信任就会很用心的好孩子🐾"
+                    ],
+                    "ponr": [
+                              "省电自保考拉。不显眼、不挨骂、评价要守住。不勉强，也不追流行。在安全区慢慢生活就是正义。",
+                              "炎上是河对岸的火，风险全部回避。比起“别人怎么看”，更重视“平稳”。问你有没有认可欲，你说“没有吧”，但头像简介整理得很认真，对吧？🐾"
+                    ],
+                    "psme": [
+                              "情绪贩卖志望，网红预备军。想用共鸣和氛围填满别人的心。会读空气、瞄准刺中的话，但自己还不敢站太出来，是很有伸展性的类型。",
+                              "发之前会想五遍“这个会被共鸣吗”。想红和害怕同时住在心里。点赞通知来的那一瞬间，你的表情大概世界第一可爱🐾"
+                    ],
+                    "psmr": [
+                              "孤高世界观，粉彩黑猫。自己的感性就是全部。不成群，不讨好，只安静地打磨自己。不爆也可以，有懂的人就够了。",
+                              "摆着一张“别人评价？不关我事”的脸，偶尔又搜自己然后秒关。不讨好是真的，但有些夜晚还是会寂寞。毕竟是猫嘛🐾"
+                    ],
+                    "psne": [
+                              "想被关心的小鸡。比起自己行动，一句“你还好吗？”就能充满电。太会读空气所以很累，也害怕被落下，是软软的撒娇型。",
+                              "在“请你自己察觉我”的中心，等着被暖暖抱住。已读没回时，脑内小法庭立刻开庭。寂寞不是罪，只是可爱🐾"
+                    ],
+                    "psnr": [
+                              "省电围观熊猫。只相信自己的感性，不成群、不焦虑、不勉强。比起通知，更重视自己的世界。SNS只看不发也完全OK。",
+                              "“别人怎么看”已经静音。比起爆红，有几个懂的人就够了。……话是这么说，偶尔搜自己然后秒关这件事，我知道🐾"
+                    ]
+          }
+};
         const langTone = tones[normalizeLang(lang)] || tones.ja;
         return langTone[typeCode] || langTone.psmr;
     }
