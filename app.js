@@ -549,12 +549,12 @@
     };
 
     // ==========================================
-    // 3. 多言語質問データベース (全16問)
+    // 3. 多言語質問データベース (全12問)
     // ==========================================
     const questions = [
         {
             category: {
-                ja: "承認の源泉", en: "Approval Source", ko: "승인의 원천", zh: "认同的源泉"
+                ja: "いいねの正体", en: "What Likes Mean", ko: "좋아요의 정체", zh: "点赞的真相"
             },
             text: {
                 ja: "SNSの投稿に対するリアクション（いいね数など）が期待より少なかった時の気持ちは？",
@@ -585,7 +585,7 @@
         },
         {
             category: {
-                ja: "欲求の動機", en: "Motivations", ko: "욕구의 동기", zh: "欲求的动机"
+                ja: "焦りスイッチ", en: "Anxiety Switch", ko: "초조함 스위치", zh: "焦虑开关"
             },
             text: {
                 ja: "新しいスキルや知識を身につけようと思う最大の動機は？",
@@ -616,7 +616,7 @@
         },
         {
             category: {
-                ja: "表出アプローチ", en: "Approach Style", ko: "표출 어프로치", zh: "表出态度"
+                ja: "見せ方のクセ", en: "Showing Style", ko: "보여주는 습관", zh: "展示习惯"
             },
             text: {
                 ja: "自分の魅力や趣味を周囲に伝えるときのスタイルは？",
@@ -647,7 +647,7 @@
         },
         {
             category: {
-                ja: "評価基準", en: "Evaluation Criteria", ko: "평가 기준", zh: "评价标准"
+                ja: "認められた合図", en: "Proof of Approval", ko: "인정의 신호", zh: "被认可的信号"
             },
             text: {
                 ja: "あなたが「他人に認められた」と強く実感する瞬間はどちら？",
@@ -678,7 +678,7 @@
         },
         {
             category: {
-                ja: "承認の源泉", en: "Approval Source", ko: "승인의 원천", zh: "认同的源泉"
+                ja: "褒められた直後", en: "After Praise", ko: "칭찬 직후", zh: "被夸之后"
             },
             text: {
                 ja: "目標を達成して人から大絶賛されたとき、脳内で真っ先に思うことは？",
@@ -709,7 +709,7 @@
         },
         {
             category: {
-                ja: "欲求の動機", en: "Motivations", ko: "욕구의 동기", zh: "欲求的动机"
+                ja: "避けたい未来", en: "Future to Avoid", ko: "피하고 싶은 미래", zh: "想避开的未来"
             },
             text: {
                 ja: "あなたにとって「生きる上で最も避けたい状態」は？",
@@ -740,7 +740,7 @@
         },
         {
             category: {
-                ja: "表出アプローチ", en: "Approach Style", ko: "표출 어프로치", zh: "表出态度"
+                ja: "手柄の置き場", en: "Where Credit Goes", ko: "공로의 위치", zh: "功劳放哪里"
             },
             text: {
                 ja: "もしグループワークで自分のアイデアが良い成果を上げた場合、どう動く？",
@@ -771,7 +771,7 @@
         },
         {
             category: {
-                ja: "評価基準", en: "Evaluation Criteria", ko: "평가 기준", zh: "评价标准"
+                ja: "心に残る報酬", en: "Reward That Sticks", ko: "마음에 남는 보상", zh: "留在心里的奖励"
             },
             text: {
                 ja: "何かのイベントに参加した際、あなたが最も価値を感じるのは？",
@@ -802,7 +802,7 @@
         },
         {
             category: {
-                ja: "承認の源泉", en: "Approval Source", ko: "승인의 원천", zh: "认同的源泉"
+                ja: "既読と沈黙", en: "Views and Silence", ko: "조회와 침묵", zh: "已读与沉默"
             },
             text: {
                 ja: "ストーリーの閲覧数はあるのに反応が少ないとき、つい考えるのは？",
@@ -833,7 +833,7 @@
         },
         {
             category: {
-                ja: "欲求の動機", en: "Motivations", ko: "욕구의 동기", zh: "欲求的动机"
+                ja: "流行への距離", en: "Distance from Trends", ko: "유행과의 거리", zh: "和潮流的距离"
             },
             text: {
                 ja: "知らないSNSの流行が急に周りで盛り上がったとき、最初の反応は？",
@@ -864,7 +864,7 @@
         },
         {
             category: {
-                ja: "表出アプローチ", en: "Approach Style", ko: "표출 어프로치", zh: "表出态度"
+                ja: "作品の出し方", en: "Sharing Your Work", ko: "작품을 내는 법", zh: "作品怎么发"
             },
             text: {
                 ja: "いい感じの作品や成果ができた直後、あなたが取りがちな行動は？",
@@ -895,7 +895,7 @@
         },
         {
             category: {
-                ja: "評価基準", en: "Evaluation Criteria", ko: "평가 기준", zh: "评价标准"
+                ja: "伸びた夜の本音", en: "The Night It Performs", ko: "잘 된 밤의 속마음", zh: "爆了那晚的真心话"
             },
             text: {
                 ja: "投稿が伸びた日の夜、あとで見返したくなるのはどちら？",
@@ -919,130 +919,6 @@
                         en: "A single comment from someone, or the feeling that the mood shifted.",
                         ko: "누군가의 한마디 댓글이나 분위기가 바뀐 순간의 감각.",
                         zh: "某个人的一句评论，或氛围突然变化的那种感觉。"
-                    },
-                    value: 's'
-                }
-            ]
-        },
-        {
-            category: {
-                ja: "承認の源泉", en: "Approval Source", ko: "승인의 원천", zh: "认同的源泉"
-            },
-            text: {
-                ja: "投稿前に最後まで迷うとき、判断基準になりやすいのは？",
-                en: "When you hesitate before posting, what usually decides it?",
-                ko: "게시 전 끝까지 망설일 때, 판단 기준이 되기 쉬운 것은?",
-                zh: "发布前犹豫到最后时，最容易成为判断标准的是？"
-            },
-            answers: [
-                {
-                    text: {
-                        ja: "これを出したらどう見られるか、変に思われないか。",
-                        en: "How people will see it, and whether it might look weird.",
-                        ko: "이걸 올리면 어떻게 보일지, 이상하게 보이지 않을지.",
-                        zh: "别人会怎么看，会不会觉得奇怪。"
-                    },
-                    value: 'e'
-                },
-                {
-                    text: {
-                        ja: "今の自分の好みや感覚にちゃんと合っているか。",
-                        en: "Whether it honestly matches my own taste and sense right now.",
-                        ko: "지금 내 취향과 감각에 제대로 맞는지.",
-                        zh: "是否真的符合此刻自己的喜好和感觉。"
-                    },
-                    value: 'r'
-                }
-            ]
-        },
-        {
-            category: {
-                ja: "欲求の動機", en: "Motivations", ko: "욕구의 동기", zh: "欲求的动机"
-            },
-            text: {
-                ja: "同年代の誰かが急に注目されたとき、心の奥で強く出る反応は？",
-                en: "When someone your age suddenly gets attention, what rises inside first?",
-                ko: "또래 누군가가 갑자기 주목받을 때, 마음속에서 강하게 올라오는 반응은?",
-                zh: "同龄人突然受到关注时，你内心最强烈的反应是？"
-            },
-            answers: [
-                {
-                    text: {
-                        ja: "「自分だけ取り残されているかも」と焦りが出る。",
-                        en: "I feel anxious that I might be the only one falling behind.",
-                        ko: "「나만 뒤처지는 건가」 하는 조급함이 올라온다.",
-                        zh: "会焦虑「是不是只有我被落下了」。"
-                    },
-                    value: 'n'
-                },
-                {
-                    text: {
-                        ja: "刺激を受けるが、最後は自分の伸ばし方を考える。",
-                        en: "I feel stimulated, then think about how I want to grow.",
-                        ko: "자극은 받지만 결국 내 성장 방식을 생각한다.",
-                        zh: "会受到刺激，但最后会思考自己的成长方式。"
-                    },
-                    value: 'm'
-                }
-            ]
-        },
-        {
-            category: {
-                ja: "表出アプローチ", en: "Approach Style", ko: "표출 어프로치", zh: "表出态度"
-            },
-            text: {
-                ja: "オンラインの会話で、自分の考えに近い話題が出たときは？",
-                en: "When an online conversation touches a topic close to your thoughts, what do you do?",
-                ko: "온라인 대화에서 내 생각과 가까운 주제가 나왔을 때는?",
-                zh: "线上聊天中出现和你想法很接近的话题时，你会？"
-            },
-            answers: [
-                {
-                    text: {
-                        ja: "流れに入って、自分の視点も早めに差し込む。",
-                        en: "I join the flow and add my perspective fairly quickly.",
-                        ko: "흐름에 들어가 내 관점도 빠르게 보탠다.",
-                        zh: "进入话题，很快加入自己的观点。"
-                    },
-                    value: 'a'
-                },
-                {
-                    text: {
-                        ja: "場の空気を見て、言えそうな隙があればそっと出す。",
-                        en: "I read the room and speak only if a good opening appears.",
-                        ko: "분위기를 보고 말할 틈이 있으면 조심히 꺼낸다.",
-                        zh: "先观察气氛，有合适空隙才轻轻说出来。"
-                    },
-                    value: 'p'
-                }
-            ]
-        },
-        {
-            category: {
-                ja: "評価基準", en: "Evaluation Criteria", ko: "평가 기준", zh: "评价标准"
-            },
-            text: {
-                ja: "SNSを続ける意味を感じるのは、どちらの瞬間に近い？",
-                en: "Which moment makes SNS feel worth continuing for you?",
-                ko: "SNS를 계속할 의미를 느끼는 순간은 어느 쪽에 가까운가요?",
-                zh: "哪一种时刻更会让你觉得继续玩社交媒体有意义？"
-            },
-            answers: [
-                {
-                    text: {
-                        ja: "フォロワーや閲覧数がじわじわ伸びて、積み上がりが見えたとき。",
-                        en: "When followers or views steadily grow and I can see the accumulation.",
-                        ko: "팔로워나 조회수가 조금씩 늘어 쌓이는 게 보일 때.",
-                        zh: "粉丝数或浏览量慢慢增长，看得见积累的时候。"
-                    },
-                    value: 'o'
-                },
-                {
-                    text: {
-                        ja: "少人数でも濃い反応があり、自分の感覚が届いたと感じたとき。",
-                        en: "When a small but deep reaction makes me feel my sensibility reached someone.",
-                        ko: "소수라도 깊은 반응이 있어 내 감각이 닿았다고 느낄 때.",
-                        zh: "即使人数不多，但有很深的回应，让你觉得自己的感觉传达到了。"
                     },
                     value: 's'
                 }
@@ -1518,200 +1394,282 @@
     }
 
     function getPersonalizationCopy(lang = state.lang) {
+        return getViralCopy(lang);
+    }
+
+    function getViralCopy(lang = state.lang) {
         const copies = {
             ja: {
-                age: {
-                    teen: "10代らしく、周囲の反応がその日の気分に直結しやすい年代補正が出ています。",
-                    twenties: "20代らしく、見られ方と自分の伸びしろを同時に気にする分岐です。",
-                    thirties: "30代らしく、実績・役割・納得感のバランスで承認を測る傾向が出ています。",
-                    forties: "40代以上らしく、場の信用や自分の基準を守る方向に承認欲求が現れています。",
-                    unknown: "年齢を伏せたぶん、回答そのものの癖を強めに読んでいます。"
-                },
                 score: {
-                    zero: "承認欲求度0%帯。見られたいというより、他人の評価圏からそっと離れたい反応です。",
-                    low: "承認欲求度はかなり低め。反応は視界に入るものの、自分の世界を守る力が勝っています。",
-                    mild: "承認欲求度は控えめ。気にはなるが、最後は自分の基準に戻れるタイプです。",
-                    medium: "承認欲求度は中間。自分軸と他人の視線が綱引きしています。",
-                    high: "承認欲求度は高め。反応・数字・居場所への感度が行動を押しています。",
-                    extreme: "承認欲求度はかなり強め。通知と評価が心の操縦席に座りがちです。"
-                },
-                patternIntro: "回答傾向は「{parts}」。",
-                patternUnknown: "回答履歴が復元できないため、タイプコードとスコア中心に読んでいます。",
-                patternJoiner: " / ",
-                labels: {
-                    active: "自分から見せにいく",
-                    passive: "見つけてほしい",
-                    objective: "数字や実績で測る",
-                    subjective: "空気や言葉で感じる",
-                    growth: "成長で満たす",
-                    safety: "置いていかれ不安で動く",
-                    external: "他者評価で安心する",
-                    internal: "自分基準で納得する"
+                    zero: "通知欄に人生を預けていないタイプ。バズより静かな夜、かなり強い。",
+                    low: "反応は見る。でも心の家賃までは払わせない。いい距離感で生きている。",
+                    mild: "気にしてない顔で、ちょっとだけ見る。そういう可愛い嘘がある。",
+                    medium: "自分軸と他人の目が綱引き中。投稿前の脳内会議、たぶん長い。",
+                    high: "数字と空気を同時に読んで疲れるタイプ。通知欄、もはや第二の心臓。",
+                    extreme: "いいねが来ないだけで世界の彩度が落ちる。承認が完全に主食。"
                 },
                 aiScore: {
-                    zero: "0%帯なので、承認欲求というより承認回避である。褒められる前に通知圏外へ避難し、心の平穏を守る省エネ設計だ。",
-                    low: "低スコア帯なので、反応待ちで溶けるほど繊細ではない。ただし興味のある相手の一言だけは、地味に刺さって長持ちする。",
-                    mild: "控えめスコア帯なので、見られたい気持ちを冗談で薄める癖がある。『別にいいけど』の裏で、少しだけ通知を見ている。",
-                    medium: "中間スコア帯なので、自分軸と他人軸の押し合いが激しい。投稿ボタンの前で、脳内会議だけがやけに民主的だ。",
-                    high: "高スコア帯なので、評価の気配に反射神経が良すぎる。数字と空気を同時に読もうとして、心の通知欄が常に満員である。",
-                    extreme: "超高スコア帯なので、承認は嗜好品ではなく燃料である。反応が薄いだけで、自尊心の通信環境まで圏外になる。"
+                    zero: "もう他人の評価通知はだいぶミュート済み。と言いつつ、たまに見て秒で閉じるのも知ってる🐾",
+                    low: "反応に振り回されないフリがかなり上手い。でも刺さる一言だけは、なぜか保存版になる。",
+                    mild: "『別にいいけど』の顔で通知を見る才能がある。平気なふり、だいぶ板についてます。",
+                    medium: "投稿ボタンの前で、自分会議と世間会議が同時開催。議長はだいたい不安。",
+                    high: "反応の気配に敏感すぎる。数字を見てないと言いながら、増減だけは秒速で察知する。",
+                    extreme: "いいね3秒来ないだけで『私、消えた？』の顔。通知ひとつで復活する燃費の悪い心です。"
+                },
+                age: {
+                    teen: "身内の空気を読みすぎて、既読の温度まで天気予報みたいに見ている。",
+                    twenties: "同世代の伸びが妙にまぶしい時期。『自分は自分』と言いながら横目は速い。",
+                    thirties: "人気そのものより、信用・役割・ちゃんとやってる感が刺さりやすい。",
+                    forties: "派手なバズより、わかる人にわかる安心感。大人の顔をした承認欲求です。",
+                    unknown: "年齢を隠しても、回答のクセはちゃんと足跡を残している。"
                 },
                 aiAge: {
-                    teen: "10代補正で、仲間内の空気がかなり強く効く。軽い既読や未反応でも、脳内では小さな社会裁判が始まりやすい。",
-                    twenties: "20代補正で、比較と自己実現が同時に走る。『自分らしく』と言いながら、同年代の伸びだけは妙に鮮明に見えている。",
-                    thirties: "30代補正で、単なる人気よりも役割・実績・信用への執着が混ざる。承認欲求が少し社会人顔をしているだけだ。",
-                    forties: "40代以上補正で、派手な反応よりも信頼と品位を気にする。とはいえ評価されたい心が消えたわけではなく、表札を付け替えただけである。",
-                    unknown: "年齢非公開なので、年齢という逃げ道を使わせず回答だけを読む。隠した分だけ、癖はむしろ輪郭を持つ。"
+                    teen: "教室でもグループLINEでも、空気の揺れにすぐ気づくタイプ。感度よすぎて自分で自分を疲れさせがち。",
+                    twenties: "比べたくないのに同年代の伸びだけは見える。目が勝手にスクショしてくる時期です。",
+                    thirties: "『ちゃんとしてる人』に見られたい気持ちが混ざる。承認欲求も社会人マナーを覚えました。",
+                    forties: "もう若いノリは追わない顔をして、信頼される位置だけはしっかり確保しにいく。渋い。",
+                    unknown: "年齢非公開で逃げ道を塞いだ結果、選択肢の癖がそのまま出ています。隠しきれません。"
                 },
-                aiPattern: "回答の核は「{parts}」。つまりこの結果はキャラ絵の雰囲気ではなく、あなたが選んだ逃げ方・見せ方・測り方の合成である。"
+                pattern: "行動のクセは「{parts}」寄り。ここまで揃うと、もう偶然じゃなくて日常の手癖。",
+                aiPattern: "選び方は「{parts}」。逃げ方・見せ方・測り方がきれいに出ています。図星ならごめん🐾",
+                patternUnknown: "回答履歴が足りないので、今回はモンスター名とスコアだけでざっくり刺します。",
+                patternJoiner: " / ",
+                labels: {
+                    active: "自分から見せる",
+                    passive: "見つけてほしい",
+                    objective: "数字を信じる",
+                    subjective: "空気を読む",
+                    growth: "伸びしろで燃える",
+                    safety: "置いてかれ不安",
+                    external: "反応で安心",
+                    internal: "自分基準で納得"
+                }
             },
             en: {
-                age: {
-                    teen: "The 10s age band adds a peer-response filter: reactions can swing the mood fast.",
-                    twenties: "The 20s age band splits you between image management and personal growth.",
-                    thirties: "The 30s age band makes approval pass through achievement, role, and self-respect.",
-                    forties: "The 40s+ age band shifts approval toward trust, credibility, and personal standards.",
-                    unknown: "Because age is hidden, the reading leans harder on the answer pattern itself."
-                },
                 score: {
-                    zero: "Approval desire sits at 0%. This is less 'notice me' and more 'please leave my inner room untouched.'",
-                    low: "Approval desire is very low. Reactions register, but your private standard wins first.",
-                    mild: "Approval desire is mild. You notice attention, then usually return to your own baseline.",
-                    medium: "Approval desire is in the middle. Your self-image and outside gaze are pulling the same rope.",
-                    high: "Approval desire is high. Reactions, numbers, and belonging cues push your behavior.",
-                    extreme: "Approval desire is intense. Notifications and evaluation tend to sit in the control seat."
-                },
-                patternIntro: "Answer pattern: {parts}.",
-                patternUnknown: "Answer history was not restored, so this reading leans on type code and score.",
-                patternJoiner: " / ",
-                labels: {
-                    active: "shows up actively",
-                    passive: "wants to be discovered",
-                    objective: "trusts numbers and proof",
-                    subjective: "reads mood and words",
-                    growth: "seeks growth",
-                    safety: "moves from exclusion anxiety",
-                    external: "rests on outside approval",
-                    internal: "returns to self-approval"
+                    zero: "You are not renting your self-worth to notifications. Quiet nights beat viral noise.",
+                    low: "You notice reactions, but you do not let them move into your head for free.",
+                    mild: "You say you do not care, then check once. A tiny, very human lie.",
+                    medium: "Your own taste and the public gaze are arm-wrestling before every post.",
+                    high: "You read numbers and vibes at the same time. Your notification tab has a pulse.",
+                    extreme: "No likes for three seconds and the room gets darker. Approval is basically breakfast."
                 },
                 aiScore: {
-                    zero: "At 0%, this is not approval hunger but approval avoidance. You protect your peace by stepping outside the scoreboard before anyone can grade you.",
-                    low: "With a low score, you are not melting over every reaction. Still, one well-placed comment from the right person can live rent-free.",
-                    mild: "With a mild score, you downplay wanting attention as a joke. The notification check still happens; it is just dressed as irony.",
-                    medium: "At midrange, self-approval and public gaze keep negotiating. The post button becomes a tiny committee meeting.",
-                    high: "With a high score, your reflexes around feedback are too sharp. You read numbers and vibes at once, then call it intuition.",
-                    extreme: "At the extreme end, approval is not a snack; it is fuel. A quiet post can make your whole self-image lose signal."
+                    zero: "Most approval alerts are muted in your soul. You still peek sometimes and close it instantly. Very elegant denial.",
+                    low: "You are good at not being ruled by reactions. One sharp comment from the right person still becomes emotional wallpaper.",
+                    mild: "You have the skill of checking notifications with a face that says 'whatever.' It is theatre, but convincing.",
+                    medium: "Before posting, your inner committee and imaginary audience both demand minutes. Anxiety usually chairs the meeting.",
+                    high: "Your feedback radar is too fast. You say you are not watching numbers while sensing every microscopic wobble.",
+                    extreme: "Three silent seconds and you look personally deleted. One notification revives you. Terrible battery life, strong drama."
+                },
+                age: {
+                    teen: "Peer atmosphere hits quickly; even silence can feel weirdly loud.",
+                    twenties: "You say 'my own path' while side-eyeing everyone else's growth chart.",
+                    thirties: "Approval now wears the costume of credibility, role, and being seen as capable.",
+                    forties: "You prefer being understood by the right few over loud buzz. Mature-looking approval hunger.",
+                    unknown: "Age is hidden, but the answer pattern still leaves fingerprints."
                 },
                 aiAge: {
-                    teen: "The 10s filter makes peer atmosphere heavy. Even a small silence can feel like a referendum.",
-                    twenties: "The 20s filter mixes comparison with self-making. You say 'my own path' while watching your peers with suspicious clarity.",
-                    thirties: "The 30s filter turns popularity into role, record, and credibility. The desire is simply wearing business clothes.",
-                    forties: "The 40s+ filter cares about trust and dignity more than flash. The need to be seen is still there; it just changed costume.",
-                    unknown: "With age undisclosed, the answers have no demographic hiding place. The pattern becomes the evidence."
+                    teen: "You notice group energy fast, sometimes too fast. Your social weather app never shuts up.",
+                    twenties: "You do not want to compare, but peer progress somehow arrives in HD.",
+                    thirties: "The desire is less 'look at me' and more 'please notice I am competent.' Very adult, still needy.",
+                    forties: "You pretend not to chase young noise, while carefully protecting the position where trusted people can see you.",
+                    unknown: "No age clue, so the choices had to confess for you. They did."
                 },
-                aiPattern: "The core pattern is {parts}. This result is not just the character image; it is the combined shape of how you hide, show, measure, and seek safety."
+                pattern: "Your habit leans toward {parts}. At this point it is not random; it is muscle memory.",
+                aiPattern: "Your choices say {parts}. The way you hide, show, and measure yourself is all over the floor.",
+                patternUnknown: "Not enough answer history survived, so this reading stings from type and score alone.",
+                patternJoiner: " / ",
+                labels: {
+                    active: "showing yourself",
+                    passive: "waiting to be found",
+                    objective: "trusting numbers",
+                    subjective: "reading the room",
+                    growth: "burning on growth",
+                    safety: "fearing being left behind",
+                    external: "needing reactions",
+                    internal: "self-standard first"
+                }
             },
             ko: {
-                age: {
-                    teen: "10대 보정으로 또래 반응이 그날의 기분에 바로 닿는 흐름이 보입니다.",
-                    twenties: "20대 보정으로 보여지는 모습과 성장 욕구가 동시에 흔들리는 분기입니다.",
-                    thirties: "30대 보정으로 성과, 역할, 납득감의 균형 속에서 인정 욕구가 드러납니다.",
-                    forties: "40대 이상 보정으로 신뢰, 품위, 자기 기준을 지키는 쪽으로 인정 욕구가 나타납니다.",
-                    unknown: "나이를 숨긴 만큼, 답변 패턴 자체를 더 강하게 읽었습니다."
-                },
                 score: {
-                    zero: "인정욕구 0%대입니다. 봐 달라는 마음보다 평가권 밖에 있고 싶은 반응이 더 큽니다.",
-                    low: "인정욕구는 매우 낮은 편입니다. 반응은 보이지만 자기 세계를 지키는 힘이 앞섭니다.",
-                    mild: "인정욕구는 약한 편입니다. 신경은 쓰지만 결국 자기 기준으로 돌아옵니다.",
-                    medium: "인정욕구는 중간입니다. 자기축과 타인의 시선이 줄다리기 중입니다.",
-                    high: "인정욕구는 높은 편입니다. 반응, 숫자, 소속감의 신호가 행동을 밀어냅니다.",
-                    extreme: "인정욕구가 상당히 강합니다. 알림과 평가가 마음의 운전석에 앉기 쉽습니다."
-                },
-                patternIntro: "답변 경향은 「{parts}」입니다.",
-                patternUnknown: "답변 기록이 복원되지 않아 타입 코드와 점수 중심으로 읽었습니다.",
-                patternJoiner: " / ",
-                labels: {
-                    active: "직접 보여주려 함",
-                    passive: "발견되길 기다림",
-                    objective: "숫자와 성과로 판단",
-                    subjective: "분위기와 말로 느낌",
-                    growth: "성장으로 채움",
-                    safety: "뒤처짐 불안으로 움직임",
-                    external: "타인 평가로 안심",
-                    internal: "자기 기준으로 납득"
+                    zero: "알림창에 자존감을 맡기지 않는 타입입니다. 조용한 밤이 바이럴보다 강합니다.",
+                    low: "반응은 봅니다. 하지만 마음속 월세까지 내주진 않습니다.",
+                    mild: "신경 안 쓰는 얼굴로 한 번 봅니다. 귀여운 거짓말이죠.",
+                    medium: "자기 기준과 남의 시선이 게시 버튼 앞에서 줄다리기 중입니다.",
+                    high: "숫자와 분위기를 동시에 읽느라 피곤한 타입. 알림창이 거의 두 번째 심장입니다.",
+                    extreme: "좋아요가 3초 안 오면 세상이 흐려집니다. 인정이 완전히 주식입니다."
                 },
                 aiScore: {
-                    zero: "0%대라서 인정욕구라기보다 인정 회피에 가깝습니다. 평가받기 전에 조용히 빠져나가 마음의 평온을 지키는 구조입니다.",
-                    low: "낮은 점수대라 모든 반응에 녹아내리지는 않습니다. 다만 중요한 사람의 한마디는 오래 남습니다.",
-                    mild: "약한 점수대라 관심받고 싶은 마음을 농담으로 흐립니다. 그래도 알림 확인은 합니다. 단지 아닌 척할 뿐입니다.",
-                    medium: "중간 점수대라 자기 기준과 타인의 시선이 계속 협상합니다. 게시 버튼 앞에서 마음속 회의가 길어집니다.",
-                    high: "높은 점수대라 피드백에 대한 반사신경이 너무 빠릅니다. 숫자와 분위기를 동시에 읽고 직감이라고 부릅니다.",
-                    extreme: "최고 점수대라 인정은 간식이 아니라 연료입니다. 반응이 조용하면 자존감의 신호까지 약해집니다."
+                    zero: "타인의 평가 알림은 마음속에서 거의 음소거했습니다. 그래도 가끔 보고 바로 닫는 건 들켰습니다🐾",
+                    low: "반응에 휘둘리지 않는 척이 꽤 능숙합니다. 하지만 꽂히는 한마디는 오래 저장됩니다.",
+                    mild: "『별로 상관없는데』라는 얼굴로 알림을 보는 재능이 있습니다. 아닌 척이 제법 자연스럽습니다.",
+                    medium: "게시 버튼 앞에서 자기회의와 세상회의가 동시에 열립니다. 의장은 대체로 불안입니다.",
+                    high: "반응의 기척에 너무 민감합니다. 숫자 안 본다면서 변화는 초 단위로 알아챕니다.",
+                    extreme: "좋아요가 3초 안 오면 『나 사라졌나?』 표정. 알림 하나로 부활하는 연비 나쁜 마음입니다."
+                },
+                age: {
+                    teen: "또래 분위기를 너무 잘 읽어서, 읽씹의 온도까지 날씨처럼 봅니다.",
+                    twenties: "또래의 성장이 유난히 눈부신 시기. 『나는 나』라면서 곁눈질은 빠릅니다.",
+                    thirties: "인기보다 신뢰, 역할, 제대로 해내는 느낌이 더 잘 꽂힙니다.",
+                    forties: "화려한 바이럴보다 알아주는 사람의 안정감. 어른 얼굴을 한 인정욕구입니다.",
+                    unknown: "나이를 숨겨도 답변 습관은 발자국을 남깁니다."
                 },
                 aiAge: {
-                    teen: "10대 보정으로 또래 분위기의 영향이 큽니다. 작은 무반응도 마음속에서는 사회적 판정처럼 커질 수 있습니다.",
-                    twenties: "20대 보정으로 비교와 자기실현이 동시에 달립니다. 내 길을 말하면서도 또래의 성장은 유난히 선명하게 보입니다.",
-                    thirties: "30대 보정으로 단순한 인기보다 역할, 성과, 신뢰가 섞입니다. 인정욕구가 사회생활 말투를 배운 셈입니다.",
-                    forties: "40대 이상 보정으로 화려한 반응보다 신뢰와 품위를 중시합니다. 인정받고 싶은 마음이 사라진 것은 아닙니다.",
-                    unknown: "나이 비공개라서 도망갈 배경이 없습니다. 답변의 습관이 그대로 증거가 됩니다."
+                    teen: "교실이든 단톡이든 공기의 흔들림을 빨리 눈치챕니다. 감도가 좋아서 스스로를 지치게 합니다.",
+                    twenties: "비교하기 싫은데 또래의 성장만은 이상하게 선명합니다. 눈이 자동 캡처를 합니다.",
+                    thirties: "『제대로 하는 사람』으로 보이고 싶은 마음이 섞입니다. 인정욕구도 사회생활 말투를 배웠습니다.",
+                    forties: "젊은 소음은 안 좇는 얼굴로, 신뢰받는 자리는 조용히 확보합니다. 묵직합니다.",
+                    unknown: "나이 비공개로 도망길을 막았더니, 선택지의 습관이 그대로 나왔습니다."
                 },
-                aiPattern: "핵심 패턴은 「{parts}」입니다. 이 결과는 캐릭터 분위기가 아니라, 당신이 고른 숨는 법, 보이는 법, 평가하는 법의 합성입니다."
+                pattern: "행동 습관은 「{parts}」 쪽입니다. 이쯤 되면 우연이 아니라 손버릇입니다.",
+                aiPattern: "선택은 「{parts}」입니다. 숨는 법, 보이는 법, 재는 법이 꽤 선명합니다. 찔렸다면 죄송🐾",
+                patternUnknown: "답변 기록이 부족해 이번엔 몬스터명과 점수만으로 가볍게 찌릅니다.",
+                patternJoiner: " / ",
+                labels: {
+                    active: "직접 보여줌",
+                    passive: "발견되길 기다림",
+                    objective: "숫자를 믿음",
+                    subjective: "공기를 읽음",
+                    growth: "성장에 불탐",
+                    safety: "뒤처짐 불안",
+                    external: "반응으로 안심",
+                    internal: "자기 기준 납득"
+                }
             },
             zh: {
-                age: {
-                    teen: "10代年龄层会让同伴反应更直接影响当天情绪。",
-                    twenties: "20代年龄层让你在外界形象和自我成长之间同时摇摆。",
-                    thirties: "30代年龄层会把认同感放进成果、角色和自我说服的平衡里。",
-                    forties: "40代以上年龄层更容易把认同感转向信任、体面和个人标准。",
-                    unknown: "因为隐藏了年龄，所以这次更重视回答模式本身。"
-                },
                 score: {
-                    zero: "认同感欲求为0%。这不是想被看见，而是想暂时离开别人的评价范围。",
-                    low: "认同感欲求很低。你会看到反应，但保护自己世界的力量更强。",
-                    mild: "认同感欲求偏弱。会在意，但最后通常回到自己的判断。",
-                    medium: "认同感欲求处于中间。自我标准和外界目光正在拉扯。",
-                    high: "认同感欲求偏高。互动、数字和归属感信号会推动你的行为。",
-                    extreme: "认同感欲求非常强。通知和评价很容易坐到内心驾驶位上。"
-                },
-                patternIntro: "回答倾向是「{parts}」。",
-                patternUnknown: "回答记录未能恢复，因此主要根据类型代码和分数判断。",
-                patternJoiner: " / ",
-                labels: {
-                    active: "主动展示自己",
-                    passive: "希望被发现",
-                    objective: "用数字和成果判断",
-                    subjective: "用氛围和话语感受",
-                    growth: "通过成长获得满足",
-                    safety: "由落后焦虑驱动",
-                    external: "靠他人评价安心",
-                    internal: "回到自我标准"
+                    zero: "你没有把自尊租给通知栏。比起爆红，安静的夜晚更适合你。",
+                    low: "你会看反应，但不会让它免费住进脑子里。",
+                    mild: "嘴上不在意，手上看一下。很人类的小谎言。",
+                    medium: "自我标准和外界眼光，在发布按钮前拔河。",
+                    high: "你同时读数据和氛围，通知栏几乎成了第二颗心脏。",
+                    extreme: "三秒没点赞，世界就暗一点。认同感基本是主食。"
                 },
                 aiScore: {
-                    zero: "0%区间更像是回避认同，而不是渴望认同。你在被评价前先撤出赛道，以此保护内心安静。",
-                    low: "低分区间说明你不会为每个反应崩塌。但关键对象的一句话，仍然能在心里停留很久。",
-                    mild: "偏低分区间会把想被看见包装成玩笑。通知还是会看，只是会装作顺手而已。",
-                    medium: "中间分数代表自我标准和外界视线一直谈判。发布按钮前，内心会议格外漫长。",
-                    high: "高分区间说明你对反馈太敏感。你同时读数字和氛围，然后把它称为直觉。",
-                    extreme: "最高区间里，认同不是点心而是燃料。帖子一安静，自我形象的信号也跟着变弱。"
+                    zero: "别人的评价通知在你心里基本静音了。但偶尔偷看又秒关，这点也藏不住🐾",
+                    low: "你很会装作不被反应牵着走。可关键的一句话，还是会被你悄悄珍藏很久。",
+                    mild: "你有一种『我才不在乎』脸检查通知的本事。演得不错。",
+                    medium: "发布前，自我会议和观众会议同时召开。主席通常叫不安。",
+                    high: "你对反馈的气味太敏感了。嘴上说不看数据，波动却能秒懂。",
+                    extreme: "三秒没点赞就像被世界删号。一个通知又立刻复活，内心续航很差但戏很足。"
+                },
+                age: {
+                    teen: "你很会读身边气氛，连已读不回的温度都像天气预报一样看。",
+                    twenties: "同龄人的成长格外刺眼。嘴上说走自己的路，余光却很快。",
+                    thirties: "比起人气，信用、角色、被认为靠谱更容易打中你。",
+                    forties: "比起热闹爆红，更想被懂的人理解。成熟外壳里的认同欲。",
+                    unknown: "年龄藏住了，但回答习惯还是留下了脚印。"
                 },
                 aiAge: {
-                    teen: "10代补正让同伴气氛影响很大。一个小小的沉默，也容易被内心放大成社会审判。",
-                    twenties: "20代补正把比较和自我实现混在一起。你说走自己的路，却把同龄人的进度看得格外清楚。",
-                    thirties: "30代补正让人气变成角色、履历和可信度。认同欲只是换上了成熟外衣。",
-                    forties: "40代以上补正更在意信任与体面，而不是表面热闹。想被认可的心没有消失，只是换了名字。",
-                    unknown: "年龄未公开，所以无法用年龄解释自己。回答习惯本身就是证据。"
+                    teen: "无论班级还是群聊，你都太快察觉气氛变化。灵敏到会把自己累到。",
+                    twenties: "不想比较，却把同龄人的进度看得高清。眼睛自动截图。",
+                    thirties: "想被看作『靠谱的人』的心混了进来。认同欲也学会了成熟说法。",
+                    forties: "表面不追年轻热闹，实际会安静地守住能被信任的位置。很稳，也很真。",
+                    unknown: "年龄不公开，选择项只能替你招供。它们已经招了。"
                 },
-                aiPattern: "核心模式是「{parts}」。这个结果不是角色图的气氛，而是你选择的隐藏方式、展示方式、衡量方式的组合。"
+                pattern: "行动习惯偏向「{parts}」。到这一步，已经不是偶然，是手癖。",
+                aiPattern: "你的选择是「{parts}」。怎么躲、怎么展示、怎么衡量，都写得很清楚。说中就抱歉🐾",
+                patternUnknown: "回答记录不足，所以这次只用怪物名和分数轻轻扎一下。",
+                patternJoiner: " / ",
+                labels: {
+                    active: "主动展示",
+                    passive: "等人发现",
+                    objective: "相信数字",
+                    subjective: "读空气",
+                    growth: "靠成长燃烧",
+                    safety: "怕被落下",
+                    external: "靠反应安心",
+                    internal: "按自我标准"
+                }
             }
         };
-
         return copies[normalizeLang(lang)] || copies.ja;
+    }
+
+    function getTypeTone(typeCode, lang = state.lang) {
+        const tones = {
+            ja: {
+                pome: ["褒められたいのに、自分から尻尾を振るのは怖いポメ。過去の数字を抱えて、誰かが気づくのを待っている。", "『すごいね』待ちの圧がすごいのに、投稿は控えめ。物陰から拍手の気配だけ探す忠犬スタイル。"],
+                pomr: ["殻の中で静かに成果を磨くカタツムリ。見せびらかさないけど、内心ではかなり自分を高く見積もっている。", "『わかる人だけわかればいい』と言いつつ、わからない人類に少し腹を立てている殻こもり賢者。"],
+                pone: ["安全な場所で『ちゃんと見てて』と震えるトイプー。ラベルや実績を抱えて、優しい誰かの回収待ち。", "自分からは出ない。でも放っておかれるのは無理。保護されたい欲が小型犬サイズでは収まっていない。"],
+                ponr: ["数字とルールで自分を守るコアラ。揉めない位置取りがうますぎて、もはや保身の職人。", "正論の木にしがみついて安全確認。落ちない代わりに、景色はだいたい同じです。"],
+                psme: ["エモい感性を誰かに見つけてほしいハムスター。投稿前に妄想の拍手だけ先に浴びている。", "『私の世界観、刺さる人には刺さる』と思いながら、出す勇気だけ家に忘れてきたタイプ。"],
+                psmr: ["自分の小さな世界で満足できる黒猫。見つけられたいより、乱されずにいたい気持ちが強い。", "孤高の顔で静かにログアウト。高尚な趣味を守るためなら、世間の通知など秒で無視。"],
+                psne: ["見守られたいピヨちゃん。頑張るより先に、誰かの『大丈夫？』で充電したい。", "何も言わなくても気づいてほしい。察して文化の真ん中で、ぬくぬく温められ待ち。"],
+                psnr: ["マイペースに竹をかじるパンダ。世間の波より、自分の部屋の平和が最優先。", "バズ？成長？それより今の省エネ姿勢が美しい。世界から静かにログアウトする天才。"],
+                aome: ["実績も努力も見せたい突撃ライオン。拍手があるほど走るし、拍手がないと急に荒野。", "『見て、私がやりました』の圧が強い。スポットライトの電源を自分で持ち歩いている。"],
+                aomr: ["我が道を突っ走るオオカミ。評価はいらない顔で、成果の見せ方だけは妙に鋭い。", "『他人の評価は気にしない』と言いながら、強さの証拠はきっちり並べる無自覚マウンター。"],
+                aone: ["少しの手柄も逃さず鳴らすオウム。場の中心にいたいけど、嫌われるのはかなり怖い。", "『私がやりました』の羽ばたきが早い。実績を盛るスピードだけは通信環境が強い。"],
+                aonr: ["ルールと数字で場を管理する柴犬。正しさの首輪をつけて、かなり堂々と吠える。", "正論を持つと急に強い。安全圏から『それ違います』を投げるフォームが美しい。"],
+                asme: ["感性を全開で広げる孔雀。褒められると羽が増え、スルーされると急に雨季。", "『センス良すぎ』が主食。拍手が止まると羽のボリュームまでしぼむクリエイティブ孔雀。"],
+                asmr: ["独自センスで突き進むハリネズミ。わかる人だけ来い、と言いながら刺はかなり長め。", "近づく人を少し刺しながら進む芸術家ロード。孤独だけど、本人はけっこう満足そう。"],
+                asne: ["愛されたい気持ちを全力で鳴らすチワワ。怖い、でも見てほしい、でも怖い。忙しい。", "かまってほしい気持ちが小型犬の声量を超えている。優しい反応を探して今日も震えています。"],
+                asnr: ["自分ルールを押し通す黒豚。納得できない助言は全部ノイズ箱へ直行。", "『私はこういうキャラなので』を盾に突進。柔らかそうで、実はかなり曲がらない。"]
+            },
+            en: {
+                pome: ["You want praise but fear wagging first. You hold old proof and wait for someone to notice.", "You radiate 'please praise me' while posting softly. A loyal dog watching for applause from the shadows."],
+                pomr: ["A snail polishing results inside the shell. You do not flex loudly, but your inner estimate is high.", "You say only the right people need to get it, then quietly resent everyone who does not."],
+                pone: ["A toy poodle trembling in a safe corner, clutching labels and waiting to be rescued kindly.", "You do not step out, but being ignored is impossible. The need for protection is bigger than the dog."],
+                ponr: ["A koala guarding itself with numbers and rules. Your defensive positioning is almost professional.", "You cling to the tree of correctness. You do not fall, but the view rarely changes."],
+                psme: ["A hamster waiting for someone to discover your emotional universe. You hear imaginary applause before posting.", "You think your world will hit the right people, but the courage to publish stayed home."],
+                psmr: ["A black cat content in a private little world. You would rather stay undisturbed than be found by everyone.", "You log out with an aloof face. Notifications are beneath your protected little taste kingdom."],
+                psne: ["A baby chick waiting to be watched over. Before effort, you want a soft 'are you okay?' recharge.", "You want people to notice without being told. Warm-nest approval, basically."],
+                psnr: ["A panda calmly chewing its own bamboo. Worldly waves lose to peace in your room.", "Buzz? Growth? Your energy-saving posture is the real masterpiece."],
+                aome: ["A charging lion who wants effort and results seen. Applause makes you run; silence becomes desert.", "Your 'I did this' aura is loud. You carry your own spotlight battery."],
+                aomr: ["A wolf on its own road. You claim not to need evaluation, but display proof with sharp precision.", "You say others do not matter while arranging evidence of superiority very neatly."],
+                aone: ["A parrot that never misses credit. You want the center, but being disliked still scares you.", "Your 'I did it' wings flap fast. Your talent for inflating achievements has great Wi-Fi."],
+                aonr: ["A police dog managing the room with rules and numbers. Correctness makes you bark with confidence.", "With a rule in hand, you get strong fast. Throwing 'actually' from safety is your sport."],
+                asme: ["A peacock spreading full aesthetic feathers. Praise adds plumage; silence brings rainy season.", "'So stylish' is your staple food. Without applause, the feathers lose volume."],
+                asmr: ["A hedgehog charging with personal taste. You say only the right people may enter, but the spikes are long.", "You walk the artist road while lightly stabbing visitors. Lonely, but you seem pleased."],
+                asne: ["A chihuahua barking the wish to be loved. Scared, but look at me, but scary. Busy heart.", "Your need for attention is louder than a small dog should be. Still searching for kind reactions."],
+                asnr: ["A boar pushing its own rules through. Unwanted advice goes straight to the noise bin.", "You charge behind 'this is my character.' Soft-looking, very unbendable."]
+            },
+            ko: {
+                pome: ["칭찬은 받고 싶은데 먼저 꼬리 흔들기는 무서운 포메. 예전 숫자를 안고 누가 알아봐 주길 기다립니다.", "『잘했네』를 기다리는 압은 큰데 표현은 조심스럽습니다. 그늘에서 박수 기척을 찾는 충견 스타일."],
+                pomr: ["껍질 속에서 조용히 성과를 닦는 달팽이. 자랑은 안 해도 속으로는 자신을 꽤 높게 칩니다.", "『알 사람만 알면 돼』라면서 못 알아보는 인류에게 살짝 화난 은둔 현자."],
+                pone: ["안전한 자리에서 『보고 있어줘』 하고 떠는 토이푸들. 라벨과 실적을 안고 다정한 구조를 기다립니다.", "먼저 나가진 않습니다. 하지만 방치도 못 견딥니다. 보호받고 싶은 마음이 강아지 사이즈를 넘었습니다."],
+                ponr: ["숫자와 규칙으로 자신을 지키는 코알라. 안 다치는 위치 선정이 거의 장인급입니다.", "정론의 나무에 매달려 안전 확인. 떨어지진 않지만 풍경은 대체로 같습니다."],
+                psme: ["감성 세계를 누가 발견해 주길 바라는 햄스터. 올리기 전 상상 박수부터 먼저 듣습니다.", "『내 세계관은 꽂히는 사람에겐 꽂혀』라고 생각하지만, 올릴 용기는 집에 두고 왔습니다."],
+                psmr: ["작은 자기 세계에서 만족하는 검은 고양이. 발견되기보다 흐트러지지 않는 쪽이 더 중요합니다.", "고고한 얼굴로 조용히 로그아웃. 취향 왕국을 지키기 위해 알림 따위는 무시합니다."],
+                psne: ["지켜봐 주길 기다리는 삐약이. 노력보다 먼저 누군가의 『괜찮아?』로 충전하고 싶습니다.", "말 안 해도 알아줬으면 합니다. 눈치껏 보살핌 문화의 중심에서 따뜻하게 품어지길 기다립니다."],
+                psnr: ["마이웨이로 대나무를 씹는 판다. 세상 물결보다 내 방의 평화가 우선입니다.", "바이럴? 성장? 지금의 에너지 절약 자세가 더 아름답습니다. 조용히 로그아웃하는 천재."],
+                aome: ["성과도 노력도 보여주고 싶은 돌격 사자. 박수가 있으면 달리고, 없으면 갑자기 황야입니다.", "『제가 했습니다』의 압이 강합니다. 스포트라이트 배터리를 직접 들고 다닙니다."],
+                aomr: ["제 길을 달리는 늑대. 평가는 필요 없다면서 성과 전시는 꽤 날카롭습니다.", "『남의 평가는 신경 안 써』라면서 강함의 증거는 깔끔하게 진열하는 무자각 마운터."],
+                aone: ["작은 공도 놓치지 않고 떠드는 앵무새. 중심에는 있고 싶지만 미움받는 건 꽤 무섭습니다.", "『제가 했어요』의 날갯짓이 빠릅니다. 성과를 부풀리는 속도만큼은 통신 상태가 좋습니다."],
+                aonr: ["규칙과 숫자로 판을 관리하는 시바견. 옳음의 목줄을 차고 당당히 짖습니다.", "정론을 쥐면 갑자기 강해집니다. 안전지대에서 『그건 아닌데요』를 던지는 폼이 좋습니다."],
+                asme: ["감성을 활짝 펼치는 공작. 칭찬받으면 깃이 늘고, 무반응이면 바로 장마입니다.", "『센스 좋다』가 주식입니다. 박수가 멈추면 깃털 볼륨도 줄어드는 크리에이티브 공작."],
+                asmr: ["독자 감성으로 돌진하는 고슴도치. 알 사람만 오라면서 가시는 꽤 깁니다.", "다가오는 사람을 조금씩 찌르며 예술가 길을 갑니다. 외롭지만 본인은 꽤 만족스러워 보입니다."],
+                asne: ["사랑받고 싶은 마음을 전력으로 짖는 치와와. 무섭고, 봐줬으면 하고, 또 무섭습니다. 바쁩니다.", "관심받고 싶은 마음이 소형견 성량을 넘었습니다. 오늘도 다정한 반응을 찾아 떨고 있습니다."],
+                asnr: ["자기 규칙을 밀어붙이는 흑돼지. 납득 안 되는 조언은 전부 소음함으로 직행합니다.", "『나는 이런 캐릭터라서』를 방패로 돌진합니다. 부드러워 보여도 꽤 안 굽힙니다."]
+            },
+            zh: {
+                pome: ["想被夸，却不敢先摇尾巴的博美。抱着过去的数据，等别人自己发现。", "等一句『好厉害』的压力很强，行动却很克制。躲在角落寻找掌声气息的忠犬。"],
+                pomr: ["在壳里安静打磨成果的蜗牛。不大声炫耀，但内心给自己的估值很高。", "嘴上说懂的人自然懂，心里却对不懂的人类有点生气。"],
+                pone: ["在安全角落发抖的贵宾犬，抱着标签和成绩，等温柔的人来接住。", "不主动走出去，但也受不了被放着不管。想被保护的心已经超过小狗尺寸。"],
+                ponr: ["用数字和规则保护自己的树袋熊。找安全位置的能力几乎是职业级。", "抱着正确之树确认安全。不会掉下来，但风景也基本不变。"],
+                psme: ["等别人发现自己感性宇宙的仓鼠。还没发布，脑内掌声已经响过。", "觉得自己的世界观会打中对的人，可发布勇气被忘在家里。"],
+                psmr: ["满足于私人小世界的黑猫。比起被所有人发现，更想不被打扰。", "用高冷表情安静退出。为了守护品味王国，通知什么的可以秒无视。"],
+                psne: ["等待被守护的小鸡。比起先努力，更想先听到一句『没事吧？』来充电。", "不说也希望别人察觉。在温暖窝里等待被照顾。"],
+                psnr: ["按自己节奏啃竹子的熊猫。世界浪潮不如房间和平重要。", "爆红？成长？现在这个省电姿势才是杰作。安静登出的天才。"],
+                aome: ["想让努力和成果都被看见的突击狮。掌声越多越能跑，没掌声就是荒野。", "『这是我做的』气场很强。随身携带聚光灯电池。"],
+                aomr: ["走自己路的狼。说不需要评价，但展示成果的手法很锋利。", "嘴上不在乎别人，强大的证据却摆得整整齐齐。"],
+                aone: ["一点功劳都不放过的鹦鹉。想站中心，又很怕被讨厌。", "『是我做的』翅膀扇得很快。放大成绩的网速特别好。"],
+                aonr: ["用规则和数字管理现场的柴犬。套上正确的项圈后，吠得很有底气。", "一拿到正论就突然变强。从安全区丢出『其实不对』的姿势很漂亮。"],
+                asme: ["全力展开感性羽毛的孔雀。被夸就加羽毛，没人理就进入雨季。", "『好有品味』是主食。掌声停了，羽毛体积也会缩。"],
+                asmr: ["靠独特审美往前冲的刺猬。说懂的人来就好，但刺真的很长。", "一边轻轻扎人一边走艺术家路线。孤独，但本人好像挺满意。"],
+                asne: ["把想被爱的心全力叫出来的吉娃娃。害怕，但想被看见，但又害怕。很忙。", "求关注的心已经超过小型犬音量。今天也在寻找温柔反应。"],
+                asnr: ["坚持自己规则的小野猪。不认同的建议全部丢进噪音箱。", "用『我就是这种人』当盾牌往前冲。看着柔软，其实很不弯。"]
+            }
+        };
+        const langTone = tones[normalizeLang(lang)] || tones.ja;
+        return langTone[typeCode] || langTone.psmr;
     }
 
     function getAnswerPatternParts(lang = state.lang) {
         const answers = normalizeAnswerCounts(state.answers);
         const total = ANSWER_KEYS.reduce((sum, key) => sum + (answers[key] || 0), 0);
-        const copy = getPersonalizationCopy(lang);
+        const copy = getViralCopy(lang);
         if (!total) return [];
 
         return [
@@ -1723,28 +1681,28 @@
     }
 
     function getAnswerPatternSummary(lang = state.lang) {
-        const copy = getPersonalizationCopy(lang);
+        const copy = getViralCopy(lang);
         const parts = getAnswerPatternParts(lang);
         if (!parts.length) return copy.patternUnknown;
-        return copy.patternIntro.replace("{parts}", parts.join(copy.patternJoiner));
+        return copy.pattern.replace("{parts}", parts.join(copy.patternJoiner));
     }
 
     function getPersonalizedResultDescription(info, lang = state.lang) {
         if (!info) return "";
-        const copy = getPersonalizationCopy(lang);
-        const base = info.description[lang] || info.description.ja || "";
+        const copy = getViralCopy(lang);
+        const typeLine = getTypeTone(state.typeCode, lang)[0] || "";
         const scoreLine = copy.score[getScoreBand()] || "";
         const ageLine = copy.age[getAgeVariantKey()] || "";
         const patternLine = getAnswerPatternSummary(lang);
 
-        return [base, scoreLine, ageLine, patternLine].filter(Boolean).join(" ");
+        return [typeLine, scoreLine, ageLine, patternLine].filter(Boolean).join(" ");
     }
 
     function getPersonalizedAiFallback(typeCode, lang = state.lang) {
         const info = typeDatabase[typeCode];
         if (!info) return "";
-        const copy = getPersonalizationCopy(lang);
-        const base = info.fallback[lang] || info.fallback.ja || "";
+        const copy = getViralCopy(lang);
+        const base = getTypeTone(typeCode, lang)[1] || "";
         const scoreLine = copy.aiScore[getScoreBand()] || "";
         const ageLine = copy.aiAge[getAgeVariantKey()] || "";
         const parts = getAnswerPatternParts(lang);
@@ -3552,15 +3510,15 @@
 
         const scoreBand = getScoreBand();
         const answerPattern = getAnswerPatternSummary(requestedLang);
-        const systemPrompt = `診断結果コードは '${typeCode}' (小文字) で、名称は '${typeName}' です。年齢層は '${age}' です。承認欲求スコアは '${state.approvalPercent}%'、スコア帯は '${scoreBand}'、回答傾向は '${answerPattern}' です。
-この情報に基づき、このユーザーの「承認欲求」について、最高に皮肉が効いていてユーモラス、かつ精神的な深層をズバッと射抜くような「極めて辛辣でイタい毒舌解説」を、必ず「${langName}」で200字以内で作成してください。
+        const systemPrompt = `診断内部情報: type='${typeCode}', name='${typeName}', age='${age}', approval='${state.approvalPercent}%', intensity='${scoreBand}', habit='${answerPattern}'。
+この材料を、システム説明ではなく「SNSあるある」として笑える短い毒舌コメントに変換し、必ず「${langName}」で200字以内で作成してください。
 
 【制約ルール】
-1. 甘やかす言葉、お世辞、ポジティブな励ましやフォローは一切禁止です。純粋な辛口ユーモアと冷酷な分析だけで構成してください。
-2. SNSでのありがちな「痛い行動パターン」（いいね欲しさに必死な姿、見栄、過剰な自意識、マウンティングなど）を具体的に挙げ、抉るように批判してください。
-3. 語尾は「〜ですね」「〜のようです」といった日和った表現を避け、「〜である」「〜なのだ」や鋭いツッコミの口調など、断定的でシャープな口調にしてください。
-4. 年齢層・承認欲求スコア・回答傾向に必ず触れ、同じタイプ名でもスコアや年齢が違えば別内容になるようにしてください。
-5. 挨拶や自己紹介、判定コード自体の説明などは一切不要です。最初から鋭い毒舌だけで開始してください。
+1. 診断システムの裏側や判定ロジックを説明する内部用語は絶対に出さない。
+2. 年齢・承認欲求の強さ・選び方のクセは、自然な行動描写やSNSあるあるとして溶かし込む。
+3. 毒舌だけど可愛げと共感があること。人格否定、差別、ルッキズム、過度な見下しは禁止。
+4. SNSでのありがちな行動（通知確認、既読、いいね、見栄、マウンティング、こっそり比較など）を具体的に混ぜる。
+5. 挨拶や自己紹介、判定コード自体の説明は不要。最初から短くテンポよく刺す。
 Please write the response entirely in ${langName}.`;
 
         const fetchPromise = fetch('http://localhost:11434/api/chat', {
