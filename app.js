@@ -1432,7 +1432,18 @@
                     },
                     "pattern": "得意技は「{parts}」。",
                     "aiPattern": "クセは「{parts}」。隠したつもりで、かなり出てます🐾",
-                    "patternUnknown": "まだ本性を隠し気味。"
+                    "patternUnknown": "まだ本性を隠し気味。",
+                    "patternJoiner": "／",
+                    "labels": {
+                              "active": "自分から見せる",
+                              "passive": "見つけてほしい",
+                              "objective": "数字を信じる",
+                              "subjective": "空気を読む",
+                              "growth": "伸びしろで燃える",
+                              "safety": "置いてかれ不安",
+                              "external": "反応で安心",
+                              "internal": "自分基準で納得"
+                    }
           },
           "en": {
                     "score": {
@@ -1467,7 +1478,18 @@
                     },
                     "pattern": "Your signature move is “{parts}.”",
                     "aiPattern": "Your habit says “{parts}.” You tried to hide it, but it leaked🐾",
-                    "patternUnknown": "You are still hiding your true form."
+                    "patternUnknown": "You are still hiding your true form.",
+                    "patternJoiner": ", ",
+                    "labels": {
+                              "active": "showing yourself",
+                              "passive": "waiting to be found",
+                              "objective": "trusting numbers",
+                              "subjective": "reading the room",
+                              "growth": "burning on growth",
+                              "safety": "fearing being left behind",
+                              "external": "needing reactions",
+                              "internal": "self-standard first"
+                    }
           },
           "ko": {
                     "score": {
@@ -1502,7 +1524,18 @@
                     },
                     "pattern": "주특기는 “{parts}”.",
                     "aiPattern": "버릇은 “{parts}”. 숨긴 줄 알았겠지만 꽤 드러났어요🐾",
-                    "patternUnknown": "아직 본모습을 살짝 숨기고 있어요."
+                    "patternUnknown": "아직 본모습을 살짝 숨기고 있어요.",
+                    "patternJoiner": "／",
+                    "labels": {
+                              "active": "직접 보여줌",
+                              "passive": "발견되길 기다림",
+                              "objective": "숫자를 믿음",
+                              "subjective": "분위기를 읽음",
+                              "growth": "성장에 불탐",
+                              "safety": "뒤처짐 불안",
+                              "external": "반응으로 안심",
+                              "internal": "자기 기준으로 납득"
+                    }
           },
           "zh": {
                     "score": {
@@ -1537,7 +1570,18 @@
                     },
                     "pattern": "你的拿手戏是“{parts}”。",
                     "aiPattern": "习惯写着“{parts}”。你以为藏住了，其实露出来了🐾",
-                    "patternUnknown": "你还在稍微隐藏本性。"
+                    "patternUnknown": "你还在稍微隐藏本性。",
+                    "patternJoiner": "／",
+                    "labels": {
+                              "active": "主动展示自己",
+                              "passive": "等待被发现",
+                              "objective": "相信数字",
+                              "subjective": "读取空气",
+                              "growth": "为成长燃烧",
+                              "safety": "害怕被落下",
+                              "external": "靠反应安心",
+                              "internal": "以自我标准认可"
+                    }
           }
 };
         return copies[normalizeLang(lang)] || copies.ja;
@@ -1818,21 +1862,35 @@
         const answers = normalizeAnswerCounts(state.answers);
         const total = ANSWER_KEYS.reduce((sum, key) => sum + (answers[key] || 0), 0);
         const copy = getViralCopy(lang);
+        const labels = copy.labels || {};
+        const fallbackLabels = (getViralCopy('ja').labels || {});
+        const label = (key) => labels[key] || fallbackLabels[key] || "";
         if (!total) return [];
 
         return [
-            answers.a >= answers.p ? copy.labels.active : copy.labels.passive,
-            answers.s >= answers.o ? copy.labels.subjective : copy.labels.objective,
-            answers.m >= answers.n ? copy.labels.growth : copy.labels.safety,
-            answers.r >= answers.e ? copy.labels.internal : copy.labels.external
-        ];
+            answers.a >= answers.p ? label('active') : label('passive'),
+            answers.s >= answers.o ? label('subjective') : label('objective'),
+            answers.m >= answers.n ? label('growth') : label('safety'),
+            answers.r >= answers.e ? label('internal') : label('external')
+        ].filter(Boolean);
     }
 
     function getAnswerPatternSummary(lang = state.lang) {
         const copy = getViralCopy(lang);
         const parts = getAnswerPatternParts(lang);
         if (!parts.length) return copy.patternUnknown;
-        return copy.pattern.replace("{parts}", parts.join(copy.patternJoiner));
+        const joiner = typeof copy.patternJoiner === 'string' ? copy.patternJoiner : "／";
+        return copy.pattern.replace("{parts}", parts.join(joiner));
+    }
+
+    function getBaseResultDescription(info, lang = state.lang) {
+        if (!info || !info.description) return "";
+        return info.description[lang] || info.description.ja || "";
+    }
+
+    function getBaseAiFallback(info, lang = state.lang) {
+        if (!info || !info.fallback) return "";
+        return info.fallback[lang] || info.fallback.ja || "";
     }
 
     function getPersonalizedResultDescription(info, lang = state.lang) {
@@ -1854,8 +1912,9 @@
         const scoreLine = copy.aiScore[getScoreBand()] || "";
         const ageLine = copy.aiAge[getAgeVariantKey()] || "";
         const parts = getAnswerPatternParts(lang);
+        const joiner = typeof copy.patternJoiner === 'string' ? copy.patternJoiner : "／";
         const patternLine = parts.length
-            ? copy.aiPattern.replace("{parts}", parts.join(copy.patternJoiner))
+            ? copy.aiPattern.replace("{parts}", parts.join(joiner))
             : copy.patternUnknown;
 
         return [base, scoreLine, ageLine, patternLine].filter(Boolean).join(" ");
@@ -2105,13 +2164,24 @@
         try {
             const commentBox = document.getElementById('aiCommentaryBox');
             const descBox = document.getElementById('resultTypeDesc');
-            const fallback = getPersonalizedAiFallback(state.typeCode, state.lang) || info.fallback[state.lang] || info.fallback.ja || "";
+            let fallback = getBaseAiFallback(info, state.lang);
+            try {
+                fallback = getPersonalizedAiFallback(state.typeCode, state.lang) || fallback;
+            } catch (err) {
+                console.warn('Personalized AI fallback could not be generated:', err);
+            }
             const ai = typeof aiText === 'string'
                 ? aiText
                 : (commentBox && commentBox.textContent ? commentBox.textContent.trim() : fallback);
-            const description = descBox && descBox.textContent
-                ? descBox.textContent.trim()
-                : getPersonalizedResultDescription(info, state.lang);
+            let description = descBox && descBox.textContent ? descBox.textContent.trim() : "";
+            if (!description) {
+                try {
+                    description = getPersonalizedResultDescription(info, state.lang);
+                } catch (err) {
+                    console.warn('Personalized description could not be saved:', err);
+                    description = getBaseResultDescription(info, state.lang);
+                }
+            }
 
             localStorage.setItem(LAST_RESULT_TYPE_KEY, getCurrentTypeName(state.lang));
             localStorage.setItem(LAST_RESULT_TYPE_CODE_KEY, state.typeCode);
@@ -3507,8 +3577,21 @@
         // これにより同じタイプコードでも、回答の濃淡に応じて0/10/40/80%帯が分岐する。
         state.approvalPercent = calculateApprovalPercent();
         
-        applyResultUI();
-        persistLastResult(getPersonalizedAiFallback(state.typeCode, state.lang));
+        const info = typeDatabase[state.typeCode];
+        try {
+            applyResultUI();
+            persistLastResult(getPersonalizedAiFallback(state.typeCode, state.lang));
+        } catch (err) {
+            console.error('Result personalization failed; continuing with base result:', err);
+            const descEl = document.getElementById('resultTypeDesc');
+            const commentBox = document.getElementById('aiCommentaryBox');
+            const baseDescription = localizeDimensionTerms(getBaseResultDescription(info, state.lang), state.lang);
+            const baseFallback = localizeDimensionTerms(getBaseAiFallback(info, state.lang), state.lang);
+
+            if (descEl) descEl.textContent = baseDescription;
+            if (commentBox) commentBox.textContent = baseFallback;
+            persistLastResult(baseFallback);
+        }
         prepareResultAdSlot();
         safeTrack('shindan_complete', {
             monster_code: state.typeCode,
@@ -3539,7 +3622,12 @@
         if (!info) return;
 
         const name = info.name[state.lang] || info.name.ja;
-        const description = getPersonalizedResultDescription(info, state.lang);
+        let description = getBaseResultDescription(info, state.lang);
+        try {
+            description = getPersonalizedResultDescription(info, state.lang) || description;
+        } catch (err) {
+            console.warn('Personalized result description failed; using base description:', err);
+        }
 
         const chekiTitle = document.getElementById('chekiTitle');
         const chekiUserName = document.getElementById('chekiUserName');
@@ -3622,7 +3710,12 @@
         const info = typeDatabase[typeCode];
         if (!commentBox || !info) return;
 
-        const fallback = getPersonalizedAiFallback(typeCode, lang) || info.fallback[lang] || info.fallback.ja;
+        let fallback = getBaseAiFallback(info, lang);
+        try {
+            fallback = getPersonalizedAiFallback(typeCode, lang) || fallback;
+        } catch (err) {
+            console.warn('Personalized AI fallback failed; using base fallback:', err);
+        }
         commentBox.textContent = localizeDimensionTerms(fallback, lang);
         persistLastResult(commentBox.textContent.trim());
         updateDetailedReportCard();
