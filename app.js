@@ -171,11 +171,11 @@
             sectionLoveAdvice: "💞 恋愛ワンポイント",
             detailedReportTitle: "📄 詳細AI診断書",
             detailedReportUnlockedText: "タイプ説明とAI毒舌を1枚の画像で保存できます。",
-            detailedReportLockedTitle: "🔒 詳細AI診断書は永久保存版で解放",
-            detailedReportLockedText: "この詳しい結果、60秒で霧に消えます。詳細AI診断書（タイプ説明＋AI毒舌）を画像で保存できます。",
+            detailedReportLockedTitle: "🔒 永久保存版で解放",
+            detailedReportLockedText: "このまま60秒で霧に消えます。1枚で残せるのは¥120だけ。",
             detailedReportSaveBtn: "📄 詳細AI診断書を画像で保存",
-            detailedReportPurchaseBtn: "✦ 詳細AI診断書を保存＋永久保存 ¥120",
-            detailedReportLossCopy: "この詳しい結果、60秒で霧に消えます。詳細AI診断書（タイプ説明＋AI毒舌）を画像で保存＋永久保存 →¥120",
+            detailedReportPurchaseBtn: "✦ ¥120で保存＋永久保存",
+            detailedReportLossCopy: "あなたの\"裏の顔\"、ぜんぶ言語化。タイプ説明＋AI毒舌を1枚にまとめました。",
             detailedReportScoreLabel: "承認欲求スコア",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
             paidSaveBtn: "✨ 詳細AI診断書を保存＋永久保存 ¥{price}",
@@ -290,11 +290,11 @@
             sectionLoveAdvice: "💞 Love tip",
             detailedReportTitle: "📄 Full AI Report",
             detailedReportUnlockedText: "Save your type description and AI roast as one clean image.",
-            detailedReportLockedTitle: "🔒 Full AI report unlocks with the forever-save version",
-            detailedReportLockedText: "This full result fades in 60 seconds. Save the AI report, type breakdown and roast, as an image for ¥120.",
+            detailedReportLockedTitle: "🔒 Unlocks with the forever-save",
+            detailedReportLockedText: "It fades into fog in 60 seconds. Keeping it in one image is ¥120 only.",
             detailedReportSaveBtn: "📄 Save full AI report as image",
-            detailedReportPurchaseBtn: "✦ Save the full AI report forever for ¥120",
-            detailedReportLossCopy: "This full result fades in 60 seconds. Save the AI report, type breakdown and roast, as an image forever →¥120",
+            detailedReportPurchaseBtn: "✦ Save forever for ¥120",
+            detailedReportLossCopy: "Your 'real face,' fully put into words. Type breakdown + AI roast, in one card.",
             detailedReportScoreLabel: "Approval Desire Score",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
             paidSaveBtn: "✨ Save full result image forever ¥{price}",
@@ -409,11 +409,11 @@
             sectionLoveAdvice: "💞 연애 한마디",
             detailedReportTitle: "📄 상세 AI 진단서",
             detailedReportUnlockedText: "유형 설명과 AI 독설을 한 장의 이미지로 저장할 수 있습니다.",
-            detailedReportLockedTitle: "🔒 상세 AI 진단서는 영구 보존판에서 열립니다",
-            detailedReportLockedText: "이 자세한 결과는 60초 뒤 사라져요. 유형 설명＋AI 독설 진단서를 이미지로 저장할 수 있어요.",
+            detailedReportLockedTitle: "🔒 영구 보존판에서 열려요",
+            detailedReportLockedText: "이대로 60초 뒤 안개 속으로 사라져요. 한 장으로 남기는 건 ¥120뿐.",
             detailedReportSaveBtn: "📄 상세 AI 진단서를 이미지로 저장",
-            detailedReportPurchaseBtn: "✦ 상세 AI 진단서 저장＋영구 보존 ¥120",
-            detailedReportLossCopy: "이 자세한 결과는 60초 뒤 사라져요. 유형 설명＋AI 독설 진단서를 이미지로 저장＋영구 보존 →¥120",
+            detailedReportPurchaseBtn: "✦ ¥120으로 저장＋영구 보존",
+            detailedReportLossCopy: "당신의 '뒷모습', 전부 언어화. 유형 설명＋AI 독설을 한 장에 담았어요.",
             detailedReportScoreLabel: "승인욕구 점수",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
             paidSaveBtn: "✨ 상세 AI 진단서 저장＋영구 보존 ¥{price}",
@@ -428,123 +428,123 @@
             dimensionExternal: "시선강탈 해피 관심종자"
         },
         zh: {
-            appTitle: "SNS认同感怪物诊断",
-            appSubtitle: "基于马斯洛需求模型的双轴认同诊断",
-            labelNickname: "请输入您的昵称",
+            appTitle: "SNS認同感怪獸診斷",
+            appSubtitle: "基於馬斯洛需求模型的雙軸認同診斷",
+            labelNickname: "請輸入你的暱稱",
             placeholderNickname: "（例：小博美）",
-            labelAge: "请选择您的年龄段",
-            ages: ["10代", "20代", "30代", "40代以上", "拒绝回答"],
-            startDiagnosisBtn: "开始诊断 💓",
-            scanBpm: "扫描深度上升中...",
+            labelAge: "請選擇你的年齡層",
+            ages: ["10代", "20代", "30代", "40代以上", "拒絕回答"],
+            startDiagnosisBtn: "開始診斷 💓",
+            scanBpm: "掃描深度上升中...",
             qHeader: "Q{num} / {total}",
-            backBtn: "← 上一题",
-            countdownText: "⚠️ 免费体验版: 剩 <span>{sec}</span> 秒神谕拍立得就会化为粉雾！",
-            chekiUserName: "用户: {name}",
-            chekiUserAge: "年龄段: {age}",
-            chekiSerialTitle: "序列号",
-            resultTitleLabel: "您的认同感欲求类型",
+            backBtn: "← 上一題",
+            countdownText: "⚠️ 免費體驗版: 剩 <span>{sec}</span> 秒神諭拍立得就會化為粉霧！",
+            chekiUserName: "使用者: {name}",
+            chekiUserAge: "年齡層: {age}",
+            chekiSerialTitle: "序號",
+            resultTitleLabel: "你的認同欲求類型",
             aiCommentTitleLabel: "AI毒舌分析",
-            exportBtn: "📸 保存/分享拍立得图片",
-            exportHint: "点击保存图片（无需截图）",
+            exportBtn: "📸 儲存/分享拍立得圖片",
+            exportHint: "點擊儲存圖片（無需截圖）",
             shareBtn: "🐦 分享到 X (Twitter)",
             lineShareBtn: "💬 分享到 LINE",
-            copyShareBtn: "🔗 复制链接",
-            retryBtn: "🔄 重新诊断",
-            lockTitle: "🌸 神谕已归于遗忘 🌸",
-            lockText: "由于免费体验的60秒已过，您的诊断结果已被封锁在粉雾中。请输入钥匙解锁以永久保存您的拍立得。",
-            premiumKeyLabel: "输入升级钥匙",
-            unlockBtn: "解除粉色锁定",
-            iosModalTitle: "准备好迎接真实的自己吗？",
-            iosModalText: "我们将加载您的社交认同欲求与生物反馈系统。心跳声音将与您的打字速度保持同步。",
-            iosStartBtn: "前进",
-            toastAudioInit: "生物反馈初始化完毕 💓",
-            toastKeySuccess: "钥匙验证成功！已为您永久保留拍立得。",
-            toastKeyFail: "无效的钥匙！",
-            toastExportStart: "正在冲印拍立得...",
-            toastExportEnd: "冲印完成！请在显示的页面中保存。",
-            toastExportFail: "冲印失败，发生了内部错误。",
-            saveModalTitle: "拍立得图片已生成",
-            saveModalText: "在 iPhone 上请从分享面板选择保存图片。若无法打开，请长按图片保存。",
-            saveModalShareBtn: "打开分享/保存",
-            saveModalDownloadBtn: "下载",
-            saveModalCloseBtn: "关闭",
-            toastAiSuccess: "AI连接成功 💓",
-            toastAiFallback: "AI已离线。已使用本地诊断。",
+            copyShareBtn: "🔗 複製連結",
+            retryBtn: "🔄 重新診斷",
+            lockTitle: "🌸 神諭已歸於遺忘 🌸",
+            lockText: "由於免費體驗的60秒已過，你的診斷結果已被封鎖在粉霧中。請輸入解鎖碼解鎖以永久保存你的拍立得。",
+            premiumKeyLabel: "輸入升級解鎖碼",
+            unlockBtn: "解除粉色鎖定",
+            iosModalTitle: "準備好迎接真實的自己嗎？",
+            iosModalText: "我們將載入你的社交認同欲求與生物反饋系統。心跳聲音將與你的打字速度保持同步。",
+            iosStartBtn: "前進",
+            toastAudioInit: "生物反饋初始化完畢 💓",
+            toastKeySuccess: "解鎖碼驗證成功！已為您永久保留拍立得。",
+            toastKeyFail: "無效的解鎖碼！",
+            toastExportStart: "正在沖印拍立得...",
+            toastExportEnd: "沖印完成！請在顯示的頁面中儲存。",
+            toastExportFail: "沖印失敗，發生了內部錯誤。",
+            saveModalTitle: "拍立得圖片已生成",
+            saveModalText: "在 iPhone 上請從分享面板選擇儲存圖片。若無法開啟，請長按圖片儲存。",
+            saveModalShareBtn: "開啟分享/儲存",
+            saveModalDownloadBtn: "下載",
+            saveModalCloseBtn: "關閉",
+            toastAiSuccess: "AI連接成功 💓",
+            toastAiFallback: "AI已離線。已使用本地診斷。",
             toastShareSuccess: "分享成功！",
-            toastCopySuccess: "链接已复制",
-            toastCopyFail: "复制失败",
-            loadingAi: "AI正在深入扫描您的内心...",
-            shareImageTitle: "SNS认同感怪物诊断",
-            shareImageText: "诊断结果拍立得图片",
-            xHashtag: "SNS认同感怪物诊断",
-            chekiFooterCta: "你是什么怪物？→",
+            toastCopySuccess: "連結已複製",
+            toastCopyFail: "複製失敗",
+            loadingAi: "AI正在深入掃描你的內心...",
+            shareImageTitle: "SNS認同感怪獸診斷",
+            shareImageText: "診斷結果拍立得圖片",
+            xHashtag: "SNS認同感怪獸診斷",
+            chekiFooterCta: "你是什麼怪獸？→",
             shareVariants: [
-                "我的社交认同感怪物是『${name}』！（分数${scorePct}%）准到笑出来…你是哪一种？",
-                "我的认同感被扫描了……结果是『${name}』(${scorePct}%)。猜猜你的怪物是什么？👀",
-                "测出来是『${name}』(${scorePct}%)！好奇大家都是什么类型，快测一下评论告诉我 👇"
+                "我的社交認同感怪獸是『${name}』！（分數${scorePct}%）準到笑出來…你是哪一種？",
+                "我的認同感被掃描了……結果是『${name}』(${scorePct}%)。猜猜你的怪獸是什麼？👀",
+                "測出來是『${name}』(${scorePct}%)！好奇大家都是什麼類型，快測一下留言告訴我 👇"
             ],
-            aiBadge: "AI神谕",
-            approvalMeterTitle: "💓 认同感欲求分数",
+            aiBadge: "AI神諭",
+            approvalMeterTitle: "💓 認同欲求分數",
             meterLow: "😌 超然",
-            meterMiddle: "😅 中间",
-            meterHigh: "🔥 认同感怪物",
-            chekiScoreLabel: "认同感分数:",
-            resultGrowthTitle: "进一步享受诊断结果",
+            meterMiddle: "😅 中間",
+            meterHigh: "🔥 認同感怪獸",
+            chekiScoreLabel: "認同感分數:",
+            resultGrowthTitle: "進一步享受診斷結果",
             resultGrowthLinks: [
-                { href: "articles/result-types.html", label: "16种诊断结果的玩法" },
-                { href: "articles/sns-approval-desire.html", label: "SNS上的认同感欲求是什么" },
-                { href: "articles/sns-fatigue.html", label: "减轻SNS疲劳的相处方式" },
-                { href: "articles/how-to-share-results.html", label: "在X分享结果的玩法" }
+                { href: "articles/result-types.html", label: "16種診斷結果的玩法" },
+                { href: "articles/sns-approval-desire.html", label: "SNS 上的認同欲求是什麼" },
+                { href: "articles/sns-fatigue.html", label: "減輕SNS疲勞的相處方式" },
+                { href: "articles/how-to-share-results.html", label: "在X 分享結果的玩法" }
             ],
             footerLinks: {
-                privacy: "隐私政策",
-                contact: "联系我们",
-                about: "运营信息",
-                articles: "认同感专栏"
+                privacy: "隱私權政策",
+                contact: "聯絡我們",
+                about: "營運資訊",
+                articles: "認同感專欄"
             },
-            consentText: "我们会为使用情况分析和广告显示使用Cookie等技术。昵称和输入内容不会发送到GA4。",
-            consentReject: "拒绝",
+            consentText: "我們會為使用情況分析和廣告顯示使用Cookie等技術。暱稱和輸入內容不會傳送到GA4。",
+            consentReject: "拒絕",
             consentAccept: "同意",
-            adLabel: "赞助链接",
-            btnPermanentSave: "✦ 保存详细AI诊断书＋永久保存 ¥120",
-            btnLockPurchase: "✦ 保存详细AI诊断书＋永久保存 ¥120",
+            adLabel: "贊助連結",
+            btnPermanentSave: "✦ 儲存詳細AI診斷書＋永久保存 ¥120",
+            btnLockPurchase: "✦ 儲存詳細AI診斷書＋永久保存 ¥120",
             orDivider: "─── 或者 ───",
-            btnCompatibility: "要揭开最佳/最糟配对吗？¥360",
-            btnTalent: "要揭开你的隐藏SNS才能吗？¥360",
+            btnCompatibility: "要揭開最佳/最糟配對嗎？¥360",
+            btnTalent: "要揭開你的隱藏SNS才能嗎？¥360",
             sectionTalentTitle: "🌟 沉睡才能包",
-            sectionTalentLocked: "才能数据正在准备中。购买后会显示在这里。",
+            sectionTalentLocked: "才能資料正在準備中。購買後會顯示在這裡。",
             sectionTalentHidden: "沉睡的才能",
-            sectionTalentWhy: "为什么适合你",
-            sectionTalentJobs: "适合的工作",
-            sectionTalentStrength: "弱点中的强项",
-            sectionTalentFuture: "未来提示",
-            sectionTalentAction: "今日行动",
-            sectionCompatTitle: "💖 配对诊断结果",
-            sectionGoodMatch: "💚 最佳搭档",
-            sectionBadMatch: "💔 冲突类型",
-            sectionLoveStyle: "📖 你的恋爱观",
-            sectionGoodSecret: "💡 加分小秘诀",
-            sectionBadAdvice: "🛠 减少摩擦的建议",
-            sectionLoveAdvice: "💞 恋爱小建议",
-            detailedReportTitle: "📄 详细AI诊断书",
-            detailedReportUnlockedText: "可将类型说明和AI毒舌分析保存为一张清晰图片。",
-            detailedReportLockedTitle: "🔒 详细AI诊断书将在永久保存版中解锁",
-            detailedReportLockedText: "这份详细结果将在60秒后消失。可将类型说明＋AI吐槽诊断书保存为图片。",
-            detailedReportSaveBtn: "📄 保存详细AI诊断书图片",
-            detailedReportPurchaseBtn: "✦ 保存详细AI诊断书＋永久保存 ¥120",
-            detailedReportLossCopy: "这份详细结果将在60秒后消失。类型说明＋AI吐槽诊断书可保存为图片并永久保留 →¥120",
-            detailedReportScoreLabel: "认同感欲求分数",
+            sectionTalentWhy: "為什麼適合你",
+            sectionTalentJobs: "適合的工作",
+            sectionTalentStrength: "弱點中的強項",
+            sectionTalentFuture: "未來提示",
+            sectionTalentAction: "今日行動",
+            sectionCompatTitle: "💖 配對診斷結果",
+            sectionGoodMatch: "💚 最佳搭檔",
+            sectionBadMatch: "💔 衝突類型",
+            sectionLoveStyle: "📖 你的戀愛觀",
+            sectionGoodSecret: "💡 加分小秘訣",
+            sectionBadAdvice: "🛠 減少摩擦的建議",
+            sectionLoveAdvice: "💞 戀愛小建議",
+            detailedReportTitle: "📄 詳細AI診斷書",
+            detailedReportUnlockedText: "可將類型解說和AI毒舌分析儲存為一張清晰圖片。",
+            detailedReportLockedTitle: "🔒 永久保存版才解鎖",
+            detailedReportLockedText: "再過60秒就會化成霧消失。想留成一張，只要¥120。",
+            detailedReportSaveBtn: "📄 儲存詳細AI診斷書圖片",
+            detailedReportPurchaseBtn: "✦ ¥120 永久保存",
+            detailedReportLossCopy: "你的『真面目』，完整化成文字。類型解說＋AI毒舌，整理成一張。",
+            detailedReportScoreLabel: "認同欲求分數",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
-            paidSaveBtn: "✨ 保存详细AI诊断书＋永久保存 ¥{price}",
-            paidSaveHint: "或分享到X免费保存",
+            paidSaveBtn: "✨ 儲存詳細AI診斷書＋永久保存 ¥{price}",
+            paidSaveHint: "或分享到X免費保存",
             paidSavedLabel: "已保存",
-            paidUnlockSuccess: "永久保存已启用！",
+            paidUnlockSuccess: "永久保存已啟用！",
 
             // ポップ用語定義
-            dimensionNeed: "胆小安心安全第一派",
-            dimensionGrowth: "意识超前极限突破宅",
+            dimensionNeed: "膽小安心安全第一派",
+            dimensionGrowth: "意識超前極限突破宅",
             dimensionInternal: "我行我素我的路精神",
-            dimensionExternal: "抢镜开心求关注狂"
+            dimensionExternal: "搶鏡開心求追蹤狂"
         }
     };
 
@@ -554,13 +554,13 @@
     const questions = [
         {
             category: {
-                ja: "いいねの正体", en: "What Likes Mean", ko: "좋아요의 정체", zh: "点赞的真相"
+                ja: "いいねの正体", en: "What Likes Mean", ko: "좋아요의 정체", zh: "按讚的真相"
             },
             text: {
                 ja: "SNSの投稿に対するリアクション（いいね数など）が期待より少なかった時の気持ちは？",
                 en: "How do you feel when your SNS post gets fewer likes/reactions than expected?",
                 ko: "SNS 게시물에 대한 반응(좋아요 수 등)이 기대보다 적었을 때의 기분은?",
-                zh: "当社交媒体帖子的互动（点赞数等）低于预期時，你的感受是？"
+                zh: "當SNS貼文的互動（按讚數等）低於預期時，你的感受是？"
             },
             answers: [
                 {
@@ -568,7 +568,7 @@
                         ja: "「誰にも見られてないのかな…」と寂しくなり、投稿を消したくなる。",
                         en: "I feel lonely, wondering if no one is watching, and want to delete the post.",
                         ko: "「아무도 안 보나...」 하고 쓸쓸해져서 게시물을 지우고 싶어진다.",
-                        zh: "会觉得「是不是没人看啊…」而感到寂寞，甚至想删帖。"
+                        zh: "會覺得「是不是沒人看啊…」而感到寂寞，甚至想刪帖。"
                     },
                     value: 'e'
                 },
@@ -577,7 +577,7 @@
                         ja: "「まあ、自分が気に入っているから関係ないや！」と気にしない。",
                         en: "I don't care because I like it myself anyway!",
                         ko: "「뭐, 내가 마음에 드니까 상관없어!」라며 신경 쓰지 않는다.",
-                        zh: "觉得「嘛，我自己喜欢就行！」所以不在意。"
+                        zh: "覺得「嘛，我自己喜歡就行！」所以不在意。"
                     },
                     value: 'r'
                 }
@@ -585,13 +585,13 @@
         },
         {
             category: {
-                ja: "焦りスイッチ", en: "Anxiety Switch", ko: "초조함 스위치", zh: "焦虑开关"
+                ja: "焦りスイッチ", en: "Anxiety Switch", ko: "초조함 스위치", zh: "焦慮開關"
             },
             text: {
                 ja: "新しいスキルや知識を身につけようと思う最大の動機は？",
                 en: "What is your main motivation for acquiring new skills or knowledge?",
                 ko: "새로운 기술이나 지식을 습득하려는 가장 큰 동기는?",
-                zh: "您学习新技能或知识的最大动力是？"
+                zh: "您學習新技能或知識的最大動力是？"
             },
             answers: [
                 {
@@ -599,7 +599,7 @@
                         ja: "周りに置いていかれたくない、または将来の不安を解消するため。",
                         en: "To avoid being left behind, or to resolve future anxieties.",
                         ko: "주변에 뒤처지고 싶지 않거나, 미래의 불안을 해소하기 위해.",
-                        zh: "不想被周围人落下，或者想消除对未来的不安。"
+                        zh: "不想被身邊人落下，或者想消除對未來的不安。"
                     },
                     value: 'n'
                 },
@@ -608,7 +608,7 @@
                         ja: "自分の可能性を広げたい、新しいことに純粋に挑戦したいため。",
                         en: "To expand my potential, or out of pure curiosity for new things.",
                         ko: "자신의 가능성을 넓히고 싶거나, 새로운 일에 순수하게 도전하기 위해.",
-                        zh: "想要拓宽自己的可能性，纯粹想尝试新事物。"
+                        zh: "想要拓寬自己的可能性，純粹想嘗試新事物。"
                     },
                     value: 'm'
                 }
@@ -616,13 +616,13 @@
         },
         {
             category: {
-                ja: "見せ方のクセ", en: "Showing Style", ko: "보여주는 습관", zh: "展示习惯"
+                ja: "見せ方のクセ", en: "Showing Style", ko: "보여주는 습관", zh: "展示習慣"
             },
             text: {
                 ja: "自分の魅力や趣味を周囲に伝えるときのスタイルは？",
                 en: "What is your style when showing your charm or hobbies to others?",
                 ko: "자신의 매력이나 취미를 주변에 알릴 때의 스타일은?",
-                zh: "向周围展示自己的魅力或兴趣时，您倾向于哪种风格？"
+                zh: "向身邊展示自己的魅力或興趣時，您傾向於哪種風格？"
             },
             answers: [
                 {
@@ -630,7 +630,7 @@
                         ja: "自ら積極的にSNSなどで発信し、多くの人に知ってもらおうとする。",
                         en: "I actively post on SNS to get as many people to know as possible.",
                         ko: "스스로 적극적으로 SNS 등에 올려 많은 사람들에게 알리려고 한다.",
-                        zh: "自己主动在社交媒体上发布，想让更多的人知道。"
+                        zh: "自己主動在SNS 上發布，想讓更多的人知道。"
                     },
                     value: 'a'
                 },
@@ -639,7 +639,7 @@
                         ja: "聞かれたら答える程度で、わかる人にだけ見つけてほしいと願う。",
                         en: "I only answer if asked, hoping that only those who get it will find me.",
                         ko: "누가 물어보면 대답하는 정도로, 알아주는 사람만 찾아주길 바란다.",
-                        zh: "有人问起才说，只希望懂的人能发现自己就行。"
+                        zh: "有人問起才說，只希望懂的人能發現自己就行。"
                     },
                     value: 'p'
                 }
@@ -647,13 +647,13 @@
         },
         {
             category: {
-                ja: "認められた合図", en: "Proof of Approval", ko: "인정의 신호", zh: "被认可的信号"
+                ja: "認められた合図", en: "Proof of Approval", ko: "인정의 신호", zh: "被認可的信號"
             },
             text: {
                 ja: "あなたが「他人に認められた」と強く実感する瞬間はどちら？",
                 en: "When do you feel most strongly that you have been recognized by others?",
                 ko: "당신이 「타인에게 인정받았다」고 강하게 실감하는 순간은?",
-                zh: "以下哪一种情况能让您强烈感受到「被他人认可」？"
+                zh: "以下哪一種情況能讓您強烈感受到「被他人認可」？"
             },
             answers: [
                 {
@@ -661,7 +661,7 @@
                         ja: "売上、フォロワー数、点数などの「明確な数値や結果」が出たとき。",
                         en: "When concrete numbers like sales, followers, or scores are achieved.",
                         ko: "매출, 팔로워 수, 점수 등 「명확한 수치나 결과」가 나왔을 때.",
-                        zh: "当销售额、粉丝数、分数等「明确的数据或结果」出来时。"
+                        zh: "當銷售額、粉絲數、分數等「明確的資料或結果」出來時。"
                     },
                     value: 'o'
                 },
@@ -670,7 +670,7 @@
                         ja: "「あなたと一緒にいると楽しい」といった「感情的・感覚的な言葉」をもらったとき。",
                         en: "When receiving emotional words like 'It is fun to be with you'.",
                         ko: "「너랑 있으면 즐거워」 등 「감정적・감각적인 말」을 들었을 때.",
-                        zh: "当听到「和你在一起很开心」这类「情感上或感觉上的话语」时。"
+                        zh: "當聽到「和你在一起很開心」這類「情感上或感覺上的話語」時。"
                     },
                     value: 's'
                 }
@@ -678,13 +678,13 @@
         },
         {
             category: {
-                ja: "褒められた直後", en: "After Praise", ko: "칭찬 직후", zh: "被夸之后"
+                ja: "褒められた直後", en: "After Praise", ko: "칭찬 직후", zh: "被誇之後"
             },
             text: {
                 ja: "目標を達成して人から大絶賛されたとき、脳内で真っ先に思うことは？",
                 en: "What is your immediate thought when you reach a goal and get highly praised?",
                 ko: "목표를 달성해 사람들에게 대찬사를 받았을 때, 머릿속에 가장 먼저 드는 생각은?",
-                zh: "当达成目标并获得大家赞赏时，您脑海中第一个想法是？"
+                zh: "當達成目標並獲得大家讚賞時，您腦海中第一個想法是？"
             },
             answers: [
                 {
@@ -692,7 +692,7 @@
                         ja: "「みんなが認めてくれた！これでもう安心だ！」と胸を撫で下ろす。",
                         en: "I sigh with relief thinking, 'Everyone accepts me! Now I'm safe!'",
                         ko: "「모두가 인정해 줬어! 이제 안심이다!」라며 안도한다.",
-                        zh: "拍着胸脯松口气：「大家都认可我了！这下终于安全了！」"
+                        zh: "拍著胸脯松口氣：「大家都認可我了！這下終於安全了！」"
                     },
                     value: 'e'
                 },
@@ -701,7 +701,7 @@
                         ja: "「よし、自分の努力がしっかり実を結んだな」と心の中で静かに噛み締める。",
                         en: "I quietly reflect: 'Yes, my efforts have truly paid off.'",
                         ko: "「좋아, 내 노력이 확실히 결실을 맺었구나」라며 마음속으로 다짐한다.",
-                        zh: "在心中默默赞许：「很好，自分の努力がようやく実を結んだ。」"
+                        zh: "在心中默默點頭：「很好，我的努力終於有結果了。」"
                     },
                     value: 'r'
                 }
@@ -709,13 +709,13 @@
         },
         {
             category: {
-                ja: "避けたい未来", en: "Future to Avoid", ko: "피하고 싶은 미래", zh: "想避开的未来"
+                ja: "避けたい未来", en: "Future to Avoid", ko: "피하고 싶은 미래", zh: "想避開的未來"
             },
             text: {
                 ja: "あなたにとって「生きる上で最も避けたい状態」は？",
                 en: "What is the single state in life you want to avoid most?",
                 ko: "당신에게 있어 「살아가면서 가장 피하고 싶은 상태」는?",
-                zh: "对您来说，「人生中最想避免的状态」是？"
+                zh: "對您來說，「人生中最想避免的狀態」是？"
             },
             answers: [
                 {
@@ -723,7 +723,7 @@
                         ja: "社会的な孤立、仲間外れ、あるいは自分の居場所がなくなること。",
                         en: "Social isolation, being excluded, or having no place to belong.",
                         ko: "사회적인 고립, 따돌림, 혹은 자신의 설 자리가 없어지는 것.",
-                        zh: "社交上的孤立、被边缘化，或者没有自己的容身之所。"
+                        zh: "社交上的孤立、被被邊緣化，或者沒有自己的容身之所。"
                     },
                     value: 'n'
                 },
@@ -732,7 +732,7 @@
                         ja: "現状維持のまま衰退し、自分のやりたいことが一生できずに終わること。",
                         en: "Decaying in status quo, ending life without doing what I wanted.",
                         ko: "현상 유지에 머무르다 쇠퇴해, 내가 하고 싶은 일을 평생 못 하고 끝나는 것.",
-                        zh: "在安于现状中慢慢退步，一生都无法做自己真正想做的事。"
+                        zh: "在安於現狀中慢慢退步，一生都無法做自己真正想做的事。"
                     },
                     value: 'm'
                 }
@@ -740,13 +740,13 @@
         },
         {
             category: {
-                ja: "手柄の置き場", en: "Where Credit Goes", ko: "공로의 위치", zh: "功劳放哪里"
+                ja: "手柄の置き場", en: "Where Credit Goes", ko: "공로의 위치", zh: "功勞放哪裡"
             },
             text: {
                 ja: "もしグループワークで自分のアイデアが良い成果を上げた場合、どう動く？",
                 en: "If your idea leads to great results in a group project, what do you do?",
                 ko: "만약 그룹 과제에서 자신의 아이디어가 좋은 성과를 냈을 때, 어떻게 행동합니까?",
-                zh: "如果团队工作中因为您的创意取得了不错成果，您会怎么做？"
+                zh: "如果團隊工作中因為你的創意取得了不錯成果，您會怎麼做？"
             },
             answers: [
                 {
@@ -754,7 +754,7 @@
                         ja: "「私のアイデアなんです！」と実績をしっかりアピールする。",
                         en: "I clearly assert my credit: 'That was my idea!'",
                         ko: "「이거 제 아이디어입니다!」라며 내 실적을 확실히 어필한다.",
-                        zh: "明确表明主权：「这其实是我的想法！」积极展示自我。"
+                        zh: "明確表明主權：「這其實是我的想法！」積極展示自我。"
                     },
                     value: 'a'
                 },
@@ -763,7 +763,7 @@
                         ja: "自分が提案したと周囲が気づいて自然と評価してくれるのを待つ。",
                         en: "I wait for others to naturally realize and appreciate that I proposed it.",
                         ko: "내가 제안한 것임을 주변이 눈치채고 자연스레 평가해 주길 기다린다.",
-                        zh: "等待大家注意到是由自己提案的，并自然而然地给予认可。"
+                        zh: "等待大家注意到是由自己提案的，並自然而然地給予認可。"
                     },
                     value: 'p'
                 }
@@ -771,13 +771,13 @@
         },
         {
             category: {
-                ja: "心に残る報酬", en: "Reward That Sticks", ko: "마음에 남는 보상", zh: "留在心里的奖励"
+                ja: "心に残る報酬", en: "Reward That Sticks", ko: "마음에 남는 보상", zh: "留在心裡的獎勵"
             },
             text: {
                 ja: "何かのイベントに参加した際、あなたが最も価値を感じるのは？",
                 en: "When attending an event, what do you find most valuable?",
                 ko: "어떤 이벤트에 참여했을 때, 당신이 가장 가치를 느끼는 것은?",
-                zh: "参加某项活动时，您认为最有价值的是？"
+                zh: "參加某項活動時，您認為最有價值的是？"
             },
             answers: [
                 {
@@ -785,7 +785,7 @@
                         ja: "修了証やバッジなどの「客観的に証明できる戦利品」をもらうこと。",
                         en: "Receiving tangible trophies like certificates or badges.",
                         ko: "수료증이나 배지 등 「객관적으로 증명할 수 있는 전리품」을 받는 것.",
-                        zh: "获得结业证书或勋章等「可以作为客观证明的战利品」。"
+                        zh: "獲得結業證書或徽章等「可以當作客觀證明的戰利品」。"
                     },
                     value: 'o'
                 },
@@ -794,7 +794,7 @@
                         ja: "その場で生まれた「仲間とのエモい連帯感や、直感的な楽しさ」を味わうこと。",
                         en: "Experiencing emotional bonding and intuitive fun with others.",
                         ko: "그 자리에서 싹튼 「동료들과의 에모한 연대감이나 직관적인 즐거움」을 맛보는 것.",
-                        zh: "体验当时产生的「与同伴之间的感性纽带，或直观的乐趣」。"
+                        zh: "體驗當時產生的「與同伴之間的感性紐帶，或直觀的樂趣」。"
                     },
                     value: 's'
                 }
@@ -802,13 +802,13 @@
         },
         {
             category: {
-                ja: "既読と沈黙", en: "Views and Silence", ko: "조회와 침묵", zh: "已读与沉默"
+                ja: "既読と沈黙", en: "Views and Silence", ko: "조회와 침묵", zh: "已讀與沉默"
             },
             text: {
                 ja: "ストーリーの閲覧数はあるのに反応が少ないとき、つい考えるのは？",
                 en: "When your story has views but almost no reactions, what do you tend to think?",
                 ko: "스토리 조회수는 있는데 반응이 거의 없을 때, 무심코 드는 생각은?",
-                zh: "动态有浏览量却几乎没人互动时，你最容易想到什么？"
+                zh: "限時動態有瀏覽量卻幾乎沒人互動時，你最容易想到什麼？"
             },
             answers: [
                 {
@@ -816,7 +816,7 @@
                         ja: "「見てるなら何か押してよ」と、誰が見たかまで確認してしまう。",
                         en: "I check who saw it and think, 'If you looked, react to it.'",
                         ko: "「봤으면 뭐라도 눌러주지」 싶어서 누가 봤는지까지 확인한다.",
-                        zh: "会想「都看了怎么不点一下」，甚至去查是谁看过。"
+                        zh: "會想「都看了怎麼不點一下」，甚至去查是誰看過。"
                     },
                     value: 'e'
                 },
@@ -825,7 +825,7 @@
                         ja: "記録として残せたなら十分で、反応の有無はあまり引きずらない。",
                         en: "If it works as my own record, reactions do not linger much.",
                         ko: "내 기록으로 남겼다면 충분해서 반응 유무를 오래 끌지 않는다.",
-                        zh: "能作为自己的记录留下就够了，不太纠结有没有反应。"
+                        zh: "能作為自己的記錄留下就夠了，不太纠結有沒有反應。"
                     },
                     value: 'r'
                 }
@@ -833,13 +833,13 @@
         },
         {
             category: {
-                ja: "流行への距離", en: "Distance from Trends", ko: "유행과의 거리", zh: "和潮流的距离"
+                ja: "流行への距離", en: "Distance from Trends", ko: "유행과의 거리", zh: "和流行的距離"
             },
             text: {
                 ja: "知らないSNSの流行が急に周りで盛り上がったとき、最初の反応は？",
                 en: "When a new SNS trend suddenly spreads around you, what is your first reaction?",
                 ko: "모르는 SNS 유행이 갑자기 주변에서 뜰 때, 첫 반응은?",
-                zh: "身边突然流行起一个你不了解的社交媒体玩法时，你的第一反应是？"
+                zh: "身邊突然流行起一個你不了解的SNS玩法時，你的第一反應是？"
             },
             answers: [
                 {
@@ -847,7 +847,7 @@
                         ja: "「乗り遅れたら存在感が薄くなるかも」と急いで把握する。",
                         en: "I rush to understand it because being late might make me invisible.",
                         ko: "「늦으면 존재감이 옅어질지도」 싶어서 급히 파악한다.",
-                        zh: "会赶紧弄懂，担心「跟不上就会没存在感」。"
+                        zh: "會趕緊弄懂，擔心「跟不上就會沒存在感」。"
                     },
                     value: 'n'
                 },
@@ -856,7 +856,7 @@
                         ja: "面白そうなら自分なりの使い方を試し、違えば静かに見送る。",
                         en: "If it seems fun, I test my own spin; if not, I let it pass.",
                         ko: "재밌어 보이면 내 방식으로 써 보고, 아니면 조용히 넘긴다.",
-                        zh: "觉得有趣就用自己的方式试试，不合适就安静略过。"
+                        zh: "覺得有趣就用自己的方式試試，不合適就安靜略過。"
                     },
                     value: 'm'
                 }
@@ -864,13 +864,13 @@
         },
         {
             category: {
-                ja: "作品の出し方", en: "Sharing Your Work", ko: "작품을 내는 법", zh: "作品怎么发"
+                ja: "作品の出し方", en: "Sharing Your Work", ko: "작품을 내는 법", zh: "作品怎麼發"
             },
             text: {
                 ja: "いい感じの作品や成果ができた直後、あなたが取りがちな行動は？",
                 en: "Right after making something you feel proud of, what do you usually do?",
                 ko: "마음에 드는 작품이나 성과가 생긴 직후, 주로 어떤 행동을 하나요?",
-                zh: "刚做出自己满意的作品或成果时，你通常会怎么做？"
+                zh: "剛做出自己滿意的作品或成果時，你通常會怎麼做？"
             },
             answers: [
                 {
@@ -878,7 +878,7 @@
                         ja: "熱が冷めないうちに、制作過程やこだわりも含めて投稿する。",
                         en: "I post it while the energy is fresh, including the process and details.",
                         ko: "열기가 식기 전에 과정과 포인트까지 함께 올린다.",
-                        zh: "趁热度还在，把过程和讲究也一起发出来。"
+                        zh: "趁熱度還在，把過程和講究也一起發出來。"
                     },
                     value: 'a'
                 },
@@ -887,7 +887,7 @@
                         ja: "まず自分だけで眺め、見せる相手やタイミングをかなり選ぶ。",
                         en: "I enjoy it privately first and carefully choose who and when to show.",
                         ko: "먼저 혼자 감상하고, 보여줄 사람과 타이밍을 꽤 고른다.",
-                        zh: "先自己欣赏，再慎重选择给谁看、什么时候发。"
+                        zh: "先自己欣賞，再慎重選擇給誰看、什麼時候發。"
                     },
                     value: 'p'
                 }
@@ -895,13 +895,13 @@
         },
         {
             category: {
-                ja: "伸びた夜の本音", en: "The Night It Performs", ko: "잘 된 밤의 속마음", zh: "爆了那晚的真心话"
+                ja: "伸びた夜の本音", en: "The Night It Performs", ko: "잘 된 밤의 속마음", zh: "爆了那晚的真心話"
             },
             text: {
                 ja: "投稿が伸びた日の夜、あとで見返したくなるのはどちら？",
                 en: "On a day when a post performs well, what do you want to revisit later?",
                 ko: "게시물이 잘 된 날 밤, 나중에 다시 보고 싶은 것은?",
-                zh: "帖子表现不错的那天晚上，你之后更想回看哪一种？"
+                zh: "貼文表現不錯的那天晚上，你之後更想回看哪一種？"
             },
             answers: [
                 {
@@ -909,7 +909,7 @@
                         ja: "伸びた数字、ランキング、保存数などの結果画面。",
                         en: "The result screen: numbers, ranking, saves, and reach.",
                         ko: "올라간 숫자, 순위, 저장 수 같은 결과 화면.",
-                        zh: "增长的数据、排名、收藏数等结果画面。"
+                        zh: "增長的資料、排名、收藏數等結果畫面。"
                     },
                     value: 'o'
                 },
@@ -918,7 +918,7 @@
                         ja: "誰かの一言コメントや、空気が変わった瞬間の感触。",
                         en: "A single comment from someone, or the feeling that the mood shifted.",
                         ko: "누군가의 한마디 댓글이나 분위기가 바뀐 순간의 감각.",
-                        zh: "某个人的一句评论，或氛围突然变化的那种感觉。"
+                        zh: "某個人的一句留言，或氛圍突然變化的那種感覺。"
                     },
                     value: 's'
                 }
@@ -932,258 +932,258 @@
     const typeDatabase = {
         pome: {
             emoji: "🐶",
-            name: { ja: "かまってちゃん型ポメラニアン", en: "Whining Pomeranian", ko: "관심종자형 포메라니안", zh: "求关注型博美犬" },
+            name: { ja: "かまってちゃん型ポメラニアン", en: "Whining Pomeranian", ko: "관심종자형 포메라니안", zh: "求追蹤型博美犬" },
             description: {
                 ja: "他人の視線（視線泥棒なハッピーかまってちゃん）と客観的ステータスを渇望しつつ、自分からはアピールできない（ビビリなあんしん安全第一派）。しかし心は成長（意識高めな限界突破オタク）を望むアンバランス種。",
                 en: "Craving others' gaze (Attention-Stealer Happy Needy) and objective status, yet unable to assert yourself (Timid Safety-First Group), while secretly desiring inner growth (High-Conscious Limit-Break Otaku).",
                 ko: "타인의 시선(시선강탈 해피 관심종자)과 객관적 스펙을 갈망하면서도, 정작 스스로 어필하지는 못하는(소심한 안심안전 제일파). 하지만 마음속으로는 성장(의식 높은 한계돌파 오타쿠)을 바라는 불안정한 존재.",
-                zh: "渴望他人的目光（抢镜开心求关注狂）与客观地位，却无法主动展示自我（胆小安心安全第一派），同时内心深处又向往着个人成长（意识超前极限突破宅）的矛盾结合体。"
+                zh: "渴望他人的目光（搶鏡開心求追蹤狂）與客觀地位，卻無法主動展示自我（膽小安心安全第一派），同時內心深處又向往著個人成長（意識超前極限突破宅）的矛盾結合體。"
             },
             fallback: {
                 ja: "「誰か私を褒めて！」と内心で絶叫しているくせに、スルーされる恐怖から自分では一切発信できないチキン。過去の栄光の数字を必死に握りしめ、物陰から誰かが「凄いね」と声をかけてくれるのをじっと監視しているイタい忠犬です。無駄に高いプライドのせいで身動きが取れなくなっていますよ。",
                 en: "Dying for praise, yet you lack the courage to post. Clinging to status metrics, you watch from the shadows like a watchdog waiting for someone to walk by and call you 'brilliant.' Your useless pride is weighing you down.",
                 ko: "칭찬은 받고 싶어 안달 났으면서 정작 스스로 올릴 배짱은 없다. 실적 숫자만 꽉 쥐고 지나가던 누군가가 '우수하네'라고 말해주길 그늘 속에서 충견처럼 감시하고 있군요. 쓸데없는 자존심만 너무 무겁습니다.",
-                zh: "极度渴望被夸奖，却又没有勇气主动发声。只敢死死抱住数据，像只看门狗一样躲在暗处，监视着有没有人路过时顺口夸一句「你真棒」。你那毫无意义的自尊心实在太沉重了。"
+                zh: "極度渴望被誇獎，卻又沒有勇氣主動發聲。只敢死死抱住資料，像只看門狗一樣躲在暗處，監視著有沒有人路過時順口誇一句「你真棒」。你那毫無意義的自尊心實在太沉重了。"
             }
         },
         pomr: {
             emoji: "🐌",
-            name: { ja: "殻にこもる自律カタツムリ", en: "Hermit Snail", ko: "껍질 속에 숨는 자율 달팽이", zh: "隐居自律小蜗牛" },
+            name: { ja: "殻にこもる自律カタツムリ", en: "Hermit Snail", ko: "껍질 속에 숨는 자율 달팽이", zh: "隱居自律小蝸牛" },
             description: {
                 ja: "マイペースなゴーイングマイウェイ精神と客観的実績にストイックに向き合う。アピールせず（ビビリなあんしん安全第一派）静かに殻の中で「自分が最強」と自惚れる気難しい哲学者。",
                 en: "Stoically facing My-Way Independent Spirit and objective results. Quietly bragging inside your shell (Timid Safety-First Group) that you are the best without advertising it.",
                 ko: "마이웨이 마이페이스 정신과 객관적 성과를 스토익하게 마주함. 어필은 극도로 자제하며(소심한 안심안전 제일파) 조용히 껍질 속에서 '내가 최고'라며 자만하는 까다로운 철학자.",
-                zh: "默默地坚持着我行我素我的路精神并追求客观成果。从不炫耀（胆小安心安全第一派），只是静静地躲在壳里自恋地认为「我才是最强的」的孤僻哲学家。"
+                zh: "默默地堅持著我行我素我的路精神並追求客觀成果。從不炫耀（膽小安心安全第一派），只是靜靜地躲在殼裡自戀地認為「我才是最強的」的孤僻哲學家。"
             },
             fallback: {
                 ja: "「私は他人の評価なんて興味ない、成長しか追わない」とスカしたツラで嘯く、自称・孤高の天才。自分が世界で一番優秀だと本気で信じ込んでいるので、他人が自分を神格化して崇め奉らない現状に、殻の中でイライラしながら怒り狂っています。",
                 en: "A snail posing as a lonely sage claiming to only care about results. Convinced you're superior, you pretend to reject lukewarm opinions, but inside you're raging at a world that refuses to bow down to your secret genius.",
                 ko: "'나는 오직 성과와 성장만을 쫓는다'고 으스대는 외로운 현자 행세 달팽이. 자신이 가장 뛰어나다고 믿고 있기에 남들의 미지근한 평가는 거부하는 척하지만, 본심은 자신에게 굴복하지 않는 세상에 분노하고 있습니다.",
-                zh: "自诩为「只追求成果与成长」的孤高贤者。因为坚信自己是最优秀的，所以表面上对他人平庸的评价不屑一顾，内心其实在为这个世界没有向你屈服而咬牙切齿。"
+                zh: "自詡為「只追求成果與成長」的孤高賢者。因為堅信自己是最優秀的，所以表面上對他人平庸的評價不屑一顧，內心其實在為這個世界沒有向你屈服而咬牙切齒。"
             }
         },
         pone: {
             emoji: "🐩",
-            name: { ja: "怯える甘えん坊トイプー", en: "Frightened Toy Poodle", ko: "겁먹은 응석받이 토이푸들", zh: "胆怯撒娇贵宾犬" },
+            name: { ja: "怯える甘えん坊トイプー", en: "Frightened Toy Poodle", ko: "겁먹은 응석받이 토이푸들", zh: "膽怯撒嬌貴賓犬" },
             description: {
                 ja: "安心安全な居場所（ビビリなあんしん安全第一派）と視線泥棒なハッピーかまってちゃん欲求にしがみつく。自ら動かず、客観的実績の鎧で武装して誰かが拾ってくれるのを待つタイプ。",
                 en: "Clinging to safe places (Timid Safety-First Group) and Attention-Stealer Happy Needy needs. Staying passive, waiting with objective armor for someone to save you.",
                 ko: "안심하고 쉴 곳(소심한 안심안전 제일파)과 시선강탈 해피 관심종자 성향에 집착함. 먼저 나서지 않고 객관적 실적의 갑옷을 입은 채 누군가 자신을 데려가 주길 기다리는 타입.",
-                zh: "死死抓住安全港湾（胆小安心安全第一派）以及抢镜开心求关注狂の渴望不放。自己不愿迈出一步，只敢披着客观成果的外衣，等待着别人来拯救自己。"
+                zh: "死死抓住安全港灣（膽小安心安全第一派）以及搶鏡開心求追蹤狂的渴望不放。自己不願邁出一步，只敢披著客觀成果的外衣，等待著別人來拯救自己。"
             },
             fallback: {
                 ja: "社会的な死（孤立）を病的に恐れ、他人のいいねや評価という酸素ボンベなしでは息もできない寄生生物。自分を売り込む度胸は皆無なので、過去の実績や学歴などのラベルを全身に貼り付け、物陰でプルプル震えながら「誰か私を養って」と物乞いしています。",
                 en: "Trembling with fear of exclusion, you crave praise like an oxygen tank. Lacking the courage to pitch yourself, you just wear credentials like armor, shivering and silently begging: 'Someone rescue me.'",
                 ko: "사회에서 버림받을까 두려움에 떨며 타인의 평가라는 산소 호흡기를 찾고 있습니다. 스스로 어필할 용기는 눈곱만큼도 없기에 그저 객관적 스펙만 껴입은 채 '누구 없어요?'라며 떠는 응석받이입니다.",
-                zh: "一边对被社会排挤的恐惧战战兢兢，一边疯狂渴求他人认可的供氧。因为没有丝毫自我展示的勇气，只能用客观标签包装自己，像个缩在角落瑟瑟发抖哭喊「谁来帮帮我」的巨婴。"
+                zh: "一邊對被社會排擠的恐惧戰戰兢兢，一邊瘋狂渴求他人認可的供氧。因為沒有絲毫自我展示的勇氣，只能用客觀標籤包裝自己，像個縮在角落瑟瑟發抖哭喊「誰來幫幫我」的巨嬰。"
             }
         },
         ponr: {
             emoji: "🐨",
-            name: { ja: "要領のいい保身コアラ", en: "Sly Protector Koala", ko: "처세 좋은 보신 코알라", zh: "善于保身的树袋熊" },
+            name: { ja: "要領のいい保身コアラ", en: "Sly Protector Koala", ko: "처세 좋은 보신 코알라", zh: "善於保身的樹袋熊" },
             description: {
                 ja: "安全第一（ビビリなあんしん安全第一派）で自分の評価だけは守りたいマイペースなゴーイングマイウェイ精神。客観的な数字やルールを盾にして絶対に傷つかない位置をキープする。",
                 en: "Seeking safety (Timid Safety-First Group) while holding onto My-Way Independent Spirit. Hiding behind figures and rules to stay out of harm's way.",
                 ko: "안전제일(소심한 안심안전 제일파)로 자기 평가만은 지키고 싶은 마이웨이 마이페이스 정신. 객관적인 수치와 규칙을 방패 삼아 절대로 상처받지 않는 포지션을 사수하는 인물.",
-                zh: "奉行安全第一（胆小安心安全第一派），极力维护自身评价的我行我素我的路精神。用客观数据 and 规则做盾牌，将自己安放在绝对不会受伤的安全位置。"
+                zh: "奉行安全第一（膽小安心安全第一派），極力維護自身評價的我行我素我的路精神。用客觀資料與規則做盾牌，將自己安放在絕對不會受傷的安全位置。"
             },
             fallback: {
                 ja: "傷つくのが怖すぎて、絶対に責任を取らなくて済む安全シェルターから一歩も出ない究極のヘタレ。他人の実績や既存のルールを盾にして「私は悪くありません」と予防線を張りまくる保身のプロですが、その徹底した逃げ腰人生、薄っぺらすぎて虚しくないですか？",
                 en: "Pathologically terrified of hurt, you watch the world from a bulletproof zone holding metrics as a shield. Your lazy self-defense is genius, but your shallow life will eventually bore you to death.",
                 ko: "상처받는 걸 병적으로 두려워해 책임질 필요가 없는 안전지대에서 수치와 실적이란 방패 뒤에 숨어 세상을 관찰합니다. 보신술 하나는 천재적이지만 그 인생の 얄팍함에 언젠가 본인조차 질려버릴 겁니다.",
-                zh: "病态般地害怕受伤。躲在绝对不需要承担责任的安全地带，拿着数据和成果 of 盾牌冷眼旁观。你的节能保身术堪称天下一绝，但如此空洞的人生，迟早有一天连你自己都会觉得无聊透顶。"
+                zh: "病態般地害怕受傷。躲在絕對不需要承擔責任的安全地帶，拿著資料和成果當盾牌冷眼旁觀。你的節能保身術堪稱天下一絕，但如此空洞的人生，遲早有一天連你自己都會覺得無聊透頂。"
             }
         },
         psme: {
             emoji: "🐹",
-            name: { ja: "エモさ渇望インフルエンサー予備軍", en: "Emo-Star Wannabe", ko: "감성 갈망 인플루언서 꿈나무", zh: "渴望情怀的预备网红" },
+            name: { ja: "エモさ渇望インフルエンサー予備軍", en: "Emo-Star Wannabe", ko: "감성 갈망 인플루언서 꿈나무", zh: "渴望情懷的預備網紅" },
             description: {
                 ja: "共感やエモさ（視線泥棒なハッピーかまってちゃん）と他人の称賛で精神を満たし、意識高めな限界突破オタクへ成長したいと願うが、受動的（ビビリなあんしん安全第一派）で動けない。",
                 en: "Desiring emotional sparks (Attention-Stealer Happy Needy) and praise, wanting to grow (High-Conscious Limit-Break Otaku), but too timid (Timid Safety-First Group) to take action.",
                 ko: "공감과 갬성(시선강탈 해피 관심종자) 및 타인의 찬사로 충전되어 의식 높은 한계돌파 오타쿠로 거듭나길 꿈꾸나, 소심함(소심한 안심안전 제일파) 때문에 꼼짝도 못 함.",
-                zh: "用共鸣与情怀（抢镜开心求关注狂）以及他人的赞美滋养精神，渴望蜕变为意识超前极限突破宅。然而骨子里的被动与胆小（胆小安心安全第一派）让你根本无法迈步。"
+                zh: "用共鳴與情懷（搶鏡開心求追蹤狂）以及他人的讚美滋養精神，渴望蛻變為意識超前極限突破宅。然而骨子裡的被動與膽小（膽小安心安全第一派）讓你根本無法邁步。"
             },
             fallback: {
                 ja: "「私のエモい感性を誰か発見して絶賛して！」と夢見る、発信力ゼロのインフルエンサー気取り。スルーされるのが怖くて自分からは何も出せず、他人の投稿にせっせとイイネを配りながら、「早く私を見つけて崇めて」と不気味なテレパシーを送り続けています。",
                 en: "You desperately want high-end doses of 'empathy' and 'praise,' but your passivity locks you up. As you double-tap others' posts, you send telepathic waves saying: 'Someone notice me!'",
                 ko: "'에모한 공감'과 '남들의 찬사'라는 명품 비타민을 간절히 원하지만 소심함에 걸려 아무것도 올리지 못합니다. 남들 글에 하트만 누르면서 '빨리 날 알아채줘' 하고 텔레파시를 보낼 뿐입니다.",
-                zh: "对「感性的共鸣」和「他人的盛赞」这种高级补药垂涎三尺，却因为被动诅咒而不敢发声。在给别人的帖子点赞的同时，默默在脑海里发送着「快来发现我」的怨念脑波。"
+                zh: "對「感性的共鳴」和「他人的盛讚」這種高級補藥垂涎三尺，卻因為被動詛咒而不敢發聲。在給別人的貼文按讚的同時，默默在腦海裡傳送著「快來發現我」的怨念腦波。"
             }
         },
         psmr: {
             emoji: "🐈‍⬛",
-            name: { ja: "孤高のパステル黒猫", en: "Aloof Pastel Black Cat", ko: "고고한 파스텔 검은 고양이", zh: "高冷的粉彩黑猫" },
+            name: { ja: "孤高のパステル黒猫", en: "Aloof Pastel Black Cat", ko: "고고한 파스텔 검은 고양이", zh: "高冷的粉彩黑貓" },
             description: {
                 ja: "独自の主観的世界観を育み、マイペースなゴーイングマイウェイ精神でのみ成長（意識高めな限界突破オタク）する。アピールもしない（ビビリなあんしん安全第一派）ミステリアス種。",
                 en: "Nurturing an original subjective worldview, growing (High-Conscious Limit-Break Otaku) only through My-Way Independent Spirit. Unassertive (Timid Safety-First Group) and mysterious.",
                 ko: "독자적인 감성 세계관을 키우며 오직 마이웨이 마이페이스 정신으로만 성장(의식 높은 한계돌파 오타쿠)함. 자신을 알리려 하지 않는(소심한 안심안전 제일파) 미스터리 고양이.",
-                zh: "孕育着独特的个人主观世界，完全依靠我行我素我的路精神来获得成长（意识超前极限突破宅）。从不自我张扬（胆小安心安全第一派），极其神秘。"
+                zh: "孕育著獨特的個人主觀世界，完全依靠我行我素我的路精神來獲得成長（意識超前極限突破宅）。從不自我張揚（膽小安心安全第一派），極其神秘。"
             },
             fallback: {
                 ja: "「凡人に私の高尚なセンスは理解できない」と斜に構え、自分の脳内ワールドで自家発電している痛々しい迷子。外へのアピールを拒絶しているため、周囲からは単なる「気難しくて絡みづらい陰キャ」として完全に空気扱いされています。それに気づかず孤高を気取っているのがおめでたいですね。",
                 en: "Shut off in your own worldview and self-satisfaction, pretending you don't need anyone's understanding. With zero voice, you're forgotten as 'that quiet, stubborn person,' which is your ultimate shelter.",
                 ko: "독자적인 뇌내 세계와 자기 만족으로 완전히 차단되어 타인의 이해 따윈 거부하는 척합니다. 아웃풋이 전혀 없기에 주변에선 '그냥 까탈스럽고 조용한 애'로 잊혔으며, 그 소외감이 본인에겐 최고의 벙커입니다.",
-                zh: "用独特的个人世界和自我感动画地为牢，摆出一副不需要任何人理解的姿态。发声力为零的你，在周围人眼中不过是个「性格古怪的闷葫芦」，并彻底被遗忘，而这正是你最享受的避风港。"
+                zh: "用獨特的個人世界和自我感動畫地為牢，擺出一副不需要任何人理解的姿態。發聲力為零的你，在身邊人眼中不過是個「性格古怪的悶葫蘆」，並徹底被遺忘，而這正是你最享受的避風港。"
             }
         },
         psne: {
             emoji: "🐥",
-            name: { ja: "見守られ待ちピヨちゃん", en: "Watch-Me Baby Chick", ko: "보살핌 대기조 삐약이", zh: "求关注的孵化小鸡" },
+            name: { ja: "見守られ待ちピヨちゃん", en: "Watch-Me Baby Chick", ko: "보살핌 대기조 삐약이", zh: "求追蹤的孵化小雞" },
             description: {
                 ja: "主観的なキャラクター愛と他人の保護（視線泥棒なハッピーかまってちゃん）を求める安全志向（ビビリなあんしん安全第一派）。自分からは一切アピールせず見守りを受ける。",
                 en: "Seeking character love and safety (Timid Safety-First Group) through Attention-Stealer Happy Needy. Never marketing yourself, simply waiting to be nurtured.",
                 ko: "주관적인 감정 이입과 타인의 따스한 시선(시선강탈 해피 관심종자)을 갈구하는 안전 지향형(소심한 안심안전 제일파). 자신은 움직이지 않고 그저 남이 챙겨주길 바람.",
-                zh: "追求主观的角色魅力与他人的呵护（抢镜开心求关注狂），属于极度缺乏安全感（胆小安心安全第一派）类型。自己摆脱不掉被动，只静静等待他人的守护。"
+                zh: "追求主觀的角色魅力與他人的呵護（搶鏡開心求追蹤狂），屬於極度缺乏安全感（膽小安心安全第一派）類型。自己擺脫不掉被動，只靜靜等待他人的守護。"
             },
             fallback: {
                 ja: "自分は一切の努力もリスクテイクもしないくせに、周囲から「可愛いね、守ってあげる」と無条件でチヤホヤされるのを待っている甘えたヒヨコ。他人の善意と優しさを吸い尽くすことしか考えておらず、永遠に他力本願の温室でぬくぬくしていたいだけの幼児退行モンスターです。",
                 en: "An infant type feeding on subjective personality and others' free kindness. You never extend a hand, simply scanning the horizon for a warm cradle where someone will pet you and call you cute.",
                 ko: "주관적인 오구오구 감성과 타인의 대가 없는 친절을 빨아먹는 영아형. 본인은 절대 먼저 베풀지 않고 '어머 귀여워라, 챙겨줄게'라며 누군가 쓰다듬어 줄 따뜻한 요람만 필사적으로 수색합니다.",
-                zh: "一味吸食主观特质与他人无偿善意的幼儿型。自己绝不伸手，只用尽全力去搜寻那张能听到别人夸「真可爱、好想保护你」并摸摸头的心灵温床。"
+                zh: "一味吸食主觀特質與他人無償善意的幼兒型。自己絕不伸手，只用盡全力去搜尋那張能聽到別人誇「真可愛、好想保護你」並摸摸頭的心靈溫床。"
             }
         },
         psnr: {
             emoji: "🐼",
-            name: { ja: "マイペースな引きこもりパンダ", en: "Low-Energy Panda", ko: "마이웨이 방구석 판다", zh: "我行我素宅地熊猫" },
+            name: { ja: "マイペースな引きこもりパンダ", en: "Low-Energy Panda", ko: "마이웨이 방구석 판다", zh: "我行我素宅地熊貓" },
             description: {
                 ja: "自分の感性のみを信じ、他人の視線や成長を必要としない安全志向（ビビリなあんしん安全第一派）のマイペースなゴーイングマイウェイ精神。省エネで静かに余生を過ごす。",
                 en: "Believing only in your own senses, needing no gaze or growth, living in My-Way Independent Spirit (Timid Safety-First Group). Quietly idling through life on energy-saving mode.",
                 ko: "내 감성만 믿으며, 타인의 평판이나 성장도 필요 없는 안전 우선형(소심한 안심안전 제일파)의 마이웨이 마이페이스 정신. 에너지 절약으로 편안히 여생을 보냄.",
-                zh: "只相信自己的感性，既不需要他人的目光也不在乎个人成长，安全至上（胆小安心安全第一派）的我行我素我的路精神。用节能模式静静地安度余生。"
+                zh: "只相信自己的感性，既不需要他人的目光也不在乎個人成長，安全至上（膽小安心安全第一派）的我行我素我的路精神。用節能模式靜靜地安度餘生。"
             },
             fallback: {
                 ja: "「私は私、他人は他人」と達観したフリをして、成長からも他者との関わりからも全力で逃避している引きこもりパンダ。省エネという名の怠惰の極みであり、世間の荒波からソッコーでログアウトして、自分の狭い趣味の世界だけを咀嚼して一生を終える予定のようです。",
                 en: "A sleeping panda who thinks your taste is absolute, and cares zero about evaluation or growth. The peak of energy-saving defense: you quietly log out and munch on your tiny world.",
                 ko: "자기 감각만 최고며, 남들의 채점표도 본인의 성장조차도 진심으로 아웃 오브 안중인 채 잠만 자는 판다. 절약형 처세의 극치로, 세상의 소음에서 조용히 로그아웃해 자신만의 세상을 갉아먹고 있습니다.",
-                zh: "坚信只有自己的感性是绝对的，同时对别人的评价甚至自己的成长都打心底觉得无所谓的瞌睡熊猫。节能保身的终极形态，悄无声息地从世界的喧嚣中登出，津津有味地咀嚼着自己的小世界。"
+                zh: "堅信只有自己的感性是絕對的，同時對別人的評價甚至自己的成長都打心底覺得無所謂的瞌睡熊貓。節能保身的終極形態，悄無聲息地從世界的喧囂中登出，津津有味地咀嚼著自己的小世界。"
             }
         },
         aome: {
             emoji: "🦁",
-            name: { ja: "マウンティング突撃ライオン", en: "Flexing Charging Lion", ko: "마운팅 돌격 사자", zh: "炫耀突击狂暴狮" },
+            name: { ja: "マウンティング突撃ライオン", en: "Flexing Charging Lion", ko: "마운팅 돌격 사자", zh: "炫耀突擊狂暴獅" },
             description: {
                 ja: "実績や数値と他者承認（視線泥棒なハッピーかまってちゃん）を求め、誰よりも能動的（意識高めな限界突破オタク）に自己アピールしながら成長したいと願うギラギラ種。",
                 en: "Demanding results, metrics, and others' approval (Attention-Stealer Happy Needy), actively pushing yourself (High-Conscious Limit-Break Otaku) while hunting for growth.",
                 ko: "성과 수치와 타인 승인(시선강탈 해피 관심종자)을 좇아, 누구보다 능동적으로(의식 높은 한계돌파 오타쿠) 자신을 세일즈하며 성장하고픈 야망의 포식자.",
-                zh: "追求数据与他人的认可（抢镜开心求关注狂），比任何人都更加主动地表现自我（意识超前极限突破宅），渴望在攀登的过程中获得成长。"
+                zh: "追求資料與他人的認可（搶鏡開心求追蹤狂），比任何人都更加主動地表現自我（意識超前極限突破宅），渴望在攀登的過程中獲得成長。"
             },
             fallback: {
                 ja: "「私の努力と実績を見よ！」と全速力でマウンティングの山を駆け登る、自己アピール過剰の爆走ライオン。自分が主役で、常にスポットライトを浴びていないと死んでしまう病気です。いくら「いいね」をもらっても底なし沼のように乾ききっており、一生承認欲求に追われて走り続ける哀れなモンスター。",
                 en: "A passionate lion sprinting up the climbing wall with metrics in one hand and compliments in the other. Your display of hustle must be watched by all. Your hunger is infinite; satisfy it once, and you roar again in seconds.",
                 ko: "실적 데이터와 남들의 찬양을 양손에 쥐고 마운팅 정상을 향해 질주하는 열혈 사자. 내가 가장 애쓰고 자라는 걸 남들이 생생히 중계해 줘야만 직성이 풀립니다. 승인 굶주림이 심해 잠시 채워져도 금세 으르렁거립니다.",
-                zh: "双手捧着成就数据与他人的鲜花，全速向着阶层顶端攀登的热血狂狮。必须让所有人目睹你最努力、最优秀的姿态。对认同感的饥饿感极强，即使短暂获得满足，也很快会再次焦虑吼叫。"
+                zh: "雙手捧著成就資料與他人的鮮花，全速向著階層頂端攀登的熱血狂獅。必須讓所有人目睹你最努力、最優秀的姿態。對認同感的飢餓感極強，即使短暫獲得滿足，也很快會再次焦慮吼叫。"
             }
         },
         aomr: {
             emoji: "🐺",
-            name: { ja: "無自覚マニアックオオカミ", en: "Aggressive Solo Wolf", ko: "무자각 매니악 늑대", zh: "无意识狂热孤狼" },
+            name: { ja: "無自覚マニアックオオカミ", en: "Aggressive Solo Wolf", ko: "무자각 매니악 늑대", zh: "無意識狂熱孤狼" },
             description: {
                 ja: "成長欲求（意識高めな限界突破オタク）が高く、実績数値と自己承認（マイペースなゴーイングマイウェイ精神）を持つ。能動的なアピールは行う戦闘型。",
                 en: "Highly ambitious (High-Conscious Limit-Break Otaku), holding solid output and self-standard (My-Way Independent Spirit). An active, combative hunter.",
                 ko: "성장 의욕(의식 높은 한계돌파 오타쿠)이 매우 높으며, 확고한 결과물과 자기 기준(마이웨이 마이페이스 정신)을 갖춤. 능동적 아필에 주저함이 없는 전투형 늑대.",
-                zh: "拥有强烈的成长欲求（意识超前极限突破宅），具备过硬的成果与自我标准（我行我素我的路精神）。会进行积极展示的战斗型人格。"
+                zh: "擁有強烈的成長欲求（意識超前極限突破宅），具備過硬的成果與自我標準（我行我素我的路精神）。會進行積極展示的戰斗型人格。"
             },
             fallback: {
                 ja: "圧倒的な成長アピールと成果をこれでもかと見せつけつつ、「他人の評価なんか眼中にない」とクールを装う一番めんどくさい自惚れオオカミ。他人に認められること以上に、「私、お前ら凡人とは次元が違うから」とマインドマウンティングをして悦に浸っている痛々しいナルシストです。",
                 en: "A toxic show-off flexing accomplishments and growth speed while muttering 'I don't care what you think.' You care less about being loved than getting drunk on your own self-assessed dominance.",
                 ko: "자랑스러운 실적และ 압도적 성장 스피드를 있는 대로 동네방네 자랑하면서 '남의 눈초리 따윈 아무래도 좋은데'라며 내숭 떠는 가장 성가신 부류. 인정받기보단 내가 한참 위에 있다는 서열질에 취해 있습니다.",
-                zh: "一边向周围人疯狂炫耀自己引以为傲的成果与惊人的成长速度，一边装模作样地嘀咕着「反正别人的评价我根本不在乎」，简直是死要面子。比起被认同，你更沉醉于自己居高临下的优越感。"
+                zh: "一邊向身邊人瘋狂炫耀自己引以為傲的成果與驚人的成長速度，一邊裝模作樣地嘀咕著「反正別人的評價我根本不在乎」，簡直是死要面子。比起被認同，你更沉醉於自己居高臨下的優越感。"
             }
         },
         aone: {
             emoji: "🦜",
-            name: { ja: "手柄泥棒アピールオウム", en: "Credit-Claiming Parrot", ko: "공치사 어필 앵무새", zh: "抢功大喇叭鹦鹉" },
+            name: { ja: "手柄泥棒アピールオウム", en: "Credit-Claiming Parrot", ko: "공치사 어필 앵무새", zh: "搶功大喇叭鸚鵡" },
             description: {
                 ja: "他人の視線（視線泥棒なハッピーかまってちゃん）と安息（ビビリなあんしん安全第一派）が最優先。自分の少しの実績数値をこれでもかと吹聴し、実力以上の評価を狙う。",
                 en: "Attention-Stealer Happy Needy and safety (Timid Safety-First Group) are your oxygen. Loudly broadcasting minor results to hook a rating beyond your pay grade.",
                 ko: "남의 시선(시선강탈 해피 관심종자)과 안락한 포지션(소심한 안심안전 제일파)이 생명선. 소소한 내 실적을 귀가 따갑게 불어대며 능력 이상의 버블 평가를 노리는 기회주의자.",
-                zh: "将他人的视线（抢镜开心求关注狂）与自身安全（胆小安心安全第一派）视为生命线。疯狂吹嘘自己取得的丁点数据，试图以此谋取超出实力的地位。"
+                zh: "將他人的視線（搶鏡開心求追蹤狂）與自身安全（膽小安心安全第一派）視為生命線。瘋狂吹噓自己取得的丁點資料，試圖以此謀取超出實力的地位。"
             },
             fallback: {
                 ja: "嫌われる恐怖に怯えながらも、コミュニティの主導権を握りたくて必死にデカい声でアピールを繰り返す、手柄泥棒オウム。他人の功績やちょっとした実績をさも「自分がやりました」風にデコレーションして吹聴する、中身スカスカの拡声器タイプです。",
                 en: "Terrified of being hated, you push active marketing just to secure a safe spot in the club. Exaggerating others' ideas or tiny numbers, you're a loud bird fighting for a nest.",
                 ko: "집단에서 미움받을까 전전긍긍하면서 정작 권력의 안전한 코어에 서기 위해 요란한 어필을 늘어놓습니다. 남의 기획안이나 푼돈 같은 숫자를 과장해 소란을 피우며 생존 공간을 확보하려는 시끄러운 새입니다.",
-                zh: "因为害怕被群体排斥，同时为了确保自己在社群中的核心安全地位，不断进行夸张的主动宣传。把别人的创意或微不足道的数据无限放大并四处声张，拼命巩固立足之地的噪杂鸟类。"
+                zh: "因為害怕被群體排斥，同時為了確保自己在社群中的核心安全地位，不斷進行誇張的主動宣傳。把別人的創意或微不足道的資料無限放大並四處聲張，拼命鞏固立足之地的噪雜鳥類。"
             }
         },
         aonr: {
             emoji: "🐕",
-            name: { ja: "合理的ルールポリス柴犬", en: "Rational Rule Police Dog", ko: "합리적 규칙 경찰 시바견", zh: "理性规则哨兵柴犬" },
+            name: { ja: "合理的ルールポリス柴犬", en: "Rational Rule Police Dog", ko: "합리적 규칙 경찰 시바견", zh: "理性規則哨兵柴犬" },
             description: {
                 ja: "安全と保身（ビビリなあんしん安全第一派）のため、実績数値と自己ルール（マイペースなゴーイングマイウェイ精神）をフル稼働し、能動的アプローチで周囲を管理・統制する。",
                 en: "For protection (Timid Safety-First Group), using results and rules (My-Way Independent Spirit) to actively monitor and organize your environment.",
                 ko: "신분 보장(소심한 안심안전 제일파)을 위해 성과 지표와 사내 룰(마이웨이 마이페이스 정신)을 악착같이 가동함. 주도적으로 주변を 관리하고 규제하는 헌병견.",
-                zh: "为了自身的安全与保身（胆小安心安全第一派），物尽其用地压榨客观数据与个人准则（我行我素我的路精神），以积极的态度对周围进行规制与统治。"
+                zh: "為了自身的安全與保身（膽小安心安全第一派），物盡其用地壓榨客觀資料與個人準則（我行我素我的路精神），以積極的態度對身邊進行規制與統治。"
             },
             fallback: {
                 ja: "自分の安全と利益（ビビリなあんしん安全第一派）を絶対防衛するため、ルールやマニュアルを棍棒のように振り回して他者を管理・攻撃（能動的ゴリゴリ系）する冷酷なポリス柴犬。客観的な「正論」という防弾チョッキを着てマウントを取り、絶対に責任の及ばない安全な特等席にドカッと腰掛けています。",
                 en: "To secure personal safety and gains, you aggressively run rule systems to build a fortress. Using objective correctness as a weapon, you lecture everyone and sit on a comfortable throne like a cold guard dog.",
                 ko: "자기 안전과 몫을 챙기기 위해 제약과 매뉴얼을 칼같이 단속하고 들이밀며 난공불락 성벽을 쌓습니다. 본인의 객관적 결백함을 무기 삼아 남을 훈계하며 꿀 빠는 자리에 앉은 차가운 경비견입니다.",
-                zh: "为了牢牢守护自己的安全与既得利益，蛮横地制定并推行各种规则体制以搭建避难所。把客观上的「正确性」当作挡箭牌四处怼人，稳坐于最稳妥、最舒服的防御高台的冷酷守卫犬。"
+                zh: "為了牢牢守護自己的安全與既得利益，蠻橫地制定並推行各種規則體制以搭建避難所。把客觀上的「正確性」當作擋箭牌四處懟人，穩坐於最穩妥、最舒服的防禦高台的冷酷守衛犬。"
             }
         },
         asme: {
             emoji: "🦚",
-            name: { ja: "ドヤ顔クリエイティブ孔雀", en: "Showy Creative Peacock", ko: "거들먹거리는 크리에이티브 공작", zh: "得意洋洋的文艺孔雀" },
+            name: { ja: "ドヤ顔クリエイティブ孔雀", en: "Showy Creative Peacock", ko: "거들먹거리는 크리에이티브 공작", zh: "得意洋洋的文藝孔雀" },
             description: {
                 ja: "感性やエモさ（視線泥棒なハッピーかまってちゃん）を能動的に振りまき、他人の絶賛を浴びながら意識高めな限界突破オタクへと成長したい自己愛モンスター。",
                 en: "Actively spreading aesthetic vibes (Attention-Stealer Happy Needy), feeding on praise to grow as a High-Conscious Limit-Break Otaku.",
                 ko: "자신의 재능과 갬성(시선강탈 해피 관심종자)을 거침없이 발산하며, 남들의 숭배를 마시며 의식 높은 한계돌파 오타쿠로 진화하고픈 자기애 과잉 포식자.",
-                zh: "将自身的情怀与感性（抢镜开心求关注狂）当成羽毛四处招摇，渴望在别人的瞩目中成长为意识超前极限突破宅的极度自恋怪。"
+                zh: "將自身的情懷與感性（搶鏡開心求追蹤狂）當成羽毛四處招搖，渴望在別人的矚目中成長為意識超前極限突破宅的極度自戀怪。"
             },
             fallback: {
                 ja: "「私のこの唯一無二のエモい感性とセンスを見て！」と羽をバサバサ広げて踊り狂う、自己表現過剰な孔雀。他人の「センス良すぎ！」という絶賛（視線泥棒なハッピーかまってちゃん）だけが主食で、それがないと干からびます。他人に消費され、飽きられるまで踊り続ける終わりのない悲劇のピエロ。",
                 en: "Spreading wings screaming 'Watch my deep emotions and growth!', feeding and swelling on comments calling you 'so artistic.' You won't stop dancing until your vibes are totally sucked dry by spectators.",
                 ko: "'내 남다른 감각과 진화를 봐줘!'라며 활짝 꼬리를 펴고 '센스 만점!'이라는 남들의 물개박수를 주워 먹고 부풀어 오르는 자기애 덩어리. 내 감성이 남들에게 다 닳아 없어질 때까지 댄스를 멈출 줄 모릅니다.",
-                zh: "张开绚丽的尾羽向全世界高喊「快看我这无与伦比的才华与成长！」，吸食着别人打心底奉上的「你真有品味」等赞辞而自我膨胀。在你的感性被观众压榨干净之前，你是绝对无法停止这支求偶舞的。"
+                zh: "張開絢麗的尾羽向全世界高喊「快看我這無與倫比的才華與成長！」，吸食著別人打心底奉上的「你真有品味」等讚辭而自我膨脹。在你的感性被觀眾壓榨乾淨之前，你是絕對無法停止這支求偶舞的。"
             }
         },
         asmr: {
             emoji: "🦔",
-            name: { ja: "我道突っ走りハリネズミ", en: "Edgy Solo Hedgehog", ko: "독불장군 질주 고슴도치", zh: "独来独往的狂奔刺猬" },
+            name: { ja: "我道突っ走りハリネズミ", en: "Edgy Solo Hedgehog", ko: "독불장군 질주 고슴도치", zh: "獨來獨往的狂奔刺蝟" },
             description: {
                 ja: "強い自己基準（マイペースなゴーイングマイウェイ精神）と独自の感性を持ち、成長（意識高めな限界突破オタク）のために能動的に我が道を切り拓くトゲだらけのクリエイター。",
                 en: "Holding strong self-satisfaction (My-Way Independent Spirit) and unique taste, actively creating paths for Growth (High-Conscious Limit-Break Otaku). A prickly designer.",
                 ko: "굳건한 자부심(마이웨이 마이페이스 정신)과 남다른 안목을 지님. 한계 돌파 오타쿠적 성장만을 위해 공격적으로 마이웨이를 돌파하는 가시 돋친 크리에이터.",
-                zh: "怀抱极强的个人准则（我行我素我的路精神）与奇妙的感性，为了实现自我价值（意识超前极限突破宅）而横冲直撞、浑身是刺的开路者。"
+                zh: "懷抱極強的個人準則（我行我素我的路精神）與奇妙的感性，為了實現自我價值（意識超前極限突破宅）而橫衝直撞、渾身是刺的開路者。"
             },
             fallback: {
                 ja: "「お前ら凡人の理解なんか1ミリも要らん」と周囲を拒絶し、己の絶対的な感性（主観エモ至上主義）と自己成長（意識高めな限界突破オタク）のために他者を威嚇（能動的ゴリゴリ系）するトゲトゲ尖りすぎモンスター。周囲に攻撃的な毒を吐き散らしながら進むため、誰も寄り付かない孤独なイタい芸術家ロードを爆進中。",
                 en: "Ignoring others' validation, actively attacking for your personal aesthetics and self-growth. Poking needles into everyone you pass, you walk a lonely, scarred path of a self-proclaimed genius.",
                 ko: "남의 시선이나 비판은 전면 무시하고 본인의 절대 미학(Subjective)과 커리어(Growth)를 위해 주동적으로 가시를 세우는 고슴도치. 온 사방에 생채기를 내며 걷기에 상처뿐인 고독한 예술가 행세입니다.",
-                zh: "彻底无视他人的看法，为了自己那不可动摇的美学标准与个人价值实现，主动龇牙咧嘴宣示主权的刺猬。因为一路上会把尖刺无差别扎向所有路人，所以走的是一条伤痕累累、只配孤独一生的「伪天才之路」。"
+                zh: "徹底無視他人的看法，為了自己那不可動搖的美學標準與個人價值實現，主動齜牙咧嘴宣示主權的刺蝟。因為一路上會把尖刺無差別扎向所有路人，所以走的是一條傷痕累累、只配孤獨一生的「偽天才之路」。"
             }
         },
         asne: {
             emoji: "🐕‍🦺",
-            name: { ja: "依存型バズりチワワ", en: "Viral-Desperate Chihuahua", ko: "의존성 관심 갈구 치와와", zh: "病态求关注的抖动吉娃娃" },
+            name: { ja: "依存型バズりチワワ", en: "Viral-Desperate Chihuahua", ko: "의존성 관심 갈구 치와와", zh: "病態求追蹤的抖動吉娃娃" },
             description: {
                 ja: "情緒的な安心感（ビビリなあんしん安全第一派）と愛されたい欲求（視線泥棒なハッピーかまってちゃん）を満たすため、能動的にかまってアピールを繰り返すモンスター。",
                 en: "Seeking safety (Timid Safety-First Group) and love (Attention-Stealer Happy Needy). Desperately spamming active shouts to trigger validation.",
                 ko: "정서적 유대(소심한 안심안전 제일파)와 예쁨 받고 싶은 욕망(시선강탈 해피 관심종자)을 먹으려, 극성맞게 치대며 애교를 남발하는 귀찮은 멍뭉이.",
-                zh: "为了填补情感安全感的缺失（胆小安心安全第一派）以及渴望被爱的诉求（抢镜开心求关注狂），频繁且主动地采取抱大腿等行为的黏人小妖精。"
+                zh: "為了填補情感安全感的缺失（膽小安心安全第一派）以及渴望被愛的訴求（搶鏡開心求追蹤狂），頻繁且主動地採取抱大腿等行為的黏人小妖精。"
             },
             fallback: {
                 ja: "愛されたい、居場所が欲しいという寂しさ（ビビリなあんしん安全第一派）から、なりふり構わず「構って！」とSNSで暴れる（能動的ゴリゴリ系）メンヘラチワワ。他人の目を引くためならお気持ち表明や過激な自虐も厭わず、キャンキャン吠えながら優しくしてくれるカモを血眼で探しています。",
                 en: "Driven by a desperate urge to be loved and secure, you pitch yourself with zero shame. You'll ruin your own character to catch eyes, yapping loudly while chasing anyone who gives you a scrap of attention.",
                 ko: "사랑받고 보호받고 싶단 일념하에 물불 안 가리고 극성맞은 자기 광고를 지속합니다. 이목을 끌 수 있다면 망가지는 것도 불사하며, 컹컹 짖으며 간식 주는 집사를 졸졸 따라다니는 반려견 신세입니다.",
-                zh: "脑子里只有「好想被爱、好想安全」这档子事，甚至连脸皮都不要地进行着极端招摇。为了博眼球不惜自毁人设，一边神经质地嚎叫一边紧追着任何愿意理睬你的人不放。"
+                zh: "腦子裡只有「好想被愛、好想安全」這檔子事，甚至連臉皮都不要地進行著極端招搖。為了博眼球不惜自毀人設，一邊神經質地嚎叫一邊緊追著任何願意理睬你的人不放。"
             }
         },
         asnr: {
             emoji: "🐖",
-            name: { ja: "頑固なマイキャラ黒豚", en: "Stubborn Unique Boar", ko: "고집불통 마이캐릭터 흑돼지", zh: "顽固的人设小野猪" },
+            name: { ja: "頑固なマイキャラ黒豚", en: "Stubborn Unique Boar", ko: "고집불통 마이캐릭터 흑돼지", zh: "頑固的人設小野豬" },
             description: {
                 ja: "独自のキャラ（マイペースなゴーイングマイウェイ精神）を能動的に貫き、自己基準で安息（ビビリなあんしん安全第一派）を得る。他人のアドバイスは全てノイズとして弾き返す。",
                 en: "Actively enforcing your brand (My-Way Independent Spirit) to acquire safety (Timid Safety-First Group) under self-satisfaction. Bouncing off others' feedback as noise.",
                 ko: "독특한 내 이미지(마이웨이 마이페이스 정신)를 우격다짐으로 밀어붙여 자기 방어(소심한 안심안전 제일파)를 획득함. 타인의 훈수는 모조리 잡음으로 스킵함.",
-                zh: "强硬地贯彻自己独特的人设（我行我素我的路精神），在满足自我感觉的基础上获取安全感（胆小安心安全第一派）。把别人提出的意见当成放屁。"
+                zh: "強硬地貫徹自己獨特的人設（我行我素我的路精神），在滿足自我感覺的基礎上獲取安全感（膽小安心安全第一派）。把別人提出的意見當成放屁。"
             },
             fallback: {
                 ja: "自分勝手なルールと独自の主観（主観エモ至上主義）を周囲に能動的（能動的ゴリゴリ系）に押し付け、何が何でも自己防衛（ビビリなあんしん安全第一派）と自己正当化（マイペースなゴーイングマイウェイ精神）を貫く頑固な黒豚。他人の親切なアドバイスはすべて「私に対する攻撃（ノイズ）」としてシャットアウトし、聞く耳を持たずに暴走し続けます。",
                 en: "Pushing your personal rule and views onto others, wrapping yourself in safety and absolute self-assessment. Bouncing all advice away as useless static, yapping your own theories forever.",
                 ko: "나만의 질서와 감성을 남에게 억지로 주입하며 자가 보신과 절대적 자의식 과잉을 달성합니다. 충고는 단 한 귀로도 듣지 않고 오로지 자기 논설만 핏대 세워 떠들어 대는 쇠고집입니다.",
-                zh: "将个人准则与主观意志强行输出给他人，借此来实现自我防卫与绝对的迷之自信。把所有的善意忠告当作杂音屏蔽，永远在那里唾沫横飞地宣扬自己那一套神逻辑。"
+                zh: "將個人準則與主觀意志強行輸出給他人，借此來實現自我防衛與絕對的迷之自信。把所有的善意忠告當作雜音屏蔽，永遠在那裡唾沫橫飛地宣揚自己那一套神邏輯。"
             }
         }
     };
@@ -1539,48 +1539,48 @@
           },
           "zh": {
                     "score": {
-                              "zero": "已经是SNS菩萨境界。比起反应，你更赢在安静的自我时间。",
-                              "low": "认可欲不重。会偶尔看看，但不住在那片沼泽里。",
-                              "mild": "装作不在意，其实会偷偷看一眼。可爱的逞强出现了。",
-                              "medium": "适度在意型。嘴上说“无所谓”，手上还是会看通知。",
-                              "high": "有点重症呢，这是夸你。点赞涨跌会悄悄改变你的表情。",
-                              "extreme": "认可欲浓度很高。一个通知就能改变你今天的天气。"
+                              "zero": "已經是SNS菩薩境界。比起反應，你更贏在安靜的自我時間。",
+                              "low": "認可欲不重。會偶爾看看，但不住在那片沼澤裡。",
+                              "mild": "裝作不在意，其實會偷偷看一眼。可愛的逞強出現了。",
+                              "medium": "適度在意型。嘴上說“無所謂”，手上還是會看通知。",
+                              "high": "有點重症呢，這是誇你。按讚漲跌會悄悄改變你的表情。",
+                              "extreme": "認可欲濃度很高。一個通知就能改變你今天的天氣。"
                     },
                     "aiScore": {
-                              "zero": "SNS菩萨级。比起等人夸，你更能选择自己的安静，很强🐾",
-                              "low": "会在意反应，但不会被它牵着走。这个距离感相当健康🐾",
-                              "mild": "表面淡定，心里小小期待。适量的认可欲，反而很有人味🐾",
-                              "medium": "“我不在意”一半是真，一半是演。通知一响你还是很敏感🐾",
-                              "high": "有点重症呢，这是夸你。反应一来一去，心情也会跟着走🐾",
-                              "extreme": "认可欲很浓。一个提示音就能让世界变亮，诚实得可爱🐾"
+                              "zero": "SNS菩薩級。比起等人誇，你更能選擇自己的安靜，很強🐾",
+                              "low": "會在意反應，但不會被它牽著走。這個距離感相當健康🐾",
+                              "mild": "表面淡定，心裡小小期待。適量的認可欲，反而很有人味🐾",
+                              "medium": "“我不在意”一半是真，一半是演。通知一響你還是很敏感🐾",
+                              "high": "有點重症呢，這是誇你。反應一來一去，心情也會跟著走🐾",
+                              "extreme": "認可欲很濃。一個提示音就能讓世界變亮，誠實得可愛🐾"
                     },
                     "age": {
-                              "teen": "教室里的空气，今天也被你全神贯注读取。",
-                              "twenties": "同龄人的成长，你假装没看见，其实看得很清楚。",
-                              "thirties": "“看起来很可靠”也开始进入认可游戏。",
-                              "forties": "外表是成年人的从容，背后偷偷搜自己。",
-                              "unknown": "年龄不公开，习惯还是藏不住。"
+                              "teen": "教室裡的空氣，今天也被你全神貫注讀取。",
+                              "twenties": "同齡人的成長，你假裝沒看見，其實看得很清楚。",
+                              "thirties": "“看起來很可靠”也開始進入認可游戲。",
+                              "forties": "外表是成年人的從容，背後偷偷搜自己。",
+                              "unknown": "年齡不公開，習慣還是藏不住。"
                     },
                     "aiAge": {
-                              "teen": "十几岁的空气雷达很敏锐。连教室温度都读得出来🐾",
-                              "twenties": "二十多岁的比较疲惫有点露出来了。同龄人的进展你其实看见了🐾",
-                              "thirties": "很三十代：认可里也混进了“看起来很稳”的需求🐾",
-                              "forties": "披着成年人的余裕，内心安静地确认反应，很熟练🐾",
-                              "unknown": "年龄藏住了，回答习惯没藏住。比你想的更诚实🐾"
+                              "teen": "十幾歲的空氣雷達很敏銳。連教室溫度都讀得出來🐾",
+                              "twenties": "二十多歲的比較疲憊有點露出來了。同齡人的進展你其實看見了🐾",
+                              "thirties": "很三十代：認可裡也混進了“看起來很穩”的需求🐾",
+                              "forties": "披著成年人的余裕，內心安靜地確認反應，很熟練🐾",
+                              "unknown": "年齡藏住了，回答習慣沒藏住。比你想的更誠實🐾"
                     },
-                    "pattern": "你的拿手戏是“{parts}”。",
-                    "aiPattern": "习惯写着“{parts}”。你以为藏住了，其实露出来了🐾",
-                    "patternUnknown": "你还在稍微隐藏本性。",
+                    "pattern": "你的拿手戲是“{parts}”。",
+                    "aiPattern": "習慣寫著“{parts}”。你以為藏住了，其實露出來了🐾",
+                    "patternUnknown": "你還在稍微隱藏本性。",
                     "patternJoiner": "／",
                     "labels": {
-                              "active": "主动展示自己",
-                              "passive": "等待被发现",
-                              "objective": "相信数字",
-                              "subjective": "读取空气",
-                              "growth": "为成长燃烧",
+                              "active": "主動展示自己",
+                              "passive": "等待被發現",
+                              "objective": "相信數字",
+                              "subjective": "讀取空氣",
+                              "growth": "為成長燃燒",
                               "safety": "害怕被落下",
-                              "external": "靠反应安心",
-                              "internal": "以自我标准认可"
+                              "external": "靠反應安心",
+                              "internal": "以自我標準認可"
                     }
           }
 };
@@ -1789,68 +1789,68 @@
           },
           "zh": {
                     "aome": [
-                              "“快看我！”的化身，突击狂暴狮。成果当然要包装，点赞就是燃料。涨起来时无敌，没动静就突然“……也没什么”。通知安静3秒，世界就要结束。",
-                              "“这是我做的”压迫感很强。必须等别人说“好厉害”才会充电。今天也每3分钟看一次自己的帖子吧？被说中了🐾"
+                              "看我看我！的化身，突擊獅子🦁 成績一定要灌水，按讚就是燃料。漲粉時無敵，沒人理就突然『…沒差啦』。通知三秒沒響就覺得世界要塌了。",
+                              "『這是我做的喔』的氣場超強。要等到有人說『好厲害』才能充電的充電式。今天也每三分鐘回去看自己的貼文吧，被說中了🐾"
                     ],
                     "aomr": [
-                              "想讲到底的狼。喜欢的东西没人问也要全力演讲。数字会在意，但比起评价，“钻研到底”更重要。一不小心就是长文，一不小心就是独白。",
-                              "布教热量业内顶级。比起爆不爆，更想“只戳中懂的人”。你找的不是粉丝，是小众同盟。这份孤高，不讨厌🐾"
+                              "超想分享的狼🐺 喜歡的東西沒人問也全力簡報。在意數字，但比起評價更想『鑽到底』。回神已是長文，回神已在自言自語。",
+                              "傳教的熱情，業界第一。比起爆紅更信『懂的人懂就好』。比起追蹤數更想找同溫層戰友，這份孤高我不討厭🐾"
                     ],
                     "aone": [
-                              "负责加戏的表现鹦鹉。小小成绩也要装饰成100倍发出去。内心其实怕受伤，所以只想在安全范围里显眼。没有大家的点赞，就会不安到睡不着。",
-                              "声音很大，里面很软。“好厉害”是主食，被已读不回比任何攻击都痛。今天也在计算怎样安全地显眼，被看穿了🐾"
+                              "灌水擔當，表現鸚鵡🦜 小成績也裝飾成一百倍發出去。骨子裡膽小，只想在不會被罵的範圍裡顯眼。沒有大家的讚就焦慮到睡不著。",
+                              "嗓門很大，裡面很軟。『好棒』是主食，已讀不回比任何攻擊都痛。今天也在算怎麼安全地刷存在感，被看穿囉🐾"
                     ],
                     "aonr": [
-                              "正确担当，规则警察柴犬。评论区那句“这不太对吧？”大概率就是你。想被看见又怕被骂，所以逻辑盔甲穿得很满。在安全区用正确性出击。",
-                              "发现失礼行为的嗅觉，警犬级。“辩赢”成了认可的替代品。其实比起“你是对的”，你更想听“我喜欢你”，我知道🐾"
+                              "正論擔當，規則柴犬🐕 留言區那句『這樣不對吧？』大概就是你。想紅又怕被罵，所以理論武裝超完備。從安全區用『正確』打人。",
+                              "找碴的嗅覺，警犬等級。把『辯贏』當成讚的替代品。其實比起『你說得對』更想要『我喜歡你』，我知道🐾"
                     ],
                     "asme": [
-                              "用世界观攻击的创意孔雀。审美和情绪值全开展示。只要爆了，就觉得自己站在世界中心。会读空气，但最后还是想问：“怎么样，很有感觉吧？”",
-                              "嘴上说“懂的人懂就好”，保存数却秒看。被共鸣就无敌，被无视就低落三天。这种纤细的自信，很可爱🐾"
+                              "用世界觀電人，創意孔雀🦚 品味跟氛圍全開展示，爆紅就覺得自己是世界第一。會看氣氛，但最後一定是『怎樣，很有fu吧？』",
+                              "嘴上說『懂的人懂就好』，收藏數卻秒看。被共鳴就無敵，被略過就消沉三天。那份纖細的自信，可愛🐾"
                     ],
                     "asmr": [
-                              "走自己的刺刺刺猬。嘴上说“不需要你们理解”，但发信从不停止。只要刺中该刺中的人就够了，孤高的创作者体质。",
-                              "口头禅是“不在乎别人怎么想”，可被黑就秒回咬。其实比谁都想被理解。刺下面，明明超会撒娇吧🐾"
+                              "走自己路的刺蝟🦔『你們懂不懂我都無所謂』嘴上這樣說，發文卻沒停過。抱著『戳到的人戳到就好』一路衝的孤高作家魂。",
+                              "『怎麼想都隨便』是口頭禪，對黑粉卻秒回嗆。其實超想被懂，份量比誰都多。刺的底下根本超會撒嬌吧🐾"
                     ],
                     "asne": [
-                              "求关注全开的爆红吉娃娃。寂寞就立刻发帖，有反应就立刻复活。靠大家一句“你还好吗？”活着的被爱型。太会读空气，偶尔也会自爆。",
-                              "“谁来理理我”的信号24小时发送中。点赞变少就开始想“是不是讨厌我？”情绪过山车。是有点重，但连这点也可爱🐾"
+                              "討拍全開，爆紅吉娃娃🐶 一寂寞就馬上PO，有反應就馬上復活。靠大家一句『還好嗎？』活著的討愛型。太會看氣氛，偶爾也自爆。",
+                              "『誰來理我一下』的電波24小時放送中。讚一變少就『是不是被討厭了？』情緒雲霄飛車。是有點重，但連這點都讓人疼🐾"
                     ],
                     "asnr": [
-                              "坚持人设的自我黑猪。“这就是我”一路推到底。会发信，但不追流行。自己的世界最安心，是顽固又稳定的一派。",
-                              "不是不动摇，是根本不弯。比起共鸣，更像“懂的人懂就好”。但其实每条回复都会看。披着慢节奏外皮的小寂寞鬼🐾"
+                              "貫徹人設派，我風黑豬🐗『因為這就是我』直接硬幹。會發文但不跟流行。自己的世界最自在的固執安定派。",
+                              "不動搖，應該說不肯彎。比起共鳴更要『懂的人就好』。但其實留言全都看完了。披著我行我素的皮、其實偷偷怕寂寞🐾"
                     ],
                     "pome": [
-                              "希望别人察觉的博美犬。自己先上不去，但想被看见的心满满。数字会在意，也想涨粉，可是“主动推销自己”真的做不到。",
-                              "点赞，你偷偷全数了。心里想着“为什么没人回应我”，但自己绝不先动。等待大师，差不多该自己迈一步了吧？🐾"
+                              "想被察覺的博美🐩 自己不敢主動，但超想被看見。在意數字也想漲粉，可是『自己宣傳』辦不到。",
+                              "讚，偷偷全都數過。一邊想『怎麼都不理我』，一邊死都不主動。等待的高手，差不多該自己出手了吧？🐾"
                     ],
                     "pomr": [
-                              "自我节奏职人，自律蜗牛。不主动表现，却悄悄积累成绩。不是为了别人，而是为了自己的成长。比起爆红，更想刷新个人最好。",
-                              "安静，却很不服输。假装不看别人的数字，只确认自己的成长。说着不需要认可，偶尔还是会漏出“谁能发现我”🐾"
+                              "自己步調的職人，自律蝸牛🐌 不宣傳，但默默累積成績。不是為了誰，是為自己的成長埋頭。比起爆紅更愛刷新自己的最佳紀錄。",
+                              "安靜卻不服輸。裝作不看別人的數字，自己的成長倒是緊盯。嘴說不要認同，偶爾還是漏出『誰來發現一下』🐾"
                     ],
                     "pone": [
-                              "怕怕的撒娇玩具贵宾。最怕被讨厌，所以只对安全的人撒娇。自己不敢先动，但没有反应就不安到快要碎掉。",
-                              "“这样发可以吗”想100遍，最后还是不发。直到已读前都紧握手机。胆小归胆小，一旦信任就会很用心的好孩子🐾"
+                              "怕怕的撒嬌貴賓🐩 最怕被討厭，只對安全的人撒嬌。自己不敢動，但沒反應就焦慮到不行。",
+                              "『這樣傳出去OK嗎』想一百次最後沒傳。已讀前一直握著手機。膽小，但對熟的人會掏心掏肺的好孩子🐾"
                     ],
                     "ponr": [
-                              "省电自保考拉。不显眼、不挨骂、评价要守住。不勉强，也不追流行。在安全区慢慢生活就是正义。",
-                              "炎上是河对岸的火，风险全部回避。比起“别人怎么看”，更重视“平稳”。问你有没有认可欲，你说“没有吧”，但头像简介整理得很认真，对吧？🐾"
+                              "省力自保，無尾熊🐨 不顯眼、不被罵、評價只守不攻。不勉強也不追流行。在安全區慢慢過才是正義。",
+                              "炎上是隔岸觀火，風險全閃。比起『被怎麼看』更要『平靜』。問你有沒有認同欲？回『還好』，但個人檔案明明整理得很整齊吧？🐾"
                     ],
                     "psme": [
-                              "情绪贩卖志望，网红预备军。想用共鸣和氛围填满别人的心。会读空气、瞄准刺中的话，但自己还不敢站太出来，是很有伸展性的类型。",
-                              "发之前会想五遍“这个会被共鸣吗”。想红和害怕同时住在心里。点赞通知来的那一瞬间，你的表情大概世界第一可爱🐾"
+                              "想賣fu的網紅預備軍✨ 想用共鳴跟氛圍填滿內心。會看氣氛抓會戳的字，但自己沒辦法衝太大的成長型。",
+                              "『這個會被共鳴嗎』發文前改五次。想紅跟害怕同時存在。讚的通知跳出來那一瞬間的表情，大概世界第一可愛🐾"
                     ],
                     "psmr": [
-                              "孤高世界观，粉彩黑猫。自己的感性就是全部。不成群，不讨好，只安静地打磨自己。不爆也可以，有懂的人就够了。",
-                              "摆着一张“别人评价？不关我事”的脸，偶尔又搜自己然后秒关。不讨好是真的，但有些夜晚还是会寂寞。毕竟是猫嘛🐾"
+                              "孤高世界觀，粉彩黑貓🐈‍⬛ 自己的感性就是全部。不結群、不討好，安靜地打磨自己。不爆紅也沒差，有懂的人就夠了。",
+                              "擺著『別人的評價？不關我事』的臉，偶爾搜自己又秒關。不討好是真的，但有些夜晚還是會寂寞。畢竟是貓嘛🐾"
                     ],
                     "psne": [
-                              "想被关心的小鸡。比起自己行动，一句“你还好吗？”就能充满电。太会读空气所以很累，也害怕被落下，是软软的撒娇型。",
-                              "在“请你自己察觉我”的中心，等着被暖暖抱住。已读没回时，脑内小法庭立刻开庭。寂寞不是罪，只是可爱🐾"
+                              "想被疼的小雞🐤 比起自己動，一句『還好嗎？』就充飽電。太會看氣氛而累，也很怕被丟下的撒嬌鬼。",
+                              "在『你不說我也要懂』文化的正中央，等著被暖暖呵護。已讀沒回，腦內就開起小型法庭。怕寂寞不是罪，只是可愛🐾"
                     ],
                     "psnr": [
-                              "省电围观熊猫。只相信自己的感性，不成群、不焦虑、不勉强。比起通知，更重视自己的世界。SNS只看不发也完全OK。",
-                              "“别人怎么看”已经静音。比起爆红，有几个懂的人就够了。……话是这么说，偶尔搜自己然后秒关这件事，我知道🐾"
+                              "省力潛水，貓熊🐼 只信自己的感性，不結群、不焦慮、不勉強。比起通知更愛自己的世界，當潛水仔也完全OK。",
+                              "『被怎麼看』早就靜音了。比起爆紅，有懂的幾個人就夠。…嘴上這樣說，偶爾還是搜自己又秒關，我知道🐾"
                     ]
           }
 };
@@ -2799,7 +2799,7 @@
                 updateLanguage();
                 showToast(state.lang === 'ja' ? "言語を日本語に切り替えました" :
                           state.lang === 'en' ? "Language switched to English" :
-                          state.lang === 'ko' ? "한국어로 변경되었습니다" : "语言已切换为中文");
+                          state.lang === 'ko' ? "한국어로 변경되었습니다" : "語言已切換為中文");
                 safeTrack('language_change', { selected_language: state.lang });
             });
         }
@@ -3672,9 +3672,9 @@
                 
                 const textEl = placeholder.querySelector('#chekiPlaceholderText');
                 if (textEl) {
-                    textEl.textContent = state.lang === 'ja' ? "（画像未配置）" :
+                    textEl.textContent = state.lang === 'ja' ? "（畫像未配置）" :
                                          state.lang === 'en' ? "(Image not placed)" :
-                                         state.lang === 'ko' ? "(이미지 없음)" : "(无画像)";
+                                         state.lang === 'ko' ? "(이미지 없음)" : "(無畫像)";
                 }
             };
         }
@@ -3747,7 +3747,7 @@
 
         const langName = requestedLang === 'en' ? 'English' :
                          requestedLang === 'ko' ? 'Korean (한국어)' :
-                         requestedLang === 'zh' ? 'Simplified Chinese (简体中文)' : 'Japanese (日本語)';
+                         requestedLang === 'zh' ? 'Traditional Chinese (繁體中文)' : 'Japanese (日本語)';
 
         const scoreBand = getScoreBand();
         const answerPattern = getAnswerPatternSummary(requestedLang);
@@ -4003,7 +4003,7 @@ Please write the response entirely in ${langName}.`;
                 updateLockPurchaseCta();
                 showToast(state.lang === 'ja' ? "神託はパステル霧に包まれました..." :
                           state.lang === 'en' ? "The Cheki has faded into pastel fog..." :
-                          state.lang === 'ko' ? "체키가 파스텔 안개에 덮였습니다..." : "拍立得已被粉雾封闭...");
+                          state.lang === 'ko' ? "체키가 파스텔 안개에 덮였습니다..." : "拍立得已被粉霧封閉...");
             }
         }, 1000);
     }
