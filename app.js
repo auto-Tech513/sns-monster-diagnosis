@@ -35,6 +35,9 @@
         isTypingActive: false,
         psychAnimFrame: null,
         aiCommentRequestId: 0,
+        inviteFromTypeCode: '',
+        inviteLandingTracked: false,
+        inviteTeaserTrackedPair: '',
         
         // 3D Parallax用
         currentRotateX: 0,
@@ -63,6 +66,8 @@
     const LAST_RESULT_ANSWERS_KEY = "lastResultAnswers";
     const CONSENT_STORAGE_KEY = "sns_monster_cookie_consent";
     const LANG_STORAGE_KEY = "sns_monster_lang";
+    const INVITE_FROM_PARAM = "from";
+    const SCORE_HISTORY_STORAGE_KEY = "sns_monster_score_history";
     const SUPPORTED_LANGS = ["ja", "en", "ko", "zh"];
     const ANSWER_KEYS = ["p", "a", "o", "s", "m", "n", "e", "r"];
 
@@ -126,6 +131,33 @@
                 "【閲覧注意】承認欲求、可視化されました→『${name}』(${scorePct}%)。あなたのモンスター、当ててみて👀",
                 "承認欲求モンスター診断、『${name}』(${scorePct}%)だった。みんなのタイプも知りたい！やったら教えて👇"
             ],
+            inviteCompatibilityBtn: "🐾 友達・恋人・推しと\"承認欲求の相性\"を測る",
+            inviteShareText: "私の承認欲求モンスターは『${name}』。あなたとの相性、測れる？🐾",
+            inviteShareTitle: "承認欲求の相性、測れる？",
+            inviteCopySuccess: "招待リンクをコピーしました",
+            inviteTeaserTitle: "💞 招待相性ティーザー",
+            inviteTeaserLine: "💞 {from}のあの人との相性 = {score}%／一言：{comment}",
+            inviteTeaserPaidHint: "理由とコツは¥360の相性パックで深掘りできます。",
+            inviteTeaserComments: {
+                same: "似すぎて鏡。刺さる時は同時に刺さる。",
+                great: "欠点の穴をふわっと埋め合える組み合わせ。",
+                good: "ノリは違うのに、意外と役割分担がうまい。",
+                mixed: "盛り上がるけど、沈黙の読み違いに注意。",
+                clash: "弱点が連鎖しやすい。距離感が命。"
+            },
+            scoreComparisonFirst: "この端末の平均はこれから育ちます ／ 今回は{score}%",
+            scoreComparisonAbove: "この端末の平均 {avg}% ／ あなたは平均より{diff}pt高め",
+            scoreComparisonBelow: "この端末の平均 {avg}% ／ あなたは平均より{diff}pt低め",
+            scoreComparisonSame: "この端末の平均 {avg}% ／ あなたは平均ど真ん中",
+            freePreviewMore: "…続きは詳細AI診断書で",
+            premiumReportAdviceTitle: "SNSとの付き合い方",
+            premiumReportTruthTitle: "人には言えない本音",
+            premiumReportAdviceItems: [
+                "投稿前に「誰に見せたいか」を1人だけ決めると、反応待ちの沼が浅くなります。",
+                "伸びなかった投稿は削除前に24時間寝かせる。数字より、残したかった感情を先に確認。",
+                "褒められたい気持ちは悪役ではありません。出し方を選べば、ちゃんと武器になります。"
+            ],
+            premiumReportTruth: "本当は、たった一人でいいから「ちゃんと見てたよ」と言われたい。",
             aiBadge: "AI的神託",
             approvalMeterTitle: "💓 承認欲求スコア",
             meterLow: "😌 達観",
@@ -245,6 +277,33 @@
                 "I got my approval desire scanned… it's \"${name}\" (${scorePct}%). Bet you can't guess yours 👀",
                 "Just got \"${name}\" (${scorePct}%) on the SNS approval monster test. Drop yours, let's compare 👇"
             ],
+            inviteCompatibilityBtn: "🐾 Check approval-desire chemistry with a friend, crush, or fave",
+            inviteShareText: "My approval-desire monster is \"${name}\". Can we measure our chemistry? 🐾",
+            inviteShareTitle: "Can we measure our approval-desire chemistry?",
+            inviteCopySuccess: "Invite link copied",
+            inviteTeaserTitle: "💞 Invite Compatibility Teaser",
+            inviteTeaserLine: "💞 Compatibility with that {from}: {score}% / {comment}",
+            inviteTeaserPaidHint: "Want the reasons and tips? Unlock the ¥360 compatibility pack.",
+            inviteTeaserComments: {
+                same: "Too mirror-like. When it hits, it hits both of you.",
+                great: "You can gently cover each other's weak spots.",
+                good: "Different vibes, surprisingly good role balance.",
+                mixed: "Fun chemistry, but silence can be misread.",
+                clash: "Weak spots can amplify. Distance is everything."
+            },
+            scoreComparisonFirst: "This device average will grow from here / This result: {score}%",
+            scoreComparisonAbove: "This device average {avg}% / You are {diff}pt higher",
+            scoreComparisonBelow: "This device average {avg}% / You are {diff}pt lower",
+            scoreComparisonSame: "This device average {avg}% / You are right on average",
+            freePreviewMore: "...more in the full AI report",
+            premiumReportAdviceTitle: "How to live with SNS",
+            premiumReportTruthTitle: "The truth you rarely say out loud",
+            premiumReportAdviceItems: [
+                "Before posting, decide the one person you want to reach. It keeps the reaction spiral smaller.",
+                "If a post flops, wait 24 hours before deleting. Check what feeling you wanted to keep first.",
+                "Wanting praise is not the villain. With the right timing, it becomes a useful signal."
+            ],
+            premiumReportTruth: "Deep down, one clear \"I saw you\" from the right person would be enough.",
             aiBadge: "AI Oracle",
             approvalMeterTitle: "💓 Approval Desire Score",
             meterLow: "😌 Detached",
@@ -364,6 +423,33 @@
                 "내 승인욕구가 스캔당했다… 결과는 『${name}』(${scorePct}%). 당신의 몬스터, 맞혀볼래요? 👀",
                 "『${name}』(${scorePct}%) 나왔어요! 다들 무슨 타입인지 궁금… 해보고 댓글로 알려줘요 👇"
             ],
+            inviteCompatibilityBtn: "🐾 친구·연인·최애와 '승인욕구 궁합' 재보기",
+            inviteShareText: "내 승인욕구 몬스터는 『${name}』. 우리 궁합, 한번 재볼래? 🐾",
+            inviteShareTitle: "승인욕구 궁합, 재볼래?",
+            inviteCopySuccess: "초대 링크가 복사되었습니다",
+            inviteTeaserTitle: "💞 초대 궁합 티저",
+            inviteTeaserLine: "💞 {from}인 그 사람과의 궁합 = {score}% / 한마디: {comment}",
+            inviteTeaserPaidHint: "이유와 살리는 법은 ¥360 궁합 팩에서 더 볼 수 있어요.",
+            inviteTeaserComments: {
+                same: "너무 닮아서 거울 같아요. 찔릴 때도 같이 찔립니다.",
+                great: "서로의 빈틈을 자연스럽게 메워줄 수 있어요.",
+                good: "결은 달라도 역할 분담이 의외로 잘 맞아요.",
+                mixed: "재미는 있는데, 침묵을 오해하지 않게 조심.",
+                clash: "약점이 서로 커질 수 있어요. 거리감이 핵심입니다."
+            },
+            scoreComparisonFirst: "이 기기의 평균은 이제부터 쌓입니다 / 이번 결과 {score}%",
+            scoreComparisonAbove: "이 기기 평균 {avg}% / 당신은 평균보다 {diff}pt 높아요",
+            scoreComparisonBelow: "이 기기 평균 {avg}% / 당신은 평균보다 {diff}pt 낮아요",
+            scoreComparisonSame: "이 기기 평균 {avg}% / 당신은 평균과 거의 같아요",
+            freePreviewMore: "…이어서 상세 AI 진단서에서",
+            premiumReportAdviceTitle: "SNS와 지내는 법",
+            premiumReportTruthTitle: "남에게 말 못 하는 속마음",
+            premiumReportAdviceItems: [
+                "올리기 전, 보여주고 싶은 사람을 딱 한 명만 정해보세요. 반응 기다림의 늪이 얕아집니다.",
+                "반응이 약한 글은 지우기 전 24시간만 묵혀두세요. 남기고 싶었던 감정을 먼저 확인해요.",
+                "칭찬받고 싶은 마음은 나쁜 게 아닙니다. 타이밍을 고르면 꽤 강한 무기가 됩니다."
+            ],
+            premiumReportTruth: "사실은 딱 한 사람에게라도 '나 봤어'라는 말을 듣고 싶습니다.",
             aiBadge: "AI 신탁",
             approvalMeterTitle: "💓 승인욕구 점수",
             meterLow: "😌 달관",
@@ -483,6 +569,33 @@
                 "我的認同感被掃描了……結果是『${name}』(${scorePct}%)。猜猜你的怪獸是什麼？👀",
                 "測出來是『${name}』(${scorePct}%)！好奇大家都是什麼類型，快測一下留言告訴我 👇"
             ],
+            inviteCompatibilityBtn: "🐾 跟朋友、戀人、推一起測「認同欲求配對」",
+            inviteShareText: "我的認同欲求怪獸是『${name}』。要不要測測我們的配對？🐾",
+            inviteShareTitle: "要不要測測認同欲求配對？",
+            inviteCopySuccess: "邀請連結已複製",
+            inviteTeaserTitle: "💞 邀請配對小提示",
+            inviteTeaserLine: "💞 和那位{from}的配對 = {score}%／一句話：{comment}",
+            inviteTeaserPaidHint: "理由和相處小訣竅可在¥360配對包中解鎖。",
+            inviteTeaserComments: {
+                same: "太像照鏡子。被戳中時會一起中箭。",
+                great: "能自然補上彼此的空缺。",
+                good: "氣質不同，卻意外能分工合作。",
+                mixed: "很有火花，但要小心誤讀沉默。",
+                clash: "弱點容易互相放大。距離感是關鍵。"
+            },
+            scoreComparisonFirst: "這台裝置的平均會從現在開始累積／本次為{score}%",
+            scoreComparisonAbove: "這台裝置平均 {avg}%／你比平均高 {diff}pt",
+            scoreComparisonBelow: "這台裝置平均 {avg}%／你比平均低 {diff}pt",
+            scoreComparisonSame: "這台裝置平均 {avg}%／你剛好在平均附近",
+            freePreviewMore: "…後續請看詳細AI診斷書",
+            premiumReportAdviceTitle: "和SNS相處的方法",
+            premiumReportTruthTitle: "不敢對人說的真心話",
+            premiumReportAdviceItems: [
+                "發文前先決定最想讓誰看到。對反應的等待就不會把你整個拖下去。",
+                "反應不如預期時，刪除前先放24小時。先確認你想留下的是哪種心情。",
+                "想被稱讚不是壞事。只要選對時機，它也能變成你的武器。"
+            ],
+            premiumReportTruth: "其實只要有一個重要的人說「我有看到」，你就會安心很多。",
             aiBadge: "AI神諭",
             approvalMeterTitle: "💓 認同欲求分數",
             meterLow: "😌 超然",
@@ -1311,6 +1424,9 @@
         updateDetailedReportCard();
         renderCompatibilitySection();
         renderTalentSection();
+        renderScoreComparison();
+        renderInviteTeaser();
+        updateInviteCompatibilityCta();
 
         document.documentElement.lang = state.lang;
 
@@ -1954,6 +2070,285 @@
         return url.href;
     }
 
+    function normalizeTypeCode(typeCode) {
+        const code = String(typeCode || '').trim().toLowerCase();
+        return /^[ap][os][mn][er]$/.test(code) && typeDatabase[code] ? code : '';
+    }
+
+    function getTypeNameByCode(typeCode, lang = state.lang) {
+        const info = typeDatabase[normalizeTypeCode(typeCode)];
+        if (!info) return "";
+        const normalizedLang = normalizeLang(lang);
+        return info.name[normalizedLang] || info.name.ja || "";
+    }
+
+    function getCanonicalSiteUrl() {
+        const configuredUrl = String(getSiteConfig().siteUrl || '').trim();
+        return configuredUrl || window.location.origin || window.location.href;
+    }
+
+    function buildInviteUrl(typeCode = state.typeCode) {
+        const code = normalizeTypeCode(typeCode);
+        const inviteUrl = new URL('/', getCanonicalSiteUrl() || window.location.href);
+        inviteUrl.search = '';
+        if (code) inviteUrl.searchParams.set(INVITE_FROM_PARAM, code);
+        return inviteUrl;
+    }
+
+    function readInviteFromParam() {
+        try {
+            const params = new URLSearchParams(window.location.search);
+            return normalizeTypeCode(params.get(INVITE_FROM_PARAM));
+        } catch (err) {
+            console.warn('Invite parameter could not be read:', err);
+            return '';
+        }
+    }
+
+    function trackInviteLanding() {
+        if (!state.inviteFromTypeCode || state.inviteLandingTracked) return;
+        state.inviteLandingTracked = true;
+        safeTrack('invite_landed', { from_type: state.inviteFromTypeCode });
+    }
+
+    function stableHashString(input) {
+        let hash = 2166136261;
+        const text = String(input || '');
+        for (let i = 0; i < text.length; i++) {
+            hash ^= text.charCodeAt(i);
+            hash = Math.imul(hash, 16777619);
+        }
+        return Math.abs(hash >>> 0);
+    }
+
+    function getCompatibilityRecordByCode(typeCode, lang = state.lang) {
+        const normalizedLang = normalizeLang(lang);
+        const typeName = getTypeNameByCode(typeCode, normalizedLang);
+        const data = window.COMPATIBILITY_DATA && window.COMPATIBILITY_DATA[normalizedLang];
+        return data && typeName ? data[typeName] : null;
+    }
+
+    function getInviteComment(tier, lang = state.lang) {
+        const copy = i18n[normalizeLang(lang)] || i18n.ja;
+        const comments = copy.inviteTeaserComments || i18n.ja.inviteTeaserComments;
+        return comments[tier] || comments.mixed || '';
+    }
+
+    function calculateInviteCompatibility(fromCode, toCode, lang = state.lang) {
+        const from = normalizeTypeCode(fromCode);
+        const to = normalizeTypeCode(toCode);
+        const normalizedLang = normalizeLang(lang);
+        const fromName = getTypeNameByCode(from, normalizedLang);
+        const toName = getTypeNameByCode(to, normalizedLang);
+        const pairKey = `${from}_${to}`;
+
+        if (!from || !to || !fromName || !toName) {
+            return { fromName, toName, pair: pairKey, score: 0, scoreBucket: 0, comment: '' };
+        }
+
+        const record = getCompatibilityRecordByCode(from, normalizedLang);
+        const isGood = Boolean(record && Array.isArray(record.goodMatch) && record.goodMatch.some(match => match.name === toName));
+        const isBad = Boolean(record && Array.isArray(record.badMatch) && record.badMatch.some(match => match.name === toName));
+        const seed = stableHashString(pairKey);
+
+        let tier = 'mixed';
+        let score = 52 + (seed % 17);
+
+        if (from === to) {
+            tier = 'same';
+            score = 54 + (seed % 9);
+        } else if (isGood) {
+            tier = 'great';
+            score = 88 + (seed % 8);
+        } else if (isBad) {
+            tier = 'clash';
+            score = 28 + (seed % 12);
+        } else {
+            const sameAxisCount = from.split('').reduce((sum, ch, idx) => sum + (to[idx] === ch ? 1 : 0), 0);
+            score = Math.max(42, Math.min(82, 46 + sameAxisCount * 8 + (seed % 13)));
+            tier = score >= 70 ? 'good' : score >= 55 ? 'mixed' : 'clash';
+        }
+
+        const scoreBucket = Math.floor(score / 10) * 10;
+        return {
+            fromName,
+            toName,
+            pair: pairKey,
+            score,
+            scoreBucket,
+            comment: getInviteComment(tier, normalizedLang)
+        };
+    }
+
+    function readScoreHistory() {
+        try {
+            const value = JSON.parse(localStorage.getItem(SCORE_HISTORY_STORAGE_KEY) || '[]');
+            return Array.isArray(value)
+                ? value.map(Number).filter(num => Number.isFinite(num) && num >= 0 && num <= 100)
+                : [];
+        } catch (err) {
+            console.warn('Score history could not be read:', err);
+            return [];
+        }
+    }
+
+    function recordScoreSample(score) {
+        const normalizedScore = Math.max(0, Math.min(100, Math.round(Number(score) || 0)));
+        try {
+            const history = readScoreHistory();
+            history.push(normalizedScore);
+            localStorage.setItem(SCORE_HISTORY_STORAGE_KEY, JSON.stringify(history.slice(-50)));
+        } catch (err) {
+            console.warn('Score history could not be written:', err);
+        }
+    }
+
+    function renderScoreComparison() {
+        const el = document.getElementById('scoreComparison');
+        if (!el || !state.typeCode) return;
+
+        const copy = i18n[state.lang] || i18n.ja;
+        const score = Math.max(0, Math.min(100, Math.round(state.approvalPercent || 0)));
+        const history = readScoreHistory();
+        let text = (copy.scoreComparisonFirst || i18n.ja.scoreComparisonFirst)
+            .replace('{score}', String(score));
+
+        if (history.length >= 2) {
+            const prior = history.slice(0, -1);
+            const base = prior.length ? prior : history;
+            const avg = Math.round(base.reduce((sum, item) => sum + item, 0) / base.length);
+            const diff = Math.abs(score - avg);
+            const template = diff <= 2
+                ? (copy.scoreComparisonSame || i18n.ja.scoreComparisonSame)
+                : score > avg
+                    ? (copy.scoreComparisonAbove || i18n.ja.scoreComparisonAbove)
+                    : (copy.scoreComparisonBelow || i18n.ja.scoreComparisonBelow);
+            text = template
+                .replace('{avg}', String(avg))
+                .replace('{diff}', String(diff))
+                .replace('{score}', String(score));
+        }
+
+        el.textContent = text;
+        el.hidden = false;
+    }
+
+    function splitPreviewSentences(text, lang = state.lang) {
+        const normalizedText = String(text || '').replace(/\s+/g, ' ').trim();
+        if (!normalizedText) return [];
+        const normalizedLang = normalizeLang(lang);
+        const pattern = normalizedLang === 'en'
+            ? /[^.!?]+[.!?]+|[^.!?]+$/g
+            : /[^。！？!?]+[。！？!?]+|[^。！？!?]+$/g;
+        return normalizedText.match(pattern)
+            ? normalizedText.match(pattern).map(item => item.trim()).filter(Boolean)
+            : [normalizedText];
+    }
+
+    function formatFreePreview(text, lang = state.lang, limit = 2, alwaysAppendMore = false) {
+        const sentences = splitPreviewSentences(text, lang);
+        if (!sentences.length) return "";
+        const copy = i18n[normalizeLang(lang)] || i18n.ja;
+        const preview = sentences.slice(0, limit).join(normalizeLang(lang) === 'en' ? ' ' : '');
+        return sentences.length > limit || alwaysAppendMore
+            ? `${preview}\n${copy.freePreviewMore || i18n.ja.freePreviewMore}`
+            : preview;
+    }
+
+    function buildPremiumReportText(typeCode = state.typeCode, lang = state.lang, aiOverride = '') {
+        const normalizedLang = normalizeLang(lang);
+        const info = typeDatabase[normalizeTypeCode(typeCode)];
+        if (!info) return "";
+
+        const copy = i18n[normalizedLang] || i18n.ja;
+        const fallback = getPersonalizedAiFallback(typeCode, normalizedLang) || getBaseAiFallback(info, normalizedLang);
+        const aiText = localizeDimensionTerms(aiOverride || fallback, normalizedLang);
+        const adviceItems = Array.isArray(copy.premiumReportAdviceItems)
+            ? copy.premiumReportAdviceItems
+            : i18n.ja.premiumReportAdviceItems;
+        const adviceText = adviceItems
+            .map((item, idx) => `${idx + 1}. ${item}`)
+            .join('\n');
+
+        return [
+            aiText,
+            `${copy.premiumReportAdviceTitle || i18n.ja.premiumReportAdviceTitle}\n${adviceText}`,
+            `${copy.premiumReportTruthTitle || i18n.ja.premiumReportTruthTitle}\n${copy.premiumReportTruth || i18n.ja.premiumReportTruth}`
+        ].filter(Boolean).join('\n\n');
+    }
+
+    function buildInviteSharePayload() {
+        const copy = i18n[state.lang] || i18n.ja;
+        const name = getCurrentTypeName(state.lang);
+        const url = buildInviteUrl(state.typeCode);
+        const text = (copy.inviteShareText || i18n.ja.inviteShareText)
+            .replace(/\$\{name\}/g, name);
+
+        return {
+            title: copy.inviteShareTitle || i18n.ja.inviteShareTitle,
+            text,
+            url: url.toString()
+        };
+    }
+
+    async function copyTextToClipboard(text) {
+        if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+            try {
+                await navigator.clipboard.writeText(text);
+                return true;
+            } catch (err) {
+                console.warn('Clipboard API failed, trying fallback:', err);
+            }
+        }
+
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.top = '-1000px';
+        textarea.style.left = '-1000px';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+
+        try {
+            return document.execCommand('copy');
+        } finally {
+            if (textarea.parentNode) {
+                textarea.parentNode.removeChild(textarea);
+            }
+        }
+    }
+
+    async function shareInviteLink(source = 'invite_cta') {
+        if (!normalizeTypeCode(state.typeCode)) return false;
+
+        const payload = buildInviteSharePayload();
+        safeTrack('invite_link_created', { from_type: state.typeCode });
+
+        if (typeof navigator.share === 'function') {
+            try {
+                await navigator.share(payload);
+                safeTrack('shindan_share', { channel: 'webshare', share_platform: 'webshare', share_variant: 'invite' });
+                showToast(i18n[state.lang].inviteCopySuccess || i18n.ja.inviteCopySuccess);
+                return true;
+            } catch (err) {
+                if (err && err.name === 'AbortError') {
+                    console.warn('Invite Web Share was cancelled.');
+                    return false;
+                }
+                console.warn('Invite Web Share failed, falling back to clipboard:', err);
+            }
+        }
+
+        const copied = await copyTextToClipboard(`${payload.text}\n${payload.url}`);
+        if (!copied) throw new Error(`Invite link copy failed: ${source}`);
+        safeTrack('shindan_share', { channel: 'copy', share_platform: 'copy', share_variant: 'invite' });
+        showToast(i18n[state.lang].inviteCopySuccess || i18n.ja.inviteCopySuccess);
+        return true;
+    }
+
     function getSiteConfig() {
         return window.SNS_MONSTER_CONFIG || {};
     }
@@ -2068,14 +2463,21 @@
         const unlocked = Boolean(state.isPremium || hasPermanentPaid());
         const info = typeDatabase[state.typeCode];
         const typeName = getCurrentTypeName(state.lang);
-        const descriptionEl = document.getElementById('resultTypeDesc');
-        const aiBox = document.getElementById('aiCommentaryBox');
-        const description = descriptionEl && descriptionEl.textContent.trim()
-            ? descriptionEl.textContent.trim()
-            : localizeDimensionTerms(info.description[state.lang] || info.description.ja || "", state.lang);
-        const aiText = aiBox && aiBox.textContent.trim()
-            ? aiBox.textContent.trim()
-            : localizeDimensionTerms(info.fallback[state.lang] || info.fallback.ja || "", state.lang);
+        const saved = readLastResult();
+        let fullDescription = getBaseResultDescription(info, state.lang);
+        try {
+            fullDescription = getPersonalizedResultDescription(info, state.lang) || fullDescription;
+        } catch (err) {
+            console.warn('Detailed report description fallback used:', err);
+        }
+        fullDescription = localizeDimensionTerms(fullDescription, state.lang);
+
+        const savedAi = saved && saved.typeCode === state.typeCode && saved.aiLang === state.lang
+            ? saved.ai
+            : '';
+        const fullAiReport = buildPremiumReportText(state.typeCode, state.lang, savedAi);
+        const previewDescription = formatFreePreview(fullDescription, state.lang, 2, true);
+        const previewAi = formatFreePreview(savedAi || getPersonalizedAiFallback(state.typeCode, state.lang), state.lang, 2, true);
 
         const nameEl = document.getElementById('detailedReportMonsterName');
         const scoreEl = document.getElementById('detailedReportScore');
@@ -2091,8 +2493,8 @@
 
         if (nameEl) nameEl.textContent = typeName;
         if (scoreEl) scoreEl.textContent = `${copy.detailedReportScoreLabel || i18n.ja.detailedReportScoreLabel} ${state.approvalPercent}%`;
-        if (descEl) descEl.textContent = description;
-        if (aiEl) aiEl.textContent = aiText;
+        if (descEl) descEl.textContent = unlocked ? fullDescription : previewDescription;
+        if (aiEl) aiEl.textContent = unlocked ? fullAiReport : previewAi;
         if (footerEl) footerEl.textContent = copy.detailedReportFooter || i18n.ja.detailedReportFooter;
         if (lossCopy) lossCopy.textContent = unlocked
             ? (copy.detailedReportUnlockedText || i18n.ja.detailedReportUnlockedText)
@@ -2162,8 +2564,6 @@
         if (!info) return;
 
         try {
-            const commentBox = document.getElementById('aiCommentaryBox');
-            const descBox = document.getElementById('resultTypeDesc');
             let fallback = getBaseAiFallback(info, state.lang);
             try {
                 fallback = getPersonalizedAiFallback(state.typeCode, state.lang) || fallback;
@@ -2172,15 +2572,13 @@
             }
             const ai = typeof aiText === 'string'
                 ? aiText
-                : (commentBox && commentBox.textContent ? commentBox.textContent.trim() : fallback);
-            let description = descBox && descBox.textContent ? descBox.textContent.trim() : "";
-            if (!description) {
-                try {
-                    description = getPersonalizedResultDescription(info, state.lang);
-                } catch (err) {
-                    console.warn('Personalized description could not be saved:', err);
-                    description = getBaseResultDescription(info, state.lang);
-                }
+                : fallback;
+            let description = "";
+            try {
+                description = getPersonalizedResultDescription(info, state.lang);
+            } catch (err) {
+                console.warn('Personalized description could not be saved:', err);
+                description = getBaseResultDescription(info, state.lang);
             }
 
             localStorage.setItem(LAST_RESULT_TYPE_KEY, getCurrentTypeName(state.lang));
@@ -2190,7 +2588,7 @@
             localStorage.setItem(LAST_RESULT_AI_LANG_KEY, state.lang);
             localStorage.setItem(LAST_RESULT_NICKNAME_KEY, state.username || "");
             localStorage.setItem(LAST_RESULT_AGE_KEY, state.age || "");
-            localStorage.setItem(LAST_RESULT_DESCRIPTION_KEY, description);
+            localStorage.setItem(LAST_RESULT_DESCRIPTION_KEY, localizeDimensionTerms(description, state.lang));
             localStorage.setItem(LAST_RESULT_ANSWERS_KEY, JSON.stringify(normalizeAnswerCounts(state.answers)));
         } catch (err) {
             console.warn('Last result could not be saved:', err);
@@ -2227,7 +2625,7 @@
 
         const commentBox = document.getElementById('aiCommentaryBox');
         if (commentBox && saved.ai && saved.aiLang === state.lang) {
-            commentBox.textContent = saved.ai;
+            commentBox.textContent = formatFreePreview(saved.ai, state.lang, 2, true);
         } else {
             renderLocalizedAiFallback(typeCode, state.lang);
         }
@@ -2237,8 +2635,11 @@
         updateDetailedReportCard();
         renderCompatibilitySection();
         renderTalentSection();
+        renderScoreComparison();
+        renderInviteTeaser();
+        updateInviteCompatibilityCta();
         startChekiParallax();
-        persistLastResult(commentBox ? commentBox.textContent.trim() : undefined);
+        persistLastResult(saved.ai && saved.aiLang === state.lang ? saved.ai : undefined);
         // 復元ビュー（課金済み/購入からの復帰）では無料体験カウントダウンのバナーは表示しない
         const restoredCountdownBanner = document.getElementById('countdownBanner');
         if (restoredCountdownBanner) restoredCountdownBanner.style.display = 'none';
@@ -2261,6 +2662,16 @@
         btn.textContent = i18n[state.lang].btnCompatibility || i18n.ja.btnCompatibility;
     }
 
+    function updateInviteCompatibilityCta() {
+        const btn = document.getElementById('btn-invite-compatibility');
+        if (!btn) return;
+
+        const shouldShow = Boolean(normalizeTypeCode(state.typeCode));
+        btn.hidden = !shouldShow;
+        btn.style.display = shouldShow ? '' : 'none';
+        btn.textContent = i18n[state.lang].inviteCompatibilityBtn || i18n.ja.inviteCompatibilityBtn;
+    }
+
     function updateTalentCta() {
         const btn = document.getElementById('btnTalent') || document.getElementById('btn-talent');
         if (!btn) return;
@@ -2280,6 +2691,59 @@
     function setTalentSectionVisible(section, visible) {
         section.style.display = visible ? 'block' : 'none';
         section.classList.toggle('active', visible);
+    }
+
+    function setInviteTeaserVisible(section, visible) {
+        section.style.display = visible ? 'block' : 'none';
+        section.classList.toggle('active', visible);
+    }
+
+    function renderInviteTeaser() {
+        const section = document.getElementById('inviteTeaserSection');
+        if (!section) return;
+
+        const fromCode = normalizeTypeCode(state.inviteFromTypeCode);
+        const toCode = normalizeTypeCode(state.typeCode);
+        if (!fromCode || !toCode) {
+            section.innerHTML = '';
+            setInviteTeaserVisible(section, false);
+            return;
+        }
+
+        const copy = i18n[state.lang] || i18n.ja;
+        const result = calculateInviteCompatibility(fromCode, toCode, state.lang);
+        if (!result || !result.score) {
+            section.innerHTML = '';
+            setInviteTeaserVisible(section, false);
+            return;
+        }
+
+        const title = document.createElement('div');
+        title.className = 'result-details-title invite-teaser-title';
+        title.textContent = copy.inviteTeaserTitle || i18n.ja.inviteTeaserTitle;
+
+        const line = document.createElement('p');
+        line.className = 'invite-teaser-line';
+        line.textContent = (copy.inviteTeaserLine || i18n.ja.inviteTeaserLine)
+            .replace('{from}', result.fromName)
+            .replace('{score}', String(result.score))
+            .replace('{comment}', result.comment);
+
+        const hint = document.createElement('p');
+        hint.className = 'invite-teaser-hint';
+        hint.textContent = copy.inviteTeaserPaidHint || i18n.ja.inviteTeaserPaidHint;
+
+        section.innerHTML = '';
+        section.append(title, line, hint);
+        setInviteTeaserVisible(section, true);
+
+        if (state.inviteTeaserTrackedPair !== result.pair) {
+            state.inviteTeaserTrackedPair = result.pair;
+            safeTrack('compat_teaser_view', {
+                pair: result.pair,
+                score_bucket: result.scoreBucket
+            });
+        }
     }
 
     function createCompatibilityMatchCard(title, matches, tipLabel) {
@@ -2517,6 +2981,7 @@
         safeTrack('paid_compatibility_click', {
             price_yen: compatConfig.price,
             source,
+            entry: state.inviteFromTypeCode ? 'invite' : 'organic',
             monster_code: state.typeCode || 'none'
         });
         window.location.assign(buildStripeUrlWithLocale(compatConfig.stripeUrl));
@@ -2690,6 +3155,7 @@
     // ==========================================
     function init() {
         state.lang = getInitialLang();
+        state.inviteFromTypeCode = readInviteFromParam();
         const langSelect = document.getElementById('langSelect');
         if (langSelect) langSelect.value = state.lang;
         rememberLang();
@@ -2708,6 +3174,7 @@
         }
         showConsentBannerIfNeeded();
         enableMeasurementAndAds();
+        trackInviteLanding();
     }
 
     function loadPremiumState() {
@@ -2898,6 +3365,18 @@
         if (compatibilityBtn) {
             compatibilityBtn.addEventListener('click', () => {
                 goToCompatibilityCheckout('result_screen');
+            });
+        }
+
+        const inviteCompatibilityBtn = document.getElementById('btn-invite-compatibility');
+        if (inviteCompatibilityBtn) {
+            inviteCompatibilityBtn.addEventListener('click', async () => {
+                try {
+                    await shareInviteLink('invite_cta');
+                } catch (err) {
+                    console.warn('Invite share failed:', err);
+                    showToast(i18n[state.lang].toastCopyFail || i18n.ja.toastCopyFail);
+                }
             });
         }
 
@@ -3344,7 +3823,7 @@
         };
 
         const buildLineShareUrl = () => {
-            const lineUrl = buildResultShareUrl('line');
+            const lineUrl = buildInviteUrl(state.typeCode);
             return `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(lineUrl.toString())}`;
         };
 
@@ -3435,14 +3914,13 @@
                 }
 
                 const name = info.name[state.lang] || info.name.ja;
-                const scorePct = state.approvalPercent;
-                const shareCopy = buildShareText(name, scorePct);
-                const shareUrl = buildResultShareUrl('x');
-                const intentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(shareCopy.text)}&url=${encodeURIComponent(shareUrl)}&hashtags=${encodeURIComponent(i18n[state.lang].xHashtag)}`;
+                const payload = buildInviteSharePayload();
+                const intentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(payload.text)}&url=${encodeURIComponent(payload.url)}&hashtags=${encodeURIComponent(i18n[state.lang].xHashtag)}`;
+                safeTrack('invite_link_created', { from_type: state.typeCode });
                 safeTrack('shindan_share', {
                     channel: 'x',
                     share_platform: 'x',
-                    share_variant: shareCopy.variant
+                    share_variant: 'invite'
                 });
 
                 showToast(i18n[state.lang].toastShareSuccess);
@@ -3453,6 +3931,7 @@
         const lineShareBtn = document.getElementById('lineShareBtn');
         if (lineShareBtn) {
             lineShareBtn.addEventListener('click', () => {
+                safeTrack('invite_link_created', { from_type: state.typeCode || 'none' });
                 safeTrack('shindan_share', { channel: 'line' });
                 showToast(i18n[state.lang].toastShareSuccess);
                 const opened = window.open(buildLineShareUrl(), '_blank', 'noopener,noreferrer');
@@ -3469,11 +3948,12 @@
                 copyShareBtn.style.display = 'none';
             } else {
                 copyShareBtn.addEventListener('click', async () => {
-                    const shareUrl = buildResultShareUrl('copy').toString();
+                    const shareUrl = buildInviteUrl(state.typeCode).toString();
                     try {
                         const copied = await copyTextToClipboard(shareUrl);
                         if (!copied) throw new Error('Copy command returned false');
                         showToast(i18n[state.lang].toastCopySuccess);
+                        safeTrack('invite_link_created', { from_type: state.typeCode || 'none' });
                         safeTrack('shindan_share', { channel: 'copy' });
                     } catch (err) {
                         console.warn('Copy share URL failed:', err);
@@ -3576,6 +4056,7 @@
         // 外部評価・能動発信・数字評価に加え、所属不安を軽く反映する。
         // これにより同じタイプコードでも、回答の濃淡に応じて0/10/40/80%帯が分岐する。
         state.approvalPercent = calculateApprovalPercent();
+        recordScoreSample(state.approvalPercent);
         
         const info = typeDatabase[state.typeCode];
         try {
@@ -3588,8 +4069,8 @@
             const baseDescription = localizeDimensionTerms(getBaseResultDescription(info, state.lang), state.lang);
             const baseFallback = localizeDimensionTerms(getBaseAiFallback(info, state.lang), state.lang);
 
-            if (descEl) descEl.textContent = baseDescription;
-            if (commentBox) commentBox.textContent = baseFallback;
+            if (descEl) descEl.textContent = formatFreePreview(baseDescription, state.lang, 2, true);
+            if (commentBox) commentBox.textContent = formatFreePreview(baseFallback, state.lang, 2, true);
             persistLastResult(baseFallback);
         }
         prepareResultAdSlot();
@@ -3650,7 +4131,7 @@
 
         const customDesc = localizeDimensionTerms(description);
                                
-        if (resultTypeDesc) resultTypeDesc.textContent = customDesc;
+        if (resultTypeDesc) resultTypeDesc.textContent = formatFreePreview(customDesc, state.lang, 2, true);
 
         if (chekiImg && placeholder && placeholderEmoji) {
             chekiImg.style.display = 'none';
@@ -3699,6 +4180,9 @@
 
         renderCompatibilitySection();
         renderTalentSection();
+        renderScoreComparison();
+        renderInviteTeaser();
+        updateInviteCompatibilityCta();
         updateDetailedReportCard();
     }
 
@@ -3716,8 +4200,9 @@
         } catch (err) {
             console.warn('Personalized AI fallback failed; using base fallback:', err);
         }
-        commentBox.textContent = localizeDimensionTerms(fallback, lang);
-        persistLastResult(commentBox.textContent.trim());
+        const fullText = localizeDimensionTerms(fallback, lang);
+        commentBox.textContent = formatFreePreview(fullText, lang, 2, true);
+        persistLastResult(fullText);
         updateDetailedReportCard();
     }
 
@@ -3784,8 +4269,9 @@ Please write the response entirely in ${langName}.`;
         Promise.race([fetchPromise, timeoutPromise])
             .then(commentary => {
                 if (requestId !== state.aiCommentRequestId || state.lang !== requestedLang || state.typeCode !== typeCode) return;
-                commentBox.textContent = localizeDimensionTerms(commentary, requestedLang);
-                persistLastResult(commentBox.textContent.trim());
+                const fullText = localizeDimensionTerms(commentary, requestedLang);
+                commentBox.textContent = formatFreePreview(fullText, requestedLang, 2, true);
+                persistLastResult(fullText);
                 updateDetailedReportCard();
                 showToast(requestedI18n.toastAiSuccess);
             })
