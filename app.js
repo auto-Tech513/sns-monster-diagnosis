@@ -145,10 +145,9 @@
                 mixed: "盛り上がるけど、沈黙の読み違いに注意。",
                 clash: "弱点が連鎖しやすい。距離感が命。"
             },
-            scoreComparisonFirst: "この端末の平均はこれから育ちます ／ 今回は{score}%",
-            scoreComparisonAbove: "この端末の平均 {avg}% ／ あなたは平均より{diff}pt高め",
-            scoreComparisonBelow: "この端末の平均 {avg}% ／ あなたは平均より{diff}pt低め",
-            scoreComparisonSame: "この端末の平均 {avg}% ／ あなたは平均ど真ん中",
+            scorePunchlineLow: "達観ゾーン。SNSに振り回されない側の人。…ほんとに？🐾",
+            scorePunchlineMid: "中間ゾーン。平気なフリして、伸びた投稿は3回見返すタイプ🐾",
+            scorePunchlineHigh: "モンスターゾーン。通知が来ない夜、スマホを3回開くタイプ🐾",
             freePreviewMore: "…続きは詳細AI診断書で",
             premiumReportAdviceTitle: "SNSとの付き合い方",
             premiumReportTruthTitle: "人には言えない本音",
@@ -207,7 +206,7 @@
             detailedReportLockedText: "このまま60秒で霧に消えます。1枚で残せるのは¥120だけ。",
             detailedReportSaveBtn: "📄 詳細AI診断書を画像で保存",
             detailedReportPurchaseBtn: "✦ ¥120で保存＋永久保存",
-            detailedReportLossCopy: "あなたの\"裏の顔\"、ぜんぶ言語化。タイプ説明＋AI毒舌を1枚にまとめました。",
+            detailedReportLossCopy: "この結果はぜんぶ無料で読めます。診断書には、ここに無い\"あなたのタイプ限定\"の【SNSとの付き合い方3つ】と【人には言えない本音】を収録。",
             detailedReportScoreLabel: "承認欲求スコア",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
             paidSaveBtn: "✨ 詳細AI診断書を保存＋永久保存 ¥{price}",
@@ -291,10 +290,9 @@
                 mixed: "Fun chemistry, but silence can be misread.",
                 clash: "Weak spots can amplify. Distance is everything."
             },
-            scoreComparisonFirst: "This device average will grow from here / This result: {score}%",
-            scoreComparisonAbove: "This device average {avg}% / You are {diff}pt higher",
-            scoreComparisonBelow: "This device average {avg}% / You are {diff}pt lower",
-            scoreComparisonSame: "This device average {avg}% / You are right on average",
+            scorePunchlineLow: "Zen zone. The type SNS can't push around… right? 🐾",
+            scorePunchlineMid: "Middle zone. Acts unbothered, still rereads a good post three times 🐾",
+            scorePunchlineHigh: "Monster zone. No notifications tonight? Phone checked three times 🐾",
             freePreviewMore: "...more in the full AI report",
             premiumReportAdviceTitle: "How to live with SNS",
             premiumReportTruthTitle: "The truth you rarely say out loud",
@@ -353,7 +351,7 @@
             detailedReportLockedText: "It fades into fog in 60 seconds. Keeping it in one image is ¥120 only.",
             detailedReportSaveBtn: "📄 Save full AI report as image",
             detailedReportPurchaseBtn: "✦ Save forever for ¥120",
-            detailedReportLossCopy: "Your 'real face,' fully put into words. Type breakdown + AI roast, in one card.",
+            detailedReportLossCopy: "Everything on this page is free. The report adds what's not here: 3 ways to live with SNS for your type, plus the one truth you never say out loud.",
             detailedReportScoreLabel: "Approval Desire Score",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
             paidSaveBtn: "✨ Save full result image forever ¥{price}",
@@ -437,10 +435,9 @@
                 mixed: "재미는 있는데, 침묵을 오해하지 않게 조심.",
                 clash: "약점이 서로 커질 수 있어요. 거리감이 핵심입니다."
             },
-            scoreComparisonFirst: "이 기기의 평균은 이제부터 쌓입니다 / 이번 결과 {score}%",
-            scoreComparisonAbove: "이 기기 평균 {avg}% / 당신은 평균보다 {diff}pt 높아요",
-            scoreComparisonBelow: "이 기기 평균 {avg}% / 당신은 평균보다 {diff}pt 낮아요",
-            scoreComparisonSame: "이 기기 평균 {avg}% / 당신은 평균과 거의 같아요",
+            scorePunchlineLow: "달관 존. SNS에 휘둘리지 않는 쪽. …정말로? 🐾",
+            scorePunchlineMid: "중간 존. 아무렇지 않은 척, 잘 된 글은 세 번 다시 봄 🐾",
+            scorePunchlineHigh: "몬스터 존. 알림 없는 밤, 폰을 세 번 여는 타입 🐾",
             freePreviewMore: "…이어서 상세 AI 진단서에서",
             premiumReportAdviceTitle: "SNS와 지내는 법",
             premiumReportTruthTitle: "남에게 말 못 하는 속마음",
@@ -499,7 +496,7 @@
             detailedReportLockedText: "이대로 60초 뒤 안개 속으로 사라져요. 한 장으로 남기는 건 ¥120뿐.",
             detailedReportSaveBtn: "📄 상세 AI 진단서를 이미지로 저장",
             detailedReportPurchaseBtn: "✦ ¥120으로 저장＋영구 보존",
-            detailedReportLossCopy: "당신의 '뒷모습', 전부 언어화. 유형 설명＋AI 독설을 한 장에 담았어요.",
+            detailedReportLossCopy: "이 결과는 전부 무료로 볼 수 있어요. 진단서에는 여기 없는 '내 유형 전용' 【SNS와 지내는 법 3가지】와 【남에게 말 못 하는 속마음】을 담았어요.",
             detailedReportScoreLabel: "승인욕구 점수",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
             paidSaveBtn: "✨ 상세 AI 진단서 저장＋영구 보존 ¥{price}",
@@ -583,10 +580,9 @@
                 mixed: "很有火花，但要小心誤讀沉默。",
                 clash: "弱點容易互相放大。距離感是關鍵。"
             },
-            scoreComparisonFirst: "這台裝置的平均會從現在開始累積／本次為{score}%",
-            scoreComparisonAbove: "這台裝置平均 {avg}%／你比平均高 {diff}pt",
-            scoreComparisonBelow: "這台裝置平均 {avg}%／你比平均低 {diff}pt",
-            scoreComparisonSame: "這台裝置平均 {avg}%／你剛好在平均附近",
+            scorePunchlineLow: "達觀區。不被SNS牽著走的那種人……真的嗎？🐾",
+            scorePunchlineMid: "中間區。裝沒事，爆的那篇還是會回去看三次🐾",
+            scorePunchlineHigh: "怪獸區。沒通知的夜晚，手機開了三次🐾",
             freePreviewMore: "…後續請看詳細AI診斷書",
             premiumReportAdviceTitle: "和SNS相處的方法",
             premiumReportTruthTitle: "不敢對人說的真心話",
@@ -645,7 +641,7 @@
             detailedReportLockedText: "再過60秒就會化成霧消失。想留成一張，只要¥120。",
             detailedReportSaveBtn: "📄 儲存詳細AI診斷書圖片",
             detailedReportPurchaseBtn: "✦ ¥120 永久保存",
-            detailedReportLossCopy: "你的『真面目』，完整化成文字。類型解說＋AI毒舌，整理成一張。",
+            detailedReportLossCopy: "這頁的結果全部免費看。診斷書收錄這裡沒有的：你的類型限定【和SNS相處的3個方法】＋【不敢對人說的真心話】。",
             detailedReportScoreLabel: "認同欲求分數",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
             paidSaveBtn: "✨ 儲存詳細AI診斷書＋永久保存 ¥{price}",
@@ -2352,25 +2348,12 @@
 
         const copy = i18n[state.lang] || i18n.ja;
         const score = Math.max(0, Math.min(100, Math.round(state.approvalPercent || 0)));
-        const history = readScoreHistory();
-        let text = (copy.scoreComparisonFirst || i18n.ja.scoreComparisonFirst)
-            .replace('{score}', String(score));
-
-        if (history.length >= 2) {
-            const prior = history.slice(0, -1);
-            const base = prior.length ? prior : history;
-            const avg = Math.round(base.reduce((sum, item) => sum + item, 0) / base.length);
-            const diff = Math.abs(score - avg);
-            const template = diff <= 2
-                ? (copy.scoreComparisonSame || i18n.ja.scoreComparisonSame)
-                : score > avg
-                    ? (copy.scoreComparisonAbove || i18n.ja.scoreComparisonAbove)
-                    : (copy.scoreComparisonBelow || i18n.ja.scoreComparisonBelow);
-            text = template
-                .replace('{avg}', String(avg))
-                .replace('{diff}', String(diff))
-                .replace('{score}', String(score));
-        }
+        const punchlineKey = score < 40
+            ? 'scorePunchlineLow'
+            : score < 70
+                ? 'scorePunchlineMid'
+                : 'scorePunchlineHigh';
+        const text = copy[punchlineKey] || i18n.ja[punchlineKey] || "";
 
         el.textContent = text;
         el.hidden = false;
@@ -2393,7 +2376,7 @@
         if (!sentences.length) return "";
         const copy = i18n[normalizeLang(lang)] || i18n.ja;
         const preview = sentences.slice(0, limit).join(normalizeLang(lang) === 'en' ? ' ' : '');
-        return sentences.length > limit || alwaysAppendMore
+        return alwaysAppendMore
             ? `${preview}\n${copy.freePreviewMore || i18n.ja.freePreviewMore}`
             : preview;
     }
@@ -2626,8 +2609,8 @@
             ? saved.ai
             : '';
         const fullAiReport = buildPremiumReportText(state.typeCode, state.lang, savedAi);
-        const previewDescription = formatFreePreview(fullDescription, state.lang, 2, true);
-        const previewAi = formatFreePreview(savedAi || getPersonalizedAiFallback(state.typeCode, state.lang), state.lang, 2, true);
+        const previewDescription = formatFreePreview(fullDescription, state.lang, 2, false);
+        const previewAi = formatFreePreview(savedAi || getPersonalizedAiFallback(state.typeCode, state.lang), state.lang, 2, false);
 
         const nameEl = document.getElementById('detailedReportMonsterName');
         const scoreEl = document.getElementById('detailedReportScore');
@@ -2775,7 +2758,7 @@
 
         const commentBox = document.getElementById('aiCommentaryBox');
         if (commentBox && saved.ai && saved.aiLang === state.lang) {
-            commentBox.textContent = formatFreePreview(saved.ai, state.lang, 2, true);
+            commentBox.textContent = localizeDimensionTerms(saved.ai, state.lang);
         } else {
             renderLocalizedAiFallback(typeCode, state.lang);
         }
@@ -4219,8 +4202,8 @@
             const baseDescription = localizeDimensionTerms(getBaseResultDescription(info, state.lang), state.lang);
             const baseFallback = localizeDimensionTerms(getBaseAiFallback(info, state.lang), state.lang);
 
-            if (descEl) descEl.textContent = formatFreePreview(baseDescription, state.lang, 2, true);
-            if (commentBox) commentBox.textContent = formatFreePreview(baseFallback, state.lang, 2, true);
+            if (descEl) descEl.textContent = baseDescription;
+            if (commentBox) commentBox.textContent = baseFallback;
             persistLastResult(baseFallback);
         }
         prepareResultAdSlot();
@@ -4281,7 +4264,7 @@
 
         const customDesc = localizeDimensionTerms(description);
                                
-        if (resultTypeDesc) resultTypeDesc.textContent = formatFreePreview(customDesc, state.lang, 2, true);
+        if (resultTypeDesc) resultTypeDesc.textContent = customDesc;
 
         if (chekiImg && placeholder && placeholderEmoji) {
             chekiImg.style.display = 'none';
@@ -4351,7 +4334,7 @@
             console.warn('Personalized AI fallback failed; using base fallback:', err);
         }
         const fullText = localizeDimensionTerms(fallback, lang);
-        commentBox.textContent = formatFreePreview(fullText, lang, 2, true);
+        commentBox.textContent = fullText;
         persistLastResult(fullText);
         updateDetailedReportCard();
     }
@@ -4420,7 +4403,7 @@ Please write the response entirely in ${langName}.`;
             .then(commentary => {
                 if (requestId !== state.aiCommentRequestId || state.lang !== requestedLang || state.typeCode !== typeCode) return;
                 const fullText = localizeDimensionTerms(commentary, requestedLang);
-                commentBox.textContent = formatFreePreview(fullText, requestedLang, 2, true);
+                commentBox.textContent = fullText;
                 persistLastResult(fullText);
                 updateDetailedReportCard();
                 showToast(requestedI18n.toastAiSuccess);
