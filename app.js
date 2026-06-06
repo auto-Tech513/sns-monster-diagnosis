@@ -95,7 +95,6 @@
             exportBtn: "📸 チェキを画像として保存/共有する",
             exportHint: "👆タップで画像保存（スクショ不要・キレイに保存）",
             shareBtn: "🐦 X（Twitter）に結果を共有する",
-            lineShareBtn: "💬 LINEで友だちに送る",
             copyShareBtn: "🔗 リンクをコピー",
             shareInviteNote: "※このリンクから友達が診断すると、ふたりの“相性%”も出ます🐾",
             retryBtn: "🔄 もう一度診断する",
@@ -132,9 +131,10 @@
                 "【閲覧注意】承認欲求、可視化されました→『${name}』(${scorePct}%)。あなたのモンスター、当ててみて👀",
                 "承認欲求モンスター診断、『${name}』(${scorePct}%)だった。みんなのタイプも知りたい！やったら教えて👇"
             ],
-            inviteCompatibilityBtn: "🐾 友達・恋人・推しと\"承認欲求の相性\"を測る",
+            inviteCompatibilityBtn: "🐾 友達・恋人・推しに送って\"相性\"を測る（無料）",
+            inviteCompatibilitySub: "LINEなどで招待リンクを送る → 相手が診断すると\"ふたりの相性%\"が出ます",
             inviteShareText: "私の承認欲求モンスターは『${name}』。あなたとの相性、測れる？🐾",
-            inviteShareTitle: "承認欲求の相性、測れる？",
+            inviteShareTitle: "私との\"承認欲求の相性\"、測ってみて🐾",
             inviteCopySuccess: "招待リンクをコピーしました",
             inviteTeaserTitle: "💞 招待相性ティーザー",
             inviteTeaserLine: "💞 {from}のあの人との相性 = {score}%／一言：{comment}",
@@ -149,6 +149,14 @@
             scorePunchlineLow: "達観ゾーン。SNSに振り回されない側の人。…ほんとに？🐾",
             scorePunchlineMid: "中間ゾーン。平気なフリして、伸びた投稿は3回見返すタイプ🐾",
             scorePunchlineHigh: "モンスターゾーン。通知が来ない夜、スマホを3回開くタイプ🐾",
+            scorePunchlines: [
+                "悟りゾーン。通知より昼寝。SNSに心拍数を渡してないタイプ🐾",
+                "達観ゾーン。「別に」と言いつつ、たまにこっそり見てるタイプ🐾",
+                "中間（おだやか）ゾーン。平気なフリが上手。でも伸びた投稿は見返すタイプ🐾",
+                "中間（ソワソワ）ゾーン。気にしてないは半分演技。通知音に肩が動くタイプ🐾",
+                "モンスター手前ゾーン。投稿後10分、スマホが手から離れないタイプ🐾",
+                "モンスターゾーン。通知が来ない夜、スマホを3回開くタイプ🐾"
+            ],
             freePreviewMore: "…続きは詳細AI診断書で",
             premiumReportAdviceTitle: "SNSとの付き合い方",
             premiumReportTruthTitle: "人には言えない本音",
@@ -184,7 +192,8 @@
             btnPermanentSave: "✦ 詳細AI診断書を保存＋永久保存 ¥120",
             btnLockPurchase: "✦ 詳細AI診断書を保存＋永久保存 ¥120",
             orDivider: "─── または ───",
-            btnCompatibility: "相性まで暴く？ ¥360",
+            btnCompatibility: "📖 16タイプ全員との相性を今すぐ見る ¥360",
+            compatibilityPaidSub: "ベスト/ワースト相性・理由・うまく付き合うコツまで丸ごと",
             btnTalent: "隠れ才能、暴いてOK？ ¥360",
             sectionTalentTitle: "🌟 眠った才能パック",
             sectionTalentLocked: "才能データを準備中です。購入後にここへ表示されます。",
@@ -241,7 +250,6 @@
             exportBtn: "📸 Save / Share Cheki",
             exportHint: "Tap to save (no screenshot needed)",
             shareBtn: "🐦 Share on X (Twitter)",
-            lineShareBtn: "💬 Share on LINE",
             copyShareBtn: "🔗 Copy link",
             shareInviteNote: "When a friend takes the quiz from your link, you'll also see your chemistry % 🐾",
             retryBtn: "🔄 Try Again",
@@ -278,9 +286,10 @@
                 "I got my approval desire scanned… it's \"${name}\" (${scorePct}%). Bet you can't guess yours 👀",
                 "Just got \"${name}\" (${scorePct}%) on the SNS approval monster test. Drop yours, let's compare 👇"
             ],
-            inviteCompatibilityBtn: "🐾 Check approval-desire chemistry with a friend, crush, or fave",
+            inviteCompatibilityBtn: "🐾 Send to a friend, crush, or fave to measure chemistry (free)",
+            inviteCompatibilitySub: "Share the invite link (LINE etc.) — when they finish, you both see your chemistry %",
             inviteShareText: "My approval-desire monster is \"${name}\". Can we measure our chemistry? 🐾",
-            inviteShareTitle: "Can we measure our approval-desire chemistry?",
+            inviteShareTitle: "Take the quiz and see our chemistry 🐾",
             inviteCopySuccess: "Invite link copied",
             inviteTeaserTitle: "💞 Invite Compatibility Teaser",
             inviteTeaserLine: "💞 Compatibility with that {from}: {score}% / {comment}",
@@ -295,6 +304,14 @@
             scorePunchlineLow: "Zen zone. The type SNS can't push around… right? 🐾",
             scorePunchlineMid: "Middle zone. Acts unbothered, still rereads a good post three times 🐾",
             scorePunchlineHigh: "Monster zone. No notifications tonight? Phone checked three times 🐾",
+            scorePunchlines: [
+                "Nirvana zone. Naps over notifications. SNS doesn't own your heartbeat 🐾",
+                "Zen zone. Says 'whatever' — still peeks sometimes 🐾",
+                "Calm-middle zone. Great poker face, still rereads the post that did well 🐾",
+                "Restless-middle zone. 'Not bothered' is half an act — shoulders jump at the ping 🐾",
+                "Almost-monster zone. Phone glued to hand for 10 minutes after posting 🐾",
+                "Monster zone. No notifications tonight? Phone checked three times 🐾"
+            ],
             freePreviewMore: "...more in the full AI report",
             premiumReportAdviceTitle: "How to live with SNS",
             premiumReportTruthTitle: "The truth you rarely say out loud",
@@ -330,7 +347,8 @@
             btnPermanentSave: "✦ Save full result image forever ¥120",
             btnLockPurchase: "✦ Restore full result forever ¥120",
             orDivider: "─── or ───",
-            btnCompatibility: "Reveal your best and worst match? ¥360",
+            btnCompatibility: "📖 See your chemistry with all 16 types now ¥360",
+            compatibilityPaidSub: "Best & worst matches, reasons, and how to handle each",
             btnTalent: "Expose your hidden SNS talent? ¥360",
             sectionTalentTitle: "🌟 Sleeping Talent Pack",
             sectionTalentLocked: "Talent data is being prepared. It will appear here after purchase.",
@@ -387,7 +405,6 @@
             exportBtn: "📸 체키 저장/공유하기",
             exportHint: "탭하면 이미지 저장 (스크린샷 불필요)",
             shareBtn: "🐦 X(Twitter)에 공유하기",
-            lineShareBtn: "💬 LINE에 공유하기",
             copyShareBtn: "🔗 링크 복사",
             shareInviteNote: "이 링크로 친구가 진단하면 둘의 '궁합%'도 나와요 🐾",
             retryBtn: "🔄 다시 도전하기",
@@ -424,9 +441,10 @@
                 "내 승인욕구가 스캔당했다… 결과는 『${name}』(${scorePct}%). 당신의 몬스터, 맞혀볼래요? 👀",
                 "『${name}』(${scorePct}%) 나왔어요! 다들 무슨 타입인지 궁금… 해보고 댓글로 알려줘요 👇"
             ],
-            inviteCompatibilityBtn: "🐾 친구·연인·최애와 '승인욕구 궁합' 재보기",
+            inviteCompatibilityBtn: "🐾 친구·연인·최애에게 보내서 '궁합' 재기 (무료)",
+            inviteCompatibilitySub: "LINE 등으로 초대 링크 전송 → 상대가 진단하면 '둘의 궁합%'가 나와요",
             inviteShareText: "내 승인욕구 몬스터는 『${name}』. 우리 궁합, 한번 재볼래? 🐾",
-            inviteShareTitle: "승인욕구 궁합, 재볼래?",
+            inviteShareTitle: "나랑 '승인욕구 궁합' 재보자 🐾",
             inviteCopySuccess: "초대 링크가 복사되었습니다",
             inviteTeaserTitle: "💞 초대 궁합 티저",
             inviteTeaserLine: "💞 {from}인 그 사람과의 궁합 = {score}% / 한마디: {comment}",
@@ -441,6 +459,14 @@
             scorePunchlineLow: "달관 존. SNS에 휘둘리지 않는 쪽. …정말로? 🐾",
             scorePunchlineMid: "중간 존. 아무렇지 않은 척, 잘 된 글은 세 번 다시 봄 🐾",
             scorePunchlineHigh: "몬스터 존. 알림 없는 밤, 폰을 세 번 여는 타입 🐾",
+            scorePunchlines: [
+                "해탈 존. 알림보다 낮잠. SNS에 심박수를 내주지 않는 타입 🐾",
+                "달관 존. '별로'라면서 가끔 몰래 보는 타입 🐾",
+                "차분한 중간 존. 태연한 척 잘하지만, 잘 된 글은 다시 보는 타입 🐾",
+                "들썩이는 중간 존. '신경 안 써'는 반쯤 연기. 알림음에 어깨가 움직이는 타입 🐾",
+                "몬스터 직전 존. 올린 뒤 10분은 폰을 못 놓는 타입 🐾",
+                "몬스터 존. 알림 없는 밤, 폰을 세 번 여는 타입 🐾"
+            ],
             freePreviewMore: "…이어서 상세 AI 진단서에서",
             premiumReportAdviceTitle: "SNS와 지내는 법",
             premiumReportTruthTitle: "남에게 말 못 하는 속마음",
@@ -476,7 +502,8 @@
             btnPermanentSave: "✦ 상세 AI 진단서 저장＋영구 보존 ¥120",
             btnLockPurchase: "✦ 상세 AI 진단서 저장＋영구 보존 ¥120",
             orDivider: "─── 또는 ───",
-            btnCompatibility: "최고/최악 궁합까지 볼래? ¥360",
+            btnCompatibility: "📖 16타입 전원과의 궁합 지금 바로 보기 ¥360",
+            compatibilityPaidSub: "베스트/워스트 궁합·이유·요령까지 한 번에",
             btnTalent: "숨은 SNS 재능, 밝혀볼래? ¥360",
             sectionTalentTitle: "🌟 잠든 재능 팩",
             sectionTalentLocked: "재능 데이터는 준비 중입니다. 구매 후 이곳에 표시됩니다.",
@@ -533,7 +560,6 @@
             exportBtn: "📸 儲存/分享拍立得圖片",
             exportHint: "點擊儲存圖片（無需截圖）",
             shareBtn: "🐦 分享到 X (Twitter)",
-            lineShareBtn: "💬 分享到 LINE",
             copyShareBtn: "🔗 複製連結",
             shareInviteNote: "朋友從這個連結做完診斷，會一併顯示你們的『契合度%』🐾",
             retryBtn: "🔄 重新診斷",
@@ -570,9 +596,10 @@
                 "我的認同感被掃描了……結果是『${name}』(${scorePct}%)。猜猜你的怪獸是什麼？👀",
                 "測出來是『${name}』(${scorePct}%)！好奇大家都是什麼類型，快測一下留言告訴我 👇"
             ],
-            inviteCompatibilityBtn: "🐾 跟朋友、戀人、推一起測「認同欲求配對」",
+            inviteCompatibilityBtn: "🐾 傳給朋友・戀人・推來測『契合度』（免費）",
+            inviteCompatibilitySub: "用LINE等傳出邀請連結 → 對方做完診斷就會顯示『你們的契合度%』",
             inviteShareText: "我的認同欲求怪獸是『${name}』。要不要測測我們的配對？🐾",
-            inviteShareTitle: "要不要測測認同欲求配對？",
+            inviteShareTitle: "跟我測測『認同欲求契合度』🐾",
             inviteCopySuccess: "邀請連結已複製",
             inviteTeaserTitle: "💞 邀請配對小提示",
             inviteTeaserLine: "💞 和那位{from}的配對 = {score}%／一句話：{comment}",
@@ -587,6 +614,14 @@
             scorePunchlineLow: "達觀區。不被SNS牽著走的那種人……真的嗎？🐾",
             scorePunchlineMid: "中間區。裝沒事，爆的那篇還是會回去看三次🐾",
             scorePunchlineHigh: "怪獸區。沒通知的夜晚，手機開了三次🐾",
+            scorePunchlines: [
+                "開悟區。比起通知更愛睡覺，心跳不交給SNS🐾",
+                "達觀區。嘴上說『還好』，偶爾還是會偷看🐾",
+                "平穩中間區。很會裝沒事，爆的那篇還是會回去看🐾",
+                "躁動中間區。『沒在意』一半是演的，通知聲一響肩膀就動🐾",
+                "準怪獸區。發文後10分鐘手機不離手🐾",
+                "怪獸區。沒通知的夜晚，手機開了三次🐾"
+            ],
             freePreviewMore: "…後續請看詳細AI診斷書",
             premiumReportAdviceTitle: "和SNS相處的方法",
             premiumReportTruthTitle: "不敢對人說的真心話",
@@ -622,7 +657,8 @@
             btnPermanentSave: "✦ 儲存詳細AI診斷書＋永久保存 ¥120",
             btnLockPurchase: "✦ 儲存詳細AI診斷書＋永久保存 ¥120",
             orDivider: "─── 或者 ───",
-            btnCompatibility: "要揭開最佳/最糟配對嗎？¥360",
+            btnCompatibility: "📖 馬上看你和全部16型的契合度 ¥360",
+            compatibilityPaidSub: "最合拍/最NG的對象、原因、相處訣竅一次看",
             btnTalent: "要揭開你的隱藏SNS才能嗎？¥360",
             sectionTalentTitle: "🌟 沉睡才能包",
             sectionTalentLocked: "才能資料正在準備中。購買後會顯示在這裡。",
@@ -2135,11 +2171,15 @@
     }
 
     function getAnswerPatternSummary(lang = state.lang) {
+        return "";
+    }
+
+    function getAiAnswerPatternSummary(lang = state.lang) {
         const copy = getViralCopy(lang);
         const parts = getAnswerPatternParts(lang);
-        if (!parts.length) return copy.patternUnknown;
+        if (!parts.length || !copy.aiPattern) return copy.patternUnknown || "";
         const joiner = typeof copy.patternJoiner === 'string' ? copy.patternJoiner : "／";
-        return copy.pattern.replace("{parts}", parts.join(joiner));
+        return copy.aiPattern.replace("{parts}", parts.join(joiner));
     }
 
     function getBaseResultDescription(info, lang = state.lang) {
@@ -2170,11 +2210,7 @@
         const base = getTypeTone(typeCode, lang)[1] || "";
         const scoreLine = copy.aiScore[getScoreBand()] || "";
         const ageLine = copy.aiAge[getAgeVariantKey()] || "";
-        const parts = getAnswerPatternParts(lang);
-        const joiner = typeof copy.patternJoiner === 'string' ? copy.patternJoiner : "／";
-        const patternLine = parts.length
-            ? copy.aiPattern.replace("{parts}", parts.join(joiner))
-            : copy.patternUnknown;
+        const patternLine = getAiAnswerPatternSummary(lang);
 
         return [base, scoreLine, ageLine, patternLine].filter(Boolean).join(" ");
     }
@@ -2357,12 +2393,26 @@
 
         const copy = i18n[state.lang] || i18n.ja;
         const score = Math.max(0, Math.min(100, Math.round(state.approvalPercent || 0)));
-        const punchlineKey = score < 40
+        const punchlines = Array.isArray(copy.scorePunchlines)
+            ? copy.scorePunchlines
+            : (Array.isArray(i18n.ja.scorePunchlines) ? i18n.ja.scorePunchlines : []);
+        const punchlineIndex = score < 20
+            ? 0
+            : score < 40
+                ? 1
+                : score < 55
+                    ? 2
+                    : score < 70
+                        ? 3
+                        : score < 85
+                            ? 4
+                            : 5;
+        const legacyKey = score < 40
             ? 'scorePunchlineLow'
             : score < 70
                 ? 'scorePunchlineMid'
                 : 'scorePunchlineHigh';
-        const text = copy[punchlineKey] || i18n.ja[punchlineKey] || "";
+        const text = punchlines[punchlineIndex] || copy[legacyKey] || i18n.ja[legacyKey] || "";
 
         el.textContent = text;
         el.hidden = false;
@@ -2795,23 +2845,47 @@
 
     function updateCompatibilityCta() {
         const btn = document.getElementById('btn-compatibility');
-        if (!btn) return;
+        const block = document.getElementById('compatibilityPaidBlock');
+        const sub = document.getElementById('compatibilityPaidSub');
+        if (!btn && !block) return;
 
         const compatConfig = getCompatibilityConfig();
         const shouldShow = compatConfig.enabled && !hasCompatibilityPaid();
-        btn.hidden = !shouldShow;
-        btn.style.display = shouldShow ? '' : 'none';
-        btn.textContent = i18n[state.lang].btnCompatibility || i18n.ja.btnCompatibility;
+        if (block) {
+            block.hidden = !shouldShow;
+            block.style.display = shouldShow ? '' : 'none';
+        }
+        if (btn) {
+            btn.hidden = !shouldShow;
+            btn.style.display = shouldShow ? '' : 'none';
+            btn.textContent = i18n[state.lang].btnCompatibility || i18n.ja.btnCompatibility;
+        }
+        if (sub) {
+            sub.hidden = !shouldShow;
+            sub.textContent = i18n[state.lang].compatibilityPaidSub || i18n.ja.compatibilityPaidSub || "";
+        }
     }
 
     function updateInviteCompatibilityCta() {
         const btn = document.getElementById('btn-invite-compatibility');
-        if (!btn) return;
+        const block = document.getElementById('inviteCompatibilityBlock');
+        const sub = document.getElementById('inviteCompatibilitySub');
+        if (!btn && !block) return;
 
         const shouldShow = Boolean(normalizeTypeCode(state.typeCode));
-        btn.hidden = !shouldShow;
-        btn.style.display = shouldShow ? '' : 'none';
-        btn.textContent = i18n[state.lang].inviteCompatibilityBtn || i18n.ja.inviteCompatibilityBtn;
+        if (block) {
+            block.hidden = !shouldShow;
+            block.style.display = shouldShow ? '' : 'none';
+        }
+        if (btn) {
+            btn.hidden = !shouldShow;
+            btn.style.display = shouldShow ? '' : 'none';
+            btn.textContent = i18n[state.lang].inviteCompatibilityBtn || i18n.ja.inviteCompatibilityBtn;
+        }
+        if (sub) {
+            sub.hidden = !shouldShow;
+            sub.textContent = i18n[state.lang].inviteCompatibilitySub || i18n.ja.inviteCompatibilitySub || "";
+        }
     }
 
     function updateTalentCta() {
@@ -3955,11 +4029,6 @@
 
         const buildResultShareUrl = source => buildInviteUrl(state.typeCode, source, 'result_share');
 
-        const buildLineShareUrl = (source = 'line') => {
-            const lineUrl = buildResultShareUrl(source);
-            return `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(lineUrl.toString())}`;
-        };
-
         const copyTextToClipboard = async text => {
             if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
                 try {
@@ -4059,19 +4128,6 @@
 
                 showToast(i18n[state.lang].toastShareSuccess);
                 window.location.assign(intentUrl);
-            });
-        }
-
-        const lineShareBtn = document.getElementById('lineShareBtn');
-        if (lineShareBtn) {
-            lineShareBtn.addEventListener('click', () => {
-                safeTrack('invite_link_created', { from_type: state.typeCode || 'none' });
-                safeTrack('shindan_share', { channel: 'line', share_platform: 'line', share_variant: 'result' });
-                showToast(i18n[state.lang].toastShareSuccess);
-                const opened = window.open(buildLineShareUrl(), '_blank', 'noopener,noreferrer');
-                if (!opened) {
-                    window.location.assign(buildLineShareUrl());
-                }
             });
         }
 
@@ -4369,7 +4425,7 @@
                          requestedLang === 'zh' ? 'Traditional Chinese (繁體中文)' : 'Japanese (日本語)';
 
         const scoreBand = getScoreBand();
-        const answerPattern = getAnswerPatternSummary(requestedLang);
+        const answerPattern = getAiAnswerPatternSummary(requestedLang);
         const systemPrompt = `診断内部情報: type='${typeCode}', name='${typeName}', age='${age}', approval='${state.approvalPercent}%', intensity='${scoreBand}', habit='${answerPattern}'。
 この材料を、システム説明ではなく「SNSあるある」として笑える短い毒舌コメントに変換し、必ず「${langName}」で200字以内で作成してください。
 

@@ -839,7 +839,20 @@
             min-height: 48px;
         }
 
-        .share-invite-note {
+        .invite-compatibility-block,
+        .compatibility-paid-block {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .invite-compatibility-block[hidden],
+        .compatibility-paid-block[hidden] {
+            display: none !important;
+        }
+
+        .invite-compatibility-sub,
+        .compatibility-paid-sub {
             margin: 0 4px 2px;
             color: var(--primary-pink-deep);
             font-size: 0.82rem;
@@ -848,11 +861,21 @@
             text-align: center;
         }
 
-        .share-btn-line {
+        .invite-compatibility-btn {
             background: #06C755;
             border-color: #00A948;
             color: #FFF;
             box-shadow: 0 6px 0 #00A948;
+            min-height: 54px;
+            white-space: normal;
+            line-height: 1.35;
+        }
+
+        .invite-compatibility-btn:hover {
+            background: #12D965;
+            border-color: #00A948;
+            color: #FFF;
+            box-shadow: 0 8px 0 #00A948;
         }
 
         .share-btn-copy {
@@ -933,15 +956,6 @@
             font-size: 0.78rem;
             font-weight: 900;
             line-height: 1.5;
-        }
-
-        .invite-compatibility-btn {
-            min-height: 54px;
-            background: linear-gradient(180deg, #FFF0F6 0%, #FFE2EC 100%);
-            border-color: var(--primary-pink);
-            box-shadow: 0 6px 0 var(--primary-pink);
-            white-space: normal;
-            line-height: 1.4;
         }
 
         .detailed-report-section {
@@ -1175,6 +1189,8 @@
             background: linear-gradient(180deg, #FFEAF1 0%, #FFD1DE 100%);
             border-color: var(--primary-pink);
             box-shadow: 0 6px 0 var(--primary-pink);
+            white-space: normal;
+            line-height: 1.35;
         }
 
         .talent-btn {
@@ -1275,6 +1291,11 @@
             .invite-compatibility-btn {
                 font-size: 0.84rem;
                 padding: 13px 10px;
+            }
+
+            .invite-compatibility-sub,
+            .compatibility-paid-sub {
+                font-size: 0.72rem;
             }
 
             .detailed-report-section {
@@ -1547,11 +1568,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 6px;
             margin-top: 4px;
         }
 
+        .cheki-score-label {
+            white-space: nowrap;
+            flex: 0 0 auto;
+        }
+
         .cheki-score-bar-bg {
-            width: 70%;
+            flex: 1 1 auto;
+            min-width: 56px;
             height: 6px;
             background: #FFD6E0;
             border-radius: 4px;
@@ -1786,7 +1814,7 @@
                                 <span class="cheki-serial" id="chekiSerial">NO. 00000000</span>
                             </div>
                             <div class="cheki-score-row">
-                                <span id="chekiScoreLabel" style="font-size:0.7rem;">承認欲求スコア:</span>
+                                <span class="cheki-score-label" id="chekiScoreLabel" style="font-size:0.7rem;">承認欲求スコア:</span>
                                 <span class="cheki-score-bar-bg">
                                     <span class="cheki-score-bar-fill" id="chekiScoreBarFill" style="width:0%"></span>
                                 </span>
@@ -1882,29 +1910,33 @@
 
             <!-- アクションボタン群 -->
             <div class="action-buttons">
-                <button class="cute-btn invite-compatibility-btn" id="btn-invite-compatibility" type="button" data-i18n="inviteCompatibilityBtn" hidden>
-                    🐾 友達・恋人・推しと"承認欲求の相性"を測る
-                </button>
-                <button class="cute-btn compatibility-btn" id="btn-compatibility" type="button" data-i18n="btnCompatibility" hidden>
-                    もう少し覗いてみる？ ¥360
-                </button>
-                <button class="cute-btn talent-btn" id="btnTalent" type="button" data-i18n="btnTalent" hidden>
-                    眠った才能、起こしてみない？ ¥360
-                </button>
                 <div class="share-button-group" aria-label="共有">
                     <button class="cute-btn" id="shareBtn" style="background: #1DA1F2; border-color: #1990DB; color: #FFF; box-shadow: 0 6px 0 #1990DB;">
                         🐦 X（Twitter）に結果を共有する
                     </button>
-                    <button class="cute-btn share-btn-line" id="lineShareBtn" type="button" data-i18n="lineShareBtn">
-                        💬 LINEで友だちに送る
-                    </button>
+                    <div class="invite-compatibility-block" id="inviteCompatibilityBlock" hidden>
+                        <button class="cute-btn invite-compatibility-btn" id="btn-invite-compatibility" type="button" data-i18n="inviteCompatibilityBtn" hidden>
+                            🐾 友達・恋人・推しに送って"相性"を測る（無料）
+                        </button>
+                        <p class="invite-compatibility-sub" id="inviteCompatibilitySub" data-i18n="inviteCompatibilitySub" hidden>
+                            LINEなどで招待リンクを送る → 相手が診断すると"ふたりの相性%"が出ます
+                        </p>
+                    </div>
                     <button class="cute-btn share-btn-copy" id="copyShareBtn" type="button" data-i18n="copyShareBtn">
                         🔗 リンクをコピー
                     </button>
-                    <p class="share-invite-note" id="shareInviteNote" data-i18n="shareInviteNote">
-                        ※このリンクから友達が診断すると、ふたりの“相性%”も出ます🐾
+                </div>
+                <div class="compatibility-paid-block" id="compatibilityPaidBlock" hidden>
+                    <button class="cute-btn compatibility-btn" id="btn-compatibility" type="button" data-i18n="btnCompatibility" hidden>
+                        📖 16タイプ全員との相性を今すぐ見る ¥360
+                    </button>
+                    <p class="compatibility-paid-sub" id="compatibilityPaidSub" data-i18n="compatibilityPaidSub" hidden>
+                        ベスト/ワースト相性・理由・うまく付き合うコツまで丸ごと
                     </p>
                 </div>
+                <button class="cute-btn talent-btn" id="btnTalent" type="button" data-i18n="btnTalent" hidden>
+                    眠った才能、起こしてみない？ ¥360
+                </button>
                 <button class="cute-btn" id="retryBtn" style="background: #EAEAEA; border-color: #D3D3D3; box-shadow: 0 6px 0 #D3D3D3;">
                     🔄 もう一度診断する
                 </button>
@@ -1976,7 +2008,7 @@
     <script src="hidden-talent-data.js?v=20260528-talent"></script>
     
     <!-- アプリケーションスクリプト -->
-    <script src="app.js?v=20260606-sharefrom"></script>
+    <script src="app.js?v=20260607-ux7"></script>
 
 </body>
 </html>
