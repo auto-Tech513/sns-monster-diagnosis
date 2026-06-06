@@ -1301,6 +1301,149 @@
         }
     };
 
+    const premiumReportJaByType = {
+        pome: {
+            advice: [
+                "「いいね待ち」より自分から1リプ送ると世界が動く。",
+                "投稿は反応数でなく「言いたかったか」で評価する。",
+                "通知オフの時間を1日1回つくる。"
+            ],
+            truth: "“どうせ私なんて”の後ろに、ちゃんと見てほしいが隠れてるよね🐾"
+        },
+        pomr: {
+            advice: [
+                "積み上げを月1で可視化して自分を褒める。",
+                "比較対象は過去の自分だけに固定する。",
+                "たまに成果を1つ外に出すと仲間が見つかる。"
+            ],
+            truth: "“認められたくない”じゃなくて“安売りしたくない”だけでしょ🐾"
+        },
+        pone: {
+            advice: [
+                "「既読＝拒否」ではないと唱える。",
+                "安心できる1〜2人とだけ深く繋がる。",
+                "不安な時は投稿前に一晩寝かせる。"
+            ],
+            truth: "こわがりなだけで、本当はめちゃくちゃ優しい子だって知ってる🐾"
+        },
+        ponr: {
+            advice: [
+                "守りでOK、ただし年1で小さく挑戦枠を作る。",
+                "情報の入れすぎ疲れに注意する。",
+                "“静けさ”を意識的に確保する。"
+            ],
+            truth: "無関心なフリして、実は全部ちゃんと見てるよね🐾"
+        },
+        psme: {
+            advice: [
+                "完璧を待たず7割で出す。",
+                "共感狙いより「自分が本当に好き」を1割混ぜる。",
+                "数字は翌朝まで見ない。"
+            ],
+            truth: "通知が来た瞬間の顔、世界一かわいいやつだよ🐾"
+        },
+        psmr: {
+            advice: [
+                "孤高はそのままで良い。",
+                "“分かる人”を数人だけ大事にする。",
+                "作品は寝かせず出すと届く。"
+            ],
+            truth: "強がりの下の繊細さ、ちゃんとかわいいよ🐾"
+        },
+        psne: {
+            advice: [
+                "助けてほしい時は言葉にする。",
+                "全部の空気を読まなくていい。",
+                "安心できる場所を1つ決める。"
+            ],
+            truth: "寂しがりは罪じゃない、ただただ愛おしい🐾"
+        },
+        psnr: {
+            advice: [
+                "ROM（潜伏）でOK、罪悪感を持たない。",
+                "好きを深掘りする趣味時間を確保する。",
+                "出したい時だけ出す。"
+            ],
+            truth: "マイペースの裏の“分かってほしい”、見えてるからね🐾"
+        },
+        aome: {
+            advice: [
+                "承認は燃料、ただし他人の数字と比べない。",
+                "“すごい”を自分で先に言う。",
+                "発信は量より刺さりで設計する。"
+            ],
+            truth: "声デカいけど中身やわらかいの、バレてるよ🐾"
+        },
+        aomr: {
+            advice: [
+                "長文は冒頭3行に要点を置く。",
+                "同好の士の場所に投下する。",
+                "数字でなく濃さで満足する。"
+            ],
+            truth: "その孤高、私は嫌いじゃないよ🐾"
+        },
+        aone: {
+            advice: [
+                "盛らなくても価値はある。",
+                "既読スルーを攻撃と捉えない。",
+                "等身大の1投稿を週1混ぜる。"
+            ],
+            truth: "“すごい”が主食、既読スルーが一番こたえるよね🐾"
+        },
+        aonr: {
+            advice: [
+                "“論破”より“対話”で承認は増える。",
+                "正しさの前に共感を1枚。",
+                "戦う相手を選ぶ。"
+            ],
+            truth: "“正しい”より“好き”が本当はほしいでしょ🐾"
+        },
+        asme: {
+            advice: [
+                "自信はそのまま、押し付けは1割引く。",
+                "共感されない日も3日で立ち直る。",
+                "作品の数を出す。"
+            ],
+            truth: "スルーされると3日凹む繊細さ、可愛いとこだよ🐾"
+        },
+        asmr: {
+            advice: [
+                "トゲは武器、刺す相手を選ぶ。",
+                "“分かってほしい”を素直に出す日を作る。",
+                "創作は寝かせず出す。"
+            ],
+            truth: "“どうでもいい”が口癖の人ほど、本当は見てほしいんだよね🐾"
+        },
+        asne: {
+            advice: [
+                "自分を満たす“ひとり充電”を持つ。",
+                "反応の増減に振り回されない。",
+                "安心できる繋がりを優先する。"
+            ],
+            truth: "ちょっと重いとこも含めて、ほっとけないんだよね🐾"
+        },
+        asnr: {
+            advice: [
+                "ブレない強みは伸ばす。",
+                "たまに流行を1つ試すと幅が出る。",
+                "本音を1割だけ見せる。"
+            ],
+            truth: "マイペースの皮かぶって、実はちょっと寂しがりでしょ🐾"
+        }
+    };
+
+    Object.entries(premiumReportJaByType).forEach(([typeCode, premium]) => {
+        if (!typeDatabase[typeCode]) return;
+        typeDatabase[typeCode].premiumAdvice = {
+            ...(typeDatabase[typeCode].premiumAdvice || {}),
+            ja: premium.advice
+        };
+        typeDatabase[typeCode].premiumTruth = {
+            ...(typeDatabase[typeCode].premiumTruth || {}),
+            ja: premium.truth
+        };
+    });
+
     // ==========================================
     // 5. 言語切り替え処理 (i18n Binder)
     // ==========================================
@@ -2263,9 +2406,16 @@
         const copy = i18n[normalizedLang] || i18n.ja;
         const fallback = getPersonalizedAiFallback(typeCode, normalizedLang) || getBaseAiFallback(info, normalizedLang);
         const aiText = localizeDimensionTerms(aiOverride || fallback, normalizedLang);
-        const adviceItems = Array.isArray(copy.premiumReportAdviceItems)
+        const typeAdviceItems = info.premiumAdvice && Array.isArray(info.premiumAdvice[normalizedLang])
+            ? info.premiumAdvice[normalizedLang]
+            : null;
+        const adviceItems = typeAdviceItems || (Array.isArray(copy.premiumReportAdviceItems)
             ? copy.premiumReportAdviceItems
-            : i18n.ja.premiumReportAdviceItems;
+            : i18n.ja.premiumReportAdviceItems);
+        const typeTruth = info.premiumTruth && typeof info.premiumTruth[normalizedLang] === 'string'
+            ? info.premiumTruth[normalizedLang]
+            : '';
+        const truthText = typeTruth || copy.premiumReportTruth || i18n.ja.premiumReportTruth;
         const adviceText = adviceItems
             .map((item, idx) => `${idx + 1}. ${item}`)
             .join('\n');
@@ -2273,7 +2423,7 @@
         return [
             aiText,
             `${copy.premiumReportAdviceTitle || i18n.ja.premiumReportAdviceTitle}\n${adviceText}`,
-            `${copy.premiumReportTruthTitle || i18n.ja.premiumReportTruthTitle}\n${copy.premiumReportTruth || i18n.ja.premiumReportTruth}`
+            `${copy.premiumReportTruthTitle || i18n.ja.premiumReportTruthTitle}\n${truthText}`
         ].filter(Boolean).join('\n\n');
     }
 
