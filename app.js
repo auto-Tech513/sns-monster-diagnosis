@@ -97,6 +97,7 @@
             shareBtn: "🐦 X（Twitter）に結果を共有する",
             lineShareBtn: "💬 LINEで友だちに送る",
             copyShareBtn: "🔗 リンクをコピー",
+            shareInviteNote: "※このリンクから友達が診断すると、ふたりの“相性%”も出ます🐾",
             retryBtn: "🔄 もう一度診断する",
             lockTitle: "🌸 神託は忘却の彼方へ 🌸",
             lockText: "無料体験枠の60秒が経過したため、診断結果のチェキはパステル霧に包まれて消滅しました。診断を永久保存したい場合は、パステルキーを入力してロックを解除してください。",
@@ -242,6 +243,7 @@
             shareBtn: "🐦 Share on X (Twitter)",
             lineShareBtn: "💬 Share on LINE",
             copyShareBtn: "🔗 Copy link",
+            shareInviteNote: "When a friend takes the quiz from your link, you'll also see your chemistry % 🐾",
             retryBtn: "🔄 Try Again",
             lockTitle: "🌸 Faded Into Forgetfulness 🌸",
             lockText: "Because 60 seconds passed, your Cheki has faded into pastel fog. Enter the pastel key to unlock and save it permanently.",
@@ -387,6 +389,7 @@
             shareBtn: "🐦 X(Twitter)에 공유하기",
             lineShareBtn: "💬 LINE에 공유하기",
             copyShareBtn: "🔗 링크 복사",
+            shareInviteNote: "이 링크로 친구가 진단하면 둘의 '궁합%'도 나와요 🐾",
             retryBtn: "🔄 다시 도전하기",
             lockTitle: "🌸 신탁은 망각의 너머로 🌸",
             lockText: "무료 체험 시간 60초가 지나 진단 결과 체키가 파스텔 안개에 봉인되었습니다. 영구 보존하려면 파스텔 키를 입력하여 잠금을 해제하십시오.",
@@ -532,6 +535,7 @@
             shareBtn: "🐦 分享到 X (Twitter)",
             lineShareBtn: "💬 分享到 LINE",
             copyShareBtn: "🔗 複製連結",
+            shareInviteNote: "朋友從這個連結做完診斷，會一併顯示你們的『契合度%』🐾",
             retryBtn: "🔄 重新診斷",
             lockTitle: "🌸 神諭已歸於遺忘 🌸",
             lockText: "由於免費體驗的60秒已過，你的診斷結果已被封鎖在粉霧中。請輸入解鎖碼解鎖以永久保存你的拍立得。",
@@ -2226,10 +2230,15 @@
         return configuredUrl || window.location.origin || window.location.href;
     }
 
-    function buildInviteUrl(typeCode = state.typeCode) {
+    function buildInviteUrl(typeCode = state.typeCode, source = 'invite', campaign = 'invite_share') {
         const code = normalizeTypeCode(typeCode);
         const inviteUrl = new URL('/', getCanonicalSiteUrl() || window.location.href);
         inviteUrl.search = '';
+        inviteUrl.searchParams.set('utm_source', String(source || 'invite'));
+        inviteUrl.searchParams.set('utm_medium', 'social');
+        inviteUrl.searchParams.set('utm_campaign', String(campaign || 'invite_share'));
+        if (state.lang) inviteUrl.searchParams.set('lang', state.lang);
+        if (code) inviteUrl.searchParams.set('monster', code);
         if (code) inviteUrl.searchParams.set(INVITE_FROM_PARAM, code);
         return inviteUrl;
     }
@@ -2410,10 +2419,10 @@
         ].filter(Boolean).join('\n\n');
     }
 
-    function buildInviteSharePayload() {
+    function buildInviteSharePayload(source = 'invite') {
         const copy = i18n[state.lang] || i18n.ja;
         const name = getCurrentTypeName(state.lang);
-        const url = buildInviteUrl(state.typeCode);
+        const url = buildInviteUrl(state.typeCode, source, 'invite_share');
         const text = (copy.inviteShareText || i18n.ja.inviteShareText)
             .replace(/\$\{name\}/g, name);
 
@@ -2457,7 +2466,7 @@
     async function shareInviteLink(source = 'invite_cta') {
         if (!normalizeTypeCode(state.typeCode)) return false;
 
-        const payload = buildInviteSharePayload();
+        const payload = buildInviteSharePayload(source);
         safeTrack('invite_link_created', { from_type: state.typeCode });
 
         if (typeof navigator.share === 'function') {
@@ -3944,19 +3953,10 @@
             return { text, variant };
         };
 
-        const buildResultShareUrl = source => {
-            const siteUrl = String(getSiteConfig().siteUrl || window.location.origin || window.location.href || '').trim();
-            const shareUrl = new URL('/r', siteUrl || window.location.href);
-            shareUrl.searchParams.set('utm_source', source);
-            shareUrl.searchParams.set('utm_medium', 'social');
-            shareUrl.searchParams.set('utm_campaign', 'result_share');
-            shareUrl.searchParams.set('monster', state.typeCode || 'unknown');
-            shareUrl.searchParams.set('lang', state.lang);
-            return shareUrl;
-        };
+        const buildResultShareUrl = source => buildInviteUrl(state.typeCode, source, 'result_share');
 
-        const buildLineShareUrl = () => {
-            const lineUrl = buildInviteUrl(state.typeCode);
+        const buildLineShareUrl = (source = 'line') => {
+            const lineUrl = buildResultShareUrl(source);
             return `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(lineUrl.toString())}`;
         };
 
@@ -4047,13 +4047,14 @@
                 }
 
                 const name = info.name[state.lang] || info.name.ja;
-                const payload = buildInviteSharePayload();
-                const intentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(payload.text)}&url=${encodeURIComponent(payload.url)}&hashtags=${encodeURIComponent(i18n[state.lang].xHashtag)}`;
-                safeTrack('invite_link_created', { from_type: state.typeCode });
+                const { text, variant } = buildShareText(name, state.approvalPercent || 0);
+                const shareUrl = buildResultShareUrl('x').toString();
+                const intentUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}&hashtags=${encodeURIComponent(i18n[state.lang].xHashtag)}`;
+                safeTrack('invite_link_created', { from_type: state.typeCode || 'none' });
                 safeTrack('shindan_share', {
                     channel: 'x',
                     share_platform: 'x',
-                    share_variant: 'invite'
+                    share_variant: variant
                 });
 
                 showToast(i18n[state.lang].toastShareSuccess);
@@ -4065,7 +4066,7 @@
         if (lineShareBtn) {
             lineShareBtn.addEventListener('click', () => {
                 safeTrack('invite_link_created', { from_type: state.typeCode || 'none' });
-                safeTrack('shindan_share', { channel: 'line' });
+                safeTrack('shindan_share', { channel: 'line', share_platform: 'line', share_variant: 'result' });
                 showToast(i18n[state.lang].toastShareSuccess);
                 const opened = window.open(buildLineShareUrl(), '_blank', 'noopener,noreferrer');
                 if (!opened) {
@@ -4081,13 +4082,13 @@
                 copyShareBtn.style.display = 'none';
             } else {
                 copyShareBtn.addEventListener('click', async () => {
-                    const shareUrl = buildInviteUrl(state.typeCode).toString();
+                    const shareUrl = buildResultShareUrl('copy').toString();
                     try {
                         const copied = await copyTextToClipboard(shareUrl);
                         if (!copied) throw new Error('Copy command returned false');
                         showToast(i18n[state.lang].toastCopySuccess);
                         safeTrack('invite_link_created', { from_type: state.typeCode || 'none' });
-                        safeTrack('shindan_share', { channel: 'copy' });
+                        safeTrack('shindan_share', { channel: 'copy', share_platform: 'copy', share_variant: 'result' });
                     } catch (err) {
                         console.warn('Copy share URL failed:', err);
                         showToast(i18n[state.lang].toastCopyFail);

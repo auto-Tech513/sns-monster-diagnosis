@@ -839,6 +839,15 @@
             min-height: 48px;
         }
 
+        .share-invite-note {
+            margin: 0 4px 2px;
+            color: var(--primary-pink-deep);
+            font-size: 0.82rem;
+            font-weight: 800;
+            line-height: 1.45;
+            text-align: center;
+        }
+
         .share-btn-line {
             background: #06C755;
             border-color: #00A948;
@@ -1892,6 +1901,9 @@
                     <button class="cute-btn share-btn-copy" id="copyShareBtn" type="button" data-i18n="copyShareBtn">
                         🔗 リンクをコピー
                     </button>
+                    <p class="share-invite-note" id="shareInviteNote" data-i18n="shareInviteNote">
+                        ※このリンクから友達が診断すると、ふたりの“相性%”も出ます🐾
+                    </p>
                 </div>
                 <button class="cute-btn" id="retryBtn" style="background: #EAEAEA; border-color: #D3D3D3; box-shadow: 0 6px 0 #D3D3D3;">
                     🔄 もう一度診断する
@@ -1964,7 +1976,7 @@
     <script src="hidden-talent-data.js?v=20260528-talent"></script>
     
     <!-- アプリケーションスクリプト -->
-    <script src="app.js?v=20260606-fullfree"></script>
+    <script src="app.js?v=20260606-sharefrom"></script>
 
 </body>
 </html>
