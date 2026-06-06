@@ -6,22 +6,22 @@
     const EMAIL = "pvac25471@gmail.com";
 
     const labels = {
-        ja: { select: "表示言語", back: "診断へ戻る", columns: "コラム一覧へ", privacy: "プライバシーポリシー", contact: "お問い合わせ", about: "運営情報", articles: "承認欲求コラム", ad: "スポンサーリンク", btnPermanentSave: "✦ 詳細AI診断書を保存＋永久保存 ¥120", btnLockPurchase: "✦ 詳細AI診断書を保存＋永久保存 ¥120", orDivider: "─── または ───", btnCompatibility: "もう少し覗いてみる？ ¥360", sectionCompatTitle: "💖 相性診断結果", sectionGoodMatch: "💚 相性◎ タイプ", sectionBadMatch: "💔 相性× タイプ", sectionLoveStyle: "📖 あなたの恋愛観" },
-        en: { select: "Language", back: "Back to diagnosis", columns: "Back to columns", privacy: "Privacy Policy", contact: "Contact", about: "About", articles: "Approval Desire Columns", ad: "Sponsored", btnPermanentSave: "✦ Save full AI report + keep forever ¥120", btnLockPurchase: "✦ Save full AI report + keep forever ¥120", orDivider: "─── or ───", btnCompatibility: "Want to peek a little more? ¥360", sectionCompatTitle: "💖 Compatibility Results", sectionGoodMatch: "💚 Great Match", sectionBadMatch: "💔 Clash Type", sectionLoveStyle: "📖 Your Love Style" },
-        ko: { select: "언어", back: "진단으로 돌아가기", columns: "칼럼 목록으로", privacy: "개인정보 처리방침", contact: "문의", about: "운영 정보", articles: "승인욕구 칼럼", ad: "스폰서 링크", btnPermanentSave: "✦ 상세 AI 진단서 저장＋영구 보존 ¥120", btnLockPurchase: "✦ 상세 AI 진단서 저장＋영구 보존 ¥120", orDivider: "─── 또는 ───", btnCompatibility: "좀 더 들여다볼래? ¥360", sectionCompatTitle: "💖 궁합 진단 결과", sectionGoodMatch: "💚 궁합 최고", sectionBadMatch: "💔 최악의 궁합", sectionLoveStyle: "📖 당신의 연애관" },
-        zh: { select: "語言", back: "返回診斷", columns: "返回專欄", privacy: "隱私權政策", contact: "聯絡我們", about: "營運資訊", articles: "認同感專欄", ad: "贊助連結", btnPermanentSave: "✦ 儲存詳細AI診斷書＋永久保存 ¥120", btnLockPurchase: "✦ 儲存詳細AI診斷書＋永久保存 ¥120", orDivider: "─── 或者 ───", btnCompatibility: "想再窺探一點嗎？¥360", sectionCompatTitle: "💖 配對診斷結果", sectionGoodMatch: "💚 最佳搭檔", sectionBadMatch: "💔 衝突類型", sectionLoveStyle: "📖 你的戀愛觀" }
+        ja: { select: "表示言語", back: "診断へ戻る", columns: "コラム一覧へ", privacy: "プライバシーポリシー", contact: "お問い合わせ", about: "運営情報", articles: "承認欲求コラム", ad: "スポンサーリンク", btnPermanentSave: "✦ 詳細AI診断書を保存＋永久保存 ¥120", btnLockPurchase: "✦ 詳細AI診断書を保存＋永久保存 ¥120", orDivider: "─── または ───", btnCompatibility: "📖 16タイプ全員との相性を今すぐ見る ¥360", sectionCompatTitle: "💖 相性診断結果", sectionGoodMatch: "💚 相性◎ タイプ", sectionBadMatch: "💔 相性× タイプ", sectionLoveStyle: "📖 あなたの恋愛観" },
+        en: { select: "Language", back: "Back to diagnosis", columns: "Back to columns", privacy: "Privacy Policy", contact: "Contact", about: "About", articles: "Approval Desire Columns", ad: "Sponsored", btnPermanentSave: "✦ Save full AI report + keep forever ¥120", btnLockPurchase: "✦ Save full AI report + keep forever ¥120", orDivider: "─── or ───", btnCompatibility: "📖 See your chemistry with all 16 types now ¥360", sectionCompatTitle: "💖 Compatibility Results", sectionGoodMatch: "💚 Great Match", sectionBadMatch: "💔 Clash Type", sectionLoveStyle: "📖 Your Love Style" },
+        ko: { select: "언어", back: "진단으로 돌아가기", columns: "칼럼 목록으로", privacy: "개인정보 처리방침", contact: "문의", about: "운영 정보", articles: "인정욕구 칼럼", ad: "스폰서 링크", btnPermanentSave: "✦ 상세 AI 진단서 저장＋영구 보존 ¥120", btnLockPurchase: "✦ 상세 AI 진단서 저장＋영구 보존 ¥120", orDivider: "─── 또는 ───", btnCompatibility: "📖 16타입 전원과의 궁합 지금 바로 보기 ¥360", sectionCompatTitle: "💖 궁합 진단 결과", sectionGoodMatch: "💚 궁합 최고", sectionBadMatch: "💔 최악의 궁합", sectionLoveStyle: "📖 당신의 연애관" },
+        zh: { select: "語言", back: "返回診斷", columns: "返回專欄", privacy: "隱私權政策", contact: "聯絡我們", about: "營運資訊", articles: "認同感專欄", ad: "贊助連結", btnPermanentSave: "✦ 儲存詳細AI診斷書＋永久保存 ¥120", btnLockPurchase: "✦ 儲存詳細AI診斷書＋永久保存 ¥120", orDivider: "─── 或者 ───", btnCompatibility: "📖 馬上看你和全部16型的契合度 ¥360", sectionCompatTitle: "💖 契合度診斷結果", sectionGoodMatch: "💚 最佳搭檔", sectionBadMatch: "💔 衝突類型", sectionLoveStyle: "📖 你的戀愛觀" }
     };
 
     const articleList = {
         ja: [
-            ["approval-desire-test.html", "承認欲求診斷でわかること", "診斷結果を自分責めではなく、SNSとの距離感を眺める入口にします。"],
+            ["approval-desire-test.html", "承認欲求診断でわかること", "診断結果を自分責めではなく、SNSとの距離感を眺める入口にします。"],
             ["sns-approval-desire.html", "SNSの承認欲求とは何か", "いいね、閲覧數、反応待ちが心に刺さる理由を整理します。"],
             ["likes-psychology.html", "いいねが気になる心理", "投稿後の通知確認や反応待ちが疲れやすい理由をまとめます。"],
-            ["maslow-social-media.html", "マズローの欲求とSNS時代の見られたい気持ち", "承認欲求をエンタメ診斷として扱うための前提をまとめます。"],
+            ["maslow-social-media.html", "マズローの欲求とSNS時代の見られたい気持ち", "承認欲求をエンタメ診断として扱うための前提をまとめます。"],
             ["sns-comparison-fatigue.html", "SNSで人と比べて疲れるときの考え方", "いいね數やフォロワー數を順位表にしすぎないための整理です。"],
             ["sns-fatigue.html", "SNS疲れを軽くする投稿との付き合い方", "反応に振り回されすぎないための現実的な工夫です。"],
-            ["result-types.html", "16タイプ診斷結果の楽しみ方", "タイプ名をネタとして楽しみながら、自分の傾向を眺めます。"],
-            ["how-to-share-results.html", "診斷結果をXでシェアして遊ぶコツ", "結果画像、投稿文、ハッシュタグを使って友だちと楽しむ導線です。"]
+            ["result-types.html", "16タイプ診断結果の楽しみ方", "タイプ名をネタとして楽しみながら、自分の傾向を眺めます。"],
+            ["how-to-share-results.html", "診断結果をXでシェアして遊ぶコツ", "結果画像、投稿文、ハッシュタグを使って友だちと楽しむ導線です。"]
         ],
         en: [
             ["approval-desire-test.html", "What an Approval Desire Test Shows", "Use the result as a light way to look at your distance from SNS, not as self-blame."],
@@ -34,8 +34,8 @@
             ["how-to-share-results.html", "Tips for Sharing Your Result on X", "How to use the image, post text, and hashtag so friends can enjoy it too."]
         ],
         ko: [
-            ["approval-desire-test.html", "승인욕구 진단으로 알 수 있는 것", "결과를 자기비난이 아니라 SNS와의 거리감을 보는 가벼운 입구로 사용합니다."],
-            ["sns-approval-desire.html", "SNS의 승인욕구란 무엇인가", "좋아요, 조회수, 반응 기다림이 왜 마음에 크게 다가오는지 정리합니다."],
+            ["approval-desire-test.html", "인정욕구 진단으로 알 수 있는 것", "결과를 자기비난이 아니라 SNS와의 거리감을 보는 가벼운 입구로 사용합니다."],
+            ["sns-approval-desire.html", "SNS의 인정욕구란 무엇인가", "좋아요, 조회수, 반응 기다림이 왜 마음에 크게 다가오는지 정리합니다."],
             ["likes-psychology.html", "좋아요가 신경 쓰이는 심리", "게시 후 알림 확인과 반응 대기가 왜 피로해지는지 살펴봅니다."],
             ["maslow-social-media.html", "매슬로 욕구와 SNS 시대의 보이고 싶은 마음", "인정, 안정, 자기표현이 SNS 화면 하나에 압축되는 방식을 설명합니다."],
             ["sns-comparison-fatigue.html", "SNS에서 남과 비교해 지칠 때", "좋아요 수와 팔로워 수를 내 순위표로 만들지 않는 법입니다."],
@@ -45,7 +45,7 @@
         ],
         zh: [
             ["approval-desire-test.html", "認同感診斷能看出什麼", "把結果當作觀察自己與SNS距離的輕鬆入口，而不是自我責備。"],
-            ["sns-approval-desire.html", "SNS 上的認同欲求是什麼", "整理按讚、瀏覽量和等待反應為什麼會牽動情緒。"],
+            ["sns-approval-desire.html", "SNS 上的認同感是什麼", "整理按讚、瀏覽量和等待反應為什麼會牽動情緒。"],
             ["likes-psychology.html", "為什麼會在意按讚", "看看發文後的通知確認和等待反應為什麼容易讓人疲憊。"],
             ["maslow-social-media.html", "馬斯洛需求與SNS時代想被看見的心情", "說明認同、安全感和自我表達如何被壓縮進一個SNS畫面。"],
             ["sns-comparison-fatigue.html", "在SNS 上和別人比較到疲憊時", "避免把按讚數和粉絲數變成個人排行榜的思路。"],
@@ -57,16 +57,16 @@
 
     const pages = {
         "about.html": {
-            title: { ja: "運営情報 | SNS承認欲求モンスター診断", en: "About | SNS Recognition Monster Diagnosis", ko: "운영 정보 | SNS 승인욕구 몬스터 진단", zh: "營運資訊 | SNS認同感怪獸診斷" },
+            title: { ja: "運営情報 | SNS承認欲求モンスター診断", en: "About | SNS Recognition Monster Diagnosis", ko: "운영 정보 | SNS 인정욕구 몬스터 진단", zh: "營運資訊 | SNS認同感怪獸診斷" },
             html: {
                 ja: `<h1>運営情報</h1><p>「SNS承認欲求モンスター診断」は、SNS時代の承認欲求を16タイプのポップなモンスターとして楽しむエンタメ診断です。</p><h2>診断について</h2><p>本診断は娯楽目的のコンテンツです。医療、心理診断、職業適性判断などの専門的判断を目的としたものではありません。</p><h2>広告について</h2><p>診断中の集中を妨げないため、広告は結果画面付近など限定された場所にのみ表示する方針です。</p>`,
                 en: `<h1>About</h1><p>SNS Recognition Monster Diagnosis is an entertainment quiz that turns approval-seeking patterns in the SNS era into 16 playful monster types.</p><h2>About the Diagnosis</h2><p>This site is for entertainment and self-reflection. It is not medical advice, a clinical psychological test, or a professional aptitude assessment.</p><h2>Advertising Policy</h2><p>To protect the flow of the diagnosis, ads are limited to restrained areas such as near the result screen and article pages.</p>`,
-                ko: `<h1>운영 정보</h1><p>SNS 승인욕구 몬스터 진단은 SNS 시대의 승인욕구를 16가지 팝한 몬스터 유형으로 즐기는 엔터테인먼트 진단입니다.</p><h2>진단에 대하여</h2><p>본 진단은 오락과 가벼운 자기 점검을 위한 콘텐츠입니다. 의료, 심리 진단, 직업 적성 판단 등 전문적 판단을 목적으로 하지 않습니다.</p><h2>광고에 대하여</h2><p>진단 흐름을 방해하지 않도록 광고는 결과 화면 근처와 칼럼 페이지 등 제한된 위치에만 배치하는 방침입니다.</p>`,
-                zh: `<h1>營運資訊</h1><p>SNS認同感怪獸診斷是一款娛樂診斷，把SNS時代的認同欲求轉化為16種可愛的怪獸類型。</p><h2>關於診斷</h2><p>本診斷用於娛樂和輕鬆自我觀察，並非醫療建議、臨床心理測驗或職業適性判斷。</p><h2>關於廣告</h2><p>為了不打斷診斷體驗，廣告原則上只會出現在結果頁附近和專欄頁面等有限位置。</p>`
+                ko: `<h1>운영 정보</h1><p>SNS 인정욕구 몬스터 진단은 SNS 시대의 인정욕구를 16가지 팝한 몬스터 유형으로 즐기는 엔터테인먼트 진단입니다.</p><h2>진단에 대하여</h2><p>본 진단은 오락과 가벼운 자기 점검을 위한 콘텐츠입니다. 의료, 심리 진단, 직업 적성 판단 등 전문적 판단을 목적으로 하지 않습니다.</p><h2>광고에 대하여</h2><p>진단 흐름을 방해하지 않도록 광고는 결과 화면 근처와 칼럼 페이지 등 제한된 위치에만 배치하는 방침입니다.</p>`,
+                zh: `<h1>營運資訊</h1><p>SNS認同感怪獸診斷是一款娛樂診斷，把SNS時代的認同感轉化為16種可愛的怪獸類型。</p><h2>關於診斷</h2><p>本診斷用於娛樂和輕鬆自我觀察，並非醫療建議、臨床心理測驗或職業適性判斷。</p><h2>關於廣告</h2><p>為了不打斷診斷體驗，廣告原則上只會出現在結果頁附近和專欄頁面等有限位置。</p>`
             }
         },
         "contact.html": {
-            title: { ja: "お問い合わせ | SNS承認欲求モンスター診断", en: "Contact | SNS Recognition Monster Diagnosis", ko: "문의 | SNS 승인욕구 몬스터 진단", zh: "聯絡我們 | SNS認同感怪獸診斷" },
+            title: { ja: "お問い合わせ | SNS承認欲求モンスター診断", en: "Contact | SNS Recognition Monster Diagnosis", ko: "문의 | SNS 인정욕구 몬스터 진단", zh: "聯絡我們 | SNS認同感怪獸診斷" },
             html: {
                 ja: `<h1>お問い合わせ</h1><p>診断結果、表示崩れ、不具合、広告表示に関するお問い合わせはこちらで受け付けます。</p><div class="note">お問い合わせ先: <a href="mailto:${EMAIL}">${EMAIL}</a></div><p>不具合報告の際は、ニックネームなど個人情報を含めず、利用ブラウザと発生した画面だけをお知らせください。</p>`,
                 en: `<h1>Contact</h1><p>Please use this contact address for result issues, layout problems, bugs, or advertising display questions.</p><div class="note">Contact: <a href="mailto:${EMAIL}">${EMAIL}</a></div><p>When reporting a bug, please avoid sending personal information such as your nickname. The browser and the screen where it happened are enough.</p>`,
@@ -75,7 +75,7 @@
             }
         },
         "privacy.html": {
-            title: { ja: "プライバシーポリシー | SNS承認欲求モンスター診断", en: "Privacy Policy | SNS Recognition Monster Diagnosis", ko: "개인정보 처리방침 | SNS 승인욕구 몬스터 진단", zh: "隱私權政策 | SNS認同感怪獸診斷" },
+            title: { ja: "プライバシーポリシー | SNS承認欲求モンスター診断", en: "Privacy Policy | SNS Recognition Monster Diagnosis", ko: "개인정보 처리방침 | SNS 인정욕구 몬스터 진단", zh: "隱私權政策 | SNS認同感怪獸診斷" },
             html: {
                 ja: `<h1>プライバシーポリシー</h1><p>本サイトは、ユーザー体験を保ちながら利用状況の分析と広告表示を行うため、必要最小限の情報のみを扱います。</p><h2>取得する情報</h2><ul><li>診断の開始、完了、画像保存、共有クリックなどの操作イベント</li><li>診断タイプコード、スコア帯、表示言語など、個人を直接特定しない分類情報</li><li>広告配信やアクセス解析に必要なCookie等の識別子</li></ul><h2>取得しない情報</h2><p>ニックネーム、自由入力の文字列、端末内の画像、連絡先、パスワード等をGoogle Analytics 4へ送信しません。</p><h2>外部サービス</h2><p>同意がある場合にGoogle Analytics 4およびGoogle AdSense等を利用することがあります。Cookieはブラウザ設定から削除または無効化できます。</p><h2>お問い合わせ</h2><p><a href="mailto:${EMAIL}">${EMAIL}</a> までお願いします。</p>`,
                 en: `<h1>Privacy Policy</h1><p>This site handles only the minimum information needed to improve the experience, analyze usage, and display ads.</p><h2>Information We May Collect</h2><ul><li>Events such as starting the diagnosis, completing it, saving an image, or clicking share</li><li>Non-identifying categories such as result type code, score range, and display language</li><li>Cookie-like identifiers needed for analytics and advertising</li></ul><h2>Information We Do Not Send</h2><p>Nicknames, free-form input text, images on your device, contacts, passwords, and similar personal data are not sent to Google Analytics 4.</p><h2>External Services</h2><p>With consent, this site may use Google Analytics 4 and Google AdSense. Cookies can be deleted or disabled in your browser settings.</p><h2>Contact</h2><p>Please contact <a href="mailto:${EMAIL}">${EMAIL}</a>.</p>`,
@@ -84,7 +84,7 @@
             }
         },
         "404.html": {
-            title: { ja: "ページが見つかりません | SNS承認欲求モンスター診断", en: "Page Not Found | SNS Recognition Monster Diagnosis", ko: "페이지를 찾을 수 없습니다 | SNS 승인욕구 몬스터 진단", zh: "找不到頁面 | SNS認同感怪獸診斷" },
+            title: { ja: "ページが見つかりません | SNS承認欲求モンスター診断", en: "Page Not Found | SNS Recognition Monster Diagnosis", ko: "페이지를 찾을 수 없습니다 | SNS 인정욕구 몬스터 진단", zh: "找不到頁面 | SNS認同感怪獸診斷" },
             html: {
                 ja: `<h1>ページが見つかりません</h1><p class="lead">探しているページは移動したか、存在しないようです。</p>`,
                 en: `<h1>Page Not Found</h1><p class="lead">The page you are looking for may have moved or does not exist.</p>`,
@@ -93,11 +93,11 @@
             }
         },
         "articles/index.html": {
-            title: { ja: "承認欲求コラム | SNS承認欲求モンスター診断", en: "Approval Desire Columns | SNS Recognition Monster Diagnosis", ko: "승인욕구 칼럼 | SNS 승인욕구 몬스터 진단", zh: "認同感專欄 | SNS認同感怪獸診斷" },
+            title: { ja: "承認欲求コラム | SNS承認欲求モンスター診断", en: "Approval Desire Columns | SNS Recognition Monster Diagnosis", ko: "인정욕구 칼럼 | SNS 인정욕구 몬스터 진단", zh: "認同感專欄 | SNS認同感怪獸診斷" },
             html: {
                 ja: `<h1>承認欲求コラム</h1><p class="lead">診断で出たモンスターを笑って終わらせず、SNSとの距離感を少しだけ整えるための読み物です。</p>`,
                 en: `<h1>Approval Desire Columns</h1><p class="lead">Short reads for turning your monster result into a lighter, healthier distance from SNS.</p>`,
-                ko: `<h1>승인욕구 칼럼</h1><p class="lead">진단에서 나온 몬스터를 웃고 끝내지 않고, SNS와의 거리감을 조금 정리하기 위한 읽을거리입니다.</p>`,
+                ko: `<h1>인정욕구 칼럼</h1><p class="lead">진단에서 나온 몬스터를 웃고 끝내지 않고, SNS와의 거리감을 조금 정리하기 위한 읽을거리입니다.</p>`,
                 zh: `<h1>認同感專欄</h1><p class="lead">不只把怪獸結果笑一笑就結束，而是輕鬆整理自己與SNS距離的讀物。</p>`
             }
         }
@@ -105,19 +105,19 @@
 
     const articlePages = {
         "approval-desire-test.html": {
-            title: ["承認欲求診断でわかること", "What an Approval Desire Test Shows", "승인욕구 진단으로 알 수 있는 것", "認同感診斷能看出什麼"],
-            lead: ["承認欲求診断は、自分の性格を決めつけるものではなく、SNSで反応を求めるクセを少し離れて眺めるための遊びです。", "An approval desire test is not here to define your personality. It is a playful way to look at your habit of seeking reactions on SNS.", "승인욕구 진단은 성격을 단정하는 것이 아니라, SNS에서 반응을 찾는 습관을 조금 떨어져 보는 놀이입니다.", "認同感診斷不是給性格下結論，而是用輕鬆方式觀察自己在SNS 上尋求反應的習慣。"],
+            title: ["承認欲求診断でわかること", "What an Approval Desire Test Shows", "인정욕구 진단으로 알 수 있는 것", "認同感診斷能看出什麼"],
+            lead: ["承認欲求診断は、自分の性格を決めつけるものではなく、SNSで反応を求めるクセを少し離れて眺めるための遊びです。", "An approval desire test is not here to define your personality. It is a playful way to look at your habit of seeking reactions on SNS.", "인정욕구 진단은 성격을 단정하는 것이 아니라, SNS에서 반응을 찾는 습관을 조금 떨어져 보는 놀이입니다.", "認同感診斷不是給性格下結論，而是用輕鬆方式觀察自己在SNS 上尋求反應的習慣。"],
             sections: [
                 [["診断で見たいのは点数より傾向", "SNSでは「見られること」が日常になる", "モンスター名にする理由"], ["Look at tendencies, not just scores", "Being seen becomes everyday life on SNS", "Why the result becomes a monster name"], ["점수보다 경향을 보기", "SNS에서는 보이는 일이 일상이 된다", "몬스터 이름으로 만드는 이유"], ["看傾向，而不只看分數", "在SNS 上，被看見成了日常", "為什麼做成怪獸名"]],
                 [["点数が高いから悪いわけではありません。どんな場面で反応が欲しくなるかを知ることが大切です。", "SNSでは投稿した瞬間に数字が返ってきます。その速さが、表現したい気持ちより評価されたい気持ちを前に出すことがあります。", "少し大げさな名前にすると、自分を責めずに笑って距離を取れます。"], ["A high score is not bad by itself. What matters is noticing when and why you want reactions.", "SNS gives numbers back quickly. That speed can push the wish to be evaluated ahead of the wish to express yourself.", "A slightly exaggerated name makes it easier to laugh, step back, and avoid self-blame."], ["점수가 높다고 나쁜 것은 아닙니다. 어떤 순간에 반응을 원하게 되는지 아는 것이 중요합니다.", "SNS는 게시하자마자 숫자가 돌아옵니다. 그 속도가 표현하고 싶은 마음보다 평가받고 싶은 마음을 앞세우기도 합니다.", "조금 과장된 이름은 자책하지 않고 웃으며 거리를 두게 해 줍니다."], ["分數高並不代表壞。重要的是知道自己在什麼場景下會想要反應。", "SNS會在發文後立刻回傳數字，這種速度有時會讓“想被評價”壓過“想表達”。", "稍微誇張的名字能讓人不必責備自己，而是笑著拉開距離。"]]
             ]
         },
         "sns-approval-desire.html": {
-            title: ["SNSの承認欲求とは何か", "What Approval Desire on SNS Means", "SNS의 승인욕구란 무엇인가", "SNS 上的認同欲求是什麼"],
+            title: ["SNSの承認欲求とは何か", "What Approval Desire on SNS Means", "SNS의 인정욕구란 무엇인가", "SNS 上的認同感是什麼"],
             lead: ["SNSで反応が気になるのは、弱さというより「見られる場所」に心が置かれているからです。", "Caring about reactions on SNS is less about weakness and more about placing your feelings in a space where you are seen.", "SNS에서 반응이 신경 쓰이는 것은 약함이라기보다, 마음이 보이는 장소에 놓여 있기 때문입니다.", "在SNS 上在意反應，與其說是軟弱，不如說是把心放在了被看見的地方。"],
             sections: [
-                [["承認欲求は悪者ではない", "数字はわかりやすいが、心には雑です", "診断は自分を責めるためではない"], ["Approval desire is not the villain", "Numbers are clear, but rough on the heart", "The diagnosis is not for blaming yourself"], ["승인욕구는 악당이 아니다", "숫자는 알기 쉽지만 마음에는 거칠다", "진단은 자신을 탓하기 위한 것이 아니다"], ["認同欲求不是壞人", "數字很清楚，但對心很粗糙", "診斷不是為了責備自己"]],
-                [["見つけてもらいたい、理解されたい、評価されたい気持ちは自然なものです。問題は、それが行動のすべてを決めてしまうときです。", "いいね数や閲覧数は投稿価値そのものではありません。タイミングやアルゴリズムなど多くの偶然が混ざります。", "この診断は、承認欲求を少し大げさなモンスター名にして笑える距離を作るためのエンタメです。"], ["Wanting to be found, understood, and valued is natural. It becomes tiring when that wish controls every action.", "Likes and views are not the value of a post itself. Timing, algorithms, and chance are mixed in.", "This diagnosis turns approval desire into a playful monster name so you can laugh and get some distance."], ["발견되고 이해받고 평가받고 싶은 마음은 자연스럽습니다. 문제는 그 마음이 행동 전부를 결정할 때입니다.", "좋아요 수와 조회수는 게시물의 가치 그 자체가 아닙니다. 타이밍과 알고리즘, 우연이 섞여 있습니다.", "이 진단은 승인욕구를 조금 과장된 몬스터 이름으로 바꾸어 웃으며 거리를 두기 위한 엔터테인먼트입니다."], ["想被發現、理解、評價是自然的。問題在於這種心情開始決定所有行動。", "按讚和瀏覽量並不是投稿本身的價值，裡面混有時間、演算法和偶然。", "這個診斷把認同欲求做成誇張的怪獸名，是為了讓你笑著拉開距離。"]]
+                [["承認欲求は悪者ではない", "数字はわかりやすいが、心には雑です", "診断は自分を責めるためではない"], ["Approval desire is not the villain", "Numbers are clear, but rough on the heart", "The diagnosis is not for blaming yourself"], ["인정욕구는 악당이 아니다", "숫자는 알기 쉽지만 마음에는 거칠다", "진단은 자신을 탓하기 위한 것이 아니다"], ["認同感不是壞人", "數字很清楚，但對心很粗糙", "診斷不是為了責備自己"]],
+                [["見つけてもらいたい、理解されたい、評価されたい気持ちは自然なものです。問題は、それが行動のすべてを決めてしまうときです。", "いいね数や閲覧数は投稿価値そのものではありません。タイミングやアルゴリズムなど多くの偶然が混ざります。", "この診断は、承認欲求を少し大げさなモンスター名にして笑える距離を作るためのエンタメです。"], ["Wanting to be found, understood, and valued is natural. It becomes tiring when that wish controls every action.", "Likes and views are not the value of a post itself. Timing, algorithms, and chance are mixed in.", "This diagnosis turns approval desire into a playful monster name so you can laugh and get some distance."], ["발견되고 이해받고 평가받고 싶은 마음은 자연스럽습니다. 문제는 그 마음이 행동 전부를 결정할 때입니다.", "좋아요 수와 조회수는 게시물의 가치 그 자체가 아닙니다. 타이밍과 알고리즘, 우연이 섞여 있습니다.", "이 진단은 인정욕구를 조금 과장된 몬스터 이름으로 바꾸어 웃으며 거리를 두기 위한 엔터테인먼트입니다."], ["想被發現、理解、評價是自然的。問題在於這種心情開始決定所有行動。", "按讚和瀏覽量並不是投稿本身的價值，裡面混有時間、演算法和偶然。", "這個診斷把認同感做成誇張的怪獸名，是為了讓你笑著拉開距離。"]]
             ]
         },
         "likes-psychology.html": {
@@ -130,7 +130,7 @@
         },
         "maslow-social-media.html": {
             title: ["マズローの欲求とSNS時代の見られたい気持ち", "Maslow's Needs and the Desire to Be Seen", "매슬로 욕구와 SNS 시대의 보이고 싶은 마음", "馬斯洛需求與SNS時代想被看見的心情"],
-            lead: ["承認欲求は、誰かに評価されたい気持ちだけでなく、自分で自分を認めたい気持ちとも結びつきます。", "Approval desire is connected not only to being valued by others, but also to wanting to approve of yourself.", "승인욕구는 타인에게 평가받고 싶은 마음뿐 아니라 스스로를 인정하고 싶은 마음과도 연결됩니다.", "認同欲求不僅與想被別人評價有關，也與想認可自己有關。"],
+            lead: ["承認欲求は、誰かに評価されたい気持ちだけでなく、自分で自分を認めたい気持ちとも結びつきます。", "Approval desire is connected not only to being valued by others, but also to wanting to approve of yourself.", "인정욕구는 타인에게 평가받고 싶은 마음뿐 아니라 스스로를 인정하고 싶은 마음과도 연결됩니다.", "認同感不僅與想被別人評價有關，也與想認可自己有關。"],
             sections: [
                 [["外側からの承認と内側からの承認", "成長したい気持ちと安心したい気持ち", "診断結果を読むコツ"], ["External approval and internal approval", "Wanting growth and wanting safety", "How to read your result"], ["외부 인정과 내부 인정", "성장하고 싶은 마음과 안심하고 싶은 마음", "진단 결과 읽는 법"], ["外部認同與內部認同", "想成長和想安心", "閱讀結果的訣竅"]],
                 [["外側からの承認はいいねやコメント、内側からの承認は自分が納得できたかという感覚です。", "SNSでは目立ちたい気持ちと批判されたくない気持ちが同時に動きます。", "結果名は心理分類ではなくエンタメのラベルです。強い名前に振り回されず、軽く眺めてください。"], ["External approval is likes and comments. Internal approval is the feeling that your own standards were met.", "On SNS, the wish to stand out and the wish not to be criticized often move at the same time.", "The result name is an entertainment label, not a clinical category. Let it be a playful hint."], ["외부 인정은 좋아요와 댓글이고, 내부 인정은 스스로 납득했는지의 감각입니다.", "SNS에서는 눈에 띄고 싶은 마음과 비판받고 싶지 않은 마음이 동시에 움직입니다.", "결과명은 심리 분류가 아니라 엔터테인먼트 라벨입니다. 강한 이름에 휘둘리지 말고 가볍게 봐 주세요."], ["外部認同是按讚和留言，內部認同是自己是否滿意的感覺。", "在SNS 上，想突出和不想被批評的心情常常同時出現。", "結果名不是心理分類，而是娛樂標籤。別被強烈的名字牽著走，輕鬆看看即可。"]]
@@ -307,7 +307,7 @@
         return {
             ja: "SNS承認欲求モンスター診断",
             en: "SNS Recognition Monster Diagnosis",
-            ko: "SNS 승인욕구 몬스터 진단",
+            ko: "SNS 인정욕구 몬스터 진단",
             zh: "SNS認同感怪獸診斷"
         }[lang];
     }

@@ -136,8 +136,8 @@
             inviteShareText: "私の承認欲求モンスターは『${name}』。あなたとの相性、測れる？🐾",
             inviteShareTitle: "私との\"承認欲求の相性\"、測ってみて🐾",
             inviteCopySuccess: "招待リンクをコピーしました",
-            inviteTeaserTitle: "💞 招待相性ティーザー",
-            inviteTeaserLine: "💞 {from}のあの人との相性 = {score}%／一言：{comment}",
+            inviteTeaserTitle: "💞 ふたりの相性",
+            inviteTeaserLine: "💞 {from}のあの人との相性は {score}%。{comment}",
             inviteTeaserPaidHint: "理由とコツは¥360の相性パックで深掘りできます。",
             inviteTeaserComments: {
                 same: "似すぎて鏡。刺さる時は同時に刺さる。",
@@ -158,8 +158,8 @@
                 "モンスターゾーン。通知が来ない夜、スマホを3回開くタイプ🐾"
             ],
             freePreviewMore: "…続きは詳細AI診断書で",
-            premiumReportAdviceTitle: "SNSとの付き合い方",
-            premiumReportTruthTitle: "人には言えない本音",
+            premiumReportAdviceTitle: "📌 SNSとの付き合い方",
+            premiumReportTruthTitle: "🤫 人には言えない本音",
             premiumReportAdviceItems: [
                 "投稿前に「誰に見せたいか」を1人だけ決めると、反応待ちの沼が浅くなります。",
                 "伸びなかった投稿は削除前に24時間寝かせる。数字より、残したかった感情を先に確認。",
@@ -291,8 +291,8 @@
             inviteShareText: "My approval-desire monster is \"${name}\". Can we measure our chemistry? 🐾",
             inviteShareTitle: "Take the quiz and see our chemistry 🐾",
             inviteCopySuccess: "Invite link copied",
-            inviteTeaserTitle: "💞 Invite Compatibility Teaser",
-            inviteTeaserLine: "💞 Compatibility with that {from}: {score}% / {comment}",
+            inviteTeaserTitle: "💞 Your chemistry together",
+            inviteTeaserLine: "💞 Your chemistry with that {from}: {score}% — {comment}",
             inviteTeaserPaidHint: "Want the reasons and tips? Unlock the ¥360 compatibility pack.",
             inviteTeaserComments: {
                 same: "Too mirror-like. When it hits, it hits both of you.",
@@ -313,8 +313,8 @@
                 "Monster zone. No notifications tonight? Phone checked three times 🐾"
             ],
             freePreviewMore: "...more in the full AI report",
-            premiumReportAdviceTitle: "How to live with SNS",
-            premiumReportTruthTitle: "The truth you rarely say out loud",
+            premiumReportAdviceTitle: "📌 How to live with SNS",
+            premiumReportTruthTitle: "🤫 The truth you rarely say out loud",
             premiumReportAdviceItems: [
                 "Before posting, decide the one person you want to reach. It keeps the reaction spiral smaller.",
                 "If a post flops, wait 24 hours before deleting. Check what feeling you wanted to keep first.",
@@ -386,8 +386,8 @@
             dimensionExternal: "Attention-Stealer Happy Needy"
         },
         ko: {
-            appTitle: "SNS 승인욕구 몬스터 진단",
-            appSubtitle: "매슬로 승인욕구 2축 모델 진단",
+            appTitle: "SNS 인정욕구 몬스터 진단",
+            appSubtitle: "매슬로 인정욕구 2축 모델 진단",
             labelNickname: "닉네임을 입력해 주세요",
             placeholderNickname: "(예: 포메짱)",
             labelAge: "연령대를 선택해 주세요",
@@ -400,7 +400,7 @@
             chekiUserName: "유저: {name}",
             chekiUserAge: "연령대: {age}",
             chekiSerialTitle: "시리얼 번호",
-            resultTitleLabel: "당신의 승인욕구 유형",
+            resultTitleLabel: "당신의 인정욕구 유형",
             aiCommentTitleLabel: "AI 심층 분석 (독설 해설)",
             exportBtn: "📸 체키 저장/공유하기",
             exportHint: "탭하면 이미지 저장 (스크린샷 불필요)",
@@ -413,7 +413,7 @@
             premiumKeyLabel: "프리미엄 파스텔 키 입력",
             unlockBtn: "파스텔 락 해제",
             iosModalTitle: "마음의 준비는 되셨습니까?",
-            iosModalText: "지금부터 당신의 승인욕구와 생체 반응 스캐너를 실행합니다. 타이핑 속도에 맞춰 심장 박동 피드백이 재생됩니다.",
+            iosModalText: "지금부터 당신의 인정욕구와 생체 반응 스캐너를 실행합니다. 타이핑 속도에 맞춰 심장 박동 피드백이 재생됩니다.",
             iosStartBtn: "시작하기",
             toastAudioInit: "스캐너 초기화 완료 💓",
             toastKeySuccess: "프리미엄 라이선스 인증 완료. 영구 해제되었습니다!",
@@ -432,22 +432,22 @@
             toastCopySuccess: "링크가 복사되었습니다",
             toastCopyFail: "복사 실패",
             loadingAi: "AI가 당신의 정신을 스캔 중……",
-            shareImageTitle: "SNS 승인욕구 몬스터 진단",
+            shareImageTitle: "SNS 인정욕구 몬스터 진단",
             shareImageText: "진단 결과 체키 이미지",
-            xHashtag: "SNS승인욕구몬스터진단",
+            xHashtag: "SNS인정욕구몬스터진단",
             chekiFooterCta: "당신은 무슨 몬스터? →",
             shareVariants: [
-                "내 SNS 승인욕구 몬스터는 『${name}』! (점수 ${scorePct}%) 너무 잘 맞아서 소름… 당신은?",
-                "내 승인욕구가 스캔당했다… 결과는 『${name}』(${scorePct}%). 당신의 몬스터, 맞혀볼래요? 👀",
+                "내 SNS 인정욕구 몬스터는 『${name}』! (점수 ${scorePct}%) 너무 잘 맞아서 소름… 당신은?",
+                "내 인정욕구가 스캔당했다… 결과는 『${name}』(${scorePct}%). 당신의 몬스터, 맞혀볼래요? 👀",
                 "『${name}』(${scorePct}%) 나왔어요! 다들 무슨 타입인지 궁금… 해보고 댓글로 알려줘요 👇"
             ],
             inviteCompatibilityBtn: "🐾 친구·연인·최애에게 보내서 '궁합' 재기 (무료)",
             inviteCompatibilitySub: "LINE 등으로 초대 링크 전송 → 상대가 진단하면 '둘의 궁합%'가 나와요",
-            inviteShareText: "내 승인욕구 몬스터는 『${name}』. 우리 궁합, 한번 재볼래? 🐾",
-            inviteShareTitle: "나랑 '승인욕구 궁합' 재보자 🐾",
+            inviteShareText: "내 인정욕구 몬스터는 『${name}』. 우리 궁합, 한번 재볼래? 🐾",
+            inviteShareTitle: "나랑 '인정욕구 궁합' 재보자 🐾",
             inviteCopySuccess: "초대 링크가 복사되었습니다",
-            inviteTeaserTitle: "💞 초대 궁합 티저",
-            inviteTeaserLine: "💞 {from}인 그 사람과의 궁합 = {score}% / 한마디: {comment}",
+            inviteTeaserTitle: "💞 둘의 궁합",
+            inviteTeaserLine: "💞 {from}인 그 사람과의 궁합은 {score}%. {comment}",
             inviteTeaserPaidHint: "이유와 살리는 법은 ¥360 궁합 팩에서 더 볼 수 있어요.",
             inviteTeaserComments: {
                 same: "너무 닮아서 거울 같아요. 찔릴 때도 같이 찔립니다.",
@@ -468,8 +468,8 @@
                 "몬스터 존. 알림 없는 밤, 폰을 세 번 여는 타입 🐾"
             ],
             freePreviewMore: "…이어서 상세 AI 진단서에서",
-            premiumReportAdviceTitle: "SNS와 지내는 법",
-            premiumReportTruthTitle: "남에게 말 못 하는 속마음",
+            premiumReportAdviceTitle: "📌 SNS와 지내는 법",
+            premiumReportTruthTitle: "🤫 남에게 말 못 하는 속마음",
             premiumReportAdviceItems: [
                 "올리기 전, 보여주고 싶은 사람을 딱 한 명만 정해보세요. 반응 기다림의 늪이 얕아집니다.",
                 "반응이 약한 글은 지우기 전 24시간만 묵혀두세요. 남기고 싶었던 감정을 먼저 확인해요.",
@@ -477,15 +477,15 @@
             ],
             premiumReportTruth: "사실은 딱 한 사람에게라도 '나 봤어'라는 말을 듣고 싶습니다.",
             aiBadge: "AI 신탁",
-            approvalMeterTitle: "💓 승인욕구 점수",
+            approvalMeterTitle: "💓 인정욕구 점수",
             meterLow: "😌 달관",
             meterMiddle: "😅 중간",
-            meterHigh: "🔥 승인욕구 몬스터",
-            chekiScoreLabel: "승인욕구 점수:",
+            meterHigh: "🔥 인정욕구 몬스터",
+            chekiScoreLabel: "인정욕구 점수:",
             resultGrowthTitle: "진단 결과 더 즐기기",
             resultGrowthLinks: [
                 { href: "articles/result-types.html", label: "16가지 진단 결과 즐기는 법" },
-                { href: "articles/sns-approval-desire.html", label: "SNS의 승인욕구란 무엇인가" },
+                { href: "articles/sns-approval-desire.html", label: "SNS의 인정욕구란 무엇인가" },
                 { href: "articles/sns-fatigue.html", label: "SNS 피로를 줄이는 게시물과의 거리" },
                 { href: "articles/how-to-share-results.html", label: "결과를 X에 공유하며 즐기는 법" }
             ],
@@ -493,7 +493,7 @@
                 privacy: "개인정보 처리방침",
                 contact: "문의",
                 about: "운영 정보",
-                articles: "승인욕구 칼럼"
+                articles: "인정욕구 칼럼"
             },
             consentText: "이용 분석과 광고 표시를 위해 쿠키 등을 사용합니다. 닉네임과 입력 내용은 GA4로 보내지 않습니다.",
             consentReject: "거부",
@@ -527,7 +527,7 @@
             detailedReportSaveBtn: "📄 상세 AI 진단서를 이미지로 저장",
             detailedReportPurchaseBtn: "✦ ¥120으로 저장＋영구 보존",
             detailedReportLossCopy: "이 결과는 전부 무료로 볼 수 있어요. 진단서에는 여기 없는 '내 유형 전용' 【SNS와 지내는 법 3가지】와 【남에게 말 못 하는 속마음】을 담았어요.",
-            detailedReportScoreLabel: "승인욕구 점수",
+            detailedReportScoreLabel: "인정욕구 점수",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
             paidSaveBtn: "✨ 상세 AI 진단서 저장＋영구 보존 ¥{price}",
             paidSaveHint: "또는 X에 공유하고 무료로 저장",
@@ -542,7 +542,7 @@
         },
         zh: {
             appTitle: "SNS認同感怪獸診斷",
-            appSubtitle: "基於馬斯洛需求模型的雙軸認同診斷",
+            appSubtitle: "基於馬斯洛需求模型的雙軸認同感診斷",
             labelNickname: "請輸入你的暱稱",
             placeholderNickname: "（例：小博美）",
             labelAge: "請選擇你的年齡層",
@@ -555,7 +555,7 @@
             chekiUserName: "使用者: {name}",
             chekiUserAge: "年齡層: {age}",
             chekiSerialTitle: "序號",
-            resultTitleLabel: "你的認同欲求類型",
+            resultTitleLabel: "你的認同感類型",
             aiCommentTitleLabel: "AI毒舌分析",
             exportBtn: "📸 儲存/分享拍立得圖片",
             exportHint: "點擊儲存圖片（無需截圖）",
@@ -568,7 +568,7 @@
             premiumKeyLabel: "輸入升級解鎖碼",
             unlockBtn: "解除粉色鎖定",
             iosModalTitle: "準備好迎接真實的自己嗎？",
-            iosModalText: "我們將載入你的社交認同欲求與生物反饋系統。心跳聲音將與你的打字速度保持同步。",
+            iosModalText: "我們將載入你的社交認同感與生物反饋系統。心跳聲音將與你的打字速度保持同步。",
             iosStartBtn: "前進",
             toastAudioInit: "生物反饋初始化完畢 💓",
             toastKeySuccess: "解鎖碼驗證成功！已為您永久保留拍立得。",
@@ -598,12 +598,12 @@
             ],
             inviteCompatibilityBtn: "🐾 傳給朋友・戀人・推來測『契合度』（免費）",
             inviteCompatibilitySub: "用LINE等傳出邀請連結 → 對方做完診斷就會顯示『你們的契合度%』",
-            inviteShareText: "我的認同欲求怪獸是『${name}』。要不要測測我們的配對？🐾",
-            inviteShareTitle: "跟我測測『認同欲求契合度』🐾",
+            inviteShareText: "我的認同感怪獸是『${name}』。要不要測測我們的契合度？🐾",
+            inviteShareTitle: "跟我測測『認同感契合度』🐾",
             inviteCopySuccess: "邀請連結已複製",
-            inviteTeaserTitle: "💞 邀請配對小提示",
-            inviteTeaserLine: "💞 和那位{from}的配對 = {score}%／一句話：{comment}",
-            inviteTeaserPaidHint: "理由和相處小訣竅可在¥360配對包中解鎖。",
+            inviteTeaserTitle: "💞 你們的契合度",
+            inviteTeaserLine: "和那位{from}的契合度是 {score}%。{comment}",
+            inviteTeaserPaidHint: "理由和相處訣竅，可用¥360的契合度包解鎖。",
             inviteTeaserComments: {
                 same: "太像照鏡子。被戳中時會一起中箭。",
                 great: "能自然補上彼此的空缺。",
@@ -623,8 +623,8 @@
                 "怪獸區。沒通知的夜晚，手機開了三次🐾"
             ],
             freePreviewMore: "…後續請看詳細AI診斷書",
-            premiumReportAdviceTitle: "和SNS相處的方法",
-            premiumReportTruthTitle: "不敢對人說的真心話",
+            premiumReportAdviceTitle: "📌 和SNS相處的方法",
+            premiumReportTruthTitle: "🤫 不敢對人說的真心話",
             premiumReportAdviceItems: [
                 "發文前先決定最想讓誰看到。對反應的等待就不會把你整個拖下去。",
                 "反應不如預期時，刪除前先放24小時。先確認你想留下的是哪種心情。",
@@ -632,7 +632,7 @@
             ],
             premiumReportTruth: "其實只要有一個重要的人說「我有看到」，你就會安心很多。",
             aiBadge: "AI神諭",
-            approvalMeterTitle: "💓 認同欲求分數",
+            approvalMeterTitle: "💓 認同感分數",
             meterLow: "😌 超然",
             meterMiddle: "😅 中間",
             meterHigh: "🔥 認同感怪獸",
@@ -640,7 +640,7 @@
             resultGrowthTitle: "進一步享受診斷結果",
             resultGrowthLinks: [
                 { href: "articles/result-types.html", label: "16種診斷結果的玩法" },
-                { href: "articles/sns-approval-desire.html", label: "SNS 上的認同欲求是什麼" },
+                { href: "articles/sns-approval-desire.html", label: "SNS 上的認同感是什麼" },
                 { href: "articles/sns-fatigue.html", label: "減輕SNS疲勞的相處方式" },
                 { href: "articles/how-to-share-results.html", label: "在X 分享結果的玩法" }
             ],
@@ -668,7 +668,7 @@
             sectionTalentStrength: "弱點中的強項",
             sectionTalentFuture: "未來提示",
             sectionTalentAction: "今日行動",
-            sectionCompatTitle: "💖 配對診斷結果",
+            sectionCompatTitle: "💖 契合度診斷結果",
             sectionGoodMatch: "💚 最佳搭檔",
             sectionBadMatch: "💔 衝突類型",
             sectionLoveStyle: "📖 你的戀愛觀",
@@ -682,7 +682,7 @@
             detailedReportSaveBtn: "📄 儲存詳細AI診斷書圖片",
             detailedReportPurchaseBtn: "✦ ¥120 永久保存",
             detailedReportLossCopy: "這頁的結果全部免費看。診斷書收錄這裡沒有的：你的類型限定【和SNS相處的3個方法】＋【不敢對人說的真心話】。",
-            detailedReportScoreLabel: "認同欲求分數",
+            detailedReportScoreLabel: "認同感分數",
             detailedReportFooter: "@snsmonsterdiag / sns-monster-diagnosis.pages.dev",
             paidSaveBtn: "✨ 儲存詳細AI診斷書＋永久保存 ¥{price}",
             paidSaveHint: "或分享到X免費保存",
@@ -1789,19 +1789,19 @@
           "ko": {
                     "score": {
                               "zero": "이미 SNS 보살 경지예요. 반응보다 조용한 자기 시간이 이겨요.",
-                              "low": "승인욕구가 가벼운 편. 가끔 보지만 늪에 살지는 않아요.",
+                              "low": "인정욕구가 가벼운 편. 가끔 보지만 늪에 살지는 않아요.",
                               "mild": "신경 안 쓰는 척하면서 살짝 봐요. 귀여운 허세, 보입니다.",
                               "medium": "적당히 신경 쓰는 타입. “별로” 뒤에서 알림은 확인해요.",
                               "high": "중증이네요, 칭찬입니다. 좋아요 수에 표정이 조금 바뀌어요.",
-                              "extreme": "승인욕구가 꽤 진해요. 알림 하나로 하루 날씨가 바뀌는 타입."
+                              "extreme": "인정욕구가 꽤 진해요. 알림 하나로 하루 날씨가 바뀌는 타입."
                     },
                     "aiScore": {
                               "zero": "SNS 보살 레벨. 칭찬을 기다리기보다 자기 평온을 고를 수 있는 사람, 강해요🐾",
                               "low": "반응은 신경 쓰지만 휘둘리지는 않아요. 거리 조절이 꽤 건강합니다🐾",
-                              "mild": "괜찮은 척하면서 조금 기대하는 타입. 적당한 승인욕구라 오히려 인간적이에요🐾",
+                              "mild": "괜찮은 척하면서 조금 기대하는 타입. 적당한 인정욕구라 오히려 인간적이에요🐾",
                               "medium": "“신경 안 써”는 반은 진심, 반은 연출. 알림 기척에는 꽤 민감해요🐾",
                               "high": "중증이네요, 칭찬입니다. 반응 하나에 기분이 오르내리는 SNS 적성형🐾",
-                              "extreme": "승인욕구 농도가 진합니다. 알림 한 번에 세상이 밝아지는 솔직한 타입🐾"
+                              "extreme": "인정욕구 농도가 진합니다. 알림 한 번에 세상이 밝아지는 솔직한 타입🐾"
                     },
                     "age": {
                               "teen": "교실 분위기에 오늘도 온 신경 집중.",
@@ -2063,7 +2063,7 @@
                     ],
                     "ponr": [
                               "에너지 절약형 보신 코알라. 눈에 띄지 않고, 맞지 않고, 평판만 지켜요. 무리는 안 하고 유행도 쫓지 않아요. 안전지대에서 느긋하게 사는 게 정의.",
-                              "불길은 강 건너 이야기, 리스크는 전부 회피. “어떻게 보일까”보다 “평온”이 먼저. 승인욕구 있냐고 물으면 “별로”라지만 프로필은 깔끔하게 다듬었죠?🐾"
+                              "불길은 강 건너 이야기, 리스크는 전부 회피. “어떻게 보일까”보다 “평온”이 먼저. 인정욕구 있냐고 물으면 “별로”라지만 프로필은 깔끔하게 다듬었죠?🐾"
                     ],
                     "psme": [
                               "감성 판매 지망 인플루언서 예비군. 공감과 감성으로 마음을 채우고 싶어요. 분위기를 읽고 꽂히는 말을 노리지만, 크게 나서는 건 아직 무서운 성장형.",
